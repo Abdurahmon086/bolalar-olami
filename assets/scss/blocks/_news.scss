@@ -25,21 +25,27 @@
     }
 
     &__card-title {
+        position: absolute;
         font-family: "BBC Reith Sans", sans-serif;
         color: #FFF;
         font-size: 17px;
         font-weight: 700;
-        margin-top: 136px;
+        bottom: 15px;
         max-width: 301px;
         margin-bottom: 0;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
 
     .card-img-overlay {
-        background-image: url(/public/images/rectangle.png);
+        background-image: url(../images/rectangle.png);
         background-size: cover;
         background-repeat: no-repeat;
         padding: 18px 12px;
+        height: 100%;
     }
 }
 

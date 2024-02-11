@@ -36,6 +36,10 @@
             font-weight: 400;
             margin-bottom: 5.75px;
             max-width: 95%;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         &-view {
@@ -62,10 +66,14 @@
     }
 
     &__left {
-        order: 2;
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
+
+        &-wrap {
+            order: 2;
+
+        }
 
         .card-img-top {
             height: 197.104px;
@@ -81,6 +89,10 @@
             font-size: 19px;
             font-weight: 500;
             margin-bottom: 0;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .card-text {
@@ -89,6 +101,10 @@
             text-overflow: ellipsis;
             font-size: 15.459px;
             margin-bottom: 0;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         &-sp {
@@ -107,7 +123,7 @@
             padding: 5.63px 13.511px;
             background: #FFF;
             left: 5.797px;
-            top: 159.423px;
+            bottom: 8.7px;
             color: #121212;
             font-size: 11.594px;
             text-transform: uppercase;
@@ -178,13 +194,14 @@
             &-spLink {
                 font-family: "BBC Reith Sans", sans-serif;
                 left: 3.668px;
-                top: 100.885px;
+                bottom: 5.5px;
                 padding: 3.563px 8.55px;
                 font-size: 7.337px;
             }
 
             &-sp {
                 font-size: 9.783px;
+                margin-bottom: 6.47px;
             }
         }
     }
@@ -266,7 +283,7 @@
 
             &-spLink {
                 left: 6.455px;
-                top: 177.519px;
+                bottom: 9.88px;
                 padding: 6.269px 15.045px;
                 font-size: 12.91px;
             }
@@ -281,6 +298,7 @@
 
             &-sp {
                 font-size: 17.214px;
+                margin-bottom: 43.37px;
             }
         }
     }

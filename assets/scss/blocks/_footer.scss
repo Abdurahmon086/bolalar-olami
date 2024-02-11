@@ -1,16 +1,22 @@
 .footer {
     padding: 40px 0 22px 0;
 
-.footer__card {
-    padding: 40px 0 22px 0;
+    .footer__card {
+        padding: 40px 0 22px 0;
 
-}
+    }
+
+    .footer__list {
+        margin-left: 50px;
+    }
+
     .footer__text {
         color: #979797;
         font-size: 13px;
         line-height: normal;
         text-transform: capitalize;
         margin-top: 27px;
+        text-align: justify;
     }
 
     .footer__link {
@@ -36,10 +42,14 @@
     }
 
 }
+
 @media only screen and (max-width:1200px) {
     .footer {
         padding: 31px 0 0 31px !important;
 
+        .footer__list {
+            margin-left: 0;
+        }
 
         .footer__card {
             display: grid !important;
@@ -55,7 +65,7 @@
         .footer__co-text {
             text-align: end !important;
             margin-bottom: 15px !important;
-        } 
+        }
     }
 }
 
@@ -79,19 +89,19 @@
         .footer__co-text {
             text-align: end !important;
             margin-bottom: 15px !important;
-        } 
+        }
     }
 }
 
 @media only screen and (max-width:768px) {
     .footer {
-        padding: 31px 0 0 31px !important; 
+        padding: 31px 0 0 31px !important;
 
 
         .footer__card {
             display: grid !important;
             grid-template-columns: auto auto !important;
-            gap: 30px !important; 
+            gap: 30px !important;
         }
 
         .footer__text {

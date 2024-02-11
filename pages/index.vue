@@ -208,7 +208,7 @@ useHead({
         </section>
         <section class="news">
             <div class="container">
-                <h4 class="news__title darkMode-title">Yangiliklar</h4>
+                <h4 class="news__title darkMode-title">Asosiy</h4>
                 <div class="news__wrapper">
                     <div
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
@@ -288,119 +288,131 @@ useHead({
         <section class="lastNews">
             <div class="container">
                 <div class="lastNews__wrapper">
-                    <div class="lastNews__left">
-                        <CardsMainCard />
-                        <div
-                            class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                        >
-                            <div class="position-relative">
-                                <img
-                                    src="/images/lastNew1.jpg"
-                                    class="card-img-top rounded-0"
-                                    alt="Hollywood Sign on The Hill"
-                                />
-                                <span
-                                    class="position-absolute lastNews__left-spLink darkMode"
-                                    >Salomatlik</span
-                                >
+                    <div class="lastNews__left-wrap">
+                        <h4 class="news__title darkMode-title">Ta'lim</h4>
+                        <div class="lastNews__left">
+                            <div
+                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
+                            >
+                                <div class="position-relative">
+                                    <img
+                                        src="/images/lastNew1.jpg"
+                                        class="card-img-top rounded-0"
+                                        alt="Hollywood Sign on The Hill"
+                                    />
+                                    <span
+                                        class="position-absolute lastNews__left-spLink darkMode"
+                                        >Salomatlik</span
+                                    >
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title darkMode">
+                                        Mirziyoyeva oilasi bolalar kutubga
+                                        bordi.
+                                    </h5>
+                                    <p class="card-text darkMode">
+                                        Prezident yordamchisi Saida Mirziyoyeva
+                                        farzandlari bilan bolalar kutubxonasiga
+                                        keldi.....
+                                    </p>
+                                    <span class="lastNews__left-sp darkMode-sp"
+                                        >12.12.2023 12:32</span
+                                    >
+                                </div>
                             </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title darkMode">
-                                    Mirziyoyeva oilasi bolalar kutubga bordi.
-                                </h5>
-                                <p class="card-text darkMode">
-                                    Prezident yordamchisi Saida Mirziyoyeva
-                                    farzandlari bilan bolalar kutubxonasiga
-                                    keldi.....
-                                </p>
-                                <span class="lastNews__left-sp darkMode-sp"
-                                    >12.12.2023 12:32</span
+                            <div
+                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
+                            >
+                                <div
+                                    class="position-relative d-none d-sm-block"
                                 >
+                                    <img
+                                        src="/images/lastNew2.jpg"
+                                        class="card-img-top rounded-0"
+                                        alt="Hollywood Sign on The Hill"
+                                    />
+                                    <span
+                                        class="position-absolute lastNews__left-spLink darkMode"
+                                        >Salomatlik</span
+                                    >
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title darkMode">
+                                        Mirziyoyeva oilasi bolalar kutubga
+                                        bordi.
+                                    </h5>
+                                    <p class="card-text darkMode">
+                                        Prezident yordamchisi Saida Mirziyoyeva
+                                        farzandlari bilan bolalar kutubxonasiga
+                                        keldi.....
+                                    </p>
+                                    <span class="lastNews__left-sp darkMode-sp"
+                                        >12.12.2023 12:32</span
+                                    >
+                                </div>
                             </div>
-                        </div>
-                        <div
-                            class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                        >
-                            <div class="position-relative">
-                                <img
-                                    src="/images/lastNew2.jpg"
-                                    class="card-img-top rounded-0"
-                                    alt="Hollywood Sign on The Hill"
-                                />
-                                <span
-                                    class="position-absolute lastNews__left-spLink darkMode"
-                                    >Salomatlik</span
+                            <div
+                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
+                            >
+                                <div
+                                    class="position-relative d-none d-sm-block"
                                 >
+                                    <img
+                                        src="/images/lastNew3.jpg"
+                                        class="card-img-top rounded-0"
+                                        alt="Hollywood Sign on The Hill"
+                                    />
+                                    <span
+                                        class="position-absolute lastNews__left-spLink darkMode"
+                                        >Salomatlik</span
+                                    >
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title darkMode">
+                                        Mirziyoyeva oilasi bolalar kutubga
+                                        bordi.
+                                    </h5>
+                                    <p class="card-text darkMode">
+                                        Prezident yordamchisi Saida Mirziyoyeva
+                                        farzandlari bilan bolalar kutubxonasiga
+                                        keldi.....
+                                    </p>
+                                    <span class="lastNews__left-sp darkMode-sp"
+                                        >12.12.2023 12:32</span
+                                    >
+                                </div>
                             </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title darkMode">
-                                    Mirziyoyeva oilasi bolalar kutubga bordi.
-                                </h5>
-                                <p class="card-text darkMode">
-                                    Prezident yordamchisi Saida Mirziyoyeva
-                                    farzandlari bilan bolalar kutubxonasiga
-                                    keldi.....
-                                </p>
-                                <span class="lastNews__left-sp darkMode-sp"
-                                    >12.12.2023 12:32</span
-                                >
-                            </div>
-                        </div>
-                        <div
-                            class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                        >
-                            <div class="position-relative">
-                                <img
-                                    src="/images/lastNew3.jpg"
-                                    class="card-img-top rounded-0"
-                                    alt="Hollywood Sign on The Hill"
-                                />
-                                <span
-                                    class="position-absolute lastNews__left-spLink darkMode"
-                                    >Salomatlik</span
-                                >
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title darkMode">
-                                    Mirziyoyeva oilasi bolalar kutubga bordi.
-                                </h5>
-                                <p class="card-text darkMode">
-                                    Prezident yordamchisi Saida Mirziyoyeva
-                                    farzandlari bilan bolalar kutubxonasiga
-                                    keldi.....
-                                </p>
-                                <span class="lastNews__left-sp darkMode-sp"
-                                    >12.12.2023 12:32</span
-                                >
-                            </div>
-                        </div>
 
-                        <div
-                            class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                        >
-                            <div class="position-relative">
-                                <img
-                                    src="/images/lastNew4.jpg"
-                                    class="card-img-top rounded-0"
-                                    alt="Hollywood Sign on The Hill"
-                                />
-                                <span
-                                    class="position-absolute lastNews__left-spLink darkMode"
-                                    >Salomatlik</span
+                            <div
+                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
+                            >
+                                <div
+                                    class="position-relative d-none d-sm-block"
                                 >
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title darkMode">
-                                    Mirziyoyeva oilasi bolalar kutubga bordi.
-                                </h5>
-                                <p class="card-text darkMode">
-                                    Prezident yordamchisi Saida Mirziyoyeva
-                                    farzandlari bilan bolalar kutubxonasiga
-                                    keldi.....
-                                </p>
-                                <span class="lastNews__left-sp darkMode-sp"
-                                    >12.12.2023 12:32</span
-                                >
+                                    <img
+                                        src="/images/lastNew4.jpg"
+                                        class="card-img-top rounded-0"
+                                        alt="Hollywood Sign on The Hill"
+                                    />
+                                    <span
+                                        class="position-absolute lastNews__left-spLink darkMode"
+                                        >Salomatlik</span
+                                    >
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title darkMode">
+                                        Mirziyoyeva oilasi bolalar kutubga
+                                        bordi.
+                                    </h5>
+                                    <p class="card-text darkMode">
+                                        Prezident yordamchisi Saida Mirziyoyeva
+                                        farzandlari bilan bolalar kutubxonasiga
+                                        keldi.....
+                                    </p>
+                                    <span class="lastNews__left-sp darkMode-sp"
+                                        >12.12.2023 12:32</span
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>

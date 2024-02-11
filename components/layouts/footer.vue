@@ -18,7 +18,9 @@
                                 loading="lazy"
                             />
                         </a>
-                        <p class="footer__text text-body-secondary fw-normal">
+                        <p
+                            class="footer__text text-body-secondary fw-normal darkMode"
+                        >
                             Bolalarolami.Uz Internet Nashri 2023 Yilning 7
                             Aprelda Elektron OAV Sifatida O'zbekiston
                             Respublikasi Prezidenti Administratsiyasi Huzuridagi
@@ -56,14 +58,14 @@
                         >
                             <li>
                                 <a
-                                    class="footer__link text-decoration-none fw-bold darkMode-title"
+                                    class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Biz haqimizda</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    class="footer__link1 fw-bold darkMode-title"
+                                    class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Guvohnoma raqami:
                                     <span class="fw-normal"> №073429</span></a
@@ -71,7 +73,7 @@
                             </li>
                             <li>
                                 <a
-                                    class="footer__link1 fw-bold darkMode-title"
+                                    class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Muassis:
                                     <span class="fw-normal"
@@ -82,7 +84,7 @@
                             </li>
                             <li>
                                 <a
-                                    class="footer__link1 fw-bold darkMode-title"
+                                    class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Masʼul muharrir:
                                     <span class="fw-normal"
@@ -99,7 +101,7 @@
                         >
                             <li>
                                 <a
-                                    class="footer__link text-decoration-none fw-bold darkMode-title"
+                                    class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Kontaktlar</a
                                 >
@@ -120,7 +122,7 @@
                                 />
 
                                 <a
-                                    class="footer__link1 fw-normal darkMode-title"
+                                    class="footer__link1 fw-normal text-decoration-none darkMode-title"
                                     href="#"
                                 >
                                     bolalarolamiuz@gmail.com</a
@@ -138,7 +140,7 @@
                                     class="darkIcon d-none"
                                 />
                                 <a
-                                    class="footer__link1 fw-normal darkMode-title"
+                                    class="footer__link1 fw-normal text-decoration-none darkMode-title"
                                     href="#"
                                     >998 (90) 109 24 35</a
                                 >
@@ -158,7 +160,7 @@
                                     class="darkIcon d-none"
                                 />
                                 <a
-                                    class="footer__link1 fw-normal darkMode-title"
+                                    class="footer__link1 fw-normal text-decoration-none darkMode-title"
                                     href="#"
                                     >634034, Toshkent sh., Naximovna <br />
                                     ko‘chasi, 8/2</a
@@ -173,7 +175,7 @@
                         >
                             <li>
                                 <a
-                                    class="footer__link text-decoration-none fw-bold darkMode-title"
+                                    class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
                                     >Hamkorlik uchun</a
                                 >
@@ -190,7 +192,7 @@
                                     class="darkIcon d-none"
                                 />
                                 <a
-                                    class="footer__link1 fw-normal darkMode-title"
+                                    class="footer__link1 fw-normal darkMode-title text-decoration-none"
                                     href="#"
                                     >998 (90) 109 24 35</a
                                 >
@@ -207,7 +209,7 @@
                                     class="darkIcon d-none"
                                 />
                                 <a
-                                    class="footer__link1 fw-normal darkMode-title"
+                                    class="footer__link1 fw-normal darkMode-title text-decoration-none"
                                     href="#"
                                     >Telegram</a
                                 >

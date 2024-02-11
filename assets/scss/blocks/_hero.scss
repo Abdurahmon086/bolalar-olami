@@ -38,6 +38,10 @@
         max-width: 240px;
         margin-top: 37px;
         margin-bottom: 0;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     &__link-btn {

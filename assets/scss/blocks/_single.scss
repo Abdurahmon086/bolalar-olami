@@ -1,6 +1,4 @@
 .single {
- 
-
     &__title {
         font-feature-settings: 'clig' off, 'liga' off;
         font-size: 18px;
@@ -76,6 +74,7 @@
     &__text {
         font-feature-settings: 'clig' off, 'liga' off;
         font-size: 13px;
+        text-align: justify;
 
         &-wrapper {
             max-width: 273px;
