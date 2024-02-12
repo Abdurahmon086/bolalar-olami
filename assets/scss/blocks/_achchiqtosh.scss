@@ -71,6 +71,7 @@
         margin: 0;
     }
 }
+
 @media only screen and (max-width:992px) {
     .achchiqtosh {
         gap: 18px !important;
@@ -79,13 +80,15 @@
         &__card {
             gap: 9px !important;
 
-            &-box7{
+            &-box7 {
                 max-height: 326px;
             }
-            &-box8{
+
+            &-box8 {
                 max-height: 203px;
             }
-            &-box9{
+
+            &-box9 {
                 max-height: 205px;
             }
         }
@@ -122,7 +125,7 @@
         }
 
         &__info-time {
-            font-family: "IBM Plex Sans"; 
+            font-family: "IBM Plex Sans";
             font-size: 7.963px !important;
             font-weight: 400 !important;
             line-height: normal;
@@ -161,14 +164,14 @@
         }
 
         &__posi-text {
-            font-size: 20.271px !important; 
+            font-size: 20.271px !important;
             line-height: normal;
             left: 16px;
             bottom: 13px;
- 
+
         }
 
-         &__info-text {
+        &__info-text {
             font-family: "IBM Plex Sans" !important;
             font-size: 10px !important;
 
