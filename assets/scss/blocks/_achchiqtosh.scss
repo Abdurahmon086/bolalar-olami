@@ -1,353 +1,256 @@
 .achchiqtosh {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 21px;
+    margin-top: 58px;
+    margin-bottom: 58px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 
     &__title {
-        font-family: "BBC Reith Sans";
+        padding-top: 3px;
+        padding-left: 10px;
         border-left: 2.253px solid #F7931E;
         opacity: 0.9;
-        padding-left: 11.26px;
         color: #242424;
-        font-family: "BBC Reith Sans";
-        font-size: 22.527px;
-        line-height: normal;
-        cursor: pointer;
+        font-family: "BBC Reith Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 0;
     }
 
-    &__text {
-        font-family: "IBM Plex Sans";
-        color: #242424;
-        font-size: 12px;
-        font-style: normal;
-        line-height: normal;
-        text-transform: uppercase;
-        bottom: -10px;
-        left: 6px;
-        background-color: #FFF;
-        padding: 4px 10px;
-        cursor: pointer;
+
+    .carousel {
+        margin-top: 10px;
     }
 
-    &__posi-text {
+    .carousel-item {
+        height: 202px;
+    }
+
+    .card-img-overlay {
+        background-image: url(/public/images/rectangle.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &__slider-text {
+        left: 12px;
+        bottom: 18px;
         color: #FFF;
-        font-size: 35.642px;
-        font-style: normal;
-        line-height: normal;
-        bottom: 23.76px;
-        left: 33.2px;
-        font-family: "BBC Reith Sans";
-        cursor: pointer;
+        font-family: "BBC Reith Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        width: 301.651px;
+        margin-bottom: 0;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+    }
+
+    &__card-box {
+        background: #FFF;
+
+        img {
+            height: 197.104px;
+        }
+    }
+
+    &__card-sp {
+        left: 5.8px;
+        bottom: 8.7px;
+        padding: 5.63px 13.511px;
+        color: #121212;
+        font-size: 11.594px;
+        text-transform: uppercase;
+        background: #FFF;
     }
 
     &__info {
-        padding: 10px 0 10px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        padding: 12px 5.8px 20px;
+
+        &-title {
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: #121212;
+            font-size: 19.324px;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        &-text {
+            overflow: hidden;
+            color: #121212;
+            text-overflow: ellipsis;
+            font-size: 15.459px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            margin-bottom: 0;
+        }
+
+        &-time {
+            margin-bottom: 0;
+            color: #A0A0A0;
+            text-overflow: ellipsis;
+            font-size: 15.459px;
+        }
     }
 
-    &__info &__info-text {
-        color: #242424;
-        font-family: "IBM Plex Sans";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-    }
-
-    &__info-text1 {
-        overflow: hidden;
-        color: #242424;
-        text-overflow: ellipsis;
-        font-family: "IBM Plex Sans";
-        font-size: 14px;
-        line-height: normal;
-    }
-
-    &__info &__info-time {
-        overflow: hidden;
-        color: #A0A0A0;
-        text-overflow: ellipsis;
-        font-size: 14px;
-        line-height: normal;
-        margin: 0;
-    }
 }
 
-@media only screen and (max-width:992px) {
+@media only screen and (min-width:576px) {
     .achchiqtosh {
-        gap: 18px !important;
+        margin-top: 58px;
+        margin-bottom: 58px;
 
-
-        &__card {
-            gap: 9px !important;
-
-            &-box7 {
-                max-height: 326px;
-            }
-
-            &-box8 {
-                max-height: 203px;
-            }
-
-            &-box9 {
-                max-height: 205px;
-            }
-        }
-
-        &__card1 {
-            gap: 9px !important;
-        }
-
-        &__title {
-            font-size: 12.812px !important;
-            line-height: normal;
-            border-left: 1.281px solid #F7931E !important;
-            padding-left: 6.41px !important;
-        }
-
-        &__posi-text {
-            font-size: 20.271px !important;
-            line-height: normal;
-            left: 16px;
-            bottom: 13px;
-
-        }
-
-        &__info-text {
-            font-family: "IBM Plex Sans" !important;
-            font-size: 10px !important;
-
-        }
-
-        &__info-text1 {
-
-            font-size: 8px !important;
-            font-weight: 400 !important;
-        }
-
-        &__info-time {
-            font-family: "IBM Plex Sans";
-            font-size: 7.963px !important;
-            font-weight: 400 !important;
-            line-height: normal;
-        }
-
-        &__text {
-
-            padding: 1.81px !important;
-            font-family: "IBM Plex Sans";
-            font-size: 6.825px !important;
-            font-weight: 400 !important;
-            line-height: normal;
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 0.5fr;
+            gap: 10px;
         }
 
     }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (min-width:768px) {
     .achchiqtosh {
-        gap: 18px !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
-
-        &__card {
-            gap: 9px !important;
-        }
-
-        &__card1 {
-            gap: 9px !important;
-        }
-
-        &__title {
-            font-size: 12.812px !important;
-            line-height: normal;
-            border-left: 1.281px solid #F7931E !important;
-            padding-left: 6.41px !important;
-        }
-
-        &__posi-text {
-            font-size: 20.271px !important;
-            line-height: normal;
-            left: 16px;
-            bottom: 13px;
-
-        }
-
-        &__info-text {
-            font-family: "IBM Plex Sans" !important;
-            font-size: 10px !important;
-
-        }
-
-        &__info-text1 {
-
-            font-size: 8px !important;
-            font-weight: 400 !important;
-        }
-
-        &__info-time {
-            font-family: "IBM Plex Sans";
-            font-size: 7.963px !important;
-            font-weight: 400 !important;
-            line-height: normal;
-        }
-
-        &__text {
-
-            padding: 1.81px !important;
-            font-family: "IBM Plex Sans";
-            font-size: 6.825px !important;
-            font-weight: 400 !important;
-            line-height: normal;
-        }
-
-    }
-}
-
-@media only screen and (max-width:576px) {
-
-
-    .achchiqtosh {
-        display: grid !important;
-        grid-template-columns: auto;
-
-
-
-        &__title {
-            font-size: 16px !important;
-            font-weight: 700;
-            line-height: normal;
-        }
-
-        &__posi-text {
-            color: #FFF;
-            font-size: 15px !important;
-            line-height: normal;
-            bottom: 18px;
-            left: 12px;
-        }
-
-        &__card {
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        &__card1 {
-            display: none !important;
-        }
-
-
-
-        &__info {
-            padding: 12px 5px 0 10px !important;
-            background-color: #FFF;
-            display: flex;
-            flex-direction: column;
+        &__wrapper {
+            grid-template-columns: 537px 1fr;
             gap: 18px;
         }
 
-        &__info-text {
-            color: #121212 !important;
-            font-size: 19.324px !important;
-            font-weight: 500 !important;
-        }
-
-        &__info-text1 {
-            color: #121212 !important;
-            font-size: 15.459px !important;
-            font-weight: 400 !important;
-            line-height: normal;
-        }
-
-        &__text {
-            color: #121212 !important;
-            font-family: "IBM Plex Sans";
-            font-size: 11.5px !important;
-            line-height: normal;
-            text-transform: uppercase;
-            bottom: -9px;
-            left: 6px;
-            background-color: #FFF;
-            padding: 4px 10px;
-
-        }
-
-        aside {
-            display: none;
-        }
-    }
-}
-
-@media only screen and (max-width:376px) {
-
-
-    .achchiqtosh {
-        display: grid !important;
-        grid-template-columns: auto;
-
-
-
         &__title {
-            font-size: 16px !important;
-            font-weight: 700;
-            line-height: normal;
+            font-size: 12.812px;
         }
 
-        &__posi-text {
-            color: #FFF;
-            font-size: 15px !important;
-            line-height: normal;
-            bottom: 18px;
-            left: 12px;
+        .carousel-item {
+            height: 314px;
+        }
+
+        &__slider-text {
+            left: 16.44px;
+            bottom: 13.87px;
+            width: 436.68px;
+            font-size: 20.271px;
         }
 
         &__card {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
         }
 
-
-        &__card1 {
-            display: none !important;
+        &__card-box {
+            img {
+                height: 99.531px;
+            }
         }
 
-
+        &__card-sp {
+            left: 3px;
+            bottom: 4px;
+            padding: 2.837px 6.81px;
+            font-size: 6.825px;
+        }
 
         &__info {
-            padding: 12px 5px 0 10px !important;
-            background-color: #FFF;
-            display: flex;
-            flex-direction: column;
+            gap: 9px;
+            padding: 5px 2.61px 9px;
+
+            &-title {
+                font-size: 10px;
+            }
+
+            &-text {
+                font-size: 8px;
+            }
+
+            &-time {
+                font-size: 7.963px;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .achchiqtosh {
+        margin-top: 27px;
+        margin-bottom: 27px;
+
+        &__wrapper {
+            grid-template-columns: 954px 1fr;
+            gap: 30px;
+        }
+
+        &__title {
+            font-size: 22.527px;
+        }
+
+        .carousel-item {
+            height: 550px;
+        }
+
+        &__slider-text {
+            left: 33px;
+            bottom: 24px;
+            width: 767.79px;
+            font-size: 35.642px;
+        }
+
+        &__card {
             gap: 18px;
         }
 
-        &__info-text {
-            color: #121212 !important;
-            font-size: 19.324px !important;
-            font-weight: 500 !important;
+        &__card-box {
+            img {
+                height: 175px;
+            }
         }
 
-        &__info-text1 {
-            color: #121212 !important;
-            font-size: 15.459px !important;
-            font-weight: 400 !important;
-            line-height: normal;
+        &__card-sp {
+            left: 7px;
+            bottom: 11px;
+            padding: 5px 10px;
+            font-size: 12px;
         }
 
-        &__text {
-            color: #121212 !important;
-            font-family: "IBM Plex Sans";
-            font-size: 11.5px !important;
-            line-height: normal;
-            text-transform: uppercase;
-            bottom: -9px;
-            left: 6px;
-            background-color: #FFF;
-            padding: 4px 10px;
+        &__info {
+            gap: 15.965px;
+            padding: 10px 5.5px 18.7px;
 
+            &-title {
+                font-size: 16px;
+            }
+
+            &-text {
+                font-size: 14px;
+            }
+
+            &-time {
+                font-size: 14px;
+            }
         }
 
-        aside {
-            display: none;
-        }
     }
 }

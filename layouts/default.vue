@@ -4,7 +4,7 @@
     <div>
         <slot />
     </div>
-    <LayoutsFooter />
+    <!-- <LayoutsFooter /> -->
 </template>
 
 <style></style>

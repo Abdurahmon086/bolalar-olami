@@ -694,435 +694,420 @@ useHead({
             </div>
         </section>
         <!-- Achchiqtosh -->
-        <section class="container">
-            <div class="achchiqtosh mt-5 mb-5">
-                <div class="achchiqtosh__card-box10 d-flex flex-column">
-                    <h4 class="achchiqtosh__title fw-bold darkMode-title">
-                        Achchiqtosh
-                    </h4>
-                    <div
-                        id="carouselExampleInterval"
-                        class="carousel slide"
-                        data-bs-ride="carousel"
-                    >
-                        <div class="carousel-inner">
-                            <div
-                                class="carousel-item position-relative active"
-                                data-bs-interval="1000"
-                            >
-                                <img
-                                    class="achchiqtosh-img1 img-fluid"
-                                    src="/images/achchiqtosh-img1.png"
-                                    alt="achchiqtosh-img1"
-                                />
-                                <p
-                                    class="achchiqtosh__posi-text position-absolute fw-bold"
-                                >
-                                    Mirziyoyeva oilasi bolalar kutubxonasiga
-                                    bordi.
-                                </p>
-                            </div>
-                            <div
-                                class="carousel-item position-relative"
-                                data-bs-interval="1000"
-                            >
-                                <img
-                                    class="achchiqtosh-img1 img-fluid"
-                                    src="/images/achchiqtosh-img1.png"
-                                    alt="achchiqtosh-img1"
-                                />
-                                <p
-                                    class="achchiqtosh__posi-text position-absolute fw-bold"
-                                >
-                                    Mirziyoyeva oilasi bolalar kutubxonasiga
-                                    bordi.
-                                </p>
-                            </div>
-                            <div
-                                class="carousel-item position-relative"
-                                data-bs-interval="1000"
-                            >
-                                <img
-                                    class="achchiqtosh-img1 img-fluid"
-                                    src="/images/achchiqtosh-img1.png"
-                                    alt="achchiqtosh-img1"
-                                />
-                                <p
-                                    class="achchiqtosh__posi-text position-absolute fw-bold"
-                                >
-                                    Mirziyoyeva oilasi bolalar kutubxonasiga
-                                    bordi.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="achchiqtosh__main=inner mt-3 mt-md-5">
-                        <h4 class="news__title darkMode-title">Salomatlik</h4>
-                        <div
-                            class="achchiqtosh__card d-flex mb-4 mt-3"
-                            style="gap: 17px"
-                        >
-                            <div
-                                class="darkMode achchiqtosh__card-box1 achchiqtosh__card-box bg-white"
-                            >
-                                <div class="position-relative">
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box2 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div
-                                    class="position-relative d-none d-sm-block"
-                                >
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box3 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div
-                                    class="position-relative d-none d-sm-block"
-                                >
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="achchiqtosh__main=inner mt-3 mt-md-5">
-                        <h4 class="news__title darkMode-title">
-                            Xususiy klinika
+        <section class="achchiqtosh">
+            <div class="container">
+                <div class="achchiqtosh__wrapper">
+                    <div class="achchiqtosh__left d-flex flex-column">
+                        <h4 class="achchiqtosh__title darkMode-title">
+                            Achchiqtosh
                         </h4>
-
                         <div
-                            class="achchiqtosh__card1 d-flex"
-                            style="gap: 17px"
+                            id="carouselExampleInterval"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
                         >
-                            <div
-                                class="darkMode achchiqtosh__card-box4 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div class="position-relative">
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box5 achchiqtosh__card-box bg-white position-relative"
-                            >
+                            <div class="carousel-inner">
                                 <div
-                                    class="position-relative d-none d-sm-block"
+                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark active"
+                                    data-bs-interval="1000"
                                 >
                                     <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
+                                        src="/images/achchiqtosh-img1.png"
+                                        class="card-img img-fluid h-100 rounded-0"
+                                        alt="Stony Beach"
                                     />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
+                                    <div class="card-img-overlay rounded-0">
+                                        <h5
+                                            class="achchiqtosh__slider-text position-absolute"
+                                        >
+                                            Mirziyoyeva oilasi bolalar
+                                            kutubxonasigaasdasdasd asd asd asd
+                                            ada sdf sfsdfssdf sdf sdf sdfs fds
+                                            fd sdasda sda bordi.
+                                        </h5>
+                                    </div>
                                 </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box6 achchiqtosh__card-box bg-white position-relative"
-                            >
                                 <div
-                                    class="position-relative d-none d-sm-block"
+                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark"
+                                    data-bs-interval="1000"
                                 >
                                     <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
+                                        src="/images/achchiqtosh-img1.png"
+                                        class="card-img img-fluid h-100 rounded-0"
+                                        alt="Stony Beach"
                                     />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
+                                    <div class="card-img-overlay rounded-0">
+                                        <h5
+                                            class="achchiqtosh__slider-text position-absolute"
+                                        >
+                                            Mirziyoyeva oilasi bolalar
+                                            kutubxonasigaasdasdasd asd asd asd
+                                            ada sdf sfsdfssdf sdf sdf sdfs fds
+                                            fd sdasda sda bordi.
+                                        </h5>
+                                    </div>
                                 </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
+                                <div
+                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark"
+                                    data-bs-interval="1000"
+                                >
+                                    <img
+                                        src="/images/achchiqtosh-img1.png"
+                                        class="card-img img-fluid h-100 rounded-0"
+                                        alt="Stony Beach"
+                                    />
+                                    <div class="card-img-overlay rounded-0">
+                                        <h5
+                                            class="achchiqtosh__slider-text position-absolute"
+                                        >
+                                            Mirziyoyeva oilasi bolalar
+                                            kutubxonasigaasdasdasd asd asd asd
+                                            ada sdf sfsdfssdf sdf sdf sdfs fds
+                                            fd sdasda sda bordi.
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+                            <h4 class="news__title darkMode-title">
+                                Salomatlik
+                            </h4>
+                            <div class="achchiqtosh__card">
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div class="position-relative">
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
                                     >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
                                     >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+                            <h4 class="news__title darkMode-title">
+                                Xususiy kilinika
+                            </h4>
+                            <div class="achchiqtosh__card">
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div class="position-relative">
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
                                     >
-                                        12.12.2023 12:32
-                                    </p>
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
+                                    >
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+                            <h4 class="news__title darkMode-title">Foydali</h4>
+                            <div class="achchiqtosh__card">
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div class="position-relative">
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
+                                    >
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="darkMode achchiqtosh__card-box">
+                                    <div
+                                        class="position-relative d-none d-md-block"
+                                    >
+                                        <img
+                                            class="img-fluid w-100"
+                                            src="/images/achchiqtosh-img2.png"
+                                            alt="achchiqtosh-img2"
+                                        />
+                                        <span
+                                            class="darkMode achchiqtosh__card-sp position-absolute"
+                                        >
+                                            SALOMATLIK
+                                        </span>
+                                    </div>
+                                    <div class="achchiqtosh__info darkMode">
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-title"
+                                        >
+                                            Mirziyoyeva oilasi bolalar kutubga
+                                            bordi.
+                                        </p>
+                                        <p
+                                            class="darkMode-title achchiqtosh__info-text"
+                                        >
+                                            Prezident yordamchisi Saida
+                                            Mirziyoyeva farzandlari bilan
+                                            bolalar kutubxonasiga keldi.....
+                                        </p>
+                                        <p
+                                            class="darkMode-sp achchiqtosh__info-time"
+                                        >
+                                            12.12.2023 12:32
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="achchiqtosh__main=inner mt-3 mt-md-5">
-                        <h4 class="news__title darkMode-title">Foydali</h4>
-
-                        <div
-                            class="achchiqtosh__card1 d-flex"
-                            style="gap: 17px"
-                        >
-                            <div
-                                class="darkMode achchiqtosh__card-box4 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div class="position-relative">
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box5 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div
-                                    class="position-relative d-none d-sm-block"
-                                >
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                            <div
-                                class="darkMode achchiqtosh__card-box6 achchiqtosh__card-box bg-white position-relative"
-                            >
-                                <div
-                                    class="position-relative d-none d-sm-block"
-                                >
-                                    <img
-                                        class="img-fluid w-100"
-                                        src="/images/achchiqtosh-img2.png"
-                                        alt="achchiqtosh-img2"
-                                    />
-                                    <p
-                                        class="darkMode achchiqtosh__text position-absolute fw-normal"
-                                    >
-                                        SALOMATLIK
-                                    </p>
-                                </div>
-                                <div class="achchiqtosh__info darkMode">
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text fw-medium fs-6"
-                                    >
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </p>
-                                    <p
-                                        class="darkMode-title achchiqtosh__info-text1 fw-normal"
-                                    >
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <p
-                                        class="darkMode-sp achchiqtosh__info-time fw-normal"
-                                    >
-                                        12.12.2023 12:32
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <aside>
-                    <div class="d-flex flex-column row-gap-3">
+                    <div class="row-gap-3 d-none d-sm-flex flex-column">
                         <img
                             class="img-fluid achchiqtosh__card-box7"
                             src="/images/reklama-img.png"
@@ -1144,7 +1129,7 @@ useHead({
                             alt="reklama-img1"
                         />
                     </div>
-                </aside>
+                </div>
             </div>
         </section>
         <section class="slide-option loopScroler bg-white darkMode mb-0">
