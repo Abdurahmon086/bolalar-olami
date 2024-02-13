@@ -91,7 +91,10 @@
             }
         }
 
-
+        .accordion {
+            height: 100vh;
+            overflow: scroll !important;
+        }
 
         &-middle {
             position: absolute;

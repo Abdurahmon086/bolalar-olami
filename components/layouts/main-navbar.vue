@@ -188,52 +188,29 @@
                         >
                             <div
                                 class="accordion-item darkMode-btn"
-                                v-for="menu in menuData"
+                                v-for="menu in menus"
                             >
                                 <h2 class="accordion-header">
                                     <button
                                         class="darkMode rounded-3 accordion-button shadow-0 collapsed"
                                         type="button"
                                         data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne"
+                                        :data-bs-target="
+                                            '#flush-collapseOne' + menu.id
+                                        "
                                         aria-expanded="true"
-                                        aria-controls="flush-collapseOne"
+                                        :aria-controls="
+                                            'flush-collapseOne' + menu.id
+                                        "
                                     >
                                         {{ menu.title_uz }}
                                     </button>
                                 </h2>
                                 <div
-                                    id="flush-collapseOne"
+                                    :id="'flush-collapseOne' + menu.id"
                                     data-bs-parent="#accordionFlushExample"
                                     class="accordion-collapse collapse border-0"
-                                    aria-labelledby="1"
-                                >
-                                    <ul class="accordion-body list-unstyled">
-                                        <li>Maktabgacha ta'lim</li>
-                                        <li>O’rta maxsus ta’lim</li>
-                                        <li>Oliy ta’lim</li>
-                                        <li>Xususiy ta’lim</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion-item darkMode-btn">
-                                <h2 class="accordion-header">
-                                    <button
-                                        class="darkMode rounded-3 accordion-button shadow-0 collapsed"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne1"
-                                        aria-expanded="true"
-                                        aria-controls="flush-collapseOne1"
-                                    >
-                                        Ta'lim
-                                    </button>
-                                </h2>
-                                <div
-                                    id="flush-collapseOne1"
-                                    data-bs-parent="#accordionFlushExample"
-                                    class="accordion-collapse collapse border-0"
-                                    aria-labelledby="1"
+                                    :aria-labelledby="menu.id"
                                 >
                                     <ul class="accordion-body list-unstyled">
                                         <li>Maktabgacha ta'lim</li>
@@ -391,6 +368,6 @@ const switchToggle = () => {
 const { data: menuData } = await useFetch(
     "http://new.bolalarolami.uz/api/v2/resources/get-sections"
 );
-
-console.log(menuData);
+const menus = menuData.value.data;
+console.log(menus);
 </script>
