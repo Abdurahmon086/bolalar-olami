@@ -183,6 +183,10 @@
         }
 
         &__left {
+            &-img {
+                display: block;
+            }
+
             .card-img-top {
                 height: 124.731px;
             }

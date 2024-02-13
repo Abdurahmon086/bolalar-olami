@@ -186,7 +186,10 @@
                             style="gap: 12px"
                             id="accordionFlushExample"
                         >
-                            <div class="accordion-item darkMode-btn">
+                            <div
+                                class="accordion-item darkMode-btn"
+                                v-for="menu in menuData"
+                            >
                                 <h2 class="accordion-header">
                                     <button
                                         class="darkMode rounded-3 accordion-button shadow-0 collapsed"
@@ -196,7 +199,7 @@
                                         aria-expanded="true"
                                         aria-controls="flush-collapseOne"
                                     >
-                                        Yangiliklar
+                                        {{ menu.title_uz }}
                                     </button>
                                 </h2>
                                 <div
@@ -389,5 +392,5 @@ const { data: menuData } = await useFetch(
     "http://new.bolalarolami.uz/api/v2/resources/get-sections"
 );
 
-// console.log(data);
+console.log(menuData);
 </script>

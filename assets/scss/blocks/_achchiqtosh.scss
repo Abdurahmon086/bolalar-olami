@@ -64,7 +64,6 @@
 
         &-box:nth-child(1) .achchiqtosh__img-wrapper {
             display: block !important;
-
         }
     }
 
@@ -130,6 +129,11 @@
     .achchiqtosh {
         margin-top: 58px;
         margin-bottom: 58px;
+
+        &__img-wrapper {
+            display: block !important;
+
+        }
 
         &__wrapper {
             display: grid;
