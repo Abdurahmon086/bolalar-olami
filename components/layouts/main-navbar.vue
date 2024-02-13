@@ -105,78 +105,24 @@
                         <ul
                             class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100"
                         >
-                            <li class="nav-item position-relative darkMode">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Bosh sahifa</a
-                                >
+                            <li
+                                class="nav-item position-relative darkMode"
+                                v-for="nav in navMain" :key="nav.id"
+                            >
+                                <a class="nav-link darkMode-title" href="#">{{
+                                    nav.title_uz
+                                }}</a>
                                 <div
                                     class="darkMode d-none item-menu list-group list-group-light position-absolute"
                                 >
                                     <button
                                         type="button"
                                         class="list-group-item darkMode list-group-item-action border-0"
+                                        v-for="navItem in nav.child" :key="navItem.id"
                                     >
-                                        Maktabgacha ta'lim
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="list-group-item darkMode list-group-item-action border-0"
-                                    >
-                                        O’rta maxsus ta’lim
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="list-group-item darkMode list-group-item-action border-0"
-                                    >
-                                        Oliy ta’lim
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="list-group-item darkMode list-group-item-action border-0"
-                                    >
-                                        Xususiy ta’lim
+                                        {{ navItem.title_uz }}
                                     </button>
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Yangiliklar</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Ta'lim</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Salomatlik</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Huquqiy klinika</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Achchiqtosh</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Media</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Foydali</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link darkMode-title" href="#"
-                                    >Kutubxona</a
-                                >
                             </li>
                         </ul>
 
@@ -188,7 +134,7 @@
                         >
                             <div
                                 class="accordion-item darkMode-btn"
-                                v-for="menu in menus"
+                                v-for="menu in navMain" :key="menu.id"
                             >
                                 <h2 class="accordion-header">
                                     <button
@@ -213,10 +159,9 @@
                                     :aria-labelledby="menu.id"
                                 >
                                     <ul class="accordion-body list-unstyled">
-                                        <li>Maktabgacha ta'lim</li>
-                                        <li>O’rta maxsus ta’lim</li>
-                                        <li>Oliy ta’lim</li>
-                                        <li>Xususiy ta’lim</li>
+                                        <li v-for="navItem in menu.child" :key="navItem.id">
+                                            {{ navItem.title_uz }}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -346,8 +291,10 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const darkTheme = ref(false);
+
+const url = "http://new.bolalarolami.uz/api/v2";
 
 const switchToggle = () => {
     darkTheme.value = !darkTheme.value;
@@ -365,9 +312,28 @@ const switchToggle = () => {
     }
 };
 
-const { data: menuData } = await useFetch(
-    "http://new.bolalarolami.uz/api/v2/resources/get-sections"
-);
+const { data: menuData } = await useFetch(`${url}/resources/get-sections`);
 const menus = menuData.value.data;
-console.log(menus);
+
+function navbarM(arr) {
+    const map = {};
+    const newArr = [];
+
+    arr.forEach((element) => {
+        map[element.id] = element;
+        element.child = [];
+    });
+
+    arr.forEach((element) => {
+        if (element.parent_id !== null) {
+            map[element.parent_id].child.push(element);
+        } else {
+            newArr.push(element);
+        }
+    });
+
+    return newArr;
+}
+
+const navMain = navbarM(menus);
 </script>

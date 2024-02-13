@@ -2,6 +2,17 @@
 useHead({
     title: "Bolalar olami",
 });
+const url = "http://new.bolalarolami.uz/api/v2";
+const { data } = await useFetch(`${url}/home/get-news-home`);
+
+const educationPosts = data.value.data.educationPosts;
+const mainPosts = data.value.data.mainPosts;
+const recentNewsPosts = data.value.data.recentNewsPosts;
+
+const mainPosts4 = mainPosts.slice(1);
+console.log(mainPosts4);
+
+console.log(educationPosts, mainPosts, recentNewsPosts);
 </script>
 
 <template>
@@ -61,9 +72,15 @@ useHead({
                                 <div
                                     class="hero__pages d-flex align-items-center"
                                 >
-                                    <i class="fas fa-angle-left"></i>
+                                    <img
+                                        src="/images/Vector-left.svg"
+                                        alt="verctor left icon"
+                                    />
                                     <span class="hero__infoTy">3</span>
-                                    <i class="fas fa-angle-right"></i>
+                                    <img
+                                        src="/images/Vector-right.svg"
+                                        alt="verctor right icon"
+                                    />
                                     <span class="opacity-75 hero__infoTy-oth"
                                         >12</span
                                     >
@@ -81,9 +98,10 @@ useHead({
                                         role="button"
                                     >
                                         Подробнее
-                                        <i
-                                            class="fas fa-angle-right fa-sm mb-1"
-                                        ></i>
+                                        <img
+                                            src="/images/Vector-oreng.svg"
+                                            alt="vrctor orange icon"
+                                        />
                                     </a>
                                 </div>
                             </div>
@@ -98,9 +116,15 @@ useHead({
                                 <div
                                     class="hero__pages d-flex align-items-center"
                                 >
-                                    <i class="fas fa-angle-left"></i>
+                                    <img
+                                        src="/images/Vector-left.svg"
+                                        alt="verctor left icon"
+                                    />
                                     <span class="hero__infoTy">3</span>
-                                    <i class="fas fa-angle-right"></i>
+                                    <img
+                                        src="/images/Vector-right.svg"
+                                        alt="verctor right icon"
+                                    />
                                     <span class="opacity-75 hero__infoTy-oth"
                                         >12</span
                                     >
@@ -119,9 +143,10 @@ useHead({
                                         role="button"
                                     >
                                         Подробнее
-                                        <i
-                                            class="fas fa-angle-right fa-sm mb-1"
-                                        ></i>
+                                        <img
+                                            src="/images/Vector-oreng.svg"
+                                            alt="vrctor orange icon"
+                                        />
                                     </a>
                                 </div>
                             </div>
@@ -136,9 +161,15 @@ useHead({
                                 <div
                                     class="hero__pages d-flex align-items-center"
                                 >
-                                    <i class="fas fa-angle-left"></i>
+                                    <img
+                                        src="/images/Vector-left.svg"
+                                        alt="verctor left icon"
+                                    />
                                     <span class="hero__infoTy">3</span>
-                                    <i class="fas fa-angle-right"></i>
+                                    <img
+                                        src="/images/Vector-right.svg"
+                                        alt="verctor right icon"
+                                    />
                                     <span class="opacity-75 hero__infoTy-oth"
                                         >12</span
                                     >
@@ -157,9 +188,10 @@ useHead({
                                         role="button"
                                     >
                                         Подробнее
-                                        <i
-                                            class="fas fa-angle-right fa-sm mb-1"
-                                        ></i>
+                                        <img
+                                            src="/images/Vector-oreng.svg"
+                                            alt="vrctor orange icon"
+                                        />
                                     </a>
                                 </div>
                             </div>
@@ -174,9 +206,15 @@ useHead({
                                 <div
                                     class="hero__pages d-flex align-items-center"
                                 >
-                                    <i class="fas fa-angle-left"></i>
+                                    <img
+                                        src="/images/Vector-left.svg"
+                                        alt="verctor left icon"
+                                    />
                                     <span class="hero__infoTy">3</span>
-                                    <i class="fas fa-angle-right"></i>
+                                    <img
+                                        src="/images/Vector-right.svg"
+                                        alt="verctor right icon"
+                                    />
                                     <span class="opacity-75 hero__infoTy-oth"
                                         >12</span
                                     >
@@ -195,9 +233,10 @@ useHead({
                                         role="button"
                                     >
                                         Подробнее
-                                        <i
-                                            class="fas fa-angle-right fa-sm mb-1"
-                                        ></i>
+                                        <img
+                                            src="/images/Vector-oreng.svg"
+                                            alt="vrctor orange icon"
+                                        />
                                     </a>
                                 </div>
                             </div>
@@ -214,70 +253,29 @@ useHead({
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                     >
                         <img
-                            src="/images/news1.jpg"
+                            :src="mainPosts[0].detail_image.card"
                             class="card-img img-fluid h-100 rounded-0"
-                            alt="Stony Beach"
+                            :alt="mainPosts[0].title_uz"
                         />
                         <div class="card-img-overlay rounded-0">
                             <h5 class="news__card-title">
-                                Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
+                                {{ mainPosts[0].title_uz }}
                             </h5>
                         </div>
                     </div>
                     <div class="news__right">
                         <div
                             class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
+                            v-for="item in mainPosts4"
                         >
                             <img
-                                src="/images/news2.jpg"
+                                :src="item.detail_image.card"
                                 class="card-img img-fluid h-100 rounded-0"
-                                alt="Stony Beach"
+                                :alt="item.title_uz"
                             />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
-                                    Yaponiyada tug‘ilishlar soni keskin kamaydi
-                                </h5>
-                            </div>
-                        </div>
-                        <div
-                            class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/news2.jpg"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="Stony Beach"
-                            />
-                            <div class="card-img-overlay rounded-0">
-                                <h5 class="news__card-title">
-                                    Yaponiyada tug‘ilishlar soni keskin kamaydi
-                                </h5>
-                            </div>
-                        </div>
-                        <div
-                            class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/news2.jpg"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="Stony Beach"
-                            />
-                            <div class="card-img-overlay rounded-0">
-                                <h5 class="news__card-title">
-                                    Yaponiyada tug‘ilishlar soni keskin kamaydi
-                                </h5>
-                            </div>
-                        </div>
-                        <div
-                            class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/news2.jpg"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="Stony Beach"
-                            />
-                            <div class="card-img-overlay rounded-0">
-                                <h5 class="news__card-title">
-                                    Yaponiyada tug‘ilishlar soni keskin kamaydi
+                                    {{ item.title_uz }}
                                 </h5>
                             </div>
                         </div>
@@ -293,14 +291,15 @@ useHead({
                         <div class="lastNews__left">
                             <div
                                 class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
+                                v-for="item in educationPosts"
                             >
                                 <div
                                     class="position-relative lastNews__left-img"
                                 >
                                     <img
-                                        src="/images/lastNew1.jpg"
+                                        :src="item.detail_image.card"
                                         class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
+                                        :alt="item.title_kr"
                                     />
                                     <span
                                         class="position-absolute lastNews__left-spLink darkMode"
@@ -309,110 +308,14 @@ useHead({
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
+                                        {{ item.title_kr }}
                                     </h5>
                                     <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
+                                        {{ item.description_kr }}
                                     </p>
-                                    <span class="lastNews__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
-                                </div>
-                            </div>
-                            <div
-                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                            >
-                                <div
-                                    class="position-relative lastNews__left-img"
-                                >
-                                    <img
-                                        src="/images/lastNew2.jpg"
-                                        class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
-                                    />
                                     <span
-                                        class="position-absolute lastNews__left-spLink darkMode"
-                                        >Salomatlik</span
-                                    >
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </h5>
-                                    <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <span class="lastNews__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
-                                </div>
-                            </div>
-                            <div
-                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                            >
-                                <div
-                                    class="position-relative lastNews__left-img"
-                                >
-                                    <img
-                                        src="/images/lastNew3.jpg"
-                                        class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
-                                    />
-                                    <span
-                                        class="position-absolute lastNews__left-spLink darkMode"
-                                        >Salomatlik</span
-                                    >
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </h5>
-                                    <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <span class="lastNews__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
-                                </div>
-                            </div>
-
-                            <div
-                                class="lastNews__left-inner card h-100 border-0 shadow-0 rounded-0 darkMode"
-                            >
-                                <div
-                                    class="position-relative lastNews__left-img"
-                                >
-                                    <img
-                                        src="/images/lastNew4.jpg"
-                                        class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
-                                    />
-                                    <span
-                                        class="position-absolute lastNews__left-spLink darkMode"
-                                        >Salomatlik</span
-                                    >
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </h5>
-                                    <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <span class="lastNews__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
+                                        class="lastNews__left-sp darkMode-sp"
+                                        >{{ item.publish_date }}</span
                                     >
                                 </div>
                             </div>
@@ -423,10 +326,12 @@ useHead({
                             So'nggi yangiliklarga
                         </h4>
                         <ul class="lastNews__right-list list-unstyled darkMode">
-                            <li class="border-bottom">
+                            <NuxtLink
+                                class="border-bottom text-decoration-none"
+                                v-for="item in recentNewsPosts"
+                            >
                                 <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
+                                    {{ item.title_uz }}
                                 </p>
                                 <div
                                     class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
@@ -441,150 +346,15 @@ useHead({
                                         />
                                         <span
                                             class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
+                                            >{{ item.views_count }}</span
                                         >
                                     </div>
                                     <span
                                         class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
+                                        >{{ item.publish_date }}</span
                                     >
                                 </div>
-                            </li>
-                            <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
-                                    >
-                                </div>
-                            </li>
-                            <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
-                                    >
-                                </div>
-                            </li>
-                            <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
-                                    >
-                                </div>
-                            </li>
-                            <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
-                                    >
-                                </div>
-                            </li>
-                            <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">
-                                    Ertaga O‘zbekistonning qaysi hududlarida qor
-                                    yog‘ishi ma’lum qilindi
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >80934</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >12.12.2023</span
-                                    >
-                                </div>
-                            </li>
+                            </NuxtLink>
                         </ul>
                     </div>
                 </div>

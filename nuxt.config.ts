@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    modules: ["nuxt-swiper"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
 
     vite: {
@@ -23,6 +24,9 @@ export default defineNuxtConfig({
                 },
             ],
         },
+    },
+    swiper: {
+        modules: "*",
     },
     ssr: true,
 });

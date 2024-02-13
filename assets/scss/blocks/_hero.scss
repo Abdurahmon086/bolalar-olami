@@ -20,6 +20,11 @@
         }
     }
 
+    // .carousel-item {
+    //     background-image: url(/public/images/rectangle.png);
+    //     background-size: cover;
+    // }
+
     .carousel-caption {
         margin: 0 auto !important;
         display: block;
@@ -56,19 +61,18 @@
         padding: 4px 13px !important;
         text-transform: capitalize;
 
-        i {
-            margin-top: 7px;
+        img {
+            width: 6px;
+            height: 10px;
         }
     }
 
     &__pages {
         gap: 3.2px;
 
-        i {
-            padding-top: 3px;
-            color: #FFF;
-            font-size: 5.514px;
-            font-weight: 700;
+        img {
+            width: 4px;
+            height: 8px;
             letter-spacing: -0.394px;
         }
     }
@@ -241,10 +245,10 @@
         &__pages {
             gap: 8px;
 
-            i {
-                padding-top: 2px;
-                font-size: 14px;
-                letter-spacing: -1px;
+            img {
+                margin-top: -3px;
+                width: 10px;
+                height: 15.976px;
             }
         }
 
@@ -258,6 +262,11 @@
             font-size: 20px;
             gap: 59px;
             padding: 14px 25px !important;
+
+            img {
+                width: 10px;
+                height: 15px;
+            }
         }
 
         &__infoTy {
