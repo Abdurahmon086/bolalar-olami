@@ -70,6 +70,15 @@
         grid-template-columns: 1fr;
         gap: 20px;
 
+        &-img {
+            display: none;
+        }
+
+        &-inner:nth-child(1) &-img {
+            display: block;
+
+        }
+
         &-wrap {
             order: 2;
 
@@ -271,6 +280,7 @@
         &__left {
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+
 
             .card-img-top {
                 height: 219.47px;

@@ -52,16 +52,26 @@
         overflow: hidden;
     }
 
+    &__img-wrapper {
+        display: none;
+    }
+
     &__card {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
 
+        &-box:nth-child(1) .achchiqtosh__img-wrapper {
+            display: block !important;
+
+        }
     }
 
     &__card-box {
         background: #FFF;
+
+
 
         img {
             height: 197.104px;

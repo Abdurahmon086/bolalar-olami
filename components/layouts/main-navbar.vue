@@ -366,7 +366,7 @@
     </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const darkTheme = ref(false);
 
 const switchToggle = () => {
@@ -384,4 +384,10 @@ const switchToggle = () => {
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
     }
 };
+
+const { data: menuData } = await useFetch(
+    "http://new.bolalarolami.uz/api/v2/resources/get-sections"
+);
+
+// console.log(data);
 </script>
