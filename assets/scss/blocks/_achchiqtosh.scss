@@ -70,8 +70,6 @@
     &__card-box {
         background: #FFF;
 
-
-
         img {
             height: 197.104px;
         }
@@ -94,7 +92,7 @@
         padding: 12px 5.8px 20px;
 
         &-title {
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;

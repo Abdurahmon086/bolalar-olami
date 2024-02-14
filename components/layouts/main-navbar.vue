@@ -22,7 +22,7 @@
                         class="header__top-menuList d-flex align-items-center"
                         style="gap: 16px"
                     >
-                        <img
+                        <!-- <img
                             src="/images/glasses.svg"
                             alt="glasses icon"
                             class="lightIcon d-block"
@@ -31,7 +31,7 @@
                             src="/images/glasses_d.svg"
                             alt="glasses icon"
                             class="darkIcon d-none"
-                        />
+                        /> -->
                         <div id="themingSwitcher" @click="switchToggle">
                             <img
                                 src="/images/moon.svg"
@@ -79,7 +79,7 @@
             >
                 <div class="container darkMode">
                     <!-- brand -->
-                    <a class="navbar-brand m-0" href="#">
+                    <NuxtLink to="/" class="navbar-brand m-0">
                         <img
                             src="/images/logo.svg"
                             class="lightIcon d-block"
@@ -94,7 +94,7 @@
                             alt="bolalar olami Logo"
                             loading="lazy"
                         />
-                    </a>
+                    </NuxtLink>
 
                     <!-- middle -->
                     <div
@@ -107,7 +107,8 @@
                         >
                             <li
                                 class="nav-item position-relative darkMode"
-                                v-for="nav in navMain" :key="nav.id"
+                                v-for="nav in navMain"
+                                :key="nav.id"
                             >
                                 <a class="nav-link darkMode-title" href="#">{{
                                     nav.title_uz
@@ -118,7 +119,8 @@
                                     <button
                                         type="button"
                                         class="list-group-item darkMode list-group-item-action border-0"
-                                        v-for="navItem in nav.child" :key="navItem.id"
+                                        v-for="navItem in nav.child"
+                                        :key="navItem.id"
                                     >
                                         {{ navItem.title_uz }}
                                     </button>
@@ -133,8 +135,9 @@
                             id="accordionFlushExample"
                         >
                             <div
-                                class="accordion-item darkMode-btn"
-                                v-for="menu in navMain" :key="menu.id"
+                                class="accordion-item darkMode-btn h-50"
+                                v-for="menu in navMain"
+                                :key="menu.id"
                             >
                                 <h2 class="accordion-header">
                                     <button
@@ -159,7 +162,10 @@
                                     :aria-labelledby="menu.id"
                                 >
                                     <ul class="accordion-body list-unstyled">
-                                        <li v-for="navItem in menu.child" :key="navItem.id">
+                                        <li
+                                            v-for="navItem in menu.child"
+                                            :key="navItem.id"
+                                        >
                                             {{ navItem.title_uz }}
                                         </li>
                                     </ul>

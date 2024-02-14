@@ -4,11 +4,6 @@ export default defineNuxtConfig({
     modules: ["nuxt-swiper"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
 
-    vite: {
-        define: {
-            "process.env.DEBUG": false,
-        },
-    },
     app: {
         head: {
             link: [
@@ -25,8 +20,8 @@ export default defineNuxtConfig({
             ],
         },
     },
-    swiper: {
-        modules: "*",
+    runtimeConfig: {
+        baseUrl: process.env.BASE_URL
     },
     ssr: true,
 });

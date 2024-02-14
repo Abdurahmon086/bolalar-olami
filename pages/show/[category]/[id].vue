@@ -1,3 +1,15 @@
+<script setup>
+useHead({ title: "Bolalar olami | posts" });
+const route = useRoute();
+const id = route.params.id;
+const url = "http://new.bolalarolami.uz/api/v2";
+
+const { data } = await useFetch(`${url}/get-post/${id}`);
+const posts = data.value.data.post;
+const mostReadPosts = data.value.data.mostReadPosts;
+
+</script>
+
 <template>
     <div class="show darkMode">
         <div class="navigate">
@@ -5,17 +17,20 @@
                 <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb d-flex align-items-center">
                         <li class="breadcrumb-item d-flex align-items-center">
-                            <a class="darkMode" href="#">Asosiy</a>
+                            <a class="darkMode text-decoration-none" href="#"
+                                >Asosiy</a
+                            >
                         </li>
                         <li class="breadcrumb-item d-flex align-items-center">
-                            <a class="darkMode" href="#">Yangiliklar</a>
+                            <a class="darkMode text-decoration-none" href="#"
+                                >Yangiliklar</a
+                            >
                         </li>
                         <li
                             class="breadcrumb-item d-flex align-items-center active darkMode"
                             aria-current="page"
                         >
-                            Maktab oʻquvchilari ilk bor Prezident
-                            Administratsiyasiga bordi
+                            {{ posts.title_uz }}
                         </li>
                     </ol>
                 </nav>
@@ -27,31 +42,34 @@
             >
                 <section class="single">
                     <h2 class="single__title">
-                        Maktab o'quvchilari ilk bor Prezident
-                        Administratsiyasiga bordi
+                        {{ posts.title_uz }}
                     </h2>
                     <div class="single__info">
-                        <span class="darkMode">14 iyul, 2023 yil</span>
+                        <span class="darkMode pt-1">{{
+                            posts.publish_date
+                        }}</span>
                         <div class="single__info-inner">
                             <img src="/images/eye_main.svg" alt="eye icon" />
-                            <span class="darkMode">98</span>
+                            <span class="darkMode">{{
+                                posts.views_count
+                            }}</span>
                         </div>
-                        <div class="single__info-inner">
+                        <!-- <div class="single__info-inner">
                             <img src="/images/message.svg" alt="message icon" />
                             <span class="darkMode">98</span>
                         </div>
                         <div class="single__info-inner">
                             <img src="/images/share.svg" alt="share icon" />
                             <span class="darkMode">98</span>
-                        </div>
+                        </div> -->
                     </div>
                     <img
-                        src="/images/main_img.jpg"
-                        alt="main image"
+                        :src="posts.detail_image.card"
+                        :alt="posts.title_uz"
                         class="single__mainImg"
                     />
                     <div class="single__inner">
-                        <ul
+                        <!-- <ul
                             class="single__social d-none d-sm-flex list-unstyled"
                         >
                             <li class="darkMode-btn">
@@ -69,10 +87,10 @@
                             <li class="darkMode-btn">
                                 <img src="/images/share.svg" alt="share icon" />
                             </li>
-                        </ul>
+                        </ul> -->
                         <div class="single__main">
                             <div class="single__main-inner d-flex">
-                                <ul
+                                <!-- <ul
                                     class="single__social list-unstyled d-flex d-sm-none"
                                 >
                                     <li class="darkMode-btn">
@@ -93,48 +111,10 @@
                                             alt="share icon"
                                         />
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <div class="single__text-wrapper">
-                                    <p class="single__text">
-                                        22 dekabr kuni tanlov va fan
-                                        olimpiadalarida g‘alaba qozongan maktab
-                                        o‘quvchilari Prezident
-                                        Administratsiyasiga bordi. Bu haqda
-                                        O‘zbekiston Respublikasi Prezidenti
-                                        Shavkat Mirziyoyevning to‘ng‘ich qizi –
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        o‘zining ijtimoiy tarmoqdagi sahifasida
-                                        ma’lum qildi.
-                                    </p>
-                                    <p class="single__text">
-                                        Uning aytishicha, g‘olib jamoalar pul
-                                        mukofotlariga ega bo‘lgan va 70 nafar
-                                        finalchi 14 nafar o‘qituvchi
-                                        hamrohligida Buyuk Britaniyada bo‘lib, u
-                                        yerda bir hafta mobaynida nufuzli ingliz
-                                        maktablarining o‘quvchilari sifatida
-                                        dars va mashg‘ulotlarda qatnashganUning
-                                        aytishicha, g‘olib jamoalar pul
-                                        mukofotlariga ega bo‘lgan va 70 nafar
-                                        finalchi 14 nafar o‘qituvchi
-                                        hamrohligida
-                                    </p>
-                                    <p class="single__text">
-                                        Buyuk Britaniyada bo‘lib, u yerda bir
-                                        hafta mobaynida nufuzli ingliz
-                                        maktablarining o‘quvchilari sifatida
-                                        dars va mashg‘ulotlarda qatnashgan.
-                                        Shuningdek, ular London, Oksford va
-                                        Kembrij shaharlari bilan ham tanishgan.
-                                        O‘qituvchilar esa ingliz tilini
-                                        o‘qitishning ilg‘or metodikalarini
-                                        o‘rganish imkoniyatiga ega bo‘lga.
-                                        Shuningdek, ular London, Oksford va
-                                        Kembrij shaharlari bilan ham tanishgan.
-                                        O‘qituvchilar esa ingliz tilini
-                                        o‘qitishning ilg‘or metodikalarini
-                                        o‘rganish imkoniyatiga ega bo‘lgan.
-                                    </p>
+                                    {{ posts.content_uz }}
+                                    <!-- {{ posts}} -->
                                 </div>
                             </div>
                             <div class="single__qs darkMode-body">
@@ -417,14 +397,17 @@
                     <section class="aside">
                         <h4 class="aside__title">Ko'p o'qilganlar</h4>
                         <div class="aside__wrapper">
-                            <div
-                                class="aside__left-inner card h-100 shadow-0 rounded-0 darkMode"
+                            <NuxtLink
+                                v-for="item in mostReadPosts"
+                                :to="`/show/category/${item.id}`"
+                                :key="item.id"
+                                class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode"
                             >
                                 <div class="position-relative">
                                     <img
-                                        src="/images/lastNew1.jpg"
+                                        :src="item.detail_image.card"
+                                        :alt="item.title_uz"
                                         class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
                                     />
                                     <span
                                         class="position-absolute aside__left-spLink darkMode"
@@ -433,87 +416,21 @@
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
+                                        {{ item.title_uz }}
                                     </h5>
                                     <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
+                                        {{ item.description_uz }}
                                     </p>
-                                    <span class="aside__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
+                                    <span class="aside__left-sp darkMode-sp">
+                                        {{ item.publish_date }}
+                                    </span>
                                 </div>
-                            </div>
-                            <img
+                            </NuxtLink>
+                            <!-- <img
                                 src="/images/add_main.jpg"
                                 alt="add image"
                                 class="aside__img-add"
-                            />
-                            <div
-                                class="aside__left-inner card h-100 shadow-0 rounded-0 darkMode"
-                            >
-                                <div class="position-relative">
-                                    <img
-                                        src="/images/lastNew1.jpg"
-                                        class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
-                                    />
-                                    <span
-                                        class="position-absolute aside__left-spLink darkMode"
-                                        >Salomatlik</span
-                                    >
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </h5>
-                                    <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <span class="aside__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
-                                </div>
-                            </div>
-                            <img
-                                src="/images/add_main.jpg"
-                                alt="add image"
-                                class="aside__img-add"
-                            />
-                            <div
-                                class="aside__left-inner card h-100 shadow-0 rounded-0 darkMode"
-                            >
-                                <div class="position-relative">
-                                    <img
-                                        src="/images/lastNew1.jpg"
-                                        class="card-img-top rounded-0"
-                                        alt="Hollywood Sign on The Hill"
-                                    />
-                                    <span
-                                        class="position-absolute aside__left-spLink darkMode"
-                                        >Salomatlik</span
-                                    >
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
-                                        Mirziyoyeva oilasi bolalar kutubga
-                                        bordi.
-                                    </h5>
-                                    <p class="card-text darkMode">
-                                        Prezident yordamchisi Saida Mirziyoyeva
-                                        farzandlari bilan bolalar kutubxonasiga
-                                        keldi.....
-                                    </p>
-                                    <span class="aside__left-sp darkMode-sp"
-                                        >12.12.2023 12:32</span
-                                    >
-                                </div>
-                            </div>
+                            /> -->
                         </div>
                     </section>
                 </aside>
@@ -701,8 +618,6 @@
         </div>
     </div>
 </template>
-
-<script lang="ts" setup></script>
 
 <style scoped>
 .show {
