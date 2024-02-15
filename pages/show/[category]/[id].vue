@@ -5,6 +5,12 @@ const id = route.params.id;
 const url = "http://new.bolalarolami.uz/api/v2";
 
 const { data } = await useFetch(`${url}/get-post/${id}`);
+if (!data.value) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: "Page Not Found",
+    });
+}
 const posts = data.value.data.post;
 const mostReadPosts = data.value.data.mostReadPosts;
 
@@ -112,10 +118,10 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                         />
                                     </li>
                                 </ul> -->
-                                <div class="single__text-wrapper">
-                                    {{ posts.content_uz }}
-                                    <!-- {{ posts}} -->
-                                </div>
+                                <div
+                                    class="single__text-wrapper single__text"
+                                    v-html="posts.content_uz"
+                                ></div>
                             </div>
                             <div class="single__qs darkMode-body">
                                 <img src="/images/dod.svg" alt="dod icon" />
@@ -128,54 +134,6 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                     ishtirok etganini qayd etgan.
                                 </p>
                             </div>
-
-                            <p class="single__text">
-                                22 dekabr kuni tanlov va fan olimpiadalarida
-                                g‘alaba qozongan maktab o‘quvchilari Prezident
-                                Administratsiyasiga bordi. Bu haqda O‘zbekiston
-                                Respublikasi Prezidenti Shavkat Mirziyoyevning
-                                to‘ng‘ich qizi – Prezident yordamchisi Saida
-                                Mirziyoyeva o‘zining ijtimoiy tarmoqdagi
-                                sahifasida ma’lum qildi.
-                            </p>
-                            <p class="single__text">
-                                Men ularga mamnuniyat bilan Administratsiya ish
-                                faoliyati haqida tushuncha berib, ekskursiya
-                                uyushtirdim. Bolalar aqlli va qiziquvchan.
-                                Ko‘ngli ochiq va to‘g‘riso‘z. Ular bizning
-                                kelajagimiz, deydi Mirziyoyeva.
-                            </p>
-                            <p class="single__text">
-                                Shuningdek, Prezident yordamchisi ta’lim
-                                islohoti doirasida “Xorijiy tillarni o‘qitish
-                                bo‘yicha eng yaxshi maktab” tanlovi
-                                o‘tkazilganini, unda 6885 ta maktab va
-                                7–9-sinflarning 35 mingga yaqin o‘quvchilari
-                                ishtirok etganini qayd etgan.
-                            </p>
-                            <p class="single__text">
-                                Uning aytishicha, g‘olib jamoalar pul
-                                mukofotlariga ega bo‘lgan va 70 nafar finalchi
-                                14 nafar o‘qituvchi hamrohligida Buyuk
-                                Britaniyada bo‘lib, u yerda bir hafta mobaynida
-                                nufuzli ingliz maktablarining o‘quvchilari
-                                sifatida dars va mashg‘ulotlarda qatnashgan. .
-                                Uning aytishicha, g‘olib jamoalar pul
-                                mukofotlariga ega bo‘lgan va 70 nafar finalchi
-                                14 nafar o‘qituvchi hamrohligida Buyuk
-                                Britaniyada
-                            </p>
-                            <p class="single__text">
-                                Uning aytishicha, g‘olib jamoalar pul
-                                mukofotlariga ega bo‘lgan va 70 nafar finalchi
-                                14 nafar o‘qituvchi hamrohligida Buyuk
-                                Britaniyada bo‘lib, u yerda bir hafta mobaynida
-                                nufuzli ingliz maktablarining o‘quvchilari
-                                sifatida dars va mashg‘ulotlarda qatnashgan.
-                                bo‘lib, u yerda bir hafta mobaynida nufuzli
-                                ingliz maktablarining o‘quvchilari sifatida dars
-                                va mashg‘ulotlarda qatnashgan.
-                            </p>
 
                             <div
                                 class="single__tags d-none d-md-block darkMode-body"

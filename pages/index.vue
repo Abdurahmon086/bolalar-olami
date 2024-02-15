@@ -4,7 +4,12 @@ useHead({
 });
 const url = "http://new.bolalarolami.uz/api/v2";
 const { data } = await useFetch(`${url}/home/get-news-home`);
-
+if (!data.value) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: "Page Not Found",
+    });
+}
 const educationPosts = data.value.data.educationPosts;
 const mainPosts = data.value.data.mainPosts;
 const recentNewsPosts = data.value.data.recentNewsPosts;
@@ -559,7 +564,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
                                         >
-                                            SALOMATLIK
+                                            Xuquqiy kilinika
                                         </span>
                                     </div>
                                     <div class="achchiqtosh__info darkMode">
@@ -602,7 +607,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
                                         >
-                                            SALOMATLIK
+                                            Foydali
                                         </span>
                                     </div>
                                     <div class="achchiqtosh__info darkMode">

@@ -1,57 +1,49 @@
 .footer {
-    padding: 40px 0 22px 0;
 
-    .footer__card {
-        padding: 40px 0 22px 0;
-
-    }
-
-    .footer__list {
-        margin-left: 50px;
-    }
+    padding: 40px 0 0 0 !important;
 
     .footer__text {
         color: #979797;
         font-size: 13px;
-        line-height: normal;
         text-transform: capitalize;
-        margin-top: 27px;
         text-align: justify;
+        max-width: 340px;
+        margin-top: 27px;
+        margin-bottom: 0;
     }
 
     .footer__link {
         color: #242424;
-        font-family: "BBC Reith Sans";
+        font-family: "BBC Reith Sans", sans-serif;
         font-size: 18px;
         line-height: normal;
     }
 
     .footer__link1 {
         color: #242424;
-        font-family: "BBC Reith Sans";
+        font-family: "BBC Reith Sans", sans-serif;
         font-size: 14px;
         line-height: normal;
     }
 
     .footer__co-text {
         color: rgba(132, 132, 131, 0.50);
-        font-family: "BBC Reith Sans";
+        font-family: "BBC Reith Sans", sans-serif;
         font-size: 10px;
-        line-height: normal;
         text-transform: capitalize;
+        padding-bottom: 22px;
+        margin-bottom: 0;
+        margin-top: 20px;
     }
 
 }
 
 @media only screen and (max-width:1200px) {
     .footer {
-        padding: 31px 0 0 31px !important;
-
-        .footer__list {
-            margin-left: 0;
-        }
+        padding: 31px 0 0 0 !important;
 
         .footer__card {
+            padding: 0;
             display: grid !important;
             grid-template-columns: auto auto !important;
             gap: 30px !important;
@@ -64,74 +56,21 @@
 
         .footer__co-text {
             text-align: end !important;
-            margin-bottom: 15px !important;
         }
     }
 }
-
-
-@media only screen and (max-width:992px) {
-    .footer {
-        padding: 31px 0 0 31px !important;
-
-
-        .footer__card {
-            display: grid !important;
-            grid-template-columns: auto auto !important;
-            gap: 30px !important;
-        }
-
-        .footer__text {
-            margin-bottom: 47px !important;
-            max-width: 340px;
-        }
-
-        .footer__co-text {
-            text-align: end !important;
-            margin-bottom: 15px !important;
-        }
-    }
-}
-
-@media only screen and (max-width:768px) {
-    .footer {
-        padding: 31px 0 0 31px !important;
-
-
-        .footer__card {
-            display: grid !important;
-            grid-template-columns: auto auto !important;
-            gap: 30px !important;
-        }
-
-        .footer__text {
-            margin-bottom: 47px !important;
-            max-width: 340px;
-        }
-
-        .footer__co-text {
-            text-align: end !important;
-            margin-bottom: 15px !important;
-        }
-    }
-}
-
 
 @media only screen and (max-width:576px) {
     .footer {
-        padding: 0 0 60px 31px !important;
+        padding: 31px 0 40px 0 !important;
 
         .footer__card {
             display: flex !important;
             flex-direction: column !important;
-            // align-self: center;
         }
 
         .footer__text {
-            font-family: "IBM Plex Sans";
             max-width: 310px;
-            color: #979797 !important;
-
         }
 
         .footer__list {
@@ -143,33 +82,9 @@
             margin-bottom: 0 !important;
             color: rgba(132, 132, 131, 0.50) !important;
         }
-    }
-}
 
-@media only screen and (max-width:376px) {
-    .footer {
-        padding: 0 0 60px 31px !important;
-
-        .footer__card {
-            display: flex !important;
-            flex-direction: column !important;
-        }
-
-        .footer__text {
-            font-family: "IBM Plex Sans";
-            max-width: 310px;
-            color: #979797 !important;
-
-        }
-
-        .footer__list {
-            margin-top: 27px !important;
-        }
-
-        .footer__co-text {
-            text-align: start !important;
-            margin-bottom: 0 !important;
-            color: rgba(132, 132, 131, 0.50) !important;
+        .footer____text {
+            margin-bottom: 20px !important;
         }
     }
 }
