@@ -1,9 +1,42 @@
+import { defineNuxtConfig } from "nuxt/config";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ["nuxt-swiper"],
+    modules: ["nuxt-swiper", "@nuxtjs/i18n"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
-
+    i18n: {
+        lazy: true,
+        langDir: "locales",
+        strategy: "prefix_except_default",
+        locales: [
+            {
+                code: "en",
+                iso: "en",
+                name: "English(US)",
+                file: "en-US.json",
+            },
+            {
+                code: "uz",
+                iso: "uz",
+                name: "Uzbek(UZ)",
+                file: "uz-UZ.json",
+            },
+            {
+                code: "ru",
+                iso: "ru",
+                name: "Russin(RU)",
+                file: "ru-RU.json",
+            },
+            {
+                code: "uzk",
+                iso: "uzk",
+                name: "Uzbek-kril(UZK)",
+                file: "uzk-UZK.json",
+            },
+        ],
+        defaultLocale: "uz",
+    },
     app: {
         head: {
             link: [
@@ -21,7 +54,7 @@ export default defineNuxtConfig({
         },
     },
     runtimeConfig: {
-        baseUrl: process.env.BASE_URL
+        baseUrl: process.env.BASE_URL,
     },
     ssr: true,
 });

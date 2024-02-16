@@ -11,11 +11,19 @@
         line-height: 13.3px;
     }
 
+    #themingSwitcher {
+        cursor: pointer;
+    }
+
     &__top {
         height: 32px;
 
         &-right {
             gap: 30px;
+        }
+
+        &-item {
+            cursor: pointer;
         }
 
         &-btn {

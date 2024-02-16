@@ -1,3 +1,67 @@
+<script setup>
+const switchLocalePath = useSwitchLocalePath();
+const route = useRoute();
+const url = "http://new.bolalarolami.uz/api/v2";
+//hooks
+const darkTheme = ref(false);
+// data
+const { data: menuData } = await useFetch(`${url}/resources/get-sections`);
+const menus = menuData.value.data;
+// language
+const { locales, locale, setLocale } = useI18n();
+
+const switchToggle = () => {
+    darkTheme.value = !darkTheme.value;
+    const darkIcons = document.querySelectorAll(".darkIcon");
+    const lightIcons = document.querySelectorAll(".lightIcon");
+
+    if (darkTheme.value) {
+        document.body.classList.add("darkBody");
+        darkIcons.forEach((icon) => icon.classList.remove("d-none"));
+        lightIcons.forEach((icon) => icon.classList.add("d-none"));
+    } else {
+        document.body.classList.remove("darkBody");
+        darkIcons.forEach((icon) => icon.classList.add("d-none"));
+        lightIcons.forEach((icon) => icon.classList.remove("d-none"));
+    }
+};
+
+function navbarM(arr) {
+    const map = {};
+    const newArr = [];
+
+    arr.forEach((element) => {
+        map[element.id] = element;
+        element.child = [];
+    });
+
+    arr.forEach((element) => {
+        if (element.parent_id !== null) {
+            map[element.parent_id].child.push(element);
+        } else {
+            newArr.push(element);
+        }
+    });
+
+    return newArr;
+}
+
+const navMain = navbarM(menus);
+
+const language = computed({
+    get: () => locale.value,
+    set: (value) => {
+        setLocale(value);
+    },
+});
+
+const changeLocale = (lang) => {
+    setLocale(lang);
+};
+
+const langPath = route.fullPath.split("/")[1];
+</script>
+
 <template>
     <header class="header fixed-top darkMode">
         <div class="header__wrapper">
@@ -54,20 +118,41 @@
                         <select
                             class="header__top-btn darkMode-btn d-xl-none"
                             aria-label="Default select example"
+                            v-model="language"
                         >
-                            <option selected value="1">Uz</option>
-                            <option value="2">Уз</option>
-                            <option value="3">En</option>
-                            <option value="4">Ру</option>
+                            <option v-for="item in locales" :value="item.code">
+                                {{ item.code }}
+                            </option>
                         </select>
+
                         <ul
                             class="header__top-list d-none d-xl-flex align-items-center list-unstyled m-0"
                             style="gap: 10px"
                         >
-                            <li class="header__top-item darkMode">Uz</li>
-                            <li class="header__top-item darkMode">Уз</li>
-                            <li class="header__top-item darkMode">En</li>
-                            <li class="header__top-item darkMode">Ру</li>
+                            <li
+                                class="header__top-item darkMode"
+                                @click="changeLocale('uz')"
+                            >
+                                Uz
+                            </li>
+                            <li
+                                class="header__top-item darkMode"
+                                @click="changeLocale('uzk')"
+                            >
+                                Уз
+                            </li>
+                            <li
+                                class="header__top-item darkMode"
+                                @click="changeLocale('en')"
+                            >
+                                En
+                            </li>
+                            <li
+                                class="header__top-item darkMode"
+                                @click="changeLocale('ru')"
+                            >
+                                Ру
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -110,9 +195,20 @@
                                 v-for="nav in navMain"
                                 :key="nav.id"
                             >
-                                <a class="nav-link darkMode-title" href="#">{{
-                                    nav.title_uz
-                                }}</a>
+                                <a class="nav-link darkMode-title" href="#">
+                                    <template v-if="langPath == 'en'">
+                                        {{ nav.title_en }}
+                                    </template>
+                                    <template v-else-if="langPath == 'uzk'">
+                                        {{ nav.title_kr }}
+                                    </template>
+                                    <template v-else-if="langPath == 'ru'">
+                                        {{ nav.title_ru }}
+                                    </template>
+                                    <template v-else>
+                                        {{ nav.title_uz }}
+                                    </template>
+                                </a>
                                 <div
                                     class="darkMode d-none item-menu list-group list-group-light position-absolute"
                                 >
@@ -122,7 +218,18 @@
                                         v-for="navItem in nav.child"
                                         :key="navItem.id"
                                     >
-                                        {{ navItem.title_uz }}
+                                        <template v-if="langPath == 'en'">
+                                            {{ navItem.title_en }}
+                                        </template>
+                                        <template v-else-if="langPath == 'uzk'">
+                                            {{ navItem.title_kr }}
+                                        </template>
+                                        <template v-else-if="langPath == 'ru'">
+                                            {{ navItem.title_ru }}
+                                        </template>
+                                        <template v-else>
+                                            {{ navItem.title_uz }}
+                                        </template>
                                     </button>
                                 </div>
                             </li>
@@ -152,7 +259,18 @@
                                             'flush-collapseOne' + menu.id
                                         "
                                     >
-                                        {{ menu.title_uz }}
+                                        <template v-if="langPath == 'en'">
+                                            {{ menu.title_en }}
+                                        </template>
+                                        <template v-else-if="langPath == 'uzk'">
+                                            {{ menu.title_kr }}
+                                        </template>
+                                        <template v-else-if="langPath == 'ru'">
+                                            {{ menu.title_ru }}
+                                        </template>
+                                        <template v-else>
+                                            {{ menu.title_uz }}
+                                        </template>
                                     </button>
                                 </h2>
                                 <div
@@ -166,7 +284,22 @@
                                             v-for="navItem in menu.child"
                                             :key="navItem.id"
                                         >
-                                            {{ navItem.title_uz }}
+                                            <template v-if="langPath == 'en'">
+                                                {{ navItem.title_en }}
+                                            </template>
+                                            <template
+                                                v-else-if="langPath == 'uzk'"
+                                            >
+                                                {{ navItem.title_kr }}
+                                            </template>
+                                            <template
+                                                v-else-if="langPath == 'ru'"
+                                            >
+                                                {{ navItem.title_ru }}
+                                            </template>
+                                            <template v-else>
+                                                {{ navItem.title_uz }}
+                                            </template>
                                         </li>
                                     </ul>
                                 </div>
@@ -296,50 +429,3 @@
         </div>
     </header>
 </template>
-
-<script setup>
-const darkTheme = ref(false);
-
-const url = "http://new.bolalarolami.uz/api/v2";
-
-const switchToggle = () => {
-    darkTheme.value = !darkTheme.value;
-    const darkIcons = document.querySelectorAll(".darkIcon");
-    const lightIcons = document.querySelectorAll(".lightIcon");
-
-    if (darkTheme.value) {
-        document.body.classList.add("darkBody");
-        darkIcons.forEach((icon) => icon.classList.remove("d-none"));
-        lightIcons.forEach((icon) => icon.classList.add("d-none"));
-    } else {
-        document.body.classList.remove("darkBody");
-        darkIcons.forEach((icon) => icon.classList.add("d-none"));
-        lightIcons.forEach((icon) => icon.classList.remove("d-none"));
-    }
-};
-
-const { data: menuData } = await useFetch(`${url}/resources/get-sections`);
-const menus = menuData.value.data;
-
-function navbarM(arr) {
-    const map = {};
-    const newArr = [];
-
-    arr.forEach((element) => {
-        map[element.id] = element;
-        element.child = [];
-    });
-
-    arr.forEach((element) => {
-        if (element.parent_id !== null) {
-            map[element.parent_id].child.push(element);
-        } else {
-            newArr.push(element);
-        }
-    });
-
-    return newArr;
-}
-
-const navMain = navbarM(menus);
-</script>

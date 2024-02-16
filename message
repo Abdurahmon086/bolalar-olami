@@ -1,0 +1,120 @@
+   <div class="single__message none-container">
+                                <div class="single__message-top darkMode-body">
+                                    <div
+                                        class="single__message-2btn d-flex align-items-center justify-content-between"
+                                    >
+                                        <img
+                                            src="/images/person.png"
+                                            alt="person image"
+                                        />
+                                        <button
+                                            class="d-block d-sm-none btn btn-light border-0 shadow-0 darkMode-btn"
+                                            data-mdb-ripple-init
+                                            data-mdb-ripple-color="dark"
+                                        >
+                                            Yuborish
+                                        </button>
+                                    </div>
+                                    <textarea
+                                        name=""
+                                        id=""
+                                        cols="30"
+                                        rows="10"
+                                        placeholder="Fikr qo‘shish…"
+                                        class="darkMode-btn"
+                                    ></textarea>
+                                    <button
+                                        class="d-none d-sm-block btn btn-light border-0 shadow-0 darkMode-btn"
+                                        data-mdb-ripple-init
+                                        data-mdb-ripple-color="dark"
+                                    >
+                                        Yuborish
+                                    </button>
+                                </div>
+                                <ul class="single__message-list list-unstyled">
+                                    <li
+                                        class="single__message-item item darkMode"
+                                    >
+                                        <div class="item__inner">
+                                            <div class="item__left">
+                                                <img
+                                                    src="/images/person.png"
+                                                    alt="person image"
+                                                />
+                                                <h4 class="darkMode">Bahrom</h4>
+                                            </div>
+                                            <!-- <div class="item__right">
+                                            <img src="" alt="">
+                                            <img src="" alt="">
+                                        </div> -->
+                                        </div>
+                                        <p class="item__text">
+                                            @maxblagun Agar siz hali ham yangi
+                                            bo'lsangiz, React-ni ko'rib
+                                            chiqishdan oldin HTML, CSS va JS
+                                            asoslariga e'tibor qaratishni
+                                            maslahat beraman. Oldinga sakrash
+                                            juda jozibali, lekin avvalo
+                                            mustahkam poydevor qo'ying.
+                                        </p>
+                                    </li>
+                                    <li
+                                        class="single__message-item item darkMode"
+                                    >
+                                        <div class="item__inner">
+                                            <div class="item__left">
+                                                <img
+                                                    src="/images/person.png"
+                                                    alt="person image"
+                                                />
+                                                <h4 class="darkMode">Bahrom</h4>
+                                            </div>
+                                            <!-- <div class="item__right">
+                                            <img src="" alt="">
+                                            <img src="" alt="">
+                                        </div> -->
+                                        </div>
+                                        <p class="item__text">
+                                            @maxblagun Agar siz hali ham yangi
+                                            bo'lsangiz, React-ni ko'rib
+                                            chiqishdan oldin HTML, CSS va JS
+                                            asoslariga e'tibor qaratishni
+                                            maslahat beraman. Oldinga sakrash
+                                            juda jozibali, lekin avvalo
+                                            mustahkam poydevor qo'ying.
+                                        </p>
+                                    </li>
+                                    <li
+                                        class="single__message-item item darkMode"
+                                    >
+                                        <div class="item__inner">
+                                            <div class="item__left">
+                                                <img
+                                                    src="/images/person.png"
+                                                    alt=" person image"
+                                                />
+                                                <h4 class="darkMode">Bahrom</h4>
+                                            </div>
+                                            <div class="item__right">
+                                                <img
+                                                    src="/images/shape.svg"
+                                                    alt="delete icon"
+                                                />
+                                                <img
+                                                    src="/images/rename.svg"
+                                                    alt="rename icon"
+                                                />
+                                            </div>
+                                        </div>
+                                        <p class="item__text">
+                                            @maxblagun Agar siz hali ham yangi
+                                            bo'lsangiz, React-ni ko'rib
+                                            chiqishdan oldin HTML, CSS va JS
+                                            asoslariga e'tibor qaratishni
+                                            maslahat beraman. Oldinga sakrash
+                                            juda jozibali, lekin avvalo
+                                            mustahkam poydevor qo'ying.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
