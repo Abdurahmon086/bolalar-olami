@@ -1,5 +1,5 @@
 <script setup>
-const switchLocalePath = useSwitchLocalePath();
+const localPath = useLocalePath();
 const route = useRoute();
 const url = "http://new.bolalarolami.uz/api/v2";
 //hooks
@@ -57,6 +57,16 @@ const language = computed({
 
 const changeLocale = (lang) => {
     setLocale(lang);
+    window.location.reload;
+};
+
+const auth = ref(false);
+const authPage = ref(true);
+const authToggle = (value) => {
+    auth.value = value;
+};
+const authPageToggle = (value) => {
+    authPage.value = value;
 };
 
 const langPath = route.fullPath.split("/")[1];
@@ -109,12 +119,222 @@ const langPath = route.fullPath.split("/")[1];
                             />
                         </div>
                         <button
+                            @click="authToggle(true)"
                             type="button"
                             class="header__top-mainBtn btn d-xl-none shadow-0 darkMode-btn"
                             data-bs-ripple-init
                         >
                             Kirish
                         </button>
+                        <template v-if="auth == true">
+                            <div class="auth">
+                                <div class="auth__wrapper">
+                                    <template v-if="authPage == true">
+                                        <h4 class="auth__title">Kirish</h4>
+                                        <p class="auth__text">
+                                            Clarity sizga chinakam professional
+                                            veb-sayt yaratish uchun kerakli
+                                            bloklar va komponentlarni beradi.
+                                        </p>
+                                        <form
+                                            class="needs-validation"
+                                            novalidate
+                                        >
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom01"
+                                                    class="form-label d-none"
+                                                    >Telefon raqam</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Telefon raqam"
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom02"
+                                                    class="form-label d-none"
+                                                    >Parol
+                                                </label>
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="validationCustom02"
+                                                    placeholder="Parol "
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <button type="submit">
+                                                    Kirish
+                                                </button>
+                                            </div>
+                                            <p class="auth__link">
+                                                Hisobingiz yo'qmi?
+                                                <span
+                                                    @click="
+                                                        authPageToggle(false)
+                                                    "
+                                                >
+                                                    Ro'yxatdan o'tish</span
+                                                >
+                                            </p>
+                                        </form>
+                                    </template>
+                                    <template v-else>
+                                        <h4 class="auth__title">
+                                            Ro'yxatdan o'tish
+                                        </h4>
+                                        <p class="auth__text">
+                                            Clarity sizga chinakam professional
+                                            veb-sayt yaratish uchun kerakli
+                                            bloklar va komponentlarni beradi.
+                                        </p>
+                                        <form class="needs-validation" validate>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom01"
+                                                    class="form-label d-none"
+                                                    >Ism Familya</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Ism Familya"
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom01"
+                                                    class="form-label d-none"
+                                                    >Telefon raqam</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Telefon raqam"
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom04"
+                                                    class="form-label d-none"
+                                                    >Viloyantingzni
+                                                    tanlang</label
+                                                >
+                                                <select
+                                                    class="form-select"
+                                                    id="validationCustom04"
+                                                    required
+                                                >
+                                                    <option
+                                                        selected
+                                                        disabled
+                                                        hidden
+                                                        value=""
+                                                    >
+                                                        Viloyantingzni tanlang
+                                                    </option>
+                                                    <option>...1</option>
+                                                    <option>...2</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please select a valid state.
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom01"
+                                                    class="form-label d-none"
+                                                    >Tumanigizni
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="Tumanigizni "
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <label
+                                                    for="validationCustom02"
+                                                    class="form-label d-none"
+                                                    >Parol
+                                                </label>
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="validationCustom02"
+                                                    placeholder="Parol "
+                                                    required
+                                                />
+                                                <div class="valid-feedback">
+                                                    Looks good!
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="form-check">
+                                                    <input
+                                                        type="checkbox"
+                                                        value=""
+                                                        id="invalidCheck"
+                                                        required
+                                                    />
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="invalidCheck"
+                                                    >
+                                                        Agree to terms and
+                                                        conditions
+                                                    </label>
+                                                    <div
+                                                        class="invalid-feedback"
+                                                    >
+                                                        You must agree before
+                                                        submitting.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <button type="submit">
+                                                    Ro'yxatdan o'tish
+                                                </button>
+                                            </div>
+                                            <p class="auth__link">
+                                                Hisobingiz yo'qmi?
+                                                <span
+                                                    @click="
+                                                        authPageToggle(true)
+                                                    "
+                                                >
+                                                    Kirish</span
+                                                >
+                                            </p>
+                                        </form>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
                         <select
                             class="header__top-btn darkMode-btn d-xl-none"
                             aria-label="Default select example"
@@ -164,7 +384,7 @@ const langPath = route.fullPath.split("/")[1];
             >
                 <div class="container darkMode">
                     <!-- brand -->
-                    <NuxtLink to="/" class="navbar-brand m-0">
+                    <NuxtLink :to="localPath('/')" class="navbar-brand m-0">
                         <img
                             src="/images/logo.svg"
                             class="lightIcon d-block"

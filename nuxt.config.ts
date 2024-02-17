@@ -1,12 +1,11 @@
-import { defineNuxtConfig } from "nuxt/config";
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ["nuxt-swiper", "@nuxtjs/i18n"],
+    spaLoadingTemplate: "~/layouts/loading.vue",
+    modules: ["@nuxtjs/i18n"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
-        lazy: true,
+        lazy: false,
         langDir: "locales",
         strategy: "prefix_except_default",
         locales: [
@@ -36,6 +35,7 @@ export default defineNuxtConfig({
             },
         ],
         defaultLocale: "uz",
+        vueI18n: "uz",
     },
     app: {
         head: {

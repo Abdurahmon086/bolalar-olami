@@ -1,4 +1,6 @@
 <script setup>
+const localPath = useLocalePath();
+
 useHead({
     title: "Bolalar olami",
 });
@@ -18,7 +20,7 @@ const healthPosts = data.value.data.healthPosts;
 const legalClinicPosts = data.value.data.legalClinicPosts;
 const quotations = data.value.data.quotations;
 const usefulPosts = data.value.data.usefulPosts;
-console.log(data, achchiqtoshPosts);
+
 const mainPosts4 = mainPosts.slice(1);
 </script>
 
@@ -257,7 +259,7 @@ const mainPosts4 = mainPosts.slice(1);
                 <h4 class="news__title darkMode-title">Asosiy</h4>
                 <div class="news__wrapper">
                     <NuxtLink
-                        :to="`show/category/${mainPosts[0].id}`"
+                        :to="localPath(`/show/category/${mainPosts[0].id}`)"
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                     >
                         <img
@@ -274,7 +276,7 @@ const mainPosts4 = mainPosts.slice(1);
                     <div class="news__right">
                         <NuxtLink
                             v-for="item in mainPosts4"
-                            :to="`show/category/${item.id}`"
+                            :to="localPath(`/show/category/${item.id}`)"
                             :key="item.id"
                             class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                         >
@@ -301,7 +303,7 @@ const mainPosts4 = mainPosts.slice(1);
                         <div class="lastNews__left">
                             <NuxtLink
                                 v-for="item in educationPosts"
-                                :to="`show/category/${item.id}`"
+                                :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode"
                             >
@@ -340,7 +342,7 @@ const mainPosts4 = mainPosts.slice(1);
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <NuxtLink
                                 v-for="item in recentNewsPosts"
-                                :to="`show/category/${item.id}`"
+                                :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="border-bottom text-decoration-none"
                             >
@@ -413,7 +415,6 @@ const mainPosts4 = mainPosts.slice(1);
                 <h4 class="media__title fw-bold darkMode-title">Media</h4>
                 <div class="media__card">
                     <div class="position-relative media__card-img w-100 h-100">
-                        <!-- <img class="img-fluid media__card--img w-100" src="/images/media-img1.png" alt="media-img1"> -->
                         <p
                             class="media__text position-absolute fw-bold fs-4 text-white"
                         >
@@ -478,7 +479,9 @@ const mainPosts4 = mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in achchiqtoshPosts"
                                     :key="item.id"
-                                    :to="`/show/category/${item.id}`"
+                                    :to="
+                                        localPath(`/show/category/${item.id}`)
+                                    "
                                     class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark active"
                                     data-bs-interval="5000"
                                 >
@@ -505,7 +508,7 @@ const mainPosts4 = mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in healthPosts"
                                     :key="item.id"
-                                    :to="`/show/category/${item.id}`"
+                                    :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div
@@ -550,7 +553,7 @@ const mainPosts4 = mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in legalClinicPosts"
                                     :key="item.id"
-                                    :to="`/show/category/${item.id}`"
+                                    :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div
@@ -593,7 +596,7 @@ const mainPosts4 = mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in usefulPosts"
                                     :key="item.id"
-                                    :to="`/show/category/${item.id}`"
+                                    :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div

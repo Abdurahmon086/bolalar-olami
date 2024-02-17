@@ -1,6 +1,7 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
 const route = useRoute();
+const localPath = useLocalePath();
 const id = route.params.id;
 const url = "http://new.bolalarolami.uz/api/v2";
 
@@ -13,7 +14,6 @@ if (!data.value) {
 }
 const posts = data.value.data.post;
 const mostReadPosts = data.value.data.mostReadPosts;
-
 </script>
 
 <template>
@@ -228,7 +228,6 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                     </ul>
                                 </div>
                             </div>
-                         
                         </div>
                     </div>
                 </section>
@@ -238,7 +237,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                         <div class="aside__wrapper">
                             <NuxtLink
                                 v-for="item in mostReadPosts"
-                                :to="`/show/category/${item.id}`"
+                                :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode"
                             >
