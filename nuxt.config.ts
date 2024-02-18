@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     spaLoadingTemplate: "~/layouts/loading.vue",
-    modules: ["@nuxtjs/i18n"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,
@@ -28,14 +28,13 @@ export default defineNuxtConfig({
                 file: "ru-RU.json",
             },
             {
-                code: "uzk",
-                iso: "uzk",
+                code: "kr",
+                iso: "kr",
                 name: "Uzbek-kril(UZK)",
                 file: "uzk-UZK.json",
             },
         ],
         defaultLocale: "uz",
-        vueI18n: "uz",
     },
     app: {
         head: {

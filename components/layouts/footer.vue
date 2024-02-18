@@ -19,11 +19,7 @@
                             />
                         </NuxtLink>
                         <p class="footer__text darkMode">
-                            Bolalarolami.Uz Internet Nashri 2023 Yilning 7
-                            Aprelda Elektron OAV Sifatida O'zbekiston
-                            Respublikasi Prezidenti Administratsiyasi Huzuridagi
-                            Axborot Va Ommaviy Kommunikatsiyalar Agentligi
-                            Tomonidan Davlat Ro‘yxatidan O‘tkazilgan.
+                            {{ $t("footer_text") }}
                         </p>
                         <div class="d-flex" style="margin-top: 50px; gap: 22px">
                             <a href="#">
@@ -58,36 +54,39 @@
                                 <a
                                     class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Biz haqimizda</a
+                                >
+                                    {{ $t("about_us") }}</a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Guvohnoma raqami:
-                                    <span class="fw-normal"> №073429</span></a
+                                    >{{ $t("gNumber") }}</a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Muassis:
-                                    <span class="fw-normal"
-                                        >"Dunyo – bolalar uchun" <br />
-                                        masʼuliyati cheklangan jamiyati.</span
-                                    ></a
+                                    style="
+                                        display: block;
+                                        max-width: 248px !important;
+                                    "
+                                    >{{ $t("founder") }}
+                                    <span class="fw-normal">{{
+                                        $t("founder_title")
+                                    }}</span></a
                                 >
                             </li>
                             <li>
                                 <a
                                     class="footer__link1 fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Masʼul muharrir:
-                                    <span class="fw-normal"
-                                        >Sherali Soliyev</span
-                                    >.</a
+                                    >{{ $t("responsible_editor") }}
+                                    <span class="fw-normal">{{
+                                        $t("responsible_editor_title")
+                                    }}</span></a
                                 >
                             </li>
                         </ul>
@@ -101,7 +100,7 @@
                                 <a
                                     class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Kontaktlar</a
+                                    >{{ $t("contact") }}</a
                                 >
                             </li>
                             <li
@@ -160,8 +159,8 @@
                                 <a
                                     class="footer__link1 fw-normal text-decoration-none darkMode-title"
                                     href="#"
-                                    >634034, Toshkent sh., Naximovna <br />
-                                    ko‘chasi, 8/2</a
+                                    style="display: block; max-width: 230px"
+                                    >{{ $t("place") }}</a
                                 >
                             </li>
                         </ul>
@@ -175,7 +174,7 @@
                                 <a
                                     class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#"
-                                    >Hamkorlik uchun</a
+                                    >{{ $t("for_support") }}</a
                                 >
                             </li>
                             <li class="d-flex" style="gap: 14px">
@@ -217,7 +216,7 @@
                 </div>
 
                 <p class="footer__co-text text-center darkMode-sp">
-                    © 2022-2023 Bolalar Olami. Barcha huquqlar himoyalangan.
+                    {{ $t("footer_title") }}
                 </p>
             </div>
         </div>

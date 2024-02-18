@@ -265,11 +265,11 @@ const mainPosts4 = mainPosts.slice(1);
                         <img
                             :src="mainPosts[0].detail_image.card"
                             class="card-img img-fluid h-100 rounded-0"
-                            :alt="mainPosts[0].title_uz"
+                            :alt="mainPosts[0][`title_${$i18n.locale}`]"
                         />
                         <div class="card-img-overlay rounded-0">
                             <h5 class="news__card-title">
-                                {{ mainPosts[0].title_uz }}
+                                {{ mainPosts[0][`title_${$i18n.locale}`] }}
                             </h5>
                         </div>
                     </NuxtLink>
@@ -283,11 +283,11 @@ const mainPosts4 = mainPosts.slice(1);
                             <img
                                 :src="item.detail_image.card"
                                 class="card-img img-fluid h-100 rounded-0"
-                                :alt="item.title_uz"
+                                :alt="item[`title_${$i18n.locale}`]"
                             />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
-                                    {{ item.title_uz }}
+                                    {{ item[`title_${$i18n.locale}`] }}
                                 </h5>
                             </div>
                         </NuxtLink>
@@ -313,7 +313,7 @@ const mainPosts4 = mainPosts.slice(1);
                                     <img
                                         :src="item.detail_image.card"
                                         class="card-img-top rounded-0"
-                                        :alt="item.title_kr"
+                                        :alt="item[`title_${$i18n.locale}`]"
                                     />
                                     <span
                                         class="position-absolute lastNews__left-spLink darkMode"
@@ -322,10 +322,12 @@ const mainPosts4 = mainPosts.slice(1);
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title darkMode">
-                                        {{ item.title_kr }}
+                                        {{ item[`title_${$i18n.locale}`] }}
                                     </h5>
                                     <p class="card-text darkMode">
-                                        {{ item.description_kr }}
+                                        {{
+                                            item[`description_${$i18n.locale}`]
+                                        }}
                                     </p>
                                     <span
                                         class="lastNews__left-sp darkMode-sp"
@@ -347,7 +349,7 @@ const mainPosts4 = mainPosts.slice(1);
                                 class="border-bottom text-decoration-none"
                             >
                                 <p class="lastNews__right-text darkMode">
-                                    {{ item.title_uz }}
+                                    {{ item[`title_${$i18n.locale}`] }}
                                 </p>
                                 <div
                                     class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
@@ -393,12 +395,12 @@ const mainPosts4 = mainPosts.slice(1);
                         >
                             <img
                                 :src="item.detail_image.original_url"
-                                :alt="item.title_uz"
+                                :alt="item[`title_${$i18n.locale}`]"
                                 class="social__img"
                             />
                             <div class="social__qs">
                                 <p class="social__qs-text">
-                                    {{ item.title_uz }}
+                                    {{ item[`title_${$i18n.locale}`] }}
                                 </p>
                                 <h4 class="social__qs-title">
                                     {{ item.author_name }}
@@ -479,22 +481,20 @@ const mainPosts4 = mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in achchiqtoshPosts"
                                     :key="item.id"
-                                    :to="
-                                        localPath(`/show/category/${item.id}`)
-                                    "
+                                    :to="localPath(`/show/category/${item.id}`)"
                                     class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark active"
                                     data-bs-interval="5000"
                                 >
                                     <img
                                         :src="item.detail_image.card"
-                                        :alt="item.title_uz"
+                                        :alt="item[`title_${$i18n.locale}`]"
                                         class="card-img img-fluid h-100 rounded-0"
                                     />
                                     <div class="card-img-overlay rounded-0">
                                         <h5
                                             class="achchiqtosh__slider-text position-absolute"
                                         >
-                                            {{ item.title_uz }}
+                                            {{ item[`title_${$i18n.locale}`] }}
                                         </h5>
                                     </div>
                                 </NuxtLink>
@@ -517,7 +517,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <img
                                             class="img-fluid w-100"
                                             :src="item.detail_image.card"
-                                            :alt="item.title_uz"
+                                            :alt="item[`title_${$i18n.locale}`]"
                                         />
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
@@ -529,12 +529,16 @@ const mainPosts4 = mainPosts.slice(1);
                                         <p
                                             class="darkMode-title achchiqtosh__info-title"
                                         >
-                                            {{ item.title_uz }}
+                                            {{ item[`title_${$i18n.locale}`] }}
                                         </p>
                                         <p
                                             class="darkMode-title achchiqtosh__info-text"
                                         >
-                                            {{ item.description_uz }}
+                                            {{
+                                                item[
+                                                    `description_${$i18n.locale}`
+                                                ]
+                                            }}
                                         </p>
                                         <p
                                             class="darkMode-sp achchiqtosh__info-time"
@@ -562,7 +566,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <img
                                             class="img-fluid w-100"
                                             :src="item.detail_image.card"
-                                            :alt="item.title_uz"
+                                            :alt="item[`title_${$i18n.locale}`]"
                                         />
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
@@ -574,12 +578,16 @@ const mainPosts4 = mainPosts.slice(1);
                                         <p
                                             class="darkMode-title achchiqtosh__info-title"
                                         >
-                                            {{ item.title_uz }}
+                                            {{ item[`title_${$i18n.locale}`] }}
                                         </p>
                                         <p
                                             class="darkMode-title achchiqtosh__info-text"
                                         >
-                                            {{ item.description_uz }}
+                                            {{
+                                                item[
+                                                    `description_${$i18n.locale}`
+                                                ]
+                                            }}
                                         </p>
                                         <p
                                             class="darkMode-sp achchiqtosh__info-time"
@@ -605,7 +613,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <img
                                             class="img-fluid w-100"
                                             :src="item.detail_image.card"
-                                            :alt="item.title_uz"
+                                            :alt="item[`title_${$i18n.locale}`]"
                                         />
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
@@ -617,12 +625,16 @@ const mainPosts4 = mainPosts.slice(1);
                                         <p
                                             class="darkMode-title achchiqtosh__info-title"
                                         >
-                                            {{ item.title_uz }}
+                                            {{ item[`title_${$i18n.locale}`] }}
                                         </p>
                                         <p
                                             class="darkMode-title achchiqtosh__info-text"
                                         >
-                                            {{ item.description_uz }}
+                                            {{
+                                                item[
+                                                    `description_${$i18n.locale}`
+                                                ]
+                                            }}
                                         </p>
                                         <p
                                             class="darkMode-sp achchiqtosh__info-time"
@@ -659,156 +671,6 @@ const mainPosts4 = mainPosts.slice(1);
                 </div>
             </div>
         </section>
-        <section class="slide-option loopScroler bg-white darkMode mb-0">
-            <div id="infinite" class="highway-slider">
-                <div class="highway-barrier">
-                    <ul class="highway-lane list-unstyled m-0 darkMode">
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                        <li class="highway-car">
-                            <img
-                                src="/images/dunyoBola-img.svg"
-                                alt="dunyoBola-img"
-                                class="lightIcon d-block img-fluid"
-                            />
-                            <img
-                                src="/images/dunyoBola-img-dark1.jpg"
-                                alt="dunyoBola-img"
-                                class="darkIcon d-none darkMode img-fluid"
-                                style="width: 204px"
-                            />
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <LoopScroler />
     </main>
 </template>

@@ -1,6 +1,5 @@
 <script setup>
 const localPath = useLocalePath();
-const route = useRoute();
 const url = "http://new.bolalarolami.uz/api/v2";
 //hooks
 const darkTheme = ref(false);
@@ -68,8 +67,6 @@ const authToggle = (value) => {
 const authPageToggle = (value) => {
     authPage.value = value;
 };
-
-const langPath = route.fullPath.split("/")[1];
 </script>
 
 <template>
@@ -80,17 +77,15 @@ const langPath = route.fullPath.split("/")[1];
                 class="container header__top d-flex justify-content-between align-items-center"
             >
                 <div class="header__top-left">
-                    <span class="header__info-text">г.Ташкент</span>
+                    <span class="header__info-text">{{ $t("city") }}</span>
                     <a class="link-opacity-75-hover" href="#"
                         >info@bolalarolami</a
                     >
                 </div>
                 <div class="header__top-right d-flex align-items-center">
                     <div class="header__top-texts d-none d-md-flex">
-                        <span class="darkMode">Guvohnoma raqami: №073429</span>
-                        <span class="darkMode"
-                            >Masʼul muharrir: Sherali Soliyev</span
-                        >
+                        <span class="darkMode">{{ $t("gNumber") }}</span>
+                        <span class="darkMode">{{ $t("editor") }}</span>
                     </div>
                     <div
                         class="header__top-menuList d-flex align-items-center"
@@ -124,13 +119,15 @@ const langPath = route.fullPath.split("/")[1];
                             class="header__top-mainBtn btn d-xl-none shadow-0 darkMode-btn"
                             data-bs-ripple-init
                         >
-                            Kirish
+                            {{ $t("entir") }}
                         </button>
                         <template v-if="auth == true">
                             <div class="auth">
                                 <div class="auth__wrapper">
                                     <template v-if="authPage == true">
-                                        <h4 class="auth__title">Kirish</h4>
+                                        <h4 class="auth__title">
+                                            {{ $t("entir") }}
+                                        </h4>
                                         <p class="auth__text">
                                             Clarity sizga chinakam professional
                                             veb-sayt yaratish uchun kerakli
@@ -357,7 +354,7 @@ const langPath = route.fullPath.split("/")[1];
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                @click="changeLocale('uzk')"
+                                @click="changeLocale('kr')"
                             >
                                 Уз
                             </li>
@@ -416,18 +413,7 @@ const langPath = route.fullPath.split("/")[1];
                                 :key="nav.id"
                             >
                                 <a class="nav-link darkMode-title" href="#">
-                                    <template v-if="langPath == 'en'">
-                                        {{ nav.title_en }}
-                                    </template>
-                                    <template v-else-if="langPath == 'uzk'">
-                                        {{ nav.title_kr }}
-                                    </template>
-                                    <template v-else-if="langPath == 'ru'">
-                                        {{ nav.title_ru }}
-                                    </template>
-                                    <template v-else>
-                                        {{ nav.title_uz }}
-                                    </template>
+                                    {{ nav[`title_${$i18n.locale}`] }}
                                 </a>
                                 <div
                                     class="darkMode d-none item-menu list-group list-group-light position-absolute"
@@ -438,18 +424,7 @@ const langPath = route.fullPath.split("/")[1];
                                         v-for="navItem in nav.child"
                                         :key="navItem.id"
                                     >
-                                        <template v-if="langPath == 'en'">
-                                            {{ navItem.title_en }}
-                                        </template>
-                                        <template v-else-if="langPath == 'uzk'">
-                                            {{ navItem.title_kr }}
-                                        </template>
-                                        <template v-else-if="langPath == 'ru'">
-                                            {{ navItem.title_ru }}
-                                        </template>
-                                        <template v-else>
-                                            {{ navItem.title_uz }}
-                                        </template>
+                                        {{ navItem[`title_${$i18n.locale}`] }}
                                     </button>
                                 </div>
                             </li>
@@ -479,18 +454,7 @@ const langPath = route.fullPath.split("/")[1];
                                             'flush-collapseOne' + menu.id
                                         "
                                     >
-                                        <template v-if="langPath == 'en'">
-                                            {{ menu.title_en }}
-                                        </template>
-                                        <template v-else-if="langPath == 'uzk'">
-                                            {{ menu.title_kr }}
-                                        </template>
-                                        <template v-else-if="langPath == 'ru'">
-                                            {{ menu.title_ru }}
-                                        </template>
-                                        <template v-else>
-                                            {{ menu.title_uz }}
-                                        </template>
+                                        {{ menu[`title_${$i18n.locale}`] }}
                                     </button>
                                 </h2>
                                 <div
@@ -504,22 +468,9 @@ const langPath = route.fullPath.split("/")[1];
                                             v-for="navItem in menu.child"
                                             :key="navItem.id"
                                         >
-                                            <template v-if="langPath == 'en'">
-                                                {{ navItem.title_en }}
-                                            </template>
-                                            <template
-                                                v-else-if="langPath == 'uzk'"
-                                            >
-                                                {{ navItem.title_kr }}
-                                            </template>
-                                            <template
-                                                v-else-if="langPath == 'ru'"
-                                            >
-                                                {{ navItem.title_ru }}
-                                            </template>
-                                            <template v-else>
-                                                {{ navItem.title_uz }}
-                                            </template>
+                                            {{
+                                                navItem[`title_${$i18n.locale}`]
+                                            }}
                                         </li>
                                     </ul>
                                 </div>

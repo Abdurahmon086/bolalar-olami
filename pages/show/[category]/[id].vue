@@ -17,7 +17,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
 </script>
 
 <template>
-    <div class="show darkMode">
+    <div class="show darkMode pb-5">
         <div class="navigate">
             <div class="container">
                 <nav aria-label="breadcrumb ">
@@ -36,7 +36,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                             class="breadcrumb-item d-flex align-items-center active darkMode"
                             aria-current="page"
                         >
-                            {{ posts.title_uz }}
+                            {{ posts[`title_${$i18n.locale}`] }}
                         </li>
                     </ol>
                 </nav>
@@ -48,7 +48,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
             >
                 <section class="single">
                     <h2 class="single__title">
-                        {{ posts.title_uz }}
+                        {{ posts[`title_${$i18n.locale}`] }}
                     </h2>
                     <div class="single__info">
                         <span class="darkMode pt-1">{{
@@ -71,7 +71,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                     </div>
                     <img
                         :src="posts.detail_image.card"
-                        :alt="posts.title_uz"
+                        :alt="posts[`title_${$i18n.locale}`]"
                         class="single__mainImg"
                     />
                     <div class="single__inner">
@@ -120,7 +120,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                 </ul> -->
                                 <div
                                     class="single__text-wrapper single__text"
-                                    v-html="posts.content_uz"
+                                    v-html="posts[`content_${$i18n.locale}`]"
                                 ></div>
                             </div>
                             <div class="single__qs darkMode-body">
@@ -244,7 +244,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                 <div class="position-relative">
                                     <img
                                         :src="item.detail_image.card"
-                                        :alt="item.title_uz"
+                                        :alt="item[`title_${$i18n.locale}`]"
                                         class="card-img-top rounded-0"
                                     />
                                     <span
@@ -254,10 +254,12 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                 </div>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title darkMode">
-                                        {{ item.title_uz }}
+                                        {{ item[`title_${$i18n.locale}`] }}
                                     </h5>
                                     <p class="card-text darkMode">
-                                        {{ item.description_uz }}
+                                        {{
+                                            item[`description_${$i18n.locale}`]
+                                        }}
                                     </p>
                                     <span class="aside__left-sp darkMode-sp">
                                         {{ item.publish_date }}
@@ -274,185 +276,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                 </aside>
             </div>
 
-            <section
-                class="slide-option loopScroler bg-white darkMode d-none d-md-flex"
-            >
-                <div id="infinite" class="highway-slider">
-                    <div class="highway-barrier">
-                        <ul class="highway-lane list-unstyled m-0 darkMode">
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                            <li class="highway-car">
-                                <img
-                                    src="/images/dunyoBola-img.svg"
-                                    alt="dunyoBola-img"
-                                    class="lightIcon d-block img-fluid"
-                                />
-                                <img
-                                    src="/images/dunyoBola-img-dark1.jpg"
-                                    alt="dunyoBola-img"
-                                    class="darkIcon d-none darkMode img-fluid"
-                                    style="width: 204px"
-                                />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <LoopScroler />
         </div>
     </div>
 </template>
