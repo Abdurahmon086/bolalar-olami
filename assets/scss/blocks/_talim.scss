@@ -1,5 +1,4 @@
 .talim-title {
-    // margin-top: 70px;
     margin-bottom: 15px;
     color: #242424;
     // font-family: "BBC Reith Sans";
@@ -179,9 +178,10 @@
 
 @media only screen and (max-width:1200px) {
     .talim-title {
-        margin-top: 120px;
+        margin-top: 15px;
         // font-family: "BBC Reith Sans";
         font-size: 20px;
+        padding-top: 110px;
     }
     .talim-box {
         display: grid;
@@ -295,9 +295,10 @@
 }
 @media only screen and (max-width:992px) {
     .talim-title {
-        margin-top: 120px;
+        margin-top: 15px;
         // font-family: "BBC Reith Sans";
         font-size: 20px;
+        padding-top: 110px;
     }
     .talim-box {
         display: grid;
@@ -413,9 +414,10 @@
 
 @media only screen and (max-width:768px) {
     .talim-title {
-        margin-top: 120px;
+        margin-top: 15px;
         // font-family: "BBC Reith Sans";
         font-size: 20px;
+        padding-top: 110px;
     }
     .talim-box {
         display: grid;
