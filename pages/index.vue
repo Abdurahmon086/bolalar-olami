@@ -256,7 +256,9 @@ const mainPosts4 = mainPosts.slice(1);
         </section>
         <section class="news">
             <div class="container">
-                <h4 class="news__title darkMode-title">Asosiy</h4>
+                <h4 class="news__title darkMode-title">
+                    {{ $t("main_title") }}
+                </h4>
                 <div class="news__wrapper">
                     <NuxtLink
                         :to="localPath(`/show/category/${mainPosts[0].id}`)"
@@ -299,7 +301,9 @@ const mainPosts4 = mainPosts.slice(1);
             <div class="container">
                 <div class="lastNews__wrapper">
                     <div class="lastNews__left-wrap">
-                        <h4 class="news__title darkMode-title">Ta'lim</h4>
+                        <h4 class="news__title darkMode-title">
+                            {{ $t("education") }}
+                        </h4>
                         <div class="lastNews__left">
                             <NuxtLink
                                 v-for="item in educationPosts"
@@ -317,7 +321,8 @@ const mainPosts4 = mainPosts.slice(1);
                                     />
                                     <span
                                         class="position-absolute lastNews__left-spLink darkMode"
-                                        >Ta'lim</span
+                                    >
+                                        {{ $t("education") }}</span
                                     >
                                 </div>
                                 <div class="card-body d-flex flex-column">
@@ -339,7 +344,7 @@ const mainPosts4 = mainPosts.slice(1);
                     </div>
                     <div class="lastNews__right darkMode border-0">
                         <h4 class="lastNews__right-title">
-                            So'nggi yangiliklarga
+                            {{ $t("last_news") }}
                         </h4>
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <NuxtLink
@@ -381,7 +386,7 @@ const mainPosts4 = mainPosts.slice(1);
         <section class="social">
             <div class="container">
                 <h4 class="social__name-title darkMode-title">
-                    Social questionnaire
+                    {{ $t("social_text") }}
                 </h4>
                 <div
                     id="carouselExampleInterval"
@@ -412,65 +417,78 @@ const mainPosts4 = mainPosts.slice(1);
             </div>
         </section>
         <!-- Media -->
-        <section class="container">
-            <div>
-                <h4 class="media__title fw-bold darkMode-title">Media</h4>
-                <div class="media__card">
-                    <div class="position-relative media__card-img w-100 h-100">
-                        <p
-                            class="media__text position-absolute fw-bold fs-4 text-white"
-                        >
-                            Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
-                        </p>
-                    </div>
-
-                    <div class="position-relative media__card-img2 w-100 h-100">
+        <section class="media">
+            <div class="container">
+                <h4 class="media__title darkMode-title">
+                    {{ $t("media") }}
+                </h4>
+                <div class="media__wrapper">
+                    <NuxtLink
+                        class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
+                    >
                         <img
-                            class="img-fluid w-100"
-                            src="/images/media-img2.png"
-                            alt="media-img2"
-                        />
-                        <p
-                            class="media__text position-absolute fw-bold fs-4 text-white"
-                        >
-                            Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
-                        </p>
-                    </div>
-
-                    <div class="position-relative media__card-img3 w-100 h-100">
-                        <img
-                            class="img-fluid w-100"
-                            src="/images/media-img3.png"
+                            src="/images/media-img1.png"
+                            class="card-img img-fluid h-100 rounded-0"
                             alt="media-img3"
                         />
-                        <p
-                            class="media__text position-absolute fw-bold fs-4 text-white"
-                        >
-                            Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
-                        </p>
-                    </div>
-                    <div class="position-relative media__card-img4 w-100 h-100">
+                        <div class="card-img-overlay rounded-0">
+                            <h5 class="media__card-title">
+                                Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
+                            </h5>
+                        </div>
+                    </NuxtLink>
+                    <NuxtLink
+                        class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
+                    >
                         <img
-                            class="img-fluid w-100"
-                            src="/images/media-img4.png"
-                            alt="media-img4"
+                            src="/images/media-img2.png"
+                            class="card-img img-fluid h-100 rounded-0"
+                            alt="media-img3"
                         />
-                        <p
-                            class="media__text position-absolute fw-bold fs-4 text-white"
-                        >
-                            Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
-                        </p>
-                    </div>
+                        <div class="card-img-overlay rounded-0">
+                            <h5 class="media__card-title">
+                                Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
+                            </h5>
+                        </div>
+                    </NuxtLink>
+                    <NuxtLink
+                        class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
+                    >
+                        <img
+                            src="/images/media-img3.png"
+                            class="card-img img-fluid h-100 rounded-0"
+                            alt="media-img3"
+                        />
+                        <div class="card-img-overlay rounded-0">
+                            <h5 class="media__card-title">
+                                Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
+                            </h5>
+                        </div>
+                    </NuxtLink>
+                    <NuxtLink
+                        class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
+                    >
+                        <img
+                            src="/images/media-img4.png"
+                            class="card-img img-fluid h-100 rounded-0"
+                            alt="media-img3"
+                        />
+                        <div class="card-img-overlay rounded-0">
+                            <h5 class="media__card-title">
+                                Mirziyoyeva oilasi bolalar kutubxonasiga bordi.
+                            </h5>
+                        </div>
+                    </NuxtLink>
                 </div>
             </div>
         </section>
         <!-- Achchiqtosh -->
-        <section class="achchiqtosh">
+        <section class="achchiqtosh mt-3 mt-sm-5">
             <div class="container">
                 <div class="achchiqtosh__wrapper">
                     <div class="achchiqtosh__left d-flex flex-column">
                         <h4 class="achchiqtosh__title darkMode-title">
-                            Achchiqtosh
+                            {{ $t("achiqtosh") }}
                         </h4>
                         <div
                             id="carouselExampleInterval"
@@ -502,7 +520,7 @@ const mainPosts4 = mainPosts.slice(1);
                         </div>
                         <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
                             <h4 class="news__title darkMode-title">
-                                Salomatlik
+                                {{ $t("healthy") }}
                             </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
@@ -522,7 +540,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
                                         >
-                                            SALOMATLIK
+                                            {{ $t("healthy") }}
                                         </span>
                                     </div>
                                     <div class="achchiqtosh__info darkMode">
@@ -551,7 +569,7 @@ const mainPosts4 = mainPosts.slice(1);
                         </div>
                         <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
                             <h4 class="news__title darkMode-title">
-                                Xuquqiy kilinika
+                                {{ $t("clinc") }}
                             </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
@@ -571,7 +589,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
                                         >
-                                            Xuquqiy kilinika
+                                            {{ $t("clinc") }}
                                         </span>
                                     </div>
                                     <div class="achchiqtosh__info darkMode">
@@ -599,7 +617,9 @@ const mainPosts4 = mainPosts.slice(1);
                             </div>
                         </div>
                         <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                            <h4 class="news__title darkMode-title">Foydali</h4>
+                            <h4 class="news__title darkMode-title">
+                                {{ $t("useful") }}
+                            </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
                                     v-for="item in usefulPosts"
@@ -618,7 +638,7 @@ const mainPosts4 = mainPosts.slice(1);
                                         <span
                                             class="darkMode achchiqtosh__card-sp position-absolute"
                                         >
-                                            Foydali
+                                            {{ $t("useful") }}
                                         </span>
                                     </div>
                                     <div class="achchiqtosh__info darkMode">
