@@ -54,9 +54,11 @@ const language = computed({
     },
 });
 
-const changeLocale = (lang) => {
+const activeText = ref(null);
+
+const changeLocale = (lang, text) => {
     setLocale(lang);
-    window.location.reload;
+    activeText.value = text;
 };
 
 const auth = ref(false);
@@ -348,25 +350,29 @@ const authPageToggle = (value) => {
                         >
                             <li
                                 class="header__top-item darkMode"
-                                @click="changeLocale('uz')"
+                                :class="{ active: activeText === 'text1' }"
+                                @click="changeLocale('uz', 'text1')"
                             >
                                 Uz
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                @click="changeLocale('kr')"
+                                :class="{ active: activeText === 'text2' }"
+                                @click="changeLocale('kr', 'text2')"
                             >
                                 Уз
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                @click="changeLocale('en')"
+                                :class="{ active: activeText === 'text3' }"
+                                @click="changeLocale('en', 'text3')"
                             >
                                 En
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                @click="changeLocale('ru')"
+                                :class="{ active: activeText === 'text4' }"
+                                @click="changeLocale('ru', 'text4')"
                             >
                                 Ру
                             </li>
@@ -600,3 +606,10 @@ const authPageToggle = (value) => {
         </div>
     </header>
 </template>
+
+<style scoped>
+.active {
+    color: rgb(228, 28, 28);
+    font-weight: 700;
+}
+</style>
