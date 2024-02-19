@@ -77,7 +77,7 @@
             height: 108px;
             display: flex;
             align-self: flex-end;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
             padding-right: 15px;
 
         }
@@ -233,7 +233,7 @@
                 height: 129.529px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 10px;
+                margin-bottom: 16px;
                 padding-right: 17px;
     
             }
@@ -350,7 +350,7 @@
                 height: 129.529px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 10px;
+                margin-bottom: 16px;
                 padding-right: 17px;
     
             }
@@ -469,7 +469,7 @@
                 height: 129.529px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 10px;
+                margin-bottom: 16px;
                 padding-right: 17px;
     
             }
@@ -575,9 +575,7 @@
         &__right {
             display: flex;
             flex-direction: column;
-            // align-items: end;
             background: #F3EBDF;
-            // width: 343px;
     
     
             &-box {
@@ -604,7 +602,6 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                // max-width: 519px;
                 padding:0 10px 15px 20.91px;
             }
     
@@ -613,7 +610,7 @@
                 height:  61.028px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 4.72px;
+                margin-bottom: 16px;
                 padding-right: 8px;
     
             }
@@ -730,8 +727,6 @@
     .talim-box {
         display: grid;
         grid-template-columns: auto;
-        // justify-content: space-between;
-        // flex-direction: column;
         row-gap:12.72px;
         margin-top: 116px;
     
@@ -755,8 +750,7 @@
                 padding: 0 2px 0 17px;
                 max-width: 293.24px;
                 bottom: 10px;
-                margin-bottom: 0;
-                // margin-top: 342px;
+                margin-bottom: 0; 
     
             }
         }
@@ -764,9 +758,8 @@
         &__right {
             display: flex;
             flex-direction: column;
-            // align-items: end;
             background: #F3EBDF;
-            // width: 343px;
+          
     
     
             &-box {
@@ -782,8 +775,7 @@
                 font-size: 13.562px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: normal;
-                // max-width: 239.026px;
+                line-height: normal; 
                 padding: 21.47px 20.91px 0 20.91px;
             }
     
@@ -793,8 +785,7 @@
                 font-size: 10.171px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: normal;
-                // max-width: 519px;
+                line-height: normal; 
                 padding:0 10px 15px 20.91px;
             }
     
@@ -803,7 +794,7 @@
                 height:  61.028px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 4.72px;
+                margin-bottom: 4.72px; 
                 padding-right: 8px;
     
             }
