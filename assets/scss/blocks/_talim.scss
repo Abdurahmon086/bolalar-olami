@@ -150,13 +150,13 @@
                 line-height: normal;
                 margin: 0;
                 padding: 2px 11px 0 6px;
-
+ 
             }
 
             &-time {
                 overflow: hidden;
                 color: #A0A0A0;
-                text-overflow: ellipsis;
+                text-overflow: ellipsis; 
                 font-family: "IBM Plex Sans";
                 font-size: 14px;
                 font-style: normal;
@@ -319,7 +319,7 @@
         }
 
     }
-}
+} 
 @media only screen and (max-width:992px) {
     .talim-title {
         margin-top: 15px;
@@ -450,7 +450,7 @@
 
     }
 }
-
+ 
 @media only screen and (max-width:768px) {
     .talim-title {
         margin-top: 15px;
@@ -580,8 +580,7 @@
         }
 
     }
-}
-
+} 
 
 @media only screen and (max-width:576px) {
 
@@ -947,4 +946,4 @@
             display: none;
         }
     }
-}
+} 

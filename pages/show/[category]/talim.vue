@@ -273,21 +273,21 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                         <div class="talim-cardimg__left-wrapper-box ">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
-                                Yuz kunda 10,000 bola vafot etdi – G'azo SSV
+                                Yuz kunda 10,000 bola vafot etdi – G'azo SSV 
                             </h4>
                             <p class="talim-cardimg__left-wrapper-text darkMode-title">
                                 G'azo sog'liqni saqlash vazirligining ma'lum qilishicha, Isroil tomonidan qariyb 100 kundan buyon amalga ...
                             </p>
-                            <p class="talim-cardimg__left-wrapper-time darkMode-sp">
+                            <p class="talim-cardimg__left-wrapper-time darkMode-sp"> 
                                 12.12.2023  12:32
                             </p>
                         </div>
-                    </div>
+                    </div> 
                     <div class="talim-cardimg__left-wrapper darkMode">
                         <div class="position-relative">
                             <img src="/images/talimImages/img2.png" class="img-fluid w-100" alt="card-img">
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
-                            Salomatlik
+                            Salomatlik 
                         </p>
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
@@ -298,7 +298,7 @@ useHead({ title: "Bolalar olami | posts" });
                                 Prezident yordamchisi Saida Mirziyoyeva farzandlari bilan bolalar kutubxonasiga keldi.....
                             </p>
                             <p class="talim-cardimg__left-wrapper-time darkMode-sp">
-                                12.12.2023  12:32
+                                12.12.2023  12:32 
                             </p>
                         </div>
                     </div>
