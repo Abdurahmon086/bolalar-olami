@@ -3,11 +3,11 @@ useHead({ title: "Bolalar olami | posts" });
 </script>
 
 <template>
-    <main>
+    <main class="darkMode-body">
     <section class="container">
        <div class="search-result">
-       <div class="search-result__box ">
-        <p class="search-result__text ">Kalit so’zi
+       <div class="search-result__box darkMode">
+        <p class="search-result__text darkMode-title">Kalit so’zi
         </p>
         <img src="/images/searchImages/close-icon.svg" class="img-fluid" alt="close icon">
        </div>

@@ -1,5 +1,5 @@
 .search-result {
-    margin-top: 120px;
+    padding-top:120px;
 
     &__box {
 
@@ -54,11 +54,11 @@
 }
 
 .search-news{
-    margin-bottom: 138px;
+    padding-bottom: 138px;
 }
 @media only screen and (max-width:1200px) {
     .search-result {
-        margin-top: 120px;
+        // padding-top: 120px;
     
         &__box {
     
@@ -101,13 +101,13 @@
         }
     }
     .search-news{
-        margin-bottom: 120px !important;
+        padding-bottom: 120px !important;
     }
      
 }
 @media only screen and (max-width:992px) {
     .search-result {
-        margin-top: 120px;
+        // margin-top: 120px;
     
         &__box {
     
@@ -150,14 +150,14 @@
         }
     }
     .search-news{
-        margin-bottom: 120px !important;
+        padding-bottom: 120px !important;
     }
      
 }
 
 @media only screen and (max-width:768px) {
     .search-result {
-        margin-top: 120px;
+        // margin-top: 120px;
     
         &__box {
     
@@ -200,7 +200,7 @@
         }
     }
     .search-news{
-        margin-bottom: 120px !important;
+        padding-bottom: 120px !important;
     }
      
 }

@@ -2552,13 +2552,14 @@ img {
   height: 108px;
   display: flex;
   align-self: flex-end;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   padding-right: 15px;
 }
 
 .talim-cardimg {
   margin-top: 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   gap: 21px;
   padding-bottom: 21px;
 }
@@ -2600,7 +2601,7 @@ img {
   font-weight: 600;
   line-height: normal;
   margin: 0;
-  padding: 2px 3px 0 6px;
+  padding: 2px 7px 0 6px;
 }
 .talim-cardimg__left-wrapper-text {
   overflow: hidden;
@@ -2612,7 +2613,7 @@ img {
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  padding: 2px 3px 0 6px;
+  padding: 2px 11px 0 6px;
 }
 .talim-cardimg__left-wrapper-time {
   overflow: hidden;
@@ -2630,6 +2631,18 @@ img {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+}
+.talim-cardimg__aside-img1 {
+  height: 574px;
+  width: 305px;
+}
+.talim-cardimg__aside-img2 {
+  height: 357px;
+  width: 305px;
+}
+.talim-cardimg__aside-img3 {
+  height: 490px;
+  width: 308px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -2676,7 +2689,7 @@ img {
     height: 129.529px;
     display: flex;
     align-self: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     padding-right: 17px;
   }
   .talim-cardimg {
@@ -2715,6 +2728,18 @@ img {
     display: flex;
     flex-direction: column;
     row-gap: 9.1px;
+  }
+  .talim-cardimg__aside-img1 {
+    height: 326px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img2 {
+    height: 203px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img3 {
+    height: 305px;
+    max-width: 173px;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -2761,7 +2786,7 @@ img {
     height: 129.529px;
     display: flex;
     align-self: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     padding-right: 17px;
   }
   .talim-cardimg {
@@ -2800,6 +2825,18 @@ img {
     display: flex;
     flex-direction: column;
     row-gap: 9.1px;
+  }
+  .talim-cardimg__aside-img1 {
+    height: 326px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img2 {
+    height: 203px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img3 {
+    height: 305px;
+    max-width: 173px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2846,7 +2883,7 @@ img {
     height: 129.529px;
     display: flex;
     align-self: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
     padding-right: 17px;
   }
   .talim-cardimg {
@@ -2886,7 +2923,16 @@ img {
     flex-direction: column;
     row-gap: 9.1px;
   }
-  .talim-cardimg__aside img {
+  .talim-cardimg__aside-img1 {
+    height: 326px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img2 {
+    height: 203px;
+    max-width: 173px;
+  }
+  .talim-cardimg__aside-img3 {
+    height: 305px;
     max-width: 173px;
   }
 }
@@ -2950,7 +2996,7 @@ img {
     height: 61.028px;
     display: flex;
     align-self: flex-end;
-    margin-bottom: 4.72px;
+    margin-bottom: 16px;
     padding-right: 8px;
   }
   .talim-cardimg {
@@ -3174,7 +3220,7 @@ img {
   }
 }
 .search-result {
-  margin-top: 120px;
+  padding-top: 120px;
 }
 .search-result__box {
   display: flex;
@@ -3218,13 +3264,10 @@ img {
 }
 
 .search-news {
-  margin-bottom: 138px;
+  padding-bottom: 138px;
 }
 
 @media only screen and (max-width: 1200px) {
-  .search-result {
-    margin-top: 120px;
-  }
   .search-result__box {
     display: flex;
     gap: 10px;
@@ -3257,13 +3300,10 @@ img {
     bottom: 0;
   }
   .search-news {
-    margin-bottom: 120px !important;
+    padding-bottom: 120px !important;
   }
 }
 @media only screen and (max-width: 992px) {
-  .search-result {
-    margin-top: 120px;
-  }
   .search-result__box {
     display: flex;
     gap: 10px;
@@ -3296,13 +3336,10 @@ img {
     bottom: 0;
   }
   .search-news {
-    margin-bottom: 120px !important;
+    padding-bottom: 120px !important;
   }
 }
 @media only screen and (max-width: 768px) {
-  .search-result {
-    margin-top: 120px;
-  }
   .search-result__box {
     display: flex;
     gap: 10px;
@@ -3335,7 +3372,7 @@ img {
     bottom: 0;
   }
   .search-news {
-    margin-bottom: 120px !important;
+    padding-bottom: 120px !important;
   }
 }
 @media only screen and (max-width: 576px) {
