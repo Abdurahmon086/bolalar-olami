@@ -8,7 +8,7 @@ const indexStore = useIndexStore();
 const localPath = useLocalePath();
 
 const data = indexStore.datas;
-console.log(data);
+
 const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
