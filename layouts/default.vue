@@ -1,11 +1,21 @@
 <script setup>
 import Loader from "~/components/loader.vue";
+
+const loader = ref(false);
 const store = useMainStore();
-store.getNabarData();
+const indexStore = useIndexStore();
+const a = async () => {
+    loader.value = true;
+    await store.getNabarData();
+    await indexStore.getIndexData();
+    loader.value = false;
+};
+a();
 </script>
+
 <template>
-    <template v-if="store.loader == true"> <Loader /> </template>
-    <template v-else-if="store.loader == false">
+    <template v-if="loader == true"> <Loader /> </template>
+    <template v-else-if="loader == false">
         <div class="">
             <LayoutsMainNavbar />
             <div class="">

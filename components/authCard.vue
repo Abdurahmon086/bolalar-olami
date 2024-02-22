@@ -1,14 +1,15 @@
 <script setup>
+import { useMainStore } from "~/stores/mainStore";
 const mainStore = useMainStore();
+const authPage = ref(true);
 </script>
-
 <template>
     <div class="auth">
         <div class="auth__inner" @click="mainStore.modalTogle(true)"></div>
 
         <div class="auth__s">
             <div class="auth__wrapper">
-                <template v-if="mainStore.authPage == true">
+                <template v-if="authPage == true">
                     <h4 class="auth__title">
                         {{ $t("entir") }}
                     </h4>
@@ -51,7 +52,7 @@ const mainStore = useMainStore();
                         </div>
                         <p class="auth__link">
                             Hisobingiz yo'qmi?
-                            <span @click="mainStore.authPage = false">
+                            <span @click="authPage = false">
                                 Ro'yxatdan o'tish</span
                             >
                         </p>
@@ -166,9 +167,7 @@ const mainStore = useMainStore();
                         </div>
                         <p class="auth__link">
                             Hisobingiz yo'qmi?
-                            <span @click="mainStore.authPage = true">
-                                Kirish</span
-                            >
+                            <span @click="authPage = true"> Kirish</span>
                         </p>
                     </form>
                 </template>

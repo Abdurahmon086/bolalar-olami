@@ -1,34 +1,21 @@
 <script setup>
-const mainStore = useMainStore();
-const localPath = useLocalePath();
-
 useHead({
     title: "Bolalar olami",
 });
-const url = "http://new.bolalarolami.uz/api/v2";
-const { data } = await useFetch(`${url}/home/get-news-home`);
-if (!data.value) {
-    throw createError({
-        statusCode: 404,
-        statusMessage: "Page Not Found",
-    });
-}
-const educationPosts = data.value.data.educationPosts;
-const mainPosts = data.value.data.mainPosts;
-const recentNewsPosts = data.value.data.recentNewsPosts;
-const achchiqtoshPosts = data.value.data.achchiqtoshPosts;
-const healthPosts = data.value.data.healthPosts;
-const legalClinicPosts = data.value.data.legalClinicPosts;
-const quotations = data.value.data.quotations;
-const usefulPosts = data.value.data.usefulPosts;
 
-const mainPosts4 = mainPosts.slice(1);
+const mainStore = useMainStore();
+const indexStore = useIndexStore();
+const localPath = useLocalePath();
+
+const data = indexStore.datas;
+console.log(data);
+const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
 <template>
     <main class="darkMode-body pb-5">
         <template v-if="mainStore.auth == true">
-            <Auth />
+            <AuthCard />
         </template>
         <section class="hero">
             <div class="container">
@@ -265,17 +252,19 @@ const mainPosts4 = mainPosts.slice(1);
                 </h4>
                 <div class="news__wrapper">
                     <NuxtLink
-                        :to="localPath(`/show/category/${mainPosts[0].id}`)"
+                        :to="
+                            localPath(`/show/category/${data.mainPosts[0].id}`)
+                        "
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                     >
                         <img
-                            :src="mainPosts[0].detail_image.card"
+                            :src="data.mainPosts[0].detail_image.card"
                             class="card-img img-fluid h-100 rounded-0"
-                            :alt="mainPosts[0][`title_${$i18n.locale}`]"
+                            :alt="data.mainPosts[0][`title_${$i18n.locale}`]"
                         />
                         <div class="card-img-overlay rounded-0">
                             <h5 class="news__card-title">
-                                {{ mainPosts[0][`title_${$i18n.locale}`] }}
+                                {{ data.mainPosts[0][`title_${$i18n.locale}`] }}
                             </h5>
                         </div>
                     </NuxtLink>
@@ -310,7 +299,7 @@ const mainPosts4 = mainPosts.slice(1);
                         </h4>
                         <div class="lastNews__left">
                             <NuxtLink
-                                v-for="item in educationPosts"
+                                v-for="item in data.educationPosts"
                                 :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode"
@@ -352,7 +341,7 @@ const mainPosts4 = mainPosts.slice(1);
                         </h4>
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <NuxtLink
-                                v-for="item in recentNewsPosts"
+                                v-for="item in data.recentNewsPosts"
                                 :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="border-bottom text-decoration-none"
@@ -399,7 +388,7 @@ const mainPosts4 = mainPosts.slice(1);
                 >
                     <div class="carousel-inner social__qs-wrapper">
                         <NuxtLink
-                            v-for="item in quotations"
+                            v-for="item in data.quotations"
                             class="carousel-item active"
                         >
                             <img
@@ -501,7 +490,7 @@ const mainPosts4 = mainPosts.slice(1);
                         >
                             <div class="carousel-inner">
                                 <NuxtLink
-                                    v-for="item in achchiqtoshPosts"
+                                    v-for="item in data.achchiqtoshPosts"
                                     :key="item.id"
                                     :to="localPath(`/show/category/${item.id}`)"
                                     class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark active"
@@ -528,7 +517,7 @@ const mainPosts4 = mainPosts.slice(1);
                             </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
-                                    v-for="item in healthPosts"
+                                    v-for="item in data.healthPosts"
                                     :key="item.id"
                                     :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
@@ -577,7 +566,7 @@ const mainPosts4 = mainPosts.slice(1);
                             </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
-                                    v-for="item in legalClinicPosts"
+                                    v-for="item in data.legalClinicPosts"
                                     :key="item.id"
                                     :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
@@ -626,7 +615,7 @@ const mainPosts4 = mainPosts.slice(1);
                             </h4>
                             <div class="achchiqtosh__card">
                                 <NuxtLink
-                                    v-for="item in usefulPosts"
+                                    v-for="item in data.usefulPosts"
                                     :key="item.id"
                                     :to="localPath(`/show/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
