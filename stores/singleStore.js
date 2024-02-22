@@ -8,9 +8,9 @@ export const useSingleStore = defineStore('singleStore', () => {
     // getter
 
     // action
-    const getIndexData = async () => {
+    const getSingleData = async (id) => {
         try {
-            const res = await fetch(`${url}/home/get-news-home`);
+            const res = await fetch(`${url}/get-post/${id}`);
             const data = await res.json();
             datas.value = data.data;
         } catch (err) {
@@ -20,7 +20,7 @@ export const useSingleStore = defineStore('singleStore', () => {
 
 
     return {
-        getIndexData,
+        getSingleData,
         datas
     };
 })
