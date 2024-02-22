@@ -447,12 +447,12 @@ useHead({ title: "Bolalar olami | posts" });
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                             Salomatlik
                         </p>
-                        
+                         
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
                                 Yuz kunda 10,000 bola vafot etdi – G'azo SSV
-                            </h4>
+                            </h4> 
                             <p class="talim-cardimg__left-wrapper-text darkMode-title">
                                 G'azo sog'liqni saqlash vazirligining ma'lum qilishicha, Isroil tomonidan qariyb 100 kundan buyon amalga ...
                             </p>
@@ -462,7 +462,7 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                     </div>
                     <div class="talim-cardimg__left-wrapper darkMode">
-                        <div class="position-relative">
+                        <div class="position-relative"> 
                             <img src="/images/talimImages/img11.png" class="img-fluid w-100" alt="card-img">
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                             Salomatlik
@@ -470,7 +470,7 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
-                                Yuz kunda 10,000 bola vafot etdi – G'azo SSV
+                                Yuz kunda 10,000 bola vafot etdi – G'azo SSV 
                             </h4>
                             <p class="talim-cardimg__left-wrapper-text darkMode-title">
                                 G'azo sog'liqni saqlash vazirligining ma'lum qilishicha, Isroil tomonidan qariyb 100 kundan buyon amalga ...
