@@ -1,6 +1,6 @@
 $spinner: rgb(255, 3, 3);
 $background: #fff;
-$size: 50px;
+
 
 html {
     background-color: $background;
@@ -8,10 +8,10 @@ html {
 
 .spinner {
     position: absolute;
-    top: calc(50% - #{$size / 2});
-    left: calc(50% - #{$size / 2});
-    width: $size;
-    height: $size;
+    top: calc(50% - #{50px / 2});
+    left: calc(50% - #{50px / 2});
+    width: 50px;
+    height: 50px;
     animation: spinner 0.75s linear infinite;
 
     span {
@@ -30,11 +30,11 @@ html {
     }
 
     .spinner-inner-3 {
-        $offset: $size * 0.1;
+        $offset: 50px * 0.1;
         top: $offset;
         left: $offset;
-        width: $size - ($offset * 2);
-        height: $size - ($offset * 2);
+        width: 50px - ($offset * 2);
+        height: 50px - ($offset * 2);
         background: $background;
     }
 }

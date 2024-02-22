@@ -22,8 +22,9 @@ const mainPosts4 = data.mainPosts.slice(1);
                 <!-- Carousel wrapper -->
                 <div
                     id="carouselExampleCaptions"
-                    class="carousel slide carousel-fade"
+                    class="carousel slide carousel-fade pointer-event"
                     data-bs-ride="carousel"
+                    data-bs-interval="500"
                 >
                     <!-- Indicators -->
                     <div class="carousel-indicators">
@@ -253,7 +254,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                 <div class="news__wrapper">
                     <NuxtLink
                         :to="
-                            localPath(`/show/category/${data.mainPosts[0].id}`)
+                            localPath(`/category/${data.mainPosts[0].id}`)
                         "
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                     >
@@ -271,7 +272,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                     <div class="news__right">
                         <NuxtLink
                             v-for="item in mainPosts4"
-                            :to="localPath(`/show/category/${item.id}`)"
+                            :to="localPath(`/category/${item.id}`)"
                             :key="item.id"
                             class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                         >
@@ -300,7 +301,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                         <div class="lastNews__left">
                             <NuxtLink
                                 v-for="item in data.educationPosts"
-                                :to="localPath(`/show/category/${item.id}`)"
+                                :to="localPath(`/category/${item.id}`)"
                                 :key="item.id"
                                 class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode"
                             >
@@ -342,7 +343,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <NuxtLink
                                 v-for="item in data.recentNewsPosts"
-                                :to="localPath(`/show/category/${item.id}`)"
+                                :to="localPath(`/category/${item.id}`)"
                                 :key="item.id"
                                 class="border-bottom text-decoration-none"
                             >
@@ -382,14 +383,17 @@ const mainPosts4 = data.mainPosts.slice(1);
                     {{ $t("social_text") }}
                 </h4>
                 <div
-                    id="carouselExampleInterval"
+                    id="carouselExampleAutoplaying"
                     class="carousel slide"
                     data-bs-ride="carousel"
+                    data-bs-interval="500"
                 >
                     <div class="carousel-inner social__qs-wrapper">
                         <NuxtLink
-                            v-for="item in data.quotations"
-                            class="carousel-item active"
+                            v-for="(item, index) in data.quotations"
+                            :key="item.id"
+                            class="carousel-item"
+                            :class="{ active: index === 0 }"
                         >
                             <img
                                 :src="item.detail_image.original_url"
@@ -484,17 +488,21 @@ const mainPosts4 = data.mainPosts.slice(1);
                             {{ $t("achiqtosh") }}
                         </h4>
                         <div
-                            id="carouselExampleInterval"
-                            class="carousel slide"
+                            id="carouselExampleAutoplaying"
+                            class="carousel slide carousel-fade pointer-event"
                             data-bs-ride="carousel"
                         >
                             <div class="carousel-inner">
                                 <NuxtLink
-                                    v-for="item in data.achchiqtoshPosts"
+                                    v-for="(
+                                        item, index
+                                    ) in data.achchiqtoshPosts"
                                     :key="item.id"
-                                    :to="localPath(`/show/category/${item.id}`)"
-                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark active"
-                                    data-bs-interval="5000"
+                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark"
+                                    :class="{ active: index === 0 }"
+                                    data-bs-interval="500"
+                                    data-bs-ride="true"
+                                    :to="localPath(`/category/${item.id}`)"
                                 >
                                     <img
                                         :src="item.detail_image.card"
@@ -519,7 +527,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in data.healthPosts"
                                     :key="item.id"
-                                    :to="localPath(`/show/category/${item.id}`)"
+                                    :to="localPath(`/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div
@@ -568,7 +576,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in data.legalClinicPosts"
                                     :key="item.id"
-                                    :to="localPath(`/show/category/${item.id}`)"
+                                    :to="localPath(`/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div
@@ -617,7 +625,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 <NuxtLink
                                     v-for="item in data.usefulPosts"
                                     :key="item.id"
-                                    :to="localPath(`/show/category/${item.id}`)"
+                                    :to="localPath(`/category/${item.id}`)"
                                     class="darkMode achchiqtosh__card-box text-decoration-none"
                                 >
                                     <div

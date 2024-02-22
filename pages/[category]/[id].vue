@@ -7,7 +7,6 @@ const id = route.params.id;
 
 await singleStore.getSingleData(id);
 const data = singleStore.datas;
-console.log(data.post);
 </script>
 
 <template>
@@ -130,20 +129,26 @@ console.log(data.post);
                                     ishtirok etganini qayd etgan.
                                 </p>
                             </div>
-
-                            <div
-                                class="single__tags d-none d-md-block darkMode-body"
-                            >
-                                <h4 class="single__tags-title">Teglar</h4>
-                                <ul class="list-unstyled">
-                                    <li class="darkMode-btn">Maktablar</li>
-                                    <li class="darkMode-btn">Bolalar</li>
-                                    <li class="darkMode-btn">O'quvchi</li>
-                                    <li class="darkMode-btn">Maktab</li>
-                                    <li class="darkMode-btn">Sahovat</li>
-                                    <li class="darkMode-btn">O'zbekiston</li>
-                                </ul>
-                            </div>
+                            <template v-if="data.post.tags.length != 0">
+                                <div
+                                    class="single__tags d-none d-md-block darkMode-body"
+                                >
+                                    <h4 class="single__tags-title">Teglar</h4>
+                                    <ul class="list-unstyled">
+                                        <NuxtLink
+                                            v-for="item of data.post.tags"
+                                        >
+                                            <li class="darkMode-btn">
+                                                {{
+                                                    item[
+                                                        `title_${$i18n.locale}`
+                                                    ]
+                                                }}
+                                            </li>
+                                        </NuxtLink>
+                                    </ul>
+                                </div>
+                            </template>
                             <div
                                 class="single__auther auther d-none d-md-flex darkMode-body"
                             >
@@ -233,7 +238,7 @@ console.log(data.post);
                         <div class="aside__wrapper">
                             <NuxtLink
                                 v-for="item in data.mostReadPosts"
-                                :to="localPath(`/show/category/${item.id}`)"
+                                :to="localPath(`/category/${item.id}`)"
                                 :key="item.id"
                                 class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode"
                             >
