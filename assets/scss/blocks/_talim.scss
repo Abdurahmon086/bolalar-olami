@@ -390,7 +390,8 @@
         gap: 18px;
         margin-bottom: 40px;
     
-    
+     
+
         &__left {
     
             gap: 20px 10px;
@@ -402,12 +403,14 @@
                     row-gap: 9.08px;
                 }
     
+
                 &-dec {
                     font-size: 6.825px;
                     padding: 4.989px 11.974px;
     
     
                 }
+
     
                 &-title {
                     font-size: 10px;
@@ -421,6 +424,7 @@
     
                 }
     
+
                 &-time {
                     font-size: 7.963px;
                     padding: 2px 3px 9.08px 3px;
@@ -586,7 +590,7 @@
 
     .talim-title{
         display: none;
-    }
+    } 
 
     .talim-box {
         display: grid;
@@ -594,6 +598,7 @@
         row-gap:12.72px;
         margin-top: 116px;
     
+
         &__left {
     
             &-box {
@@ -604,6 +609,7 @@
     
             }
     
+
             &-title {
                 color: #FFF;
                 // font-family: "BBC Reith Sans";
@@ -619,6 +625,7 @@
             }
         }
     
+        
         &__right {
             display: flex;
             flex-direction: column;

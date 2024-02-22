@@ -185,7 +185,7 @@ useHead({ title: "Bolalar olami | posts" });
                                     <span
                                         class="lastNews__right-sp lastNews__right-spDate darkMode-sp">12.12.2023</span>
                                 </div>
-                            </li>
+                            </li> 
                             <li class="border-bottom">
                                 <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida qor
                                     yog‘ishi ma’lum qilindi</p>
@@ -279,7 +279,7 @@ useHead({ title: "Bolalar olami | posts" });
                                 G'azo sog'liqni saqlash vazirligining ma'lum qilishicha, Isroil tomonidan qariyb 100 kundan buyon amalga ...
                             </p>
                             <p class="talim-cardimg__left-wrapper-time darkMode-sp"> 
-                                12.12.2023  12:32
+                                12.12.2023  12:32 
                             </p>
                         </div>
                     </div> 
@@ -346,7 +346,7 @@ useHead({ title: "Bolalar olami | posts" });
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                             Salomatlik
                         </p>
-                        </div>
+                        </div> 
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
                                 Mirziyoyeva oilasi bolalar kutubga bordi.
@@ -358,6 +358,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 12.12.2023  12:32
                             </p>
                         </div>
+
+
+
                     </div>
                     <div class="talim-cardimg__left-wrapper darkMode">
                         <div class="position-relative">
@@ -383,7 +386,7 @@ useHead({ title: "Bolalar olami | posts" });
                             <img src="/images/talimImages/img7.png" class="img-fluid w-100" alt="card-img">
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                             Salomatlik
-                        </p>
+                        </p>  
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
@@ -392,9 +395,12 @@ useHead({ title: "Bolalar olami | posts" });
                             <p class="talim-cardimg__left-wrapper-text darkMode-title">
                                 G'azo sog'liqni saqlash vazirligining ma'lum qilishicha, Isroil tomonidan qariyb 100 kundan buyon amalga ...
                             </p>
+
                             <p class="talim-cardimg__left-wrapper-time darkMode-sp">
                                 12.12.2023  12:32
                             </p>
+
+
                         </div>
                     </div>
                     <div class="talim-cardimg__left-wrapper darkMode">
@@ -441,6 +447,7 @@ useHead({ title: "Bolalar olami | posts" });
                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                             Salomatlik
                         </p>
+                        
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
