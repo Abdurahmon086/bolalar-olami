@@ -4,7 +4,7 @@ useHead({ title: "Bolalar olami | posts" });
 </script>
 
 <template>
-    <main class="darkMode-body pb-5">
+    <main class="darkMode-body pb-5 bg-light">
         <section class="darkMode-body">
             <div class="container">
                 <h3 class="talim-title darkMode-title">
@@ -101,7 +101,7 @@ useHead({ title: "Bolalar olami | posts" });
             <div class="container">
                 <div class="lastNews__wrapper ">
                     <div class="lastNews__left">
-                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode">
+                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode border-0">
                             <div class="position-relative">
                                 <img src="/images/lastNew1.jpg" class="card-img-top rounded-0"
                                     alt="Hollywood Sign on The Hill" />
@@ -117,7 +117,7 @@ useHead({ title: "Bolalar olami | posts" });
                                 <span class="lastNews__left-sp darkMode-sp">12.12.2023 12:32</span>
                             </div>
                         </div>
-                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode">
+                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode border-0">
                             <div class="position-relative">
                                 <img src="/images/lastNew2.jpg" class="card-img-top rounded-0"
                                     alt="Hollywood Sign on The Hill" />
@@ -133,7 +133,7 @@ useHead({ title: "Bolalar olami | posts" });
                                 <span class="lastNews__left-sp darkMode-sp">12.12.2023 12:32</span>
                             </div>
                         </div>
-                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode">
+                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode border-0">
                             <div class="position-relative">
                                 <img src="/images/lastNew3.jpg" class="card-img-top rounded-0"
                                     alt="Hollywood Sign on The Hill" />
@@ -151,7 +151,7 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
 
 
-                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode">
+                        <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode border-0">
                             <div class="position-relative">
                                 <img src="/images/lastNew4.jpg" class="card-img-top rounded-0"
                                     alt="Hollywood Sign on The Hill" />
