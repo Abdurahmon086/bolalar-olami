@@ -170,7 +170,7 @@ useHead({ title: "Bolalar olami | posts" });
 
                     </div>
                     <div class="lastNews__right darkMode border-0">
-                        <h4 class="lastNews__right-title ">So'nggi yangiliklarga</h4>
+                        <h4 class="lastNews__right-title ">So'nggi yangiliklarga</h4> 
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <li class="border-bottom">
                                 <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida
@@ -228,7 +228,7 @@ useHead({ title: "Bolalar olami | posts" });
                                 </div>
                             </li>
                             <li class="border-bottom">
-                                <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida
+                                <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida 
                                     qor
                                     yog‘ishi ma’lum qilindi</p>
                                 <div
@@ -243,7 +243,7 @@ useHead({ title: "Bolalar olami | posts" });
                             </li>
                             <li class="border-bottom">
                                 <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida
-                                    qor
+                                    qor 
                                     yog‘ishi ma’lum qilindi</p>
                                 <div
                                     class=" lastNews__right-view d-flex justify-content-between align-items-center  darkMode-sp">
