@@ -1,13 +1,12 @@
 <script setup>
+const { locales } = useI18n();
+const mainStore = useMainStore();
+const navMain = mainStore.navbarM;
+
 const localPath = useLocalePath();
-const url = "http://new.bolalarolami.uz/api/v2";
+
 //hooks
 const darkTheme = ref(false);
-// data
-const { data: menuData } = await useFetch(`${url}/resources/get-sections`);
-const menus = menuData.value.data;
-// language
-const { locales, locale, setLocale } = useI18n();
 
 const switchToggle = () => {
     darkTheme.value = !darkTheme.value;
@@ -23,51 +22,6 @@ const switchToggle = () => {
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
     }
-};
-
-function navbarM(arr) {
-    const map = {};
-    const newArr = [];
-
-    arr.forEach((element) => {
-        map[element.id] = element;
-        element.child = [];
-    });
-
-    arr.forEach((element) => {
-        if (element.parent_id !== null) {
-            map[element.parent_id].child.push(element);
-        } else {
-            newArr.push(element);
-        }
-    });
-
-    return newArr;
-}
-
-const navMain = navbarM(menus);
-
-const language = computed({
-    get: () => locale.value,
-    set: (value) => {
-        setLocale(value);
-    },
-});
-
-const activeText = ref(null);
-
-const changeLocale = (lang, text) => {
-    setLocale(lang);
-    activeText.value = text;
-};
-
-const auth = ref(false);
-const authPage = ref(true);
-const authToggle = (value) => {
-    auth.value = value;
-};
-const authPageToggle = (value) => {
-    authPage.value = value;
 };
 </script>
 
@@ -116,228 +70,21 @@ const authPageToggle = (value) => {
                             />
                         </div>
                         <button
-                            @click="authToggle(true)"
+                            @click="
+                                (mainStore.auth = true),
+                                    (mainStore.auths = false)
+                            "
                             type="button"
                             class="header__top-mainBtn btn d-xl-none shadow-0 darkMode-btn"
                             data-bs-ripple-init
                         >
                             {{ $t("entir") }}
                         </button>
-                        <template v-if="auth == true">
-                            <div class="auth">
-                                <div class="auth__wrapper">
-                                    <template v-if="authPage == true">
-                                        <h4 class="auth__title">
-                                            {{ $t("entir") }}
-                                        </h4>
-                                        <p class="auth__text">
-                                            Clarity sizga chinakam professional
-                                            veb-sayt yaratish uchun kerakli
-                                            bloklar va komponentlarni beradi.
-                                        </p>
-                                        <form
-                                            class="needs-validation"
-                                            novalidate
-                                        >
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom01"
-                                                    class="form-label d-none"
-                                                    >Telefon raqam</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    placeholder="Telefon raqam"
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom02"
-                                                    class="form-label d-none"
-                                                    >Parol
-                                                </label>
-                                                <input
-                                                    type="password"
-                                                    class="form-control"
-                                                    id="validationCustom02"
-                                                    placeholder="Parol "
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <button type="submit">
-                                                    Kirish
-                                                </button>
-                                            </div>
-                                            <p class="auth__link">
-                                                Hisobingiz yo'qmi?
-                                                <span
-                                                    @click="
-                                                        authPageToggle(false)
-                                                    "
-                                                >
-                                                    Ro'yxatdan o'tish</span
-                                                >
-                                            </p>
-                                        </form>
-                                    </template>
-                                    <template v-else>
-                                        <h4 class="auth__title">
-                                            Ro'yxatdan o'tish
-                                        </h4>
-                                        <p class="auth__text">
-                                            Clarity sizga chinakam professional
-                                            veb-sayt yaratish uchun kerakli
-                                            bloklar va komponentlarni beradi.
-                                        </p>
-                                        <form class="needs-validation" validate>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom01"
-                                                    class="form-label d-none"
-                                                    >Ism Familya</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    placeholder="Ism Familya"
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom01"
-                                                    class="form-label d-none"
-                                                    >Telefon raqam</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    placeholder="Telefon raqam"
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom04"
-                                                    class="form-label d-none"
-                                                    >Viloyantingzni
-                                                    tanlang</label
-                                                >
-                                                <select
-                                                    class="form-select"
-                                                    id="validationCustom04"
-                                                    required
-                                                >
-                                                    <option
-                                                        selected
-                                                        disabled
-                                                        hidden
-                                                        value=""
-                                                    >
-                                                        Viloyantingzni tanlang
-                                                    </option>
-                                                    <option>...1</option>
-                                                    <option>...2</option>
-                                                </select>
-                                                <div class="invalid-feedback">
-                                                    Please select a valid state.
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom01"
-                                                    class="form-label d-none"
-                                                    >Tumanigizni
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    placeholder="Tumanigizni "
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <label
-                                                    for="validationCustom02"
-                                                    class="form-label d-none"
-                                                    >Parol
-                                                </label>
-                                                <input
-                                                    type="password"
-                                                    class="form-control"
-                                                    id="validationCustom02"
-                                                    placeholder="Parol "
-                                                    required
-                                                />
-                                                <div class="valid-feedback">
-                                                    Looks good!
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <div class="form-check">
-                                                    <input
-                                                        type="checkbox"
-                                                        value=""
-                                                        id="invalidCheck"
-                                                        required
-                                                    />
-                                                    <label
-                                                        class="form-check-label"
-                                                        for="invalidCheck"
-                                                    >
-                                                        Agree to terms and
-                                                        conditions
-                                                    </label>
-                                                    <div
-                                                        class="invalid-feedback"
-                                                    >
-                                                        You must agree before
-                                                        submitting.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <button type="submit">
-                                                    Ro'yxatdan o'tish
-                                                </button>
-                                            </div>
-                                            <p class="auth__link">
-                                                Hisobingiz yo'qmi?
-                                                <span
-                                                    @click="
-                                                        authPageToggle(true)
-                                                    "
-                                                >
-                                                    Kirish</span
-                                                >
-                                            </p>
-                                        </form>
-                                    </template>
-                                </div>
-                            </div>
-                        </template>
+
                         <select
                             class="header__top-btn darkMode-btn d-xl-none"
                             aria-label="Default select example"
-                            v-model="language"
+                            v-model="mainStore.language"
                         >
                             <option v-for="item in locales" :value="item.code">
                                 {{ item.code }}
@@ -350,29 +97,37 @@ const authPageToggle = (value) => {
                         >
                             <li
                                 class="header__top-item darkMode"
-                                :class="{ active: activeText === 'text1' }"
-                                @click="changeLocale('uz', 'text1')"
+                                :class="{
+                                    active: mainStore.activeText === 'text1',
+                                }"
+                                @click="mainStore.changeLocale('uz', 'text1')"
                             >
                                 Uz
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                :class="{ active: activeText === 'text2' }"
-                                @click="changeLocale('kr', 'text2')"
+                                :class="{
+                                    active: mainStore.activeText === 'text2',
+                                }"
+                                @click="mainStore.changeLocale('kr', 'text2')"
                             >
                                 Уз
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                :class="{ active: activeText === 'text3' }"
-                                @click="changeLocale('en', 'text3')"
+                                :class="{
+                                    active: mainStore.activeText === 'text3',
+                                }"
+                                @click="mainStore.changeLocale('en', 'text3')"
                             >
                                 En
                             </li>
                             <li
                                 class="header__top-item darkMode"
-                                :class="{ active: activeText === 'text4' }"
-                                @click="changeLocale('ru', 'text4')"
+                                :class="{
+                                    active: mainStore.activeText === 'text4',
+                                }"
+                                @click="mainStore.changeLocale('ru', 'text4')"
                             >
                                 Ру
                             </li>
@@ -443,7 +198,7 @@ const authPageToggle = (value) => {
                             id="accordionFlushExample"
                         >
                             <div
-                                class="accordion-item darkMode-btn h-50"
+                                class="accordion-item darkMode-btn"
                                 v-for="menu in navMain"
                                 :key="menu.id"
                             >

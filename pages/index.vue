@@ -1,4 +1,5 @@
 <script setup>
+const mainStore = useMainStore();
 const localPath = useLocalePath();
 
 useHead({
@@ -26,6 +27,9 @@ const mainPosts4 = mainPosts.slice(1);
 
 <template>
     <main class="darkMode-body pb-5">
+        <template v-if="mainStore.auth == true">
+            <Auth />
+        </template>
         <section class="hero">
             <div class="container">
                 <!-- Carousel wrapper -->
