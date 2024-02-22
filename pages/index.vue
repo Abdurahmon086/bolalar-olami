@@ -687,3 +687,9 @@ const mainPosts4 = data.mainPosts.slice(1);
         <LoopScroler />
     </main>
 </template>
+
+<style scoped>
+main {
+    background: #f6f6f6;
+}
+</style>

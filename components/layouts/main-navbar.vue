@@ -243,7 +243,8 @@ const switchToggle = () => {
                     <div
                         class="header__navbar-right d-flex align-items-center darkMode"
                     >
-                        <button
+                        <NuxtLink
+                            to="/search"
                             type="button"
                             class="darkMode-btn btn shadow-0 header__navbar-btn"
                         >
@@ -257,7 +258,7 @@ const switchToggle = () => {
                                 class="darkIcon d-none"
                                 alt="search icon"
                             />
-                        </button>
+                        </NuxtLink>
                         <button
                             type="button"
                             data-bs-toggle="collapse"

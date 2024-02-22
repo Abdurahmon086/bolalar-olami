@@ -1,19 +1,13 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
-const route = useRoute();
 const localPath = useLocalePath();
+const singleStore = useSingleStore();
+const route = useRoute();
 const id = route.params.id;
-const url = "http://new.bolalarolami.uz/api/v2";
 
-const { data } = await useFetch(`${url}/get-post/${id}`);
-if (!data.value) {
-    throw createError({
-        statusCode: 404,
-        statusMessage: "Page Not Found",
-    });
-}
-const posts = data.value.data.post;
-const mostReadPosts = data.value.data.mostReadPosts;
+await singleStore.getSingleData(id);
+const data = singleStore.datas;
+console.log(data.post);
 </script>
 
 <template>
@@ -36,7 +30,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                             class="breadcrumb-item d-flex align-items-center active darkMode"
                             aria-current="page"
                         >
-                            {{ posts[`title_${$i18n.locale}`] }}
+                            {{ data.post[`title_${$i18n.locale}`] }}
                         </li>
                     </ol>
                 </nav>
@@ -48,16 +42,16 @@ const mostReadPosts = data.value.data.mostReadPosts;
             >
                 <section class="single">
                     <h2 class="single__title">
-                        {{ posts[`title_${$i18n.locale}`] }}
+                        {{ data.post[`title_${$i18n.locale}`] }}
                     </h2>
                     <div class="single__info">
                         <span class="darkMode pt-1">{{
-                            posts.publish_date
+                            data.post.publish_date
                         }}</span>
                         <div class="single__info-inner">
                             <img src="/images/eye_main.svg" alt="eye icon" />
                             <span class="darkMode">{{
-                                posts.views_count
+                                data.post.views_count
                             }}</span>
                         </div>
                         <!-- <div class="single__info-inner">
@@ -70,8 +64,8 @@ const mostReadPosts = data.value.data.mostReadPosts;
                         </div> -->
                     </div>
                     <img
-                        :src="posts.detail_image.card"
-                        :alt="posts[`title_${$i18n.locale}`]"
+                        :src="data.post.detail_image.card"
+                        :alt="data.post[`title_${$i18n.locale}`]"
                         class="single__mainImg"
                     />
                     <div class="single__inner">
@@ -120,7 +114,9 @@ const mostReadPosts = data.value.data.mostReadPosts;
                                 </ul> -->
                                 <div
                                     class="single__text-wrapper single__text"
-                                    v-html="posts[`content_${$i18n.locale}`]"
+                                    v-html="
+                                        data.post[`content_${$i18n.locale}`]
+                                    "
                                 ></div>
                             </div>
                             <div class="single__qs darkMode-body">
@@ -236,7 +232,7 @@ const mostReadPosts = data.value.data.mostReadPosts;
                         <h4 class="aside__title">Ko'p o'qilganlar</h4>
                         <div class="aside__wrapper">
                             <NuxtLink
-                                v-for="item in mostReadPosts"
+                                v-for="item in data.mostReadPosts"
                                 :to="localPath(`/show/category/${item.id}`)"
                                 :key="item.id"
                                 class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode"
