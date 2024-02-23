@@ -10,6 +10,7 @@ export const useMainStore = defineStore('mainStore', () => {
     const activeText = ref(null);
     const auth = ref(false);
     const auths = ref(false);
+    const darkTheme = ref(false);
     // getter
 
     const language = computed({

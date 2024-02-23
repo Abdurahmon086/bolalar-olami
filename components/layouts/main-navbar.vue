@@ -1,23 +1,28 @@
 <script setup>
 const { locales } = useI18n();
 const mainStore = useMainStore();
+const searchStore = useSearchStore();
 const navMain = mainStore.navbarM;
 
 const localPath = useLocalePath();
 
 //hooks
-const darkTheme = ref(false);
+let darkTheme = false;
 
 const switchToggle = () => {
-    darkTheme.value = !darkTheme.value;
+    darkTheme = !darkTheme;
+    localStorage.setItem("darkMode", JSON.parse(darkTheme));
+
+    const value = localStorage.getItem("darkMode");
+
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
 
-    if (darkTheme.value) {
+    if (value == "true") {
         document.body.classList.add("darkBody");
         darkIcons.forEach((icon) => icon.classList.remove("d-none"));
         lightIcons.forEach((icon) => icon.classList.add("d-none"));
-    } else {
+    } else if (value == "false") {
         document.body.classList.remove("darkBody");
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
@@ -76,7 +81,6 @@ const switchToggle = () => {
                             "
                             type="button"
                             class="header__top-mainBtn btn d-xl-none shadow-0 darkMode-btn"
-                            data-bs-ripple-init
                         >
                             {{ $t("entir") }}
                         </button>
@@ -247,6 +251,7 @@ const switchToggle = () => {
                             to="/search"
                             type="button"
                             class="darkMode-btn btn shadow-0 header__navbar-btn"
+                            @click="searchStore.modal = false"
                         >
                             <img
                                 src="/images/search.svg"
