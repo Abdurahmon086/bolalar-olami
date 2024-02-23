@@ -170,7 +170,7 @@ useHead({ title: "Bolalar olami | posts" });
 
                     </div>
                     <div class="lastNews__right darkMode border-0">
-                        <h4 class="lastNews__right-title ">So'nggi yangiliklarga</h4>
+                        <h4 class="lastNews__right-title ">So'nggi maqolalar</h4>
                         <ul class="lastNews__right-list list-unstyled darkMode">
                             <li class="border-bottom">
                                 <p class="lastNews__right-text darkMode">Ertaga O‘zbekistonning qaysi hududlarida

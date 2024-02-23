@@ -8,7 +8,7 @@ const data = indexStore.datas;
 </script>
 
 <template>
-    <main>
+    <main class="darkMode-body">
         <section class="container">
             <div class="search-result">
                 <div class="search-result__box">
@@ -19,7 +19,6 @@ const data = indexStore.datas;
                         alt="close icon"
                     />
                 </div>
-
                 <div class="search-result__card">
                     <div class="search-result__card-wrapper position-relative">
                         <img
@@ -152,6 +151,7 @@ const data = indexStore.datas;
                 </div>
             </div>
         </section>
+        
         <section class="lastNews">
             <div class="container">
                 <div class="lastNews__wrapper">
