@@ -496,8 +496,8 @@ useHead({ title: "Bolalar olami | posts" });
                 </div>
                 <aside class="talim-cardimg__aside">
                     <img src="/images/talimImages/reklama-img1.png" class="img-fluid talim-cardimg__aside-img1" alt="reklama-img">
-                    <img src="/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2"  alt="reklama-img">
-                    <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img">
+                    <img src="/public/images/talimImages/new-reklama.png" class="img-fluid talim-cardimg__aside-img2"  alt="reklama-img">
+                    <img src="/public/images/talimImages/new-reklama.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img">
 
                 </aside>
             </div>

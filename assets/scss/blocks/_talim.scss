@@ -96,7 +96,7 @@
     &__left {
 
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
         gap: 19px 15px;
 
         &-wrapper {
@@ -174,16 +174,16 @@
         flex-direction: column;
         row-gap: 16px;
         &-img1{
-            width: 305px;
-            height: 574px;
+            width: 477px;
+            // height: 916px;
         }
         &-img2{
-            width: 305px;
-            height: 357px;
+            width: 477px;
+            // height: 448px;
         }
         &-img3{
-            width: 305px;
-            height: 460px;
+            width: 477px;
+            // height: 540px;
         }
     }
 }
@@ -303,16 +303,16 @@
             flex-direction: column;
             row-gap: 9.1px;
             &-img1{
-                max-width: 173px;
-                height: 326px;
+                max-width: 345px;
+                // height: 326px;
             }
             &-img2{
-                max-width: 173px;
-                height: 203px;
+                max-width: 345px;
+                // height: 203px;
             }
             &-img3{
-                max-width: 173px;
-                height: 305px;
+                max-width: 345px;
+                // height: 305px;
             }
         }
 
@@ -432,16 +432,16 @@
             flex-direction: column;
             row-gap: 9.1px;
             &-img1{
-                max-width: 173px;
-                height: 326px;
+                max-width: 345px;
+                // height: 326px;
             }
             &-img2{
-                max-width: 173px;
-                height: 203px;
+                max-width: 345px;
+                // height: 203px;
             }
             &-img3{
-                max-width: 173px;
-                height: 305px;
+                max-width: 345px;
+                // height: 305px;
             }
         }
 
@@ -563,16 +563,16 @@
             row-gap: 9.1px;
 
             &-img1{
-                max-width: 173px;
-                height: 326px;
+                max-width: 345px;
+                // height: 326px;
             }
             &-img2{
-                max-width: 173px;
-                height: 203px;
+                max-width: 345px;
+                // height: 203px;
             }
             &-img3{
-                max-width: 173px;
-                height: 305px;
+                max-width: 345px;
+                // height: 305px;
             }
         }
 
