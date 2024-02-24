@@ -330,10 +330,10 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                         <div class="talim-cardimg__left-wrapper-box">
                             <h4 class="talim-cardimg__left-wrapper-title darkMode-title">
-                                “Bolamni gapirib, o‘ynab yurgan holatiga qaytarib bering. Men sizga 3 mlrd so‘m beraman”
+                                Mirziyoyeva oilasi bolalar kutubga bordi.
                             </h4>
                             <p class="talim-cardimg__left-wrapper-text darkMode-title">
-                                “Dok-1 Maks” siropi sabab gapirishdan, yurishdan to‘xtagan va birinchi guruh nogironiga aylangan 5 yoshli ...
+                                Prezident yordamchisi Saida Mirziyoyeva farzandlari bilan bolalar kutubxonasiga keldi.....
                             </p>
                             <p class="talim-cardimg__left-wrapper-time darkMode-sp">
                                 12.12.2023  12:32
@@ -496,8 +496,8 @@ useHead({ title: "Bolalar olami | posts" });
                 </div>
                 <aside class="talim-cardimg__aside">
                     <img src="/images/talimImages/reklama-img1.png" class="img-fluid talim-cardimg__aside-img1" alt="reklama-img">
-                    <img src="/public/images/talimImages/new-reklama.png" class="img-fluid talim-cardimg__aside-img2"  alt="reklama-img">
-                    <img src="/public/images/talimImages/new-reklama.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img">
+                    <img src="/public/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2"  alt="reklama-img">
+                    <img src="/public/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img">
 
                 </aside>
             </div>

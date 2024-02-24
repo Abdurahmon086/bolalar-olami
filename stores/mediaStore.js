@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-
+const url = 'http://new.bolalarolami.uz/api/v2/get-videos '
 // export const usemediaStore = defineStore('mediaStore', () => {
 // function toggleClass() {
 //     var divs = document.getElementsByClassName("myDiv");
