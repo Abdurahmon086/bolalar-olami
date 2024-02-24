@@ -1,6 +1,6 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
-const store = useMediaStore()
+// const store = useMediaStore()
 </script>
 <template>
    <main class="darkMode-body pb-5 bg-white">
@@ -104,7 +104,7 @@ const store = useMediaStore()
             <h2 class="mediacate__all-text darkMode-title">
                 Hammasi
             </h2>
-            <button id="myButton" @click="store.$boolFunc()" class="btn btn-danger mediaBtn">ffff</button>
+            <button id="myButton" class="btn btn-danger mediaBtn">ffff</button>
            </div>
             <div class="mediacate__all">
                 <div class="position-relative mediacate__all-card w-100 image-container ">
@@ -170,6 +170,7 @@ const store = useMediaStore()
                 <div class="position-relative mediacate__all-card w-100 image-container classOld myDiv">
                             <img src="/images/mediacategoryImages/all-img3.png" class="img-fluid h-100 rounded-0 card-img"
                                 alt="img">
+                                
                             <div class="position-absolute mediacate__all-box w-100 card-img-overlay">
                                 <div>
                                     <p class="mediacate__all-box-text fw-medium text-white">Ijtimoiy so'rovnoma</p>
