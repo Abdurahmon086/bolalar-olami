@@ -1,6 +1,5 @@
 <script setup>
 useHead({ title: "Bolalar olami | search" });
-const root = useRoute();
 
 const indexStore = useIndexStore();
 const searchStore = useSearchStore();
@@ -8,9 +7,6 @@ const searchStore = useSearchStore();
 const localPath = useLocalePath();
 
 const data = indexStore.datas;
-const searchData = searchStore.datas.value;
-
-console.log(searchData);
 </script>
 
 <template>
@@ -42,16 +38,16 @@ console.log(searchData);
                             </template>
                         </button>
                     </div>
-                    <div class="search-result__card" v-if="searchData">
+                    <div class="search-result__card" v-if="searchStore.datas">
                         <template
                             v-if="
                                 !searchStore.showAll &&
-                                searchData.posts.data.length > 4
+                                searchStore.datas?.data?.length > 4
                             "
                         >
                             <NuxtLink
                                 class="search-result__card-wrapper position-relative"
-                                v-for="item in searchData.posts.data.slice(
+                                v-for="item in searchStore.datas?.data.slice(
                                     0,
                                     4
                                 )"
@@ -77,7 +73,7 @@ console.log(searchData);
                         <template v-else>
                             <NuxtLink
                                 class="search-result__card-wrapper position-relative"
-                                v-for="item in searchData.posts.data"
+                                v-for="item in searchStore.datas?.data"
                                 :key="item.id"
                                 :to="localPath(`/category/${item.id}`)"
                             >

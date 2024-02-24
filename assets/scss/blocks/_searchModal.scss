@@ -48,3 +48,18 @@
     }
 
 }
+
+@media only screen and (max-width:560px) {
+    .searchModal {
+        height: 180vh;
+
+        &__x {
+            // position: absolute;
+            top: 48px;
+            right: 45px;
+            width: 48px;
+            height: 48px;
+        }
+
+    }
+}

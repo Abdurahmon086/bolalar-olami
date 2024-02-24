@@ -1,5 +1,6 @@
 <script setup>
 const searchStore = useSearchStore();
+
 </script>
 
 <template>
@@ -19,7 +20,7 @@ const searchStore = useSearchStore();
                 type="text"
                 name="search"
                 id="search"
-                v-model="searchStore.text"
+                v-model="searchStore.search"
             />
         </form>
     </div>

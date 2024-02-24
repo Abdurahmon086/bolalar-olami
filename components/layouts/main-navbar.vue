@@ -11,18 +11,18 @@ let darkTheme = false;
 
 const switchToggle = () => {
     darkTheme = !darkTheme;
-    localStorage.setItem("darkMode", JSON.parse(darkTheme));
+    localStorage.setItem("darkMode", JSON.stringify(darkTheme));
 
-    const value = localStorage.getItem("darkMode");
+    const value = JSON.parse(localStorage.getItem("darkMode"));
 
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
 
-    if (value == "true") {
+    if (value) {
         document.body.classList.add("darkBody");
         darkIcons.forEach((icon) => icon.classList.remove("d-none"));
         lightIcons.forEach((icon) => icon.classList.add("d-none"));
-    } else if (value == "false") {
+    } else {
         document.body.classList.remove("darkBody");
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
