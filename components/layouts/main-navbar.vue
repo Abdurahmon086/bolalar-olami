@@ -248,8 +248,7 @@ const switchToggle = () => {
                     <div
                         class="header__navbar-right d-flex align-items-center darkMode"
                     >
-                        <NuxtLink
-                            to="/search"
+                        <div
                             type="button"
                             class="darkMode-btn btn shadow-0 header__navbar-btn"
                             @click="searchStore.modal = false"
@@ -264,7 +263,10 @@ const switchToggle = () => {
                                 class="darkIcon d-none"
                                 alt="search icon"
                             />
-                        </NuxtLink>
+                        </div>
+                        <template v-if="!searchStore.modal">
+                            <SearchModal
+                        /></template>
                         <button
                             type="button"
                             data-bs-toggle="collapse"
