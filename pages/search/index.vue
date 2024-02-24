@@ -10,6 +10,65 @@ const data = indexStore.datas;
 </script>
 
 <template>
+    <main class="darkMode-body">
+        <section class="container">
+            <div class="search-result">
+                <div class="search-result__box">
+                    <p class="search-result__text">Kalit so’zi</p>
+                    <img
+                        src="/images/searchImages/close-icon.svg"
+                        class="img-fluid"
+                        alt="close icon"
+                    />
+                </div>
+                <div class="search-result__card">
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+
     <main>
         <template v-if="!searchStore.modal"> <SearchModal /></template>
         <template v-else>
@@ -25,6 +84,7 @@ const data = indexStore.datas;
                                 class="img-fluid"
                                 alt="close icon"
                             />
+
                         </div>
                         <button
                             @click="searchStore.showAll = !searchStore.showAll"
@@ -45,6 +105,75 @@ const data = indexStore.datas;
                                 searchStore.datas?.data?.length > 4
                             "
                         >
+
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="search-result__card-wrapper position-relative">
+                        <img
+                            src="/images/searchImages/img1.png"
+                            class="img-fluid w-100"
+                            alt="img"
+                        />
+                        <div
+                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                        >
+                            <p
+                                class="search-result__card-wrapper-text position-absolute"
+                            >
+                                Yaponiyada tug‘ilishlar soni keskin kamaydi
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="lastNews">
+            <div class="container">
+                <div class="lastNews__wrapper">
+                    <div class="lastNews__left-wrap">
+                        <h4 class="news__title darkMode-title">
+                            {{ $t("education") }}
+                        </h4>
+                        <div class="lastNews__left">
+
                             <NuxtLink
                                 class="search-result__card-wrapper position-relative"
                                 v-for="item in searchStore.datas?.data.slice(

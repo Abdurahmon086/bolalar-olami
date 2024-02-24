@@ -166,7 +166,7 @@ useHead({ title: "Bolalar olami | posts" });
                             <ul
                                 class="mediaGaller-wrapper--card-list1 darkMode"
                             >
-                                <li class="mediaGaller-wrapper--card-item1">
+                                <li class="mediaGaller-wrapper--card-item1 darkMode-card">
                                     <p
                                         class="mediaGaller-wrapper--card-item1--text"
                                     >
