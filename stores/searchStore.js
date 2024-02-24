@@ -16,14 +16,6 @@ export const useSearchStore = defineStore('searchStore', () => {
     // getter
 
     // action
-    async function searchShows(search) {
-        const grabData = await fetch(URL + search.value);
-        const json = await grabData.json();
-        shows.value = json.data.posts;
-        // console.log(json.data.posts);
-    }
-
-
     const getSearchData = async (value) => {
         try {
             singleStore.loading = true
