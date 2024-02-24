@@ -19,12 +19,10 @@ export const useMediaStore = defineStore('mediaStore', () => {
 
 
     const toggleCategory = (category) => {
-        // Faol kategoriyani almashish
         activeCategory.value = (activeCategory.value === category) ? null : category;
     };
 
     const isActive = (category) => {
-        // Kategoriya faol bo'lsa true qaytaradi
         return activeCategory.value === category;
     };
 
