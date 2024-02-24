@@ -10,7 +10,6 @@ export const useMediaStore = defineStore('mediaStore', () => {
         try {
             const res = await fetch(`${url}`);
             const data = await res.json();
-            console.log(data.data);
             datas.value = data.data
         } catch (err) {
             console.log(err);

@@ -70,8 +70,9 @@ img {
 
 .darkBody .darkMode-btn {
     color: #DBDBDB !important;
-    background: #242424 !important;
-    border: 1px solid rgba(222, 222, 222, 0.20) !important;
+    border-radius: 4px;
+    border: 1px solid rgba(230, 236, 248, 0.10) !important;
+    background: rgba(255, 255, 255, 0.10) !important;
 }
 
 .darkBody .darkMode2 {
@@ -85,6 +86,7 @@ img {
 .darkBody .darkMode-title {
     color: #DBDBDB !important;
 }
+
 .darkBody .darkMode-card {
     background-color: #3E2E89 !important;
 }

@@ -80,7 +80,8 @@ const switchToggle = () => {
                                     (mainStore.auths = false)
                             "
                             type="button"
-                            class="header__top-mainBtn btn d-xl-none shadow-0 darkMode-btn"
+                            class="header__top-mainBtn btn shadow-0 darkMode-btn"
+                            v-if="!mainStore.authed"
                         >
                             {{ $t("entir") }}
                         </button>
@@ -102,36 +103,36 @@ const switchToggle = () => {
                             <li
                                 class="header__top-item darkMode"
                                 :class="{
-                                    active: mainStore.activeText === 'text1',
+                                    active: $i18n.locale === 'uz',
                                 }"
-                                @click="mainStore.changeLocale('uz', 'text1')"
+                                @click="mainStore.changeLocale('uz')"
                             >
                                 Uz
                             </li>
                             <li
                                 class="header__top-item darkMode"
                                 :class="{
-                                    active: mainStore.activeText === 'text2',
+                                    active: $i18n.locale === 'kr',
                                 }"
-                                @click="mainStore.changeLocale('kr', 'text2')"
+                                @click="mainStore.changeLocale('kr')"
                             >
                                 Уз
                             </li>
                             <li
                                 class="header__top-item darkMode"
                                 :class="{
-                                    active: mainStore.activeText === 'text3',
+                                    active: $i18n.locale === 'en',
                                 }"
-                                @click="mainStore.changeLocale('en', 'text3')"
+                                @click="mainStore.changeLocale('en')"
                             >
                                 En
                             </li>
                             <li
                                 class="header__top-item darkMode"
                                 :class="{
-                                    active: mainStore.activeText === 'text4',
+                                    active: $i18n.locale === 'ru',
                                 }"
-                                @click="mainStore.changeLocale('ru', 'text4')"
+                                @click="mainStore.changeLocale('ru')"
                             >
                                 Ру
                             </li>
@@ -280,35 +281,14 @@ const switchToggle = () => {
                             />
                         </button>
                         <!-- Avatar -->
-                        <div class="dropdown">
-                            <a
-                                class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <img
-                                    src="/images/person.png"
-                                    class="rounded-circle"
-                                    height="35"
-                                    alt="person"
-                                    loading="lazy"
-                                />
-                            </a>
-
-                            <!-- width uzi 182px  -->
-                            <ul
-                                class="darkMode dropdown-menu dropdown-menu-end"
-                                style="width: 192px"
-                                aria-labelledby="navbarSupportedContent"
-                            >
-                                <li
-                                    class="darkMode d-flex align-items-start"
-                                    style="
-                                        gap: 8px;
-                                        padding: 10px 10px 4px 10px;
-                                    "
+                        <template v-if="mainStore?.authed">
+                            <div class="dropdown">
+                                <a
+                                    class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
                                 >
                                     <img
                                         src="/images/person.png"
@@ -317,50 +297,86 @@ const switchToggle = () => {
                                         alt="person"
                                         loading="lazy"
                                     />
+                                </a>
 
-                                    <div>
-                                        <h4
-                                            class="m-0"
-                                            style="
-                                                font-size: 14px;
-                                                line-height: 20px;
-                                            "
+                                <!-- width uzi 182px  -->
+                                <ul
+                                    class="darkMode dropdown-menu dropdown-menu-end"
+                                    style="width: 192px"
+                                    aria-labelledby="navbarSupportedContent"
+                                >
+                                    <li
+                                        class="darkMode d-flex align-items-start"
+                                        style="
+                                            gap: 8px;
+                                            padding: 10px 10px 4px 10px;
+                                        "
+                                    >
+                                        <img
+                                            src="/images/person.png"
+                                            class="rounded-circle"
+                                            height="35"
+                                            alt="person"
+                                            loading="lazy"
+                                        />
+
+                                        <div>
+                                            <h4
+                                                class="m-0"
+                                                style="
+                                                    font-size: 14px;
+                                                    line-height: 20px;
+                                                "
+                                            >
+                                                Firdavs Muzaffarov
+                                            </h4>
+                                            <span
+                                                style="
+                                                    color: rgba(
+                                                        36,
+                                                        36,
+                                                        36,
+                                                        0.5
+                                                    );
+                                                    font-size: 11px;
+                                                    line-height: 20px;
+                                                "
+                                                class="darkMode-sp"
+                                                >info@gmail.com</span
+                                            >
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item darkMode"
+                                            href="#"
+                                            >Akaunt sozlamalari</a
                                         >
-                                            Firdavs Muzaffarov
-                                        </h4>
-                                        <span
-                                            style="
-                                                color: rgba(36, 36, 36, 0.5);
-                                                font-size: 11px;
-                                                line-height: 20px;
-                                            "
-                                            class="darkMode-sp"
-                                            >info@gmail.com</span
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item darkMode"
+                                            href="#"
+                                            >Qorong'i rejim</a
                                         >
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item darkMode" href="#"
-                                        >Akaunt sozlamalari</a
-                                    >
-                                </li>
-                                <li>
-                                    <a class="dropdown-item darkMode" href="#"
-                                        >Qorong'i rejim</a
-                                    >
-                                </li>
-                                <li>
-                                    <a class="dropdown-item darkMode" href="#"
-                                        >Yordam</a
-                                    >
-                                </li>
-                                <li>
-                                    <a class="dropdown-item darkMode" href="#"
-                                        >Chiqish</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item darkMode"
+                                            href="#"
+                                            >Yordam</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item darkMode"
+                                            href="#"
+                                            >Chiqish</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </nav>
@@ -370,7 +386,7 @@ const switchToggle = () => {
 
 <style scoped>
 .active {
-    color: rgb(228, 28, 28);
+    color: #f7931e;
     font-weight: 700;
 }
 </style>
