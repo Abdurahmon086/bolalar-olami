@@ -1,5 +1,5 @@
 .search-result {
-    margin-top: 120px;
+    padding-top: 120px;
 
     &__box {
         display: flex;
@@ -57,7 +57,7 @@
 
 @media only screen and (max-width:1200px) {
     .search-result {
-        margin-top: 120px;
+        padding-top: 120px;
 
         &__box {
 
@@ -99,7 +99,7 @@
 
 @media only screen and (max-width:992px) {
     .search-result {
-        margin-top: 120px;
+        padding-top: 120px;
 
         &__box {
 
@@ -138,7 +138,7 @@
 
 @media only screen and (max-width:768px) {
     .search-result {
-        margin-top: 120px;
+        padding-top: 120px;
 
         &__box {
 
@@ -177,7 +177,7 @@
 
 @media only screen and (max-width:576px) {
     .search-result {
-        margin-top: 125px;
+        padding-top: 125px;
 
         &__box {
 
@@ -219,8 +219,8 @@
 
 @media only screen and (max-width:376px) {
     .search-result {
-        margin-top: 125px;
-
+        padding-top: 125px; 
+ 
         &__box {
 
             display: flex;

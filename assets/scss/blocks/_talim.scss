@@ -88,7 +88,7 @@
 .talim-cardimg {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto ;
     gap: 21px;
     padding-bottom: 21px;
 
@@ -136,7 +136,7 @@
                 font-weight: 600;
                 line-height: normal;
                 margin: 0;
-                padding: 2px 3px 0 6px;
+                padding: 2px 8px 0 6px;
             }
 
             &-text {
@@ -175,15 +175,15 @@
         row-gap: 16px;
         &-img1{
             width: 305px;
-            height: 574px;
+            // height: 916px;
         }
         &-img2{
             width: 305px;
-            height: 357px;
+            // height: 448px;
         }
         &-img3{
             width: 305px;
-            height: 460px;
+            // height: 540px;
         }
     }
 }
@@ -304,15 +304,15 @@
             row-gap: 9.1px;
             &-img1{
                 max-width: 173px;
-                height: 326px;
+                // height: 326px;
             }
             &-img2{
                 max-width: 173px;
-                height: 203px;
+                // height: 203px;
             }
             &-img3{
                 max-width: 173px;
-                height: 305px;
+                // height: 305px;
             }
         }
 
@@ -433,15 +433,15 @@
             row-gap: 9.1px;
             &-img1{
                 max-width: 173px;
-                height: 326px;
+                // height: 326px;
             }
             &-img2{
                 max-width: 173px;
-                height: 203px;
+                // height: 203px;
             }
             &-img3{
                 max-width: 173px;
-                height: 305px;
+                // height: 305px;
             }
         }
 
@@ -564,15 +564,15 @@
 
             &-img1{
                 max-width: 173px;
-                height: 326px;
+                // height: 326px;
             }
             &-img2{
                 max-width: 173px;
-                height: 203px;
+                // height: 203px;
             }
             &-img3{
                 max-width: 173px;
-                height: 305px;
+                // height: 305px;
             }
         }
 
