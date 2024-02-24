@@ -8,7 +8,7 @@
         &-item {
             height: 100%;
             display: block;
-            bottom: 25px;
+
         }
 
         &-caption {
@@ -22,7 +22,7 @@
     .swiper-pagination {
         text-align: left;
         left: 14px !important;
-        bottom: 51% !important;
+        bottom: 42% !important;
 
         span {
             width: 7px;
@@ -100,16 +100,12 @@
     .hero {
         .carousel {
             height: 310px;
-
-            &-item {
-                bottom: 29px;
-            }
         }
 
         .swiper-pagination {
             text-align: left;
             left: 14px !important;
-            bottom: 48% !important;
+            bottom: 40% !important;
 
             span {
                 width: 7px;
@@ -152,7 +148,7 @@
 
         .swiper-pagination {
             left: 43px !important;
-            bottom: 34% !important;
+            bottom: 26% !important;
 
             span {
                 width: 7px;
@@ -169,7 +165,7 @@
     .hero {
 
         .swiper-pagination {
-            bottom: 41% !important;
+            bottom: 32% !important;
 
             span {
                 width: 9px;
@@ -190,19 +186,17 @@
         .carousel {
             height: 568.022px;
 
-            &-item {
-                bottom: 64px !important;
-            }
 
             &-caption {
                 padding: 0 80px;
+                margin-bottom: 42px;
             }
 
         }
 
         .swiper-pagination {
             left: 80px !important;
-            bottom: 41% !important;
+            bottom: 36% !important;
 
             span {
                 width: 12px;

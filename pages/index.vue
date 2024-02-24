@@ -23,7 +23,6 @@ const mainPosts4 = data.mainPosts.slice(1);
                     :modules="[
                         SwiperAutoplay,
                         SwiperEffectCreative,
-                        SwiperKeyboard,
                         SwiperPagination,
                     ]"
                     :pagination="{
@@ -47,10 +46,9 @@ const mainPosts4 = data.mainPosts.slice(1);
                     }"
                     class="carousel"
                 >
-
                     <!-- Inner -->
                     <SwiperSlide
-                        v-for="slide in 10"
+                        v-for="slide in 4"
                         :key="slide"
                         class="carousel-inner"
                     >
