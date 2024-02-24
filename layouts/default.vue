@@ -11,5 +11,3 @@ const mainStore = useMainStore();
     </div>
     <LayoutsFooter />
 </template>
-
-<style></style>

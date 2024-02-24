@@ -45,6 +45,20 @@ img {
     flex-grow: 1;
 }
 
+.hidden-text-2 {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hidden-text-3 {
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .darkBody .darkMode-body {
     background: #1C1C1C !important;
 }

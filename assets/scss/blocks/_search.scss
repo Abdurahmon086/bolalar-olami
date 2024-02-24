@@ -14,11 +14,9 @@
 
     &__text {
         color: #242424;
-        // font-family: "BBC Reith Sans";
+        font-family: "BBC Reith Sans", sans-serif;
         font-size: 18px;
-        font-style: normal;
         font-weight: 700;
-        line-height: normal;
         margin: 0;
 
     }
@@ -39,15 +37,15 @@
             }
 
             &-text {
+                position: absolute;
+                bottom: 7px;
+                left: 6px;
+                max-width: 90%;
                 color: #FFF;
-                // font-family: "BBC Reith Sans";
+                font-family: "BBC Reith Sans", sans-serif;
                 font-size: 15px;
-                font-style: normal;
                 font-weight: 700;
-                line-height: normal;
-                padding: 130px 29.91px 11.14px 9.65px;
                 margin-bottom: 0;
-                bottom: 0;
             }
         }
     }
@@ -86,18 +84,8 @@
             margin-bottom: 18px;
 
             &-wrapper {
-                &-box {
-                    background-image: url(../../images/searchImages/Rectangle-imgBg.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    bottom: 0;
-                }
-
                 &-text {
                     font-size: 8.812px;
-                    padding: 130px 17px 7.1px 5.49px;
-                    margin-bottom: 0;
-                    bottom: 0;
                 }
             }
         }
@@ -138,25 +126,12 @@
             margin-bottom: 18px;
 
             &-wrapper {
-                &-box {
-                    background-image: url(../../images/searchImages/Rectangle-imgBg.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    bottom: 0;
-                }
 
                 &-text {
                     font-size: 8.812px;
-                    padding: 130px 17px 7.1px 5.49px;
-                    margin-bottom: 0;
-                    bottom: 0;
                 }
             }
         }
-    }
-
-    .search-news {
-        margin-bottom: 120px !important;
     }
 
 }
@@ -190,26 +165,13 @@
             margin-bottom: 18px;
 
             &-wrapper {
-                &-box {
-                    background-image: url(../../images/searchImages/Rectangle-imgBg.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    bottom: 0;
-                }
-
                 &-text {
                     font-size: 8.812px;
-                    padding: 130px 17px 7.1px 5.49px;
-                    margin-bottom: 0;
-                    bottom: 0;
                 }
             }
         }
     }
 
-    .search-news {
-        margin-bottom: 120px !important;
-    }
 
 }
 
@@ -242,18 +204,9 @@
             margin-bottom: 20px;
 
             &-wrapper {
-                &-box {
-                    background-image: url(../../images/searchImages/Rectangle-imgBg.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    bottom: 0;
-                }
 
                 &-text {
                     font-size: 15px;
-                    padding: 130px 40px 18px 12px;
-                    margin-bottom: 0;
-                    bottom: 0;
                 }
             }
         }
@@ -293,24 +246,11 @@
             margin-bottom: 20px;
 
             &-wrapper {
-                &-box {
-                    background-image: url(../../images/searchImages/Rectangle-imgBg.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    bottom: 0;
-                }
 
                 &-text {
                     font-size: 15px;
-                    padding: 130px 29.91px 18px 12px;
-                    margin-bottom: 0;
-                    bottom: 0;
                 }
             }
         }
-    }
-
-    .search-news {
-        margin-bottom: 0 !important;
     }
 }

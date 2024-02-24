@@ -3,10 +3,10 @@ useHead({ title: "Bolalar olami | search" });
 
 const indexStore = useIndexStore();
 const searchStore = useSearchStore();
-
+const route = useRoute();
 const localPath = useLocalePath();
 
-const data = indexStore.datas;
+const data = indexStore?.datas;
 </script>
 
 <template>
@@ -18,81 +18,34 @@ const data = indexStore.datas;
                     <div
                         class="d-flex align-item-center justify-content-between"
                     >
-                        <div class="search-result__box">
-                            <p class="search-result__text">Kalit so’zi</p>
-                            <img
-                                src="/images/searchImages/close-icon.svg"
-                                class="img-fluid"
-                                alt="close icon"
-                            />
+                        <div class="search-result__box p-2">
+                            <p class="search-result__text">
+                                {{ route.query.q }}
+                            </p>
                         </div>
-                        <button
-                            @click="searchStore.showAll = !searchStore.showAll"
-                            class="btn btn-danger"
-                        >
-                            <template v-if="!searchStore.showAll">
-                                Hammasini ko'rsatish
-                            </template>
-                            <template v-else>
-                                Hammasini ko'rsatish yopish
-                            </template>
-                        </button>
                     </div>
                     <div class="search-result__card" v-if="searchStore.datas">
-                        <template
-                            v-if="
-                                !searchStore.showAll &&
-                                searchStore.datas?.data?.length > 4
-                            "
+                        <NuxtLink
+                            class="search-result__card-wrapper position-relative"
+                            v-for="item in searchStore.datas?.data"
+                            :key="item.id"
+                            :to="localPath(`/category/${item.id}`)"
                         >
-                            <NuxtLink
-                                class="search-result__card-wrapper position-relative"
-                                v-for="item in searchStore.datas?.data.slice(
-                                    0,
-                                    4
-                                )"
-                                :key="item.id"
-                                :to="localPath(`/category/${item.id}`)"
+                            <img
+                                :src="item.detail_image.card"
+                                class="img-fluid w-100"
+                                alt="img"
+                            />
+                            <div
+                                class="search-result__card-wrapper-box position-absolute w-100 h-100"
                             >
-                                <img
-                                    :src="item.detail_image.card"
-                                    class="img-fluid w-100"
-                                    alt="img"
-                                />
-                                <div
-                                    class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                                <p
+                                    class="search-result__card-wrapper-text position-absolute position-absolute"
                                 >
-                                    <p
-                                        class="search-result__card-wrapper-text position-absolute position-absolute"
-                                    >
-                                        {{ item[`title_${$i18n.locale}`] }}
-                                    </p>
-                                </div>
-                            </NuxtLink>
-                        </template>
-                        <template v-else>
-                            <NuxtLink
-                                class="search-result__card-wrapper position-relative"
-                                v-for="item in searchStore.datas?.data"
-                                :key="item.id"
-                                :to="localPath(`/category/${item.id}`)"
-                            >
-                                <img
-                                    :src="item.detail_image.card"
-                                    class="img-fluid w-100"
-                                    alt="img"
-                                />
-                                <div
-                                    class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                                >
-                                    <p
-                                        class="search-result__card-wrapper-text position-absolute position-absolute"
-                                    >
-                                        {{ item[`title_${$i18n.locale}`] }}
-                                    </p>
-                                </div>
-                            </NuxtLink>
-                        </template>
+                                    {{ item[`title_${$i18n.locale}`] }}
+                                </p>
+                            </div>
+                        </NuxtLink>
                     </div>
                 </div>
             </section>
