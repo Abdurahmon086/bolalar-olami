@@ -19,50 +19,43 @@ const mainPosts4 = data.mainPosts.slice(1);
         </template> -->
         <section class="hero">
             <div class="container">
-                <!-- Carousel wrapper -->
-                <div
-                    id="carouselExampleCaptions"
-                    class="carousel slide carousel-fade pointer-event"
-                    data-bs-ride="carousel"
-                    data-bs-interval="500"
+                <Swiper
+                    :modules="[
+                        SwiperAutoplay,
+                        SwiperEffectCreative,
+                        SwiperKeyboard,
+                        SwiperPagination,
+                    ]"
+                    :pagination="{
+                        clickable: true,
+                    }"
+                    :slides-per-view="1"
+                    :loop="true"
+                    :effect="'creative'"
+                    :autoplay="{
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    }"
+                    :creative-effect="{
+                        prev: {
+                            shadow: false,
+                            translate: ['-20%', 0, -1],
+                        },
+                        next: {
+                            translate: ['100%', 0, 0],
+                        },
+                    }"
+                    class="carousel"
                 >
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <button
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide-to="0"
-                            class="active rounded-circle"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide-to="1"
-                            class="rounded-circle"
-                            aria-label="Slide 2"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide-to="2"
-                            class="rounded-circle"
-                            aria-label="Slide 3"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide-to="3"
-                            class="rounded-circle"
-                            aria-label="Slide 4"
-                        ></button>
-                    </div>
 
                     <!-- Inner -->
-                    <div class="carousel-inner">
+                    <SwiperSlide
+                        v-for="slide in 10"
+                        :key="slide"
+                        class="carousel-inner"
+                    >
                         <!-- Single item -->
-                        <div class="carousel-item active image-container w-100">
+                        <div class="carousel-item image-container w-100">
                             <img
                                 src="/images/hero_img.jpg"
                                 class="img-fluid h-100 w-100"
@@ -87,7 +80,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     >
                                 </div>
                                 <div
-                                    class="d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
+                                    class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
                                 >
                                     <h3 class="text-start hero__car-text">
                                         Yaponiyada tug‘ilishlar soni kamaydi
@@ -107,143 +100,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item image-container w-100">
-                            <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
-                                class="img-fluid h-100 w-100"
-                                alt="Sunset Over the City"
-                            />
-                            <div class="carousel-caption">
-                                <div
-                                    class="hero__pages d-flex align-items-center"
-                                >
-                                    <img
-                                        src="/images/Vector-left.svg"
-                                        alt="verctor left icon"
-                                    />
-                                    <span class="hero__infoTy">3</span>
-                                    <img
-                                        src="/images/Vector-right.svg"
-                                        alt="verctor right icon"
-                                    />
-                                    <span class="opacity-75 hero__infoTy-oth"
-                                        >12</span
-                                    >
-                                </div>
-                                <div
-                                    class="d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
-                                >
-                                    <h3 class="text-start hero__car-text">
-                                        Yaponiyada tug‘ilishlar soni keskin
-                                        kamaydi
-                                    </h3>
-                                    <a
-                                        class="btn text-white hero__link-btn d-flex align-items-center darkMode2"
-                                        data-bs-ripple-init
-                                        href="#!"
-                                        role="button"
-                                    >
-                                        Подробнее
-                                        <img
-                                            src="/images/Vector-oreng.svg"
-                                            alt="vrctor orange icon"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item image-container w-100">
-                            <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
-                                class="img-fluid h-100 w-100"
-                                alt="Sunset Over the City"
-                            />
-                            <div class="carousel-caption">
-                                <div
-                                    class="hero__pages d-flex align-items-center"
-                                >
-                                    <img
-                                        src="/images/Vector-left.svg"
-                                        alt="verctor left icon"
-                                    />
-                                    <span class="hero__infoTy">3</span>
-                                    <img
-                                        src="/images/Vector-right.svg"
-                                        alt="verctor right icon"
-                                    />
-                                    <span class="opacity-75 hero__infoTy-oth"
-                                        >12</span
-                                    >
-                                </div>
-                                <div
-                                    class="d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
-                                >
-                                    <h3 class="text-start hero__car-text">
-                                        Yaponiyada tug‘ilishlar soni keskin
-                                        kamaydi
-                                    </h3>
-                                    <a
-                                        class="btn text-white hero__link-btn d-flex align-items-center darkMode2"
-                                        data-bs-ripple-init
-                                        href="#!"
-                                        role="button"
-                                    >
-                                        Подробнее
-                                        <img
-                                            src="/images/Vector-oreng.svg"
-                                            alt="vrctor orange icon"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item image-container w-100">
-                            <img
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
-                                class="img-fluid h-100 w-100"
-                                alt="Sunset Over the City"
-                            />
-                            <div class="carousel-caption">
-                                <div
-                                    class="hero__pages d-flex align-items-center"
-                                >
-                                    <img
-                                        src="/images/Vector-left.svg"
-                                        alt="verctor left icon"
-                                    />
-                                    <span class="hero__infoTy">3</span>
-                                    <img
-                                        src="/images/Vector-right.svg"
-                                        alt="verctor right icon"
-                                    />
-                                    <span class="opacity-75 hero__infoTy-oth"
-                                        >12</span
-                                    >
-                                </div>
-                                <div
-                                    class="d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
-                                >
-                                    <h3 class="text-start hero__car-text">
-                                        Yaponiyada tug‘ilishlar soni keskin
-                                        kamaydi
-                                    </h3>
-                                    <a
-                                        class="btn text-white hero__link-btn d-flex align-items-center darkMode2"
-                                        data-bs-ripple-init
-                                        href="#!"
-                                        role="button"
-                                    >
-                                        Подробнее
-                                        <img
-                                            src="/images/Vector-oreng.svg"
-                                            alt="vrctor orange icon"
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </section>
         <section class="news">
@@ -380,19 +238,32 @@ const mainPosts4 = data.mainPosts.slice(1);
                 <h4 class="social__name-title darkMode-title">
                     {{ $t("social_text") }}
                 </h4>
-                <div
-                    id="carouselExampleAutoplaying"
-                    class="carousel slide"
-                    data-bs-ride="carousel"
-                    data-bs-interval="500"
+                <Swiper
+                    class="carousel"
+                    :modules="[SwiperAutoplay, SwiperEffectCreative]"
+                    :slides-per-view="1"
+                    :loop="true"
+                    :effect="'creative'"
+                    :autoplay="{
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    }"
+                    :creative-effect="{
+                        prev: {
+                            shadow: false,
+                            translate: ['-20%', 0, -1],
+                        },
+                        next: {
+                            translate: ['100%', 0, 0],
+                        },
+                    }"
                 >
-                    <div class="carousel-inner social__qs-wrapper">
-                        <NuxtLink
-                            v-for="(item, index) in data.quotations"
-                            :key="item.id"
-                            class="carousel-item"
-                            :class="{ active: index === 0 }"
-                        >
+                    <SwiperSlide
+                        v-for="item in data.quotations"
+                        :key="item.id"
+                        class="social__qs-wrapper"
+                    >
+                        <NuxtLink class="carousel-item">
                             <img
                                 :src="item.detail_image.original_url"
                                 :alt="item[`title_${$i18n.locale}`]"
@@ -407,8 +278,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h4>
                             </div>
                         </NuxtLink>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </section>
         <!-- Media -->
@@ -485,37 +356,58 @@ const mainPosts4 = data.mainPosts.slice(1);
                         <h4 class="achchiqtosh__title darkMode-title">
                             {{ $t("achiqtosh") }}
                         </h4>
-                        <div
-                            id="carouselExampleAutoplaying"
-                            class="carousel slide carousel-fade pointer-event"
-                            data-bs-ride="carousel"
-                        >
-                            <div class="carousel-inner">
-                                <NuxtLink
-                                    v-for="(
-                                        item, index
-                                    ) in data.achchiqtoshPosts"
-                                    :key="item.id"
-                                    class="carousel-item position-relative image-container card border-0 rounded-0 bg-dark"
-                                    :class="{ active: index === 0 }"
-                                    data-bs-interval="500"
-                                    data-bs-ride="true"
-                                    :to="localPath(`/category/${item.id}`)"
+                        <div class="">
+                            <Swiper
+                                :modules="[
+                                    SwiperAutoplay,
+                                    SwiperEffectCreative,
+                                ]"
+                                :slides-per-view="1"
+                                :loop="true"
+                                :effect="'creative'"
+                                :autoplay="{
+                                    delay: 3000,
+                                    disableOnInteraction: true,
+                                }"
+                                :creative-effect="{
+                                    prev: {
+                                        shadow: true,
+                                        translate: ['-20%', 0, -1],
+                                    },
+                                    next: {
+                                        translate: ['100%', 0, 0],
+                                    },
+                                }"
+                                class="achchiqtosh__carousel"
+                            >
+                                <SwiperSlide
+                                    v-for="item in data.achchiqtoshPosts"
+                                    :key="item"
+                                    class="achchiqtosh__carousel-inner"
                                 >
-                                    <img
-                                        :src="item.detail_image.card"
-                                        :alt="item[`title_${$i18n.locale}`]"
-                                        class="card-img img-fluid h-100 rounded-0"
-                                    />
-                                    <div class="card-img-overlay rounded-0">
-                                        <h5
-                                            class="achchiqtosh__slider-text position-absolute"
-                                        >
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </h5>
-                                    </div>
-                                </NuxtLink>
-                            </div>
+                                    <NuxtLink
+                                        class="achchiqtosh__carousel-item bg-dark image-container"
+                                        :to="localPath(`/category/${item.id}`)"
+                                    >
+                                        <img
+                                            :src="item.detail_image.card"
+                                            :alt="item[`title_${$i18n.locale}`]"
+                                            class="achchiqtosh__carousel-img img-fluid h-100"
+                                        />
+                                        <div class="achchiqtosh__carousel-text">
+                                            <h5
+                                                class="achchiqtosh__slider-text hidden-text-3"
+                                            >
+                                                {{
+                                                    item[
+                                                        `title_${$i18n.locale}`
+                                                    ]
+                                                }}
+                                            </h5>
+                                        </div>
+                                    </NuxtLink>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                         <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
                             <h4 class="news__title darkMode-title">
