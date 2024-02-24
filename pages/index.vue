@@ -3,7 +3,7 @@ useHead({
     title: "Bolalar olami",
 });
 
-const mainStore = useMainStore();
+// const mainStore = useMainStore();
 const indexStore = useIndexStore();
 const localPath = useLocalePath();
 
@@ -14,9 +14,9 @@ const mainPosts4 = data.mainPosts.slice(1);
 
 <template>
     <main class="darkMode-body pb-5">
-        <template v-if="mainStore.auth == true">
+        <!-- <template v-if="mainStore.auth == true">
             <AuthCard />
-        </template>
+        </template> -->
         <section class="hero">
             <div class="container">
                 <!-- Carousel wrapper -->
@@ -253,9 +253,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                 </h4>
                 <div class="news__wrapper">
                     <NuxtLink
-                        :to="
-                            localPath(`/category/${data.mainPosts[0].id}`)
-                        "
+                        :to="localPath(`/category/${data.mainPosts[0].id}`)"
                         class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                     >
                         <img

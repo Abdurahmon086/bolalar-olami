@@ -149,7 +149,7 @@ const data = singleStore.datas;
                                     </ul>
                                 </div>
                             </template>
-                            <div
+                            <!-- <div
                                 class="single__auther auther d-none d-md-flex darkMode-body"
                             >
                                 <div class="single__auther-name">
@@ -228,7 +228,7 @@ const data = singleStore.datas;
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </section>
