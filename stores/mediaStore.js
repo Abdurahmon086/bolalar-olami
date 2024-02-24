@@ -4,6 +4,7 @@ const url = 'http://new.bolalarolami.uz/api/v2/get-videos '
 export const useMediaStore = defineStore('mediaStore', () => {
     const datas = ref();
     const openToggle = ref(false)
+    const activeCategory = ref(null);
 
     const getMediaData = async () => {
         try {
@@ -17,5 +18,15 @@ export const useMediaStore = defineStore('mediaStore', () => {
     };
 
 
-    return { datas, openToggle, getMediaData }
+    const toggleCategory = (category) => {
+        // Faol kategoriyani almashish
+        activeCategory.value = (activeCategory.value === category) ? null : category;
+    };
+
+    const isActive = (category) => {
+        // Kategoriya faol bo'lsa true qaytaradi
+        return activeCategory.value === category;
+    };
+
+    return { datas, openToggle, getMediaData, toggleCategory, isActive }
 })

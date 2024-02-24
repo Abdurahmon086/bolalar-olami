@@ -147,14 +147,14 @@ const store = useMediaStore();
                     </h2>
                     <button
                         id="myButton"
-                        @click="store.openToggle = !store.openToggle"
+                        @click="store.toggleCategory(items)"
                         class="btn btn-danger btn-sm mediaBtn"
                     >
                         Hammasi
                     </button>
                 </div>
                 <div class="mediacate__all">
-                    <template v-if="!store.openToggle">
+                    <template v-if="!store.isActive(items)">
                         <div
                             class="position-relative mediacate__all-card w-100 image-container"
                             v-for="item in items?.videos.slice(0, 4)"
