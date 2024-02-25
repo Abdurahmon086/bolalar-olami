@@ -22,7 +22,6 @@ export const useSearchStore = defineStore('searchStore', () => {
             singleStore.loading = true
             const res = await fetch(`${url}/get-search?search=${value.value == '' ? rout.query.q : value.value}`);
             const data = await res.json();
-            console.log(data);
             datas.value = data.data.posts
             singleStore.loading = false
         } catch (err) {

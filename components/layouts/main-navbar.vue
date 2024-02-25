@@ -1,4 +1,6 @@
 <script setup>
+import { getItem, setItem } from "~/utility/localStorageControl";
+
 const { locales } = useI18n();
 const mainStore = useMainStore();
 const searchStore = useSearchStore();
@@ -7,13 +9,13 @@ const navMain = mainStore.navbarM;
 const localPath = useLocalePath();
 
 //hooks
-let darkTheme = false;
+const darkTheme = ref(false);
 
-const switchToggle = () => {
-    darkTheme = !darkTheme;
-    localStorage.setItem("darkMode", JSON.stringify(darkTheme));
+const switchToggle = computed(() => {
+    darkTheme.value = !darkTheme.value;
+    setItem("darkThame", darkTheme.value);
 
-    const value = JSON.parse(localStorage.getItem("darkMode"));
+    const value = getItem("darkThame");
 
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
@@ -27,7 +29,7 @@ const switchToggle = () => {
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
     }
-};
+});
 </script>
 
 <template>
@@ -275,12 +277,30 @@ const switchToggle = () => {
                             aria-label="Toggle navigation"
                             class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed"
                         >
-                            <img src="/images/x.svg" alt="x icon" class="" />
-                            <img
-                                src="/images/menu.svg"
-                                alt="menu icon"
-                                class="d-none"
-                            />
+                            <template v-if="!darkTheme">
+                                <img
+                                    src="/images/x.svg"
+                                    alt="x icon"
+                                    class=""
+                                />
+                                <img
+                                    src="/images/menu.svg"
+                                    alt="menu icon"
+                                    class="d-none"
+                                />
+                            </template>
+                            <template v-else>
+                                <img
+                                    src="/images/x.svg"
+                                    alt="x icon"
+                                    class=""
+                                />
+                                <img
+                                    src="/images/menu-d.svg"
+                                    alt="menu icon"
+                                    class="d-none"
+                                />
+                            </template>
                         </button>
                         <!-- Avatar -->
                         <template v-if="mainStore?.authed">
