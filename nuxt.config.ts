@@ -3,6 +3,31 @@ import { defineNuxtConfig } from "nuxt/config";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+    ssr: true,
+    app: {
+        head: {
+            link: [
+                {
+                    href: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css",
+                    rel: "stylesheet",
+                },
+            ],
+            script: [
+                {
+                    type: "text/javascript",
+                    src: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js",
+                },
+            ],
+
+            title: "bolalar olami sitega xush kelibsiz",
+            meta: [
+                {
+                    name: "Bolalar Olami - yangiliklardan bohabar bo'ling",
+                    content: "Yangiliklardan bohabar bo'ling",
+                },
+            ],
+        },
+    },
     devtools: {
         enabled: true,
 
@@ -10,8 +35,6 @@ export default defineNuxtConfig({
             enabled: true,
         },
     },
-    pages: true,
-    // spaLoadingTemplate: "~/layouts/loading.vue",
     modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
@@ -46,24 +69,8 @@ export default defineNuxtConfig({
         ],
         defaultLocale: "uz",
     },
-    app: {
-        head: {
-            link: [
-                {
-                    href: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css",
-                    rel: "stylesheet",
-                },
-            ],
-            script: [
-                {
-                    type: "text/javascript",
-                    src: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js",
-                },
-            ],
-        },
-    },
+
     runtimeConfig: {
-        baseUrl: process.env.BASE_URL,
+        baseUrl: process.env.BASE_URL || "http://new.bolalarolami.uz/api/v2",
     },
-    ssr: true,
 });

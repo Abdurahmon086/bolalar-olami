@@ -137,6 +137,7 @@ const data = singleStore.datas;
                                     <ul class="list-unstyled">
                                         <NuxtLink
                                             v-for="item of data.post.tags"
+                                            :to="`/tegs/${item.id}`"
                                         >
                                             <li class="darkMode-btn">
                                                 {{

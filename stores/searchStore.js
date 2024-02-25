@@ -31,7 +31,7 @@ export const useSearchStore = defineStore('searchStore', () => {
     const submitForm = () => {
         if (!search.value) return;
         router.push({ path: "/search/", query: { q: search.value } });
-        modal.value = true
+        modal.value = false
         getSearchData(search)
         search.value = ''
     };

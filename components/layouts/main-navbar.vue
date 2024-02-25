@@ -251,7 +251,7 @@ const switchToggle = () => {
                         <div
                             type="button"
                             class="darkMode-btn btn shadow-0 header__navbar-btn"
-                            @click="searchStore.modal = false"
+                            @click="searchStore.modal = true"
                         >
                             <img
                                 src="/images/search.svg"
@@ -264,7 +264,7 @@ const switchToggle = () => {
                                 alt="search icon"
                             />
                         </div>
-                        <template v-if="!searchStore.modal">
+                        <template v-if="searchStore.modal == true">
                             <SearchModal
                         /></template>
                         <button
