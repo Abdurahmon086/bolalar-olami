@@ -5,6 +5,9 @@
     left: 0;
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &__inner {
         width: 100vw;
@@ -21,8 +24,6 @@
     &__s {
         position: absolute;
         z-index: 99999;
-        top: 300px;
-        left: 38%;
     }
 
     &__wrapper {

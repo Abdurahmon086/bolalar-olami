@@ -1,4 +1,4 @@
-<!-- <script setup>
+<script setup>
 const mainStore = useMainStore();
 const authPage = ref(true);
 </script>
@@ -175,7 +175,5 @@ const authPage = ref(true);
     </div>
 </template>
 
-<style></style> -->
-<template>
-    <div class="">asd</div>
-</template>
+<style></style>
+
