@@ -5,137 +5,79 @@ const indexStore = useIndexStore();
 const searchStore = useSearchStore();
 const route = useRoute();
 const localPath = useLocalePath();
-
-const data = indexStore?.datas;
 </script>
 
 <template>
     <main class="darkMode-body">
-
-        <!-- <template v-if="!searchStore.modal"> <SearchModal /></template>
-        <template v-else> -->
-        <section class="container">
-            <div class="search-result">
-                <div class="d-flex align-item-center justify-content-between">
-                    <div class="search-result__box">
-                        <p class="search-result__text">
-                            {{ route.query.q }}
-                        </p>
-                    </div>
-                </div>
-                <div class="search-result__card" v-if="searchStore.datas">
-                    <NuxtLink
-                        class="search-result__card-wrapper position-relative"
-                        v-for="item in searchStore.datas?.data"
-                        :key="item.id"
-                        :to="localPath(`/category/${item.id}`)"
-                    >
-                        <img
-                            :src="item.detail_image.card"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute position-absolute hidden-text-3"
-                            >
-                                {{ item[`title_${$i18n.locale}`] }}
-                            </p>
-                        </div>
-                    </NuxtLink>
-                </div>
-            </div>
-        </section>
-        <section class="lastNews">
+        <section>
             <div class="container">
-                <div class="lastNews__wrapper">
-                    <div class="lastNews__left-wrap">
-                        <h4 class="news__title darkMode-title">
-                            {{ $t("education") }}
-                        </h4>
-                        <div class="lastNews__left">
+                <div class="tegs">
+                    <p class="tegs-text darkMode-title">{{ route.query.q }}</p>
+                    <div class="tegs-cardimg">
+                        <div
+                            class="tegs-cardimg__left"
+                            v-if="searchStore.datas"
+                        >
                             <NuxtLink
-                                v-for="item in data.educationPosts"
-                                :to="localPath(`/category/${item.id}`)"
+                                class="tegs-cardimg__left-wrapper darkMode"
+                                v-for="item in searchStore.datas?.data"
                                 :key="item.id"
-                                class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode"
+                                :to="localPath(`/category/${item.id}`)"
                             >
-                                <div
-                                    class="position-relative lastNews__left-img"
-                                >
+                                <div class="position-relative">
                                     <img
                                         :src="item.detail_image.card"
-                                        class="card-img-top rounded-0"
-                                        :alt="item[`title_${$i18n.locale}`]"
+                                        class="img-fluid w-100"
+                                        alt="card-img"
                                     />
-                                    <span
-                                        class="position-absolute lastNews__left-spLink darkMode"
+                                    <p
+                                        class="tegs-cardimg__left-wrapper-dec position-absolute darkMode"
                                     >
-                                        {{ $t("education") }}</span
-                                    >
+                                        Maktab
+                                    </p>
                                 </div>
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title darkMode">
+                                <div class="tegs-cardimg__left-wrapper-box">
+                                    <h4
+                                        class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2"
+                                    >
                                         {{ item[`title_${$i18n.locale}`] }}
-                                    </h5>
-                                    <p class="card-text darkMode">
+                                    </h4>
+                                    <p
+                                        class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3"
+                                    >
                                         {{
                                             item[`description_${$i18n.locale}`]
                                         }}
                                     </p>
-                                    <span
-                                        class="lastNews__left-sp darkMode-sp"
-                                        >{{ item.publish_date }}</span
+                                    <p
+                                        class="tegs-cardimg__left-wrapper-time darkMode-sp"
                                     >
+                                        {{ item.publish_date }}
+                                    </p>
                                 </div>
                             </NuxtLink>
                         </div>
-                    </div>
-                    <div class="lastNews__right darkMode border-0">
-                        <h4 class="lastNews__right-title">
-                            {{ $t("last_news") }}
-                        </h4>
-                        <ul class="lastNews__right-list list-unstyled darkMode">
-                            <NuxtLink
-                                v-for="item in data.recentNewsPosts"
-                                :to="localPath(`/category/${item.id}`)"
-                                :key="item.id"
-                                class="border-bottom text-decoration-none"
-                            >
-                                <p class="lastNews__right-text darkMode">
-                                    {{ item[`title_${$i18n.locale}`] }}
-                                </p>
-                                <div
-                                    class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-
-                                >
-                                    <div
-                                        class="d-flex align-items-center"
-                                        style="gap: 7px"
-                                    >
-                                        <img
-                                            src="/images/eye.svg"
-                                            alt="eye icon"
-                                        />
-                                        <span
-                                            class="lastNews__right-sp darkMode-sp"
-                                            >{{ item.views_count }}</span
-                                        >
-                                    </div>
-                                    <span
-                                        class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                        >{{ item.publish_date }}</span
-                                    >
-                                </div>
-                            </NuxtLink>
-                        </ul>
+                        <aside class="tegs-cardimg__aside">
+                            <img
+                                src="/images/talimImages/reklama-img1.png"
+                                class="img-fluid tegs-cardimg__aside-img1"
+                                alt="reklama-img"
+                            />
+                            <img
+                                src="/public/images/talimImages/reklama-img2.png"
+                                class="img-fluid tegs-cardimg__aside-img2"
+                                alt="reklama-img"
+                            />
+                            <img
+                                src="/public/images/talimImages/reklama-img3.png"
+                                class="img-fluid talim-cardimg__aside-img3"
+                                alt="reklama-img"
+                            />
+                        </aside>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- </template> -->
     </main>
 </template>
 

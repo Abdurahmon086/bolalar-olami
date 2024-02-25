@@ -6,6 +6,7 @@ import { useSingleStore } from './singleStore'
 export const useSearchStore = defineStore('searchStore', () => {
     const router = useRouter();
     const singleStore = useSingleStore()
+    const rout = useRoute()
 
     // state
     const datas = ref([])
@@ -19,15 +20,16 @@ export const useSearchStore = defineStore('searchStore', () => {
     const getSearchData = async (value) => {
         try {
             singleStore.loading = true
-            const res = await fetch(`${url}/get-search?search=${value.value}`);
+            const res = await fetch(`${url}/get-search?search=${value.value == '' ? rout.query.q : value.value}`);
             const data = await res.json();
+            console.log(data);
             datas.value = data.data.posts
             singleStore.loading = false
         } catch (err) {
             console.log(err);
         }
     };
-
+    getSearchData(search)
     const submitForm = () => {
         if (!search.value) return;
         router.push({ path: "/search/", query: { q: search.value } });
