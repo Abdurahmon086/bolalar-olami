@@ -3,73 +3,14 @@ useHead({ title: "Bolalar olami | search" });
 
 const indexStore = useIndexStore();
 const searchStore = useSearchStore();
-
+const route = useRoute();
 const localPath = useLocalePath();
 
-const data = indexStore.datas;
+const data = indexStore?.datas;
 </script>
 
 <template>
     <main class="darkMode-body">
-        <section class="container">
-            <div class="search-result">
-                <div class="search-result__box">
-                    <p class="search-result__text">Kalit so’zi</p>
-                    <img
-                        src="/images/searchImages/close-icon.svg"
-                        class="img-fluid"
-                        alt="close icon"
-                    />
-                </div>
-                <div class="search-result__card">
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-
-    <main>
         <template v-if="!searchStore.modal"> <SearchModal /></template>
         <template v-else>
             <section class="container">
@@ -78,150 +19,33 @@ const data = indexStore.datas;
                         class="d-flex align-item-center justify-content-between"
                     >
                         <div class="search-result__box">
-                            <p class="search-result__text">Kalit so’zi</p>
-                            <img
-                                src="/images/searchImages/close-icon.svg"
-                                class="img-fluid"
-                                alt="close icon"
-                            />
-
+                            <p class="search-result__text">
+                                {{ route.query.q }}
+                            </p>
                         </div>
-                        <button
-                            @click="searchStore.showAll = !searchStore.showAll"
-                            class="btn btn-danger"
-                        >
-                            <template v-if="!searchStore.showAll">
-                                Hammasini ko'rsatish
-                            </template>
-                            <template v-else>
-                                Hammasini ko'rsatish yopish
-                            </template>
-                        </button>
                     </div>
                     <div class="search-result__card" v-if="searchStore.datas">
-                        <template
-                            v-if="
-                                !searchStore.showAll &&
-                                searchStore.datas?.data?.length > 4
-                            "
+                        <NuxtLink
+                            class="search-result__card-wrapper position-relative"
+                            v-for="item in searchStore.datas?.data"
+                            :key="item.id"
+                            :to="localPath(`/category/${item.id}`)"
                         >
-
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
+                            <img
+                                :src="item.detail_image.card"
+                                class="img-fluid w-100"
+                                alt="img"
+                            />
+                            <div
+                                class="search-result__card-wrapper-box position-absolute w-100 h-100"
                             >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="search-result__card-wrapper position-relative">
-                        <img
-                            src="/images/searchImages/img1.png"
-                            class="img-fluid w-100"
-                            alt="img"
-                        />
-                        <div
-                            class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                        >
-                            <p
-                                class="search-result__card-wrapper-text position-absolute"
-                            >
-                                Yaponiyada tug‘ilishlar soni keskin kamaydi
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="lastNews">
-            <div class="container">
-                <div class="lastNews__wrapper">
-                    <div class="lastNews__left-wrap">
-                        <h4 class="news__title darkMode-title">
-                            {{ $t("education") }}
-                        </h4>
-                        <div class="lastNews__left">
-
-                            <NuxtLink
-                                class="search-result__card-wrapper position-relative"
-                                v-for="item in searchStore.datas?.data.slice(
-                                    0,
-                                    4
-                                )"
-                                :key="item.id"
-                                :to="localPath(`/category/${item.id}`)"
-                            >
-                                <img
-                                    :src="item.detail_image.card"
-                                    class="img-fluid w-100"
-                                    alt="img"
-                                />
-                                <div
-                                    class="search-result__card-wrapper-box position-absolute w-100 h-100"
+                                <p
+                                    class="search-result__card-wrapper-text position-absolute position-absolute hidden-text-3"
                                 >
-                                    <p
-                                        class="search-result__card-wrapper-text position-absolute position-absolute"
-                                    >
-                                        {{ item[`title_${$i18n.locale}`] }}
-                                    </p>
-                                </div>
-                            </NuxtLink>
-                        </template>
-                        <template v-else>
-                            <NuxtLink
-                                class="search-result__card-wrapper position-relative"
-                                v-for="item in searchStore.datas?.data"
-                                :key="item.id"
-                                :to="localPath(`/category/${item.id}`)"
-                            >
-                                <img
-                                    :src="item.detail_image.card"
-                                    class="img-fluid w-100"
-                                    alt="img"
-                                />
-                                <div
-                                    class="search-result__card-wrapper-box position-absolute w-100 h-100"
-                                >
-                                    <p
-                                        class="search-result__card-wrapper-text position-absolute position-absolute"
-                                    >
-                                        {{ item[`title_${$i18n.locale}`] }}
-                                    </p>
-                                </div>
-                            </NuxtLink>
-                        </template>
+                                    {{ item[`title_${$i18n.locale}`] }}
+                                </p>
+                            </div>
+                        </NuxtLink>
                     </div>
                 </div>
             </section>
