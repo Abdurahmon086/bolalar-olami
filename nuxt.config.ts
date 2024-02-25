@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     },
     pages: true,
     // spaLoadingTemplate: "~/layouts/loading.vue",
-    modules: ["@nuxtjs/i18n", "@pinia/nuxt"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,

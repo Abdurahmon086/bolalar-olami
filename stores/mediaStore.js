@@ -1,35 +1,30 @@
 import { defineStore } from 'pinia'
-const url = 'http://new.bolalarolami.uz/api/v2/get-videos'
+const url = 'http://new.bolalarolami.uz/api/v2/get-videos '
 
-export const useMediaStore = defineStore('counter', () => {
-    // const isBool = ref(false);
+export const useMediaStore = defineStore('mediaStore', () => {
+    const datas = ref();
+    const openToggle = ref(false)
+    const activeCategory = ref(null);
 
-    // function $boolFunc() {
-    //     isBool.value = !isBool.value;
-    //     console.log(isBool.value);
-        
-    // }
-
-    // return { isBool, $boolFunc }
-
-     // state
-  const datas = ref()
-  // getter
-
-  // action
-  const getMediaData = async () => {
-    try {
-      const res = await fetch(`${url}/home/get-news-home`);
-      const data = await res.json();
-      datas.value = data.data;
-    } catch (err) {
-      console.log(err);
-    }
-  }
+    const getMediaData = async () => {
+        try {
+            const res = await fetch(`${url}`);
+            const data = await res.json();
+            datas.value = data.data
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
 
-  return {
-    getMediaData,
-    datas
-  };
+    const toggleCategory = (category) => {
+        activeCategory.value = (activeCategory.value === category) ? null : category;
+    };
+
+    const isActive = (category) => {
+        return activeCategory.value === category;
+    };
+
+    return { datas, openToggle, getMediaData, toggleCategory, isActive }
+
 })

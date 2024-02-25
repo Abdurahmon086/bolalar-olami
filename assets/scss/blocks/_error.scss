@@ -1,0 +1,106 @@
+.error {
+    background: url(/images/404_page.png),
+        lightgray -56px -5.377px / 107.778% 101.028% no-repeat;
+    background-size: 100vw 100vh;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.error__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.error__title-404 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 152px;
+    font-weight: 700;
+}
+
+.error__inner {
+    padding: 24px;
+    gap: 10px;
+    background: rgba(36, 36, 36, 0.1);
+    backdrop-filter: blur(27px);
+}
+
+.error__title {
+    color: #fff;
+    font-family: "BBC Reith Sans", sans-serif;
+    font-size: 51px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.error__text {
+    max-width: 450px;
+    color: #fff;
+    font-family: "BBC Reith Sans", sans-serif;
+    font-size: 20.468px;
+    line-height: 30.702px;
+    letter-spacing: 0.819px;
+    margin-bottom: 34px;
+}
+
+.error__btn {
+    width: 255.849px;
+    height: 57.566px;
+    flex-shrink: 0;
+    border-radius: 6.396px;
+    background: #f7931e;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 20.468px;
+    gap: 32px;
+}
+
+@media only screen and (max-width: 666px) {
+    .error {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .error__wrapper {
+        gap: 20px;
+    }
+
+    .error__title-404 {
+        font-size: 100px;
+    }
+
+    .error__inner {
+        padding: 14px;
+    }
+
+    .error__title {
+        font-size: 32px;
+    }
+
+    .error__text {
+        max-width: 250px;
+        color: #fff;
+        font-family: "BBC Reith Sans", sans-serif;
+        font-size: 16.468px;
+        line-height: 20.702px;
+        margin-bottom: 24px;
+    }
+
+    .error__btn {
+        width: 185.849px;
+        height: 47.566px;
+        flex-shrink: 0;
+        font-size: 16.468px;
+    }
+}

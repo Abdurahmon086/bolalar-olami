@@ -4,7 +4,7 @@
 
     &__wrapper {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
     }
 
     &__title {
@@ -19,25 +19,36 @@
         margin-bottom: 0;
     }
 
-
-    .carousel {
+    &__carousel {
         margin-top: 10px;
-    }
-
-    .carousel-item {
-        height: 202px;
-    }
-
-    .card-img-overlay {
-        background-image: url(/images/rectangle.png);
-        background-size: cover;
-        background-repeat: no-repeat;
         width: 100%;
-        height: 100%;
+        height: 202px;
 
+
+        &-item {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        &-img {
+            width: 100%;
+        }
+
+        &-text {
+            position: absolute;
+            top: 0;
+            background-image: url(/images/rectangle.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 100%;
+        }
     }
 
     &__slider-text {
+        position: absolute;
         left: 12px;
         bottom: 18px;
         color: #FFF;
@@ -46,10 +57,6 @@
         font-weight: 700;
         width: 301.651px;
         margin-bottom: 0;
-        -webkit-line-clamp: 3;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 
     &__img-wrapper {
@@ -135,7 +142,7 @@
 
         &__wrapper {
             display: grid;
-            grid-template-columns: 1fr 0.5fr;
+            grid-template-columns: 70% 30%;
             gap: 10px;
         }
 
@@ -156,7 +163,7 @@
             font-size: 12.812px;
         }
 
-        .carousel-item {
+        &__carousel {
             height: 314px;
         }
 
@@ -219,7 +226,7 @@
             font-size: 22.527px;
         }
 
-        .carousel-item {
+        &__carousel {
             height: 550px;
         }
 

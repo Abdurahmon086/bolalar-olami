@@ -7,12 +7,11 @@ export const useMainStore = defineStore('mainStore', () => {
     const { locale, setLocale } = useI18n();
     // state
     const navData = ref([]);
-    const activeText = ref(null);
     const auth = ref(false);
     const auths = ref(false);
-    const darkTheme = ref(false);
-    // getter
+    const authed = ref(false)
 
+    // getter
     const language = computed({
         get: () => locale.value,
         set: (value) => {
@@ -51,9 +50,8 @@ export const useMainStore = defineStore('mainStore', () => {
         }
     };
 
-    const changeLocale = (lang, text) => {
+    const changeLocale = (lang) => {
         setLocale(lang);
-        activeText.value = text;
     };
 
     const modalTogle = (value) => {
@@ -71,7 +69,6 @@ export const useMainStore = defineStore('mainStore', () => {
         language,
         navbarM,
         navData,
-        auth,
-        activeText
+        auth, authed
     };
 })
