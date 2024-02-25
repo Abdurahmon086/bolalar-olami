@@ -1,6 +1,6 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
-const store = useMediaStore();
+const store = useMediaStore()
 </script>
 <template>
     <main class="darkMode-body pb-5 bg-white">

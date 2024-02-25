@@ -11,6 +11,7 @@ const data = indexStore?.datas;
 
 <template>
     <main class="darkMode-body">
+
         <!-- <template v-if="!searchStore.modal"> <SearchModal /></template>
         <template v-else> -->
         <section class="container">
@@ -108,6 +109,7 @@ const data = indexStore?.datas;
                                 </p>
                                 <div
                                     class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
+
                                 >
                                     <div
                                         class="d-flex align-items-center"

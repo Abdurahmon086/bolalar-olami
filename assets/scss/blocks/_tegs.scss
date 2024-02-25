@@ -1,0 +1,598 @@
+.tegs {
+    padding-top: 126px;
+
+    &-text {
+        color: #242424;
+        font-family: "BBC Reith Sans", sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 0;
+
+    }
+
+    &-cardimg {
+        margin-top: 24.5px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 21px;
+        padding-bottom: 21px;
+
+
+        &__left {
+
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px 21px;
+
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                background-color: #FFF;
+
+                &-box {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 15.96px;
+                }
+
+                &-dec {
+                    color: #242424;
+                    font-family: "IBM Plex Sans";
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    padding: 4.989px 11.974px;
+                    background-color: #FFF;
+                    bottom: 12px;
+                    left: 11px;
+                    margin-bottom: 0;
+
+
+                }
+
+                &-title {
+                    color: #242424;
+                    font-family: "IBM Plex Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 0;
+                    padding: 2px 8px 0 6px;
+                }
+
+                &-text {
+                    overflow: hidden;
+                    color: #242424;
+                    text-overflow: ellipsis;
+                    font-family: "IBM Plex Sans";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin: 0;
+                    padding: 2px 3px 0 6px;
+
+                }
+
+                &-time {
+                    overflow: hidden;
+                    color: #A0A0A0;
+                    text-overflow: ellipsis;
+                    font-family: "IBM Plex Sans";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    margin: 0;
+                    padding: 2px 3px 15.9px 6px;
+
+                }
+            }
+        }
+
+        &__aside {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+
+            &-img1 {
+                width: 305px;
+                // height: 916px;
+            }
+
+            &-img2 {
+                width: 305px;
+                // height: 448px;
+            }
+
+            &-img3 {
+                width: 305px;
+                // height: 540px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+
+    .tegs {
+        padding-top: 128px;
+
+        &-text {
+            font-size: 16px;
+
+        }
+
+        &-cardimg {
+            margin-top: 24px;
+            display: flex;
+            gap: 18px;
+            margin-bottom: 40px;
+
+
+            &__left {
+
+                gap: 20px 10px;
+
+                &-wrapper {
+                    row-gap: 5px;
+
+                    &-box {
+                        row-gap: 9.08px;
+                    }
+
+                    &-dec {
+                        font-size: 6.825px;
+                        padding: 2.989px 5.974px;
+                        bottom: 5px;
+                        left: 4px;
+
+
+                    }
+
+                    &-title {
+                        font-size: 10px;
+                        font-weight: 500;
+                        padding: 2px 3px 0 3px;
+                    }
+
+                    &-text {
+                        font-size: 8px;
+                        padding: 2px 3px 0 3px;
+
+                    }
+
+                    &-time {
+                        font-size: 7.963px;
+                        padding: 2px 3px 9.08px 3px;
+
+                    }
+                }
+            }
+
+            &__aside {
+                display: flex;
+                flex-direction: column;
+                row-gap: 9.1px;
+
+                &-img1 {
+                    max-width: 173px;
+                    // height: 326px;
+                }
+
+                &-img2 {
+                    max-width: 173px;
+                    // height: 203px;
+                }
+
+                &-img3 {
+                    max-width: 173px;
+                    // height: 305px;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+
+    .tegs {
+        padding-top: 128px;
+
+        &-text {
+            font-size: 16px;
+
+        }
+
+        &-cardimg {
+            margin-top: 24px;
+            display: flex;
+            gap: 18px;
+            margin-bottom: 40px;
+
+
+            &__left {
+
+                gap: 20px 10px;
+
+                &-wrapper {
+                    row-gap: 5px;
+
+                    &-box {
+                        row-gap: 9.08px;
+                    }
+
+                    &-dec {
+                        font-size: 6.825px;
+                        padding: 2.989px 5.974px;
+                        bottom: 5px;
+                        left: 4px;
+
+
+                    }
+
+                    &-title {
+                        font-size: 10px;
+                        font-weight: 500;
+                        padding: 2px 3px 0 3px;
+                    }
+
+                    &-text {
+                        font-size: 8px;
+                        padding: 2px 3px 0 3px;
+
+                    }
+
+                    &-time {
+                        font-size: 7.963px;
+                        padding: 2px 3px 9.08px 3px;
+
+                    }
+                }
+            }
+
+            &__aside {
+                display: flex;
+                flex-direction: column;
+                row-gap: 9.1px;
+
+                &-img1 {
+                    max-width: 173px;
+                    // height: 326px;
+                }
+
+                &-img2 {
+                    max-width: 173px;
+                    // height: 203px;
+                }
+
+                &-img3 {
+                    max-width: 173px;
+                    // height: 305px;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+    .tegs {
+        padding-top: 128px;
+
+        &-text {
+            font-size: 16px;
+
+        }
+
+        &-cardimg {
+            margin-top: 24px;
+            display: flex;
+            gap: 18px;
+            margin-bottom: 40px;
+
+
+            &__left {
+
+                gap: 20px 10px;
+
+                &-wrapper {
+                    row-gap: 5px;
+
+                    &-box {
+                        row-gap: 9.08px;
+                    }
+
+                    &-dec {
+                        font-size: 6.825px;
+                        padding: 2.989px 5.974px;
+                        bottom: 5px;
+                        left: 4px;
+
+
+                    }
+
+                    &-title {
+                        font-size: 10px;
+                        font-weight: 500;
+                        padding: 2px 3px 0 3px;
+                    }
+
+                    &-text {
+                        font-size: 8px;
+                        padding: 2px 3px 0 3px;
+
+                    }
+
+                    &-time {
+                        font-size: 7.963px;
+                        padding: 2px 3px 9.08px 3px;
+
+                    }
+                }
+            }
+
+            &__aside {
+                display: flex;
+                flex-direction: column;
+                row-gap: 9.1px;
+
+                &-img1 {
+                    max-width: 173px;
+                    // height: 326px;
+                }
+
+                &-img2 {
+                    max-width: 173px;
+                    // height: 203px;
+                }
+
+                &-img3 {
+                    max-width: 173px;
+                    // height: 305px;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    .tegs {
+        padding-top: 131px;
+
+        &-text {
+            color: #242424;
+            font-family: "BBC Reith Sans", sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+        }
+
+        &-cardimg {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            // gap: 21px;
+            margin-bottom: 21px;
+
+
+            &__left {
+
+                display: grid;
+                grid-template-columns: auto;
+                row-gap: 20px;
+
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 11px;
+                    background-color: #FFF;
+
+                    &-box {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 18px;
+                    }
+
+                    img {
+                        width: 343px;
+                    }
+
+                    &-dec {
+                        color: #121212;
+                        font-family: "IBM Plex Sans";
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        padding: 4.989px 11.974px;
+                        background-color: #FFF;
+                        // top: 145px;
+                        bottom: 12px;
+                        left: 11px;
+                        margin-bottom: 0;
+
+
+                    }
+
+                    &-title {
+                        color: #242424;
+                        font-family: "IBM Plex Sans";
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 0 6px;
+                        max-width: 331px;
+                    }
+
+                    &-text {
+                        overflow: hidden;
+                        color: #242424;
+                        text-overflow: ellipsis;
+                        font-family: "IBM Plex Sans";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 0 6px;
+                        max-width: 331px;
+
+
+                    }
+
+                    &-time {
+                        overflow: hidden;
+                        color: #A0A0A0;
+                        text-overflow: ellipsis;
+                        font-family: "IBM Plex Sans";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 15.9px 6px;
+                        max-width: 331px;
+
+
+                    }
+                }
+            }
+
+            &__aside {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:376px) {
+
+    .tegs {
+        padding-top: 131px;
+
+        &-text {
+            color: #242424;
+            font-family: "BBC Reith Sans", sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+        }
+
+        &-cardimg {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            // gap: 21px;
+            margin-bottom: 21px;
+
+
+            &__left {
+
+                display: grid;
+                grid-template-columns: auto;
+                row-gap: 20px;
+
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 11px;
+                    background-color: #FFF;
+
+                    &-box {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 18px;
+                    }
+
+                    img {
+                        width: 343px;
+                    }
+
+                    &-dec {
+                        color: #121212;
+                        font-family: "IBM Plex Sans";
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        padding: 4.989px 11.974px;
+                        background-color: #FFF;
+                        // top: 145px;
+                        bottom: 12px;
+                        left: 11px;
+                        margin-bottom: 0;
+
+
+                    }
+
+                    &-title {
+                        color: #242424;
+                        font-family: "IBM Plex Sans";
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 0 6px;
+                        max-width: 331px;
+                    }
+
+                    &-text {
+                        overflow: hidden;
+                        color: #242424;
+                        text-overflow: ellipsis;
+                        font-family: "IBM Plex Sans";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 0 6px;
+                        max-width: 331px;
+
+
+                    }
+
+                    &-time {
+                        overflow: hidden;
+                        color: #A0A0A0;
+                        text-overflow: ellipsis;
+                        font-family: "IBM Plex Sans";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        margin: 0;
+                        padding: 2px 3px 15.9px 6px;
+                        max-width: 331px;
+
+
+                    }
+                }
+            }
+
+            &__aside {
+                display: none;
+            }
+        }
+    }
+}

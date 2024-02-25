@@ -26,4 +26,5 @@ export const useMediaStore = defineStore('mediaStore', () => {
     };
 
     return { datas, openToggle, getMediaData, toggleCategory, isActive }
+
 })
