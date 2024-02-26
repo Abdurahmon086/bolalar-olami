@@ -1,0 +1,212 @@
+.mediacard-title {
+    color: #000;
+    font-family: "IBM Plex Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: 24px;
+}
+
+.mediacard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 112px;
+
+    &-box {
+        background: #FFF;
+
+        &--title {
+            color: #272C3C;
+            font-family: Roboto, sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+            padding: 16px 0 5px 32px;
+            margin-bottom: 0;
+
+        }
+
+        &--text {
+            color: #9B9B9B;
+            font-family: Roboto, sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 21px;
+            padding: 0 5px 15px 32px;
+            margin-bottom: 0;
+
+        }
+    }
+}
+@media only screen and (max-width:1200px) {
+    .mediacard-title {
+        color: #000;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 24px;
+    }
+
+    .mediacard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 18px;
+        margin-top: 42px;
+        margin-bottom: 83px;
+
+        &-box {
+            background: #FFF;
+
+            img{
+                cursor: pointer;
+            }
+
+            &--title {
+
+                padding: 7px 0 5px 20px;
+            }
+
+            &--text {
+                padding: 0 5px 16px 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .mediacard-title {
+        color: #000;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 24px;
+    }
+
+    .mediacard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 18px;
+        margin-top: 42px;
+        margin-bottom: 83px;
+
+        &-box {
+            background: #FFF;
+
+            &--title {
+
+                padding: 7px 0 5px 20px;
+            }
+
+            &--text {
+                padding: 0 5px 16px 20px;
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px) {
+    .mediacard-title {
+        color: #000;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 24px;
+    }
+
+    .mediacard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 18px;
+        margin-top: 42px;
+        margin-bottom: 83px;
+
+        &-box {
+            background: #FFF;
+
+            &--title {
+
+                padding: 7px 0 5px 20px;
+            }
+
+            &--text {
+                padding: 0 5px 16px 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .mediacard-title {
+        color: #000;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 24px;
+    }
+
+    .mediacard {
+        display: grid;
+        grid-template-columns: 1fr ;
+        row-gap: 28px;
+        margin-top: 32px;
+        margin-bottom:40px;
+
+        &-box {
+            background: #FFF;
+
+            &--title {
+
+                padding: 7px 0 5px 20px;
+            }
+
+            &--text {
+                padding: 0 5px 16px 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:376px) {
+    .mediacard-title {
+        color: #000;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        margin-top: 24px;
+    }
+
+    .mediacard {
+        display: grid;
+        grid-template-columns: 1fr ;
+        row-gap: 28px;
+        margin-top: 32px;
+        margin-bottom: 40px;
+
+        &-box {
+            background: #FFF;
+
+            &--title {
+
+                padding: 7px 0 5px 20px;
+            }
+
+            &--text {
+                padding: 0 5px 16px 20px;
+            }
+        }
+    }
+}

@@ -53,6 +53,7 @@ const store = useMediaStore()
                                 class="img-fluid rounded-0 mediacate__card-box1--img"
                                 alt="GALEREYA img"
                             />
+                            
                             <h2
                                 class="mediacate__card-bottom--title position-absolute"
                             >
@@ -164,6 +165,7 @@ const store = useMediaStore()
                                 class="img-fluid h-100 rounded-0 card-img"
                                 alt="img"
                             />
+                            
                             <div
                                 class="position-absolute mediacate__all-box w-100 card-img-overlay"
                             >
