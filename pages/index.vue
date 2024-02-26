@@ -104,7 +104,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     </div>
                                 </div>
                             </div>
-                        </SwiperSlide>
+            </SwiperSlide>
                     </Swiper>
                 </div>
             </section>
