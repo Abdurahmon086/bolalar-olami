@@ -7,6 +7,7 @@ export const useSearchStore = defineStore('searchStore', () => {
     const router = useRouter();
     const singleStore = useSingleStore()
     const rout = useRoute()
+    const { locale } = useI18n()
 
     // state
     const datas = ref([])
@@ -31,7 +32,7 @@ export const useSearchStore = defineStore('searchStore', () => {
     getSearchData(search)
     const submitForm = () => {
         if (!search.value) return;
-        router.push({ path: "/search/", query: { q: search.value } });
+        router.push({ path: `${locale.value == 'uz' ? '' : locale.value}/search/`, query: { q: search.value } });
         modal.value = false
         getSearchData(search)
         search.value = ''
