@@ -159,8 +159,10 @@ await store.getMediaData();
                             id="myButton"
                             @click="store.toggleCategory(items)"
                             class="btn btn-danger btn-sm mediaBtn"
-                        >
-
+                        ></button>
+                    </div>
+                    <div class="mediacate__all">
+                        <template v-if="!store.isActive(items)">
                             <div
                                 class="position-relative mediacate__all-card w-100 image-container"
                                 v-for="item in items?.videos.slice(0, 4)"
