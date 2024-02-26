@@ -3,7 +3,7 @@ useHead({ title: "Bolalar olami | posts" });
 const route = useRoute();
 const mainStore = useMainStore();
 const tageStore = useTageStore();
-await tageStore.getTagsData(route.params.id);
+await tageStore.getTagsData(route.params.ids);
 </script>
 
 <template>

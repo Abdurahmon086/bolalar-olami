@@ -5,7 +5,6 @@ const url = 'http://new.bolalarolami.uz/api/v2'
 
 export const useMainStore = defineStore('mainStore', () => {
     const { locale, setLocale } = useI18n();
-    const mainStore = useMainStore();
     // state
     const navData = ref([]);
     const auth = ref(false);
@@ -44,11 +43,11 @@ export const useMainStore = defineStore('mainStore', () => {
     // action
     const getNabarData = async () => {
         try {
-            mainStore.loader = true
+            loader.value = true
             const res = await fetch(`${url}/resources/get-sections`);
             const data = await res.json();
             navData.value = data.data
-            mainStore.loader = false
+            loader.value = false
         } catch (err) {
             console.log(err);
         }

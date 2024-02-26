@@ -17,7 +17,7 @@ export const useTageStore = defineStore('tageStore', () => {
             const res = await fetch(`${url}/get-tag/${id}`);
             const data = await res.json();
             datas.value = data.data
-            mainStore.loader = true
+            mainStore.loader = false
         } catch (err) {
             console.log(err);
         }

@@ -3,9 +3,10 @@
         class="loopScroler bg-white darkMode mt-5 mb-0 d-none d-md-flex w-100"
     >
         <Swiper
-            :modules="[SwiperEffectCreative, SwiperNavigation, SwiperFreeMode]"
+            :modules="[SwiperNavigation, SwiperAutoplay]"
             :slides-per-view="5"
             :navigation="{ enabled: true }"
+            :autoplay="{ delay: 1000 }"
             class="loopScroler__inner"
         >
             <SwiperSlide

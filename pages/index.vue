@@ -16,95 +16,56 @@ const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
 <template>
-    <template v-if="mainStore.loader == true"> <Loader /> </template>
+    <template v-if="mainStore.loader == true">
+        <Loader />
+    </template>
     <template v-else-if="mainStore.loader == false">
         <main class="darkMode-body pb-5">
-            <!-- <template v-if="mainStore.auth == true">
-            <AuthCard />
-        </template> -->
             <section class="hero">
                 <div class="container">
-                    <Swiper
-                        :modules="[
-                            SwiperAutoplay,
-                            SwiperEffectCreative,
-                            SwiperPagination,
-                        ]"
-                        :pagination="{
-                            clickable: true,
-                        }"
-                        :slides-per-view="1"
-                        :loop="true"
-                        :effect="'creative'"
-                        :autoplay="{
-                            delay: 3000,
-                            disableOnInteraction: true,
-                        }"
-                        :creative-effect="{
-                            prev: {
-                                shadow: false,
-                                translate: ['-20%', 0, -1],
-                            },
-                            next: {
-                                translate: ['100%', 0, 0],
-                            },
-                        }"
-                        class="carousel"
-                    >
+                    <Swiper :modules="[
+                        SwiperAutoplay,
+                        SwiperEffectCreative,
+                        SwiperPagination,
+                    ]" :pagination="{
+    clickable: true,
+}" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
+    delay: 3000,
+    disableOnInteraction: true,
+}" :creative-effect="{
+    prev: {
+        shadow: false,
+        translate: ['-20%', 0, -1],
+    },
+    next: {
+        translate: ['100%', 0, 0],
+    },
+}" class="carousel">
                         <!-- Inner -->
-                        <SwiperSlide
-                            v-for="slide in 4"
-                            :key="slide"
-                            class="carousel-inner"
-                        >
-                            <!-- Single item -->
+                        <SwiperSlide v-for="slide in 4" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
-                                <img
-                                    src="/images/hero_img.jpg"
-                                    class="img-fluid h-100 w-100"
-                                    style="object-fit: cover"
-                                    alt="hero image"
-                                />
+                                <img src="/images/hero_img.jpg" class="img-fluid h-100 w-100" style="object-fit: cover"
+                                    alt="hero image" />
                                 <div class="carousel-caption">
-                                    <div
-                                        class="hero__pages d-flex align-items-center"
-                                    >
-                                        <img
-                                            src="/images/Vector-left.svg"
-                                            alt="verctor left icon"
-                                        />
+                                    <div class="hero__pages d-flex align-items-center">
+                                        <img src="/images/Vector-left.svg" alt="verctor left icon" />
                                         <span class="hero__infoTy">3</span>
-                                        <img
-                                            src="/images/Vector-right.svg"
-                                            alt="verctor right icon"
-                                        />
-                                        <span
-                                            class="opacity-75 hero__infoTy-oth"
-                                            >12</span
-                                        >
+                                        <img src="/images/Vector-right.svg" alt="verctor right icon" />
+                                        <span class="opacity-75 hero__infoTy-oth">12</span>
                                     </div>
                                     <div
-                                        class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between"
-                                    >
+                                        class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between">
                                         <h3 class="text-start hero__car-text">
                                             Yaponiyada tug‘ilishlar soni kamaydi
                                         </h3>
-                                        <a
-                                            class="btn text-white hero__link-btn d-flex align-items-center darkMode2"
-                                            data-bs-ripple-init
-                                            href="#!"
-                                            role="button"
-                                        >
+                                        <a class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
                                             Подробнее
-                                            <img
-                                                src="/images/Vector-oreng.svg"
-                                                alt="vrctor orange icon"
-                                            />
+                                            <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
                                         </a>
                                     </div>
                                 </div>
                             </div>
-            </SwiperSlide>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
             </section>
@@ -114,17 +75,10 @@ const mainPosts4 = data.mainPosts.slice(1);
                         {{ $t("main_title") }}
                     </h4>
                     <div class="news__wrapper">
-                        <NuxtLink
-                            :to="localPath(`/category/${data.mainPosts[0].id}`)"
-                            class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                :src="data.mainPosts[0].detail_image.card"
-                                class="card-img img-fluid h-100 rounded-0"
-                                :alt="
-                                    data.mainPosts[0][`title_${$i18n.locale}`]
-                                "
-                            />
+                        <NuxtLink :to="localPath(`/categories/${data.mainPosts[0].id}`)"
+                            class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
+                            <img :src="data.mainPosts[0].detail_image.card" class="card-img img-fluid h-100 rounded-0" :alt="data.mainPosts[0][`title_${$i18n.locale}`]
+                                " />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
                                     {{
@@ -136,17 +90,10 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </NuxtLink>
                         <div class="news__right">
-                            <NuxtLink
-                                v-for="item in mainPosts4"
-                                :to="localPath(`/category/${item.id}`)"
-                                :key="item.id"
-                                class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
-                            >
-                                <img
-                                    :src="item.detail_image.card"
-                                    class="card-img img-fluid h-100 rounded-0"
-                                    :alt="item[`title_${$i18n.locale}`]"
-                                />
+                            <NuxtLink v-for="item in mainPosts4" :to="localPath(`/categories/${item.id}`)" :key="item.id"
+                                class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
+                                <img :src="item.detail_image.card" class="card-img img-fluid h-100 rounded-0"
+                                    :alt="item[`title_${$i18n.locale}`]" />
                                 <div class="card-img-overlay rounded-0">
                                     <h5 class="news__card-title">
                                         {{ item[`title_${$i18n.locale}`] }}
@@ -165,41 +112,27 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 {{ $t("education") }}
                             </h4>
                             <div class="lastNews__left">
-                                <NuxtLink
-                                    v-for="item in data.educationPosts"
-                                    :to="localPath(`/category/${item.id}`)"
+                                <NuxtLink v-for="item in data.educationPosts" :to="localPath(`/categories/${item.id}`)"
                                     :key="item.id"
-                                    class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode"
-                                >
-                                    <div
-                                        class="position-relative lastNews__left-img"
-                                    >
-                                        <img
-                                            :src="item.detail_image.card"
-                                            class="card-img-top rounded-0"
-                                            :alt="item[`title_${$i18n.locale}`]"
-                                        />
-                                        <span
-                                            class="position-absolute lastNews__left-spLink darkMode"
-                                        >
-                                            {{ $t("education") }}</span
-                                        >
+                                    class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
+                                    <div class="position-relative lastNews__left-img">
+                                        <img :src="item.detail_image.card" class="card-img-top rounded-0"
+                                            :alt="item[`title_${$i18n.locale}`]" />
+                                        <span class="position-absolute lastNews__left-spLink darkMode">
+                                            {{ $t("education") }}</span>
                                     </div>
                                     <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title darkMode">
+                                        <h5 class="card-title darkMode hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}
                                         </h5>
-                                        <p class="card-text darkMode">
+                                        <p class="card-text darkMode hidden-text-3">
                                             {{
                                                 item[
-                                                    `description_${$i18n.locale}`
+                                                `description_${$i18n.locale}`
                                                 ]
                                             }}
                                         </p>
-                                        <span
-                                            class="lastNews__left-sp darkMode-sp"
-                                            >{{ item.publish_date }}</span
-                                        >
+                                        <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
                                 </NuxtLink>
                             </div>
@@ -208,38 +141,20 @@ const mainPosts4 = data.mainPosts.slice(1);
                             <h4 class="lastNews__right-title">
                                 {{ $t("last_news") }}
                             </h4>
-                            <ul
-                                class="lastNews__right-list list-unstyled darkMode"
-                            >
-                                <NuxtLink
-                                    v-for="item in data.recentNewsPosts"
-                                    :to="localPath(`/category/${item.id}`)"
-                                    :key="item.id"
-                                    class="border-bottom text-decoration-none"
-                                >
+                            <ul class="lastNews__right-list list-unstyled darkMode">
+                                <NuxtLink v-for="item in data.recentNewsPosts" :to="localPath(`/categories/${item.id}`)"
+                                    :key="item.id" class="border-bottom text-decoration-none">
                                     <p class="lastNews__right-text darkMode">
                                         {{ item[`title_${$i18n.locale}`] }}
                                     </p>
                                     <div
-                                        class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp"
-                                    >
-                                        <div
-                                            class="d-flex align-items-center"
-                                            style="gap: 7px"
-                                        >
-                                            <img
-                                                src="/images/eye.svg"
-                                                alt="eye icon"
-                                            />
-                                            <span
-                                                class="lastNews__right-sp darkMode-sp"
-                                                >{{ item.views_count }}</span
-                                            >
+                                        class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp">
+                                        <div class="d-flex align-items-center" style="gap: 7px">
+                                            <img src="/images/eye.svg" alt="eye icon" />
+                                            <span class="lastNews__right-sp darkMode-sp">{{ item.views_count }}</span>
                                         </div>
                                         <span
-                                            class="lastNews__right-sp lastNews__right-spDate darkMode-sp"
-                                            >{{ item.publish_date }}</span
-                                        >
+                                            class="lastNews__right-sp lastNews__right-spDate darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
                                 </NuxtLink>
                             </ul>
@@ -252,37 +167,23 @@ const mainPosts4 = data.mainPosts.slice(1);
                     <h4 class="social__name-title darkMode-title">
                         {{ $t("social_text") }}
                     </h4>
-                    <Swiper
-                        class="carousel"
-                        :modules="[SwiperAutoplay, SwiperEffectCreative]"
-                        :slides-per-view="1"
-                        :loop="true"
-                        :effect="'creative'"
-                        :autoplay="{
+                    <Swiper class="carousel" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1"
+                        :loop="true" :effect="'creative'" :autoplay="{
                             delay: 3000,
                             disableOnInteraction: true,
-                        }"
-                        :creative-effect="{
-                            prev: {
-                                shadow: false,
-                                translate: ['-20%', 0, -1],
-                            },
-                            next: {
-                                translate: ['100%', 0, 0],
-                            },
-                        }"
-                    >
-                        <SwiperSlide
-                            v-for="item in data.quotations"
-                            :key="item.id"
-                            class="social__qs-wrapper"
-                        >
+                        }" :creative-effect="{
+    prev: {
+        shadow: false,
+        translate: ['-20%', 0, -1],
+    },
+    next: {
+        translate: ['100%', 0, 0],
+    },
+}">
+                        <SwiperSlide v-for="item in data.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
-                                <img
-                                    :src="item.detail_image.original_url"
-                                    :alt="item[`title_${$i18n.locale}`]"
-                                    class="social__img"
-                                />
+                                <img :src="item.detail_image.original_url" :alt="item[`title_${$i18n.locale}`]"
+                                    class="social__img" />
                                 <div class="social__qs">
                                     <p class="social__qs-text">
                                         {{ item[`title_${$i18n.locale}`] }}
@@ -303,14 +204,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                         {{ $t("media") }}
                     </h4>
                     <div class="media__wrapper">
-                        <NuxtLink
-                            class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/media-img1.png"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="media-img3"
-                            />
+                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                            <img src="/images/media-img1.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -318,14 +213,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h5>
                             </div>
                         </NuxtLink>
-                        <NuxtLink
-                            class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/media-img2.png"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="media-img3"
-                            />
+                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                            <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -333,14 +222,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h5>
                             </div>
                         </NuxtLink>
-                        <NuxtLink
-                            class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/media-img3.png"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="media-img3"
-                            />
+                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                            <img src="/images/media-img3.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -348,14 +231,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h5>
                             </div>
                         </NuxtLink>
-                        <NuxtLink
-                            class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0"
-                        >
-                            <img
-                                src="/images/media-img4.png"
-                                class="card-img img-fluid h-100 rounded-0"
-                                alt="media-img3"
-                            />
+                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                            <img src="/images/media-img4.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -375,57 +252,33 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 {{ $t("achiqtosh") }}
                             </h4>
                             <div class="">
-                                <Swiper
-                                    :modules="[
-                                        SwiperAutoplay,
-                                        SwiperEffectCreative,
-                                    ]"
-                                    :slides-per-view="1"
-                                    :loop="true"
-                                    :effect="'creative'"
-                                    :autoplay="{
-                                        delay: 3000,
-                                        disableOnInteraction: true,
-                                    }"
-                                    :creative-effect="{
-                                        prev: {
-                                            shadow: true,
-                                            translate: ['-20%', 0, -1],
-                                        },
-                                        next: {
-                                            translate: ['100%', 0, 0],
-                                        },
-                                    }"
-                                    class="achchiqtosh__carousel"
-                                >
-                                    <SwiperSlide
-                                        v-for="item in data.achchiqtoshPosts"
-                                        :key="item"
-                                        class="achchiqtosh__carousel-inner"
-                                    >
-                                        <NuxtLink
-                                            class="achchiqtosh__carousel-item bg-dark image-container"
-                                            :to="
-                                                localPath(
-                                                    `/category/${item.id}`
-                                                )
-                                            "
-                                        >
-                                            <img
-                                                :src="item.detail_image.card"
-                                                :alt="
-                                                    item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                "
-                                                class="achchiqtosh__carousel-img img-fluid h-100"
-                                            />
-                                            <div
-                                                class="achchiqtosh__carousel-text"
-                                            >
-                                                <h5
-                                                    class="achchiqtosh__slider-text hidden-text-3"
-                                                >
+                                <Swiper :modules="[
+                                    SwiperAutoplay,
+                                    SwiperEffectCreative,
+                                ]" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
+    delay: 3000,
+    disableOnInteraction: true,
+}" :creative-effect="{
+    prev: {
+        shadow: true,
+        translate: ['-20%', 0, -1],
+    },
+    next: {
+        translate: ['100%', 0, 0],
+    },
+}" class="achchiqtosh__carousel">
+                                    <SwiperSlide v-for="item in data.achchiqtoshPosts" :key="item"
+                                        class="achchiqtosh__carousel-inner">
+                                        <NuxtLink class="achchiqtosh__carousel-item bg-dark image-container" :to="localPath(
+                                            `/categories/${item.id}`
+                                        )
+                                            ">
+                                            <img :src="item.detail_image.card" :alt="item[
+                                                `title_${$i18n.locale}`
+                                                ]
+                                                " class="achchiqtosh__carousel-img img-fluid h-100" />
+                                            <div class="achchiqtosh__carousel-text">
+                                                <h5 class="achchiqtosh__slider-text hidden-text-3">
                                                     {{
                                                         item[
                                                             `title_${$i18n.locale}`
@@ -442,52 +295,34 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("healthy") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <NuxtLink
-                                        v-for="item in data.healthPosts"
-                                        :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
-                                        class="darkMode achchiqtosh__card-box text-decoration-none"
-                                    >
-                                        <div
-                                            class="position-relative achchiqtosh__img-wrapper"
-                                        >
-                                            <img
-                                                class="img-fluid w-100"
-                                                :src="item.detail_image.card"
-                                                :alt="
-                                                    item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                "
-                                            />
-                                            <span
-                                                class="darkMode achchiqtosh__card-sp position-absolute"
-                                            >
+                                    <NuxtLink v-for="item in data.healthPosts" :key="item.id"
+                                        :to="localPath(`/categories/${item.id}`)"
+                                        class="darkMode achchiqtosh__card-box text-decoration-none">
+                                        <div class="position-relative achchiqtosh__img-wrapper">
+                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                                `title_${$i18n.locale}`
+                                                ]
+                                                " />
+                                            <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("healthy") }}
                                             </span>
                                         </div>
                                         <div class="achchiqtosh__info darkMode">
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-title"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-title">
                                                 {{
                                                     item[
-                                                        `title_${$i18n.locale}`
+                                                    `title_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-text"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-text">
                                                 {{
                                                     item[
-                                                        `description_${$i18n.locale}`
+                                                    `description_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-sp achchiqtosh__info-time"
-                                            >
+                                            <p class="darkMode-sp achchiqtosh__info-time">
                                                 {{ item.publish_date }}
                                             </p>
                                         </div>
@@ -499,52 +334,34 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("clinc") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <NuxtLink
-                                        v-for="item in data.legalClinicPosts"
-                                        :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
-                                        class="darkMode achchiqtosh__card-box text-decoration-none"
-                                    >
-                                        <div
-                                            class="position-relative achchiqtosh__img-wrapper"
-                                        >
-                                            <img
-                                                class="img-fluid w-100"
-                                                :src="item.detail_image.card"
-                                                :alt="
-                                                    item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                "
-                                            />
-                                            <span
-                                                class="darkMode achchiqtosh__card-sp position-absolute"
-                                            >
+                                    <NuxtLink v-for="item in data.legalClinicPosts" :key="item.id"
+                                        :to="localPath(`/categories/${item.id}`)"
+                                        class="darkMode achchiqtosh__card-box text-decoration-none">
+                                        <div class="position-relative achchiqtosh__img-wrapper">
+                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                                `title_${$i18n.locale}`
+                                                ]
+                                                " />
+                                            <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("clinc") }}
                                             </span>
                                         </div>
                                         <div class="achchiqtosh__info darkMode">
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-title"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-title">
                                                 {{
                                                     item[
-                                                        `title_${$i18n.locale}`
+                                                    `title_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-text"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-text">
                                                 {{
                                                     item[
-                                                        `description_${$i18n.locale}`
+                                                    `description_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-sp achchiqtosh__info-time"
-                                            >
+                                            <p class="darkMode-sp achchiqtosh__info-time">
                                                 {{ item.publish_date }}
                                             </p>
                                         </div>
@@ -556,52 +373,34 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("useful") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <NuxtLink
-                                        v-for="item in data.usefulPosts"
-                                        :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
-                                        class="darkMode achchiqtosh__card-box text-decoration-none"
-                                    >
-                                        <div
-                                            class="position-relative achchiqtosh__img-wrapper"
-                                        >
-                                            <img
-                                                class="img-fluid w-100"
-                                                :src="item.detail_image.card"
-                                                :alt="
-                                                    item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                "
-                                            />
-                                            <span
-                                                class="darkMode achchiqtosh__card-sp position-absolute"
-                                            >
+                                    <NuxtLink v-for="item in data.usefulPosts" :key="item.id"
+                                        :to="localPath(`/categories/${item.id}`)"
+                                        class="darkMode achchiqtosh__card-box text-decoration-none">
+                                        <div class="position-relative achchiqtosh__img-wrapper">
+                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                                `title_${$i18n.locale}`
+                                                ]
+                                                " />
+                                            <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("useful") }}
                                             </span>
                                         </div>
                                         <div class="achchiqtosh__info darkMode">
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-title"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-title">
                                                 {{
                                                     item[
-                                                        `title_${$i18n.locale}`
+                                                    `title_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-title achchiqtosh__info-text"
-                                            >
+                                            <p class="darkMode-title achchiqtosh__info-text">
                                                 {{
                                                     item[
-                                                        `description_${$i18n.locale}`
+                                                    `description_${$i18n.locale}`
                                                     ]
                                                 }}
                                             </p>
-                                            <p
-                                                class="darkMode-sp achchiqtosh__info-time"
-                                            >
+                                            <p class="darkMode-sp achchiqtosh__info-time">
                                                 {{ item.publish_date }}
                                             </p>
                                         </div>
@@ -610,26 +409,13 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </div>
                         <div class="row-gap-3 d-none d-sm-flex flex-column">
-                            <img
-                                class="img-fluid achchiqtosh__card-box7"
-                                src="/images/reklama-img.png"
-                                alt="reklama-img"
-                            />
-                            <img
-                                class="img-fluid achchiqtosh__card-box8"
-                                src="/images/reklama-img1.png"
-                                alt="reklama-img1"
-                            />
-                            <img
-                                class="img-fluid achchiqtosh__card-box9"
-                                src="/images/reklama-img1.png"
-                                alt="reklama-img1"
-                            />
-                            <img
-                                class="img-fluid achchiqtosh__card-box9"
-                                src="/images/reklama-img1.png"
-                                alt="reklama-img1"
-                            />
+                            <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
+                            <img class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png"
+                                alt="reklama-img1" />
+                            <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png"
+                                alt="reklama-img1" />
+                            <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png"
+                                alt="reklama-img1" />
                         </div>
                     </div>
                 </div>

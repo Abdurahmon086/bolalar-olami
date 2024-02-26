@@ -1,12 +1,11 @@
-const url = 'http://new.bolalarolami.uz/api/v2'
 import { defineStore } from 'pinia'
-import { useSingleStore } from './singleStore'
+const url = 'http://new.bolalarolami.uz/api/v2'
 
 
 export const useSearchStore = defineStore('searchStore', () => {
     const router = useRouter();
     const mainStore = useMainStore();
-    
+
     const rout = useRoute()
     const { locale } = useI18n()
 
@@ -25,7 +24,7 @@ export const useSearchStore = defineStore('searchStore', () => {
             const res = await fetch(`${url}/get-search?search=${value.value == '' ? rout.query.q : value.value}`);
             const data = await res.json();
             datas.value = data.data.posts
-            mainStore.loader = true
+            mainStore.loader = false
         } catch (err) {
             console.log(err);
         }
@@ -40,7 +39,7 @@ export const useSearchStore = defineStore('searchStore', () => {
         search.value = '';
     };
 
-    
+
 
     return {
         submitForm,

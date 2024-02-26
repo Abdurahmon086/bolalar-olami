@@ -2,7 +2,7 @@
 const mainStore = useMainStore();
 </script>
 <template>
-    <LayoutsMainNavbar />
+    <!-- <LayoutsMainNavbar /> -->
     <div class="">
         <template v-if="mainStore.auth == true">
             <AuthModal />

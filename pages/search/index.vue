@@ -28,7 +28,7 @@ const localPath = useLocalePath();
                                     class="tegs-cardimg__left-wrapper darkMode"
                                     v-for="item in searchStore.datas?.data"
                                     :key="item.id"
-                                    :to="localPath(`/category/${item.id}`)"
+                                    :to="localPath(`/categories/${item.id}`)"
                                 >
                                     <div class="position-relative">
                                         <img
