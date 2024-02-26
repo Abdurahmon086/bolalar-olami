@@ -104,7 +104,7 @@ const mainPosts4 = data.mainPosts.slice(1);
         </section>
         <section class="news">
             <div class="container">
-                <h4 class="news__title darkMode-title">
+                <h4 class="news__title news__tt darkMode-title">
                     {{ $t("main_title") }}
                 </h4>
                 <div class="news__wrapper">
@@ -582,7 +582,7 @@ const mainPosts4 = data.mainPosts.slice(1);
         </section>
         <LoopScroler />
     </main>
-</template>
+</template> 
 
 <style scoped>
 main {

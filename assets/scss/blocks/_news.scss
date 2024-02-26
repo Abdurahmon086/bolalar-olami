@@ -15,10 +15,13 @@
 
     &__title {
         font-family: "BBC Reith Sans", sans-serif;
-        font-size: 16px;
+        font-size: 24px;
         font-weight: 700;
         margin-bottom: 27px;
+        border-left: 2.253px solid #F7931E;
+        padding-left: 10px;
     }
+    
 
     &__cards {
         height: 202px;
@@ -117,7 +120,7 @@
         }
 
         &__title {
-            font-size: 20px;
+            font-size: 24px;
         }
 
         &__wrapper &__cards {
