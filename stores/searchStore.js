@@ -5,7 +5,10 @@ import { useSingleStore } from './singleStore'
 
 export const useSearchStore = defineStore('searchStore', () => {
     const router = useRouter();
-    const singleStore = useSingleStore()
+    const mainStore = useMainStore();
+    
+    const rout = useRoute()
+    const { locale } = useI18n()
 
     // state
     const datas = ref([])
@@ -18,23 +21,26 @@ export const useSearchStore = defineStore('searchStore', () => {
     // action
     const getSearchData = async (value) => {
         try {
-            singleStore.loading = true
-            const res = await fetch(`${url}/get-search?search=${value.value}`);
+            mainStore.loader = true
+            const res = await fetch(`${url}/get-search?search=${value.value == '' ? rout.query.q : value.value}`);
             const data = await res.json();
             datas.value = data.data.posts
-            singleStore.loading = false
+            mainStore.loader = true
         } catch (err) {
             console.log(err);
         }
     };
-
+    getSearchData(search)
     const submitForm = () => {
         if (!search.value) return;
-        router.push({ path: "/search/", query: { q: search.value } });
-        modal.value = true
-        getSearchData(search)
-        search.value = ''
+        const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
+        router.push({ path: `${pathPrefix}/search/`, query: { q: search.value } });
+        modal.value = false;
+        getSearchData(search);
+        search.value = '';
     };
+
+    
 
     return {
         submitForm,

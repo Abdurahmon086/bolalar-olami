@@ -1,29 +1,32 @@
 import { defineStore } from 'pinia'
+import { useSingleStore } from './singleStore'
 const url = 'http://new.bolalarolami.uz/api/v2'
 
-
-export const useSingleStore = defineStore('singleStore', () => {
+export const useTageStore = defineStore('tageStore', () => {
     const mainStore = useMainStore();
+
     // state
     const datas = ref()
+
     // getter
 
     // action
-    const getSingleData = async (id) => {
+    const getTagsData = async (id) => {
         try {
             mainStore.loader = true
-            const res = await fetch(`${url}/get-post/${id}`);
+            const res = await fetch(`${url}/get-tag/${id}`);
             const data = await res.json();
-            datas.value = data.data;
-            mainStore.loader = false
+            datas.value = data.data
+            mainStore.loader = true
         } catch (err) {
             console.log(err);
         }
-    }
+    };
+
 
 
     return {
-        getSingleData,
-        datas
+        datas,
+        getTagsData
     };
 })

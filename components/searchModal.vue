@@ -1,12 +1,11 @@
 <script setup>
 const searchStore = useSearchStore();
-
 </script>
 
 <template>
     <div class="searchModal">
         <img
-            @click="searchStore.modal = true"
+            @click="searchStore.modal = false"
             src="/images/search-x.svg"
             alt="search x icon"
             class="searchModal__x"

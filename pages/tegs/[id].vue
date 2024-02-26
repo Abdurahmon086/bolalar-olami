@@ -1,12 +1,9 @@
 <script setup>
-import Loader from '~/components/loader.vue';
-
-useHead({ title: "Bolalar olami | search" });
-
-const searchStore = useSearchStore();
-const mainStore = useMainStore();
+useHead({ title: "Bolalar olami | posts" });
 const route = useRoute();
-const localPath = useLocalePath();
+const mainStore = useMainStore();
+const tageStore = useTageStore();
+await tageStore.getTagsData(route.params.id);
 </script>
 
 <template>
@@ -16,19 +13,12 @@ const localPath = useLocalePath();
             <section>
                 <div class="container">
                     <div class="tegs">
-                        <p class="tegs-text darkMode-title">
-                            {{ route.query.q }}
-                        </p>
+                        <p class="tegs-text darkMode-title">Maktab</p>
                         <div class="tegs-cardimg">
-                            <div
-                                class="tegs-cardimg__left"
-                                v-if="searchStore.datas"
-                            >
-                                <NuxtLink
+                            <div class="tegs-cardimg__left">
+                                <div
                                     class="tegs-cardimg__left-wrapper darkMode"
-                                    v-for="item in searchStore.datas?.data"
-                                    :key="item.id"
-                                    :to="localPath(`/category/${item.id}`)"
+                                    v-for="item in tageStore.datas?.posts.data"
                                 >
                                     <div class="position-relative">
                                         <img
@@ -63,7 +53,7 @@ const localPath = useLocalePath();
                                             {{ item.publish_date }}
                                         </p>
                                     </div>
-                                </NuxtLink>
+                                </div>
                             </div>
                             <aside class="tegs-cardimg__aside">
                                 <img
@@ -76,19 +66,15 @@ const localPath = useLocalePath();
                                     class="img-fluid tegs-cardimg__aside-img2"
                                     alt="reklama-img"
                                 />
-                                <img
-                                    src="/public/images/talimImages/reklama-img3.png"
-                                    class="img-fluid talim-cardimg__aside-img3"
-                                    alt="reklama-img"
-                                />
+                                <!-- <img src="/public/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img"> -->
                             </aside>
                         </div>
                     </div>
                 </div>
-            </section></main
-    ></template>
+            </section>
+        </main>
+    </template>
 </template>
-
 <style scoped>
 main {
     background: #f6f6f6;
