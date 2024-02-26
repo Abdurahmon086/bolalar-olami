@@ -5,11 +5,13 @@ const url = 'http://new.bolalarolami.uz/api/v2'
 
 export const useMainStore = defineStore('mainStore', () => {
     const { locale, setLocale } = useI18n();
+    const mainStore = useMainStore();
     // state
     const navData = ref([]);
     const auth = ref(false);
     const auths = ref(false);
     const authed = ref(false)
+    const loader = ref(false)
 
     // getter
     const language = computed({
@@ -42,9 +44,11 @@ export const useMainStore = defineStore('mainStore', () => {
     // action
     const getNabarData = async () => {
         try {
+            mainStore.loader = true
             const res = await fetch(`${url}/resources/get-sections`);
             const data = await res.json();
             navData.value = data.data
+            mainStore.loader = false
         } catch (err) {
             console.log(err);
         }
@@ -68,7 +72,7 @@ export const useMainStore = defineStore('mainStore', () => {
         changeLocale,
         language,
         navbarM,
-        navData,
+        navData, loader,
         auth, authed
     };
 })

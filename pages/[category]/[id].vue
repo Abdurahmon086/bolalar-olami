@@ -1,15 +1,22 @@
 <script setup>
+import Loader from '~/components/loader.vue';
 useHead({ title: "Bolalar olami | posts" });
+
 const localPath = useLocalePath();
+
+const mainStore = useMainStore();
 const singleStore = useSingleStore();
+
 const route = useRoute();
 const id = route.params.id;
-
 await singleStore.getSingleData(id);
+
 const data = singleStore.datas;
 </script>
 
 <template>
+    <template v-if="mainStore.loader == true"> <Loader /> </template>
+    <template v-else-if="mainStore.loader == false">
     <div class="show darkMode pb-5">
         <div class="navigate">
             <div class="container">
@@ -281,6 +288,7 @@ const data = singleStore.datas;
             <LoopScroler />
         </div>
     </div>
+    </template>
 </template>
 
 <style scoped>

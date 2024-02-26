@@ -3,19 +3,19 @@ const url = 'http://new.bolalarolami.uz/api/v2'
 
 
 export const useSingleStore = defineStore('singleStore', () => {
+    const mainStore = useMainStore();
     // state
     const datas = ref()
-    const loading = ref(false)
     // getter
 
     // action
     const getSingleData = async (id) => {
         try {
-            loading.value = true
+            mainStore.loader = true
             const res = await fetch(`${url}/get-post/${id}`);
             const data = await res.json();
             datas.value = data.data;
-            loading.value = false
+            mainStore.loader = false
         } catch (err) {
             console.log(err);
         }
@@ -24,7 +24,6 @@ export const useSingleStore = defineStore('singleStore', () => {
 
     return {
         getSingleData,
-        datas,
-        loading
+        datas
     };
 })

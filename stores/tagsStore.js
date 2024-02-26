@@ -3,7 +3,7 @@ import { useSingleStore } from './singleStore'
 const url = 'http://new.bolalarolami.uz/api/v2'
 
 export const useTageStore = defineStore('tageStore', () => {
-    const singleStore = useSingleStore()
+    const mainStore = useMainStore();
 
     // state
     const datas = ref()
@@ -13,11 +13,11 @@ export const useTageStore = defineStore('tageStore', () => {
     // action
     const getTagsData = async (id) => {
         try {
-            singleStore.loading = true
+            mainStore.loader = true
             const res = await fetch(`${url}/get-tag/${id}`);
             const data = await res.json();
             datas.value = data.data
-            singleStore.loading = false
+            mainStore.loader = true
         } catch (err) {
             console.log(err);
         }
