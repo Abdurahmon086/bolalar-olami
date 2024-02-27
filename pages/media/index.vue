@@ -11,18 +11,19 @@ useHead({ title: "Bolalar olami | posts" });
                         Изображения и видео со всего мира
                     </h3>
                     <p class="mediaGaller-text">Media</p>
-                    <div type="search" class="mediaGaller-seaBtn">
+                    <div type="search" class="mediaGaller-seaBtn w-75">
                         <a href="#"
-                            ><img
+                            >
+                            <img
                                 src="/public/images/mediagalleriyaImages/search-icon.svg"
                                 class="img-fluid"
                                 alt="searchiicon"
                             />
                         </a>
                         <input
-                            type="search"
+                            type="text"
                             placeholder="Искать лицензионный контент..."
-                            class="mediaGaller-seaBtn-inp"
+                            class="mediaGaller-seaBtn-inp w-75"
                         />
                     </div>
                 </div>
