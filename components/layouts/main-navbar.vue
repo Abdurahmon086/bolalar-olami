@@ -3,13 +3,14 @@ import { getItem, setItem } from "~/utility/localStorageControl";
 import Loader from "../loader.vue";
 
 const { locales } = useI18n();
-const mainStore = useMainStore();
-const searchStore = useSearchStore();
-const navMain = mainStore.navbarM;
-
 const localPath = useLocalePath();
 
+const mainStore = useMainStore();
+const searchStore = useSearchStore();
 await mainStore.getNabarData();
+
+const navMain = mainStore.navbarM;
+
 //hooks
 const darkTheme = ref(false);
 
@@ -126,8 +127,8 @@ const switchToggle = computed(() => {
                             <!-- navbar list -->
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
                                 <li class="nav-item position-relative darkMode" v-for="nav in navMain" :key="nav.id">
-                                    <NuxtLink class="nav-link darkMode-title" :to="nav.url">
-                                        <p class="m-0" @click="ids = nav">
+                                    <NuxtLink class="nav-link darkMode-title" :to="localPath(`/${nav.slug_uz}/`)">
+                                        <p class="m-0" @click="mainStore.category = nav">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
                                     </NuxtLink>
@@ -135,11 +136,13 @@ const switchToggle = computed(() => {
                                         <button type="button"
                                             class="list-group-item darkMode list-group-item-action border-0"
                                             v-for="navItem in nav.child" :key="navItem.id">
-                                            <NuxtLink :to="navItem.url" class="text-decoration-none darkMode"
-                                                style="color: #242424;">
-                                                {{
-                                                    navItem[`title_${$i18n.locale}`]
-                                                }}
+                                            <NuxtLink :to="localPath(`/${navItem.slug_uz}/`)"
+                                                class="text-decoration-none darkMode" style="color: #242424;">
+                                                <p class="m-0" @click="mainStore.category = navItem">
+                                                    {{
+                                                        navItem[`title_${$i18n.locale}`]
+                                                    }}
+                                                </p>
                                             </NuxtLink>
                                         </button>
                                     </div>
@@ -150,12 +153,12 @@ const switchToggle = computed(() => {
                             <div class="darkMode accordion accordion-flush container my-3 d-flex flex-column d-xl-none left-0"
                                 style="gap: 12px" id="accordionFlushExample">
                                 <div class="accordion-item darkMode-btn" v-for="menu in navMain" :key="menu.id">
-                                    <h2 class="accordion-header">
+                                    <h2 class="accordion-header" @click="mainStore.category = menu">
                                         <button class="darkMode rounded-3 accordion-button shadow-0 collapsed" type="button"
                                             data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + menu.id"
                                             aria-expanded="true" :aria-controls="'flush-collapseOne' + menu.id">
-                                            <NuxtLink :to="menu?.url" class="text-decoration-none darkMode"
-                                                style="color: #242424;">
+                                            <NuxtLink :to="localPath(`/${menu.slug_uz}/`)"
+                                                class="text-decoration-none darkMode" style="color: #242424;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
                                             </NuxtLink>
                                         </button>
@@ -164,9 +167,11 @@ const switchToggle = computed(() => {
                                         class="accordion-collapse collapse border-0 darkMode" :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
                                             <li v-for="navItem in menu.child" :key="navItem.id">
-                                                <NuxtLink :to="navItem?.url" class="text-decoration-none darkMode"
-                                                    style="color: #242424;">
-                                                    {{ navItem[`title_${$i18n.locale}`] }}
+                                                <NuxtLink :to="localPath(`/${navItem.slug_uz}/`)"
+                                                    class="text-decoration-none darkMode" style="color: #242424;">
+                                                    <p class="m-0" @click="mainStore.category = navItem">
+                                                        {{ navItem[`title_${$i18n.locale}`] }}
+                                                    </p>
                                                 </NuxtLink>
                                             </li>
                                         </ul>
