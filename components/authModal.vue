@@ -1,6 +1,64 @@
 <script setup>
 const mainStore = useMainStore();
 const authPage = ref(true);
+const regions = [
+  {
+    id: 8,
+    name: 'Qoraqalpog‘iston Respublikasi'
+  },
+  {
+    id: 9,
+    name: 'Buxoro viloyati'
+  },
+  {
+    id: 10,
+    name: 'Samarqand viloyati'
+  },
+  {
+    id: 11,
+    name: 'Navoiy viloyati'
+  },
+  {
+    id: 12,
+    name: 'Andijon viloyati'
+  },
+  {
+    id: 13,
+    name: 'Farg‘ona viloyati'
+  },
+  {
+    id: 14,
+    name: 'Surxondaryo viloyati'
+  },
+  {
+    id: 15,
+    name: 'Sirdaryo viloyati'
+  },
+  {
+    id: 16,
+    name: 'Xorazm viloyati'
+  },
+  {
+    id: 17,
+    name: 'Toshkent viloyati'
+  },
+  {
+    id: 18,
+    name: 'Qashqadaryo viloyati'
+  },
+  {
+    id: 19,
+    name: 'Jizzax viloyati'
+  },
+  {
+    id: 21,
+    name: 'Namangan viloyati'
+  },
+  {
+    id: 22,
+    name: 'Toshkent shaxri'
+  }
+];
 </script>
 <template>
     <div class="auth">
@@ -94,20 +152,19 @@ const authPage = ref(true);
                         </div>
                         <div class="">
                             <label
-                                for="validationCustom04"
+                                for="region_id"
                                 class="form-label d-none"
                                 >Viloyantingzni tanlang</label
                             >
                             <select
                                 class="form-select"
-                                id="validationCustom04"
+                                id="region_id"
                                 required
                             >
                                 <option selected disabled hidden value="">
                                     Viloyantingzni tanlang
                                 </option>
-                                <option>...1</option>
-                                <option>...2</option>
+                                <option v-for="region in regions" :key="region.id" :label="region.name" :value="region.id">Barchasi</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid state.
