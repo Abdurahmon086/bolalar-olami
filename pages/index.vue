@@ -101,7 +101,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                 <div class="container">
                     <div class="lastNews__wrapper">
                         <div class="lastNews__left-wrap">
-                            <h4 class="media__title darkMode-title">
+                            <h4 class="news__title darkMode-title">
                                 {{ $t("education") }}
                             </h4>
                             <div class="lastNews__left">
@@ -294,7 +294,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </Swiper>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title mb-3 darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("healthy") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -333,7 +333,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title mb-3 darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("clinc") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -372,7 +372,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title mb-3 darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("useful") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -403,7 +403,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                                     ]
                                                 }}
                                             </p>
-                                            <p class="darkMode-sp achchiqtosh__info-time">
+                                            <p class="darkMode-sp achchiqtosh__info-time ">
                                                 {{ item.publish_date }}
                                             </p>
                                         </div>
