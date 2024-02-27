@@ -4,8 +4,6 @@ import Loader from "~/components/loader.vue";
 const route = useRoute();
 
 const localPath = useLocalePath();
-
-const mainStore = useMainStore();
 const singleStore = useSingleStore();
 
 await singleStore.getSingleData(route.params.id);

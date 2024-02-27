@@ -1,14 +1,16 @@
 <script setup>
-import Loader from "~/components/loader.vue";
-
 useHead({
     title: "Bolalar olami",
 });
+import Loader from "~/components/loader.vue";
+import { useIndexStore } from '~/stores/indexStore';
 
-const indexStore = useIndexStore();
 const localPath = useLocalePath();
+const indexStore = useIndexStore();
 
-// await indexStore.getIndexData()
+
+await indexStore.getIndexData()
+
 const data = indexStore.datas;
 
 const mainPosts4 = data.mainPosts.slice(1);
