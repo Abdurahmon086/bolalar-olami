@@ -127,7 +127,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                                 ]
                                             }}
                                         </p>
-                                        <span class="lastNews__left-sp darkMode-sp">{{  item.publish_date }}</span>
+                                        <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
                                 </NuxtLink>
                             </div>
