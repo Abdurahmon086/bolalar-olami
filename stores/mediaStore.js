@@ -9,11 +9,11 @@ export const useMediaStore = defineStore('mediaStore', () => {
 
     const getMediaData = async () => {
         try {
-            mainStore.loader = true
+            // mainStore.loader = true
             const res = await fetch(`${url}`);
             const data = await res.json();
             datas.value = data.data
-            mainStore.loader = false
+            // mainStore.loader = false
         } catch (err) {
             console.log(err);
         }

@@ -9,7 +9,7 @@ const mainStore = useMainStore();
 const indexStore = useIndexStore();
 const localPath = useLocalePath();
 
-await indexStore.getIndexData()
+// await indexStore.getIndexData()
 const data = indexStore.datas;
 
 const mainPosts4 = data.mainPosts.slice(1);
@@ -23,16 +23,10 @@ const mainPosts4 = data.mainPosts.slice(1);
         <main class="darkMode-body pb-5">
             <section class="hero">
                 <div class="container">
-                    <Swiper :modules="[
-                        SwiperAutoplay,
-                        SwiperEffectCreative,
-                        SwiperPagination,
-                    ]" :pagination="{
-    clickable: true,
-}" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
-    delay: 3000,
-    disableOnInteraction: true,
-}" :creative-effect="{
+                    <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination,]"
+                        :pagination="{ clickable: true, }" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
+                            delay: 3000, disableOnInteraction: true,
+                        }" :creative-effect="{
     prev: {
         shadow: false,
         translate: ['-20%', 0, -1],

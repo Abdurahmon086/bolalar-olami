@@ -129,7 +129,7 @@ const data = singleStore.datas;
                                         </h4>
                                         <ul class="list-unstyled">
                                             <NuxtLink v-for="item of data?.post.tags" :to="`/tegs/${item.id}`">
-                                                <li class="darkMode-btn">
+                                                <li class="darkMode-btn button-container-1">
                                                     {{
                                                         item[
                                                             `title_${$i18n.locale}`

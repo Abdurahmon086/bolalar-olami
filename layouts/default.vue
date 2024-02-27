@@ -1,5 +1,7 @@
 <script setup>
 const mainStore = useMainStore()
+const indexStore = useIndexStore()
+await indexStore.getIndexData()
 </script>
 <template>
     <LayoutsMainNavbar />

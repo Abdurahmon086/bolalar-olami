@@ -1,3 +1,86 @@
+@mixin button($bcolor,
+    $url,
+    $x1,
+    $y1,
+    $bor,
+    $col) {
+    background: $bcolor;
+    -webkit-mask: url($url);
+    mask: url($url);
+    -webkit-mask-size: $x1 $y1;
+    mask-size: $x1 $y1;
+    border: $bor;
+    color: $col;
+}
+
+.button-container-1 {
+    width: 101%;
+    height: 100%;
+    color: #FFF !important;
+    @include button(#F7931E,
+        "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+        2300%,
+        100%,
+        none,
+        #fff);
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+        -webkit-animation: ani 0.7s steps(22) forwards;
+        animation: ani 0.7s steps(22) forwards;
+    }
+}
+
+@-webkit-keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+}
+
+@keyframes ani {
+    from {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+}
+
+@-webkit-keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0;
+    }
+
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0;
+    }
+}
+
 .single {
     &__title {
         font-feature-settings: 'clig' off, 'liga' off;
