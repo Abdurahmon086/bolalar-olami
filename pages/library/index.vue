@@ -576,7 +576,7 @@ useHead({ title: "Bolalar olami | category" });
                             alt="reklama-img" />
                         <img src="/public/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2"
                             alt="reklama-img" />
-                        <img src="/public/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"
+                        <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"
                             alt="reklama-img" />
                     </aside>
                 </div>

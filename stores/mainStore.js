@@ -11,6 +11,7 @@ export const useMainStore = defineStore('mainStore', () => {
     const auths = ref(false);
     const authed = ref(false)
     const loader = ref(false)
+    const category = ref()
 
     // getter
     const language = computed({

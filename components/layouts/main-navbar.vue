@@ -127,7 +127,9 @@ const switchToggle = computed(() => {
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
                                 <li class="nav-item position-relative darkMode" v-for="nav in navMain" :key="nav.id">
                                     <NuxtLink class="nav-link darkMode-title" :to="nav.url">
-                                        {{ nav[`title_${$i18n.locale}`] }}
+                                        <p class="m-0" @click="ids = nav">
+                                            {{ nav[`title_${$i18n.locale}`] }}
+                                        </p>
                                     </NuxtLink>
                                     <div class="darkMode d-none item-menu list-group list-group-light position-absolute">
                                         <button type="button"
