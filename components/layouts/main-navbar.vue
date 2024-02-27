@@ -33,7 +33,6 @@ const switchToggle = computed(() => {
     }
 });
 
-console.log(mainStore.navData);
 </script>
 
 <template>

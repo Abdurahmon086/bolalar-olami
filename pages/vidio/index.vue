@@ -1,8 +1,7 @@
 <script setup>
+useHead({ title: "Bolalar olami | posts" });
 import Loader from "~/components/loader.vue";
 
-useHead({ title: "Bolalar olami | posts" });
-const mainStore = useMainStore();
 const store = useMediaStore();
 await store.getMediaData();
 </script>

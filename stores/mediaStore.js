@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 const url = 'http://new.bolalarolami.uz/api/v2/get-videos '
 
 export const useMediaStore = defineStore('mediaStore', () => {
-    const mainStore = useMainStore()
     const datas = ref();
     const openToggle = ref(false)
     const activeCategory = ref(null);
@@ -14,7 +13,7 @@ export const useMediaStore = defineStore('mediaStore', () => {
             const res = await fetch(`${url}`);
             const data = await res.json();
             datas.value = data.data
-            loader.value = true
+            loader.value = false
         } catch (err) {
             console.log(err);
         }

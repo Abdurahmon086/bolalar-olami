@@ -6,16 +6,17 @@ export const useSingleStore = defineStore('singleStore', () => {
     const mainStore = useMainStore();
     // state
     const datas = ref()
+    const loader = ref(false)
     // getter
 
     // action
     const getSingleData = async (id) => {
         try {
-            // mainStore.loader = true
+            // loader.value = true
             const res = await fetch(`${url}/get-post/${id}`);
             const data = await res.json();
             datas.value = data.data;
-            // mainStore.loader = false
+            // loader.value = false
         } catch (err) {
             console.log(err);
         }
@@ -24,6 +25,7 @@ export const useSingleStore = defineStore('singleStore', () => {
 
     return {
         getSingleData,
-        datas
+        datas,
+        loader
     };
 })

@@ -6,23 +6,27 @@ export const useIndexStore = defineStore('indexStore', () => {
   const mainStore = useMainStore()
   // state
   const datas = ref()
+  const loader = ref(false)
   // getter
 
   // action
   const getIndexData = async () => {
     try {
-      mainStore.loader = true
+      loader.value = true
       const res = await fetch(`${url}/home/get-news-home`);
       const data = await res.json();
       datas.value = data.data;
-      mainStore.loader = false
+      loader.value = false
     } catch (err) {
       console.log(err);
+    } finally {
+      loader.value = false;
     }
   }
 
 
   return {
+    loader,
     getIndexData,
     datas
   };
