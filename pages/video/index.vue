@@ -21,14 +21,13 @@ await store.getMediaData();
                         <div class="mediacate__card-box position-relative">
                             <!-- <img src="/images/mediacategoryImages/mediaimg1.png" class="img-fluid mediacate__card-img"
                                 alt="GALEREYA img" /> -->
-                            <div class="mediacate__card-posi position-absolute w-100">
-                                <iframe :src="store.datas.bannerVideos[0].youtube_link" width="100%"
+                                <iframe :src="store.datas.bannerVideos[0].youtube_link" 
                                     src="https://www.youtube.com/embed/6ZdkMZq95PI"
                                     title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="mediacate__iframe">
+                                    allowfullscreen class="w-100 mediacate__card-img">
                                 </iframe>
-
+                            <div class="mediacate__card-posi position-absolute  w-100">
                                 <!-- <div>
                                     <h3 class="mediacate__card-posi--title fw-medium text-white hidden-text-3">
                                         {{
@@ -48,13 +47,15 @@ await store.getMediaData();
                                 </NuxtLink> -->
                             </div>
                         </div>
-                        <div class="mediacate__card-box1">
-                            <div class="position-relative">
+                        <div class="mediacate__card-box1 ">
+                            <div class="position-relative" >
                                 <img src="/images/mediacategoryImages/mediaimg2.png"
-                                    class="img-fluid rounded-0 mediacate__card-box1--img" alt="GALEREYA img" />
-                                <h2 class="mediacate__card-bottom--title position-absolute">
+                                    class="img-fluid rounded-0 mediacate__card-box1--img  h-100" alt="GALEREYA img" />
+                     <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
+                                    <h2 class="mediacate__card-bottom--title position-absolute">
                                     Barcha pleylistlar
                                 </h2>
+                                </NuxtLink>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
@@ -70,7 +71,7 @@ await store.getMediaData();
                             </div>
                             <div class="position-relative">
                                 <img src="/images/mediacategoryImages/mediaimg3.png"
-                                    class="img-fluid rounded-0 mediacate__card-box1--img" alt="GALEREYA img" />
+                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
                                 <h2 class="mediacate__card-bottom--title position-absolute">
                                     Barcha fotosuratlar
                                 </h2>
