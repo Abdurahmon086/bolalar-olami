@@ -1,10 +1,7 @@
 <script setup>
 import { useMainStore } from '~/stores/mainStore';
-import { useIndexStore } from '~/stores/indexStore';
 const mainStore = useMainStore()
-const indexStore = useIndexStore()
 
-await indexStore.getIndexData()
 </script>
 <template>
     <LayoutsMainNavbar />

@@ -9,12 +9,11 @@ export const useCategoryStore = defineStore('categoryStore', () => {
     // getter
 
     // action
-    const getCategoryData = async () => {
+    const getCategoryData = async (id) => {
         try {
             loader.value = true
-            const res = await fetch(`${url}/get-category/1`);
+            const res = await fetch(`${url}/get-category/${id}`);
             const data = await res.json();
-            console.log(data.data);
             datas.value = data.data;
             loader.value = false
         } catch (err) {
@@ -23,6 +22,7 @@ export const useCategoryStore = defineStore('categoryStore', () => {
             loader.value = false;
         }
     }
+
 
 
     return {
