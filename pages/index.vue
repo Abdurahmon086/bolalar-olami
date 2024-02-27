@@ -296,7 +296,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </Swiper>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="news__title darkMode-title">
+                                <h4 class="news__title darkMode-title achchiqtosh__title">
                                     {{ $t("healthy") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -335,7 +335,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="news__title darkMode-title">
+                                <h4 class="news__title darkMode-title achchiqtosh__title">
                                     {{ $t("clinc") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -374,7 +374,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="news__title darkMode-title">
+                                <h4 class="news__title darkMode-title achchiqtosh__title">
                                     {{ $t("useful") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
