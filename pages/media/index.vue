@@ -8,11 +8,11 @@ useHead({ title: "Bolalar olami | posts" });
             <div class="mediaGaller">
                 <div class="container">
                     <h3 class="mediaGaller-title">
-                        Изображения и видео со всего мира
+                        Изображения и видео со всего мира 
                     </h3>
                     <p class="mediaGaller-text">Media</p>
                     <div type="search" class="mediaGaller-seaBtn w-75">
-                        <a href="#"
+                        <a href="#"  
                             >
                             <img
                                 src="/public/images/mediagalleriyaImages/search-icon.svg"
