@@ -1,0 +1,37 @@
+.imgModal{
+    position: absolute; 
+    left: 0;
+    z-index: 99999;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    background: rgba(10, 10, 11, 0.70);
+backdrop-filter: blur(42px);
+
+    &-top{
+
+    &__img3{
+        position: absolute;
+        top: 59px;
+        left: 81px;
+    }
+    &__img1{
+        margin: 0 auto;
+        position: absolute;
+        top: 48px;
+        left: 617px;
+        right: 617px;
+        bottom: 53px;
+    }     
+    &__img2{
+        position: absolute;
+        left: 161px;
+        bottom: 161px;
+        top: 162px;
+        right: 161px;
+        // margin: 0 auto;
+        max-height: 500px;
+    }   
+    }
+}
+
