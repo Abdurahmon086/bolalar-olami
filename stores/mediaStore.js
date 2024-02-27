@@ -6,14 +6,15 @@ export const useMediaStore = defineStore('mediaStore', () => {
     const datas = ref();
     const openToggle = ref(false)
     const activeCategory = ref(null);
+    const loader = ref(false)
 
     const getMediaData = async () => {
         try {
-            // mainStore.loader = true
+            loader.value = true
             const res = await fetch(`${url}`);
             const data = await res.json();
             datas.value = data.data
-            // mainStore.loader = false
+            loader.value = true
         } catch (err) {
             console.log(err);
         }
@@ -28,6 +29,6 @@ export const useMediaStore = defineStore('mediaStore', () => {
         return activeCategory.value === category;
     };
 
-    return { datas, openToggle, getMediaData, toggleCategory, isActive }
+    return { datas, openToggle, loader, getMediaData, toggleCategory, isActive }
 
 })
