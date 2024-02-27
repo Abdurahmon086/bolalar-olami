@@ -11,8 +11,8 @@ const indexStore = useIndexStore();
 
 await indexStore.getIndexData()
 
-const data = indexStore.datas;
-
+const data = indexStore?.datas;
+console.log(data);
 const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
@@ -37,7 +37,7 @@ const mainPosts4 = data.mainPosts.slice(1);
     },
 }" class="carousel">
                         <!-- Inner -->
-                        <SwiperSlide v-for="slide in 4" class="carousel-inner">
+                        <SwiperSlide v-for="slide in data.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
                                 <img src="/images/hero_img.jpg" class="img-fluid h-100 w-100" style="object-fit: cover"
                                     alt="hero image" />
