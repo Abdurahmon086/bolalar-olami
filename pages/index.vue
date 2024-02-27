@@ -9,7 +9,7 @@ const mainStore = useMainStore();
 const indexStore = useIndexStore();
 const localPath = useLocalePath();
 
-await indexStore.getIndexData();
+await indexStore.getIndexData()
 const data = indexStore.datas;
 
 const mainPosts4 = data.mainPosts.slice(1);
@@ -275,7 +275,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                             ">
                                             <img :src="item.detail_image.card" :alt="item[
                                                 `title_${$i18n.locale}`
-                                                ]
+                                            ]
                                                 " class="achchiqtosh__carousel-img img-fluid h-100" />
                                             <div class="achchiqtosh__carousel-text">
                                                 <h5 class="achchiqtosh__slider-text hidden-text-3">
@@ -301,7 +301,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
                                                 `title_${$i18n.locale}`
-                                                ]
+                                            ]
                                                 " />
                                             <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("healthy") }}
@@ -340,7 +340,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
                                                 `title_${$i18n.locale}`
-                                                ]
+                                            ]
                                                 " />
                                             <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("clinc") }}
@@ -379,7 +379,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
                                                 `title_${$i18n.locale}`
-                                                ]
+                                            ]
                                                 " />
                                             <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                 {{ $t("useful") }}

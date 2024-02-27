@@ -11,11 +11,11 @@ export const useSingleStore = defineStore('singleStore', () => {
     // action
     const getSingleData = async (id) => {
         try {
-            mainStore.loader = true
+            // mainStore.loader = true
             const res = await fetch(`${url}/get-post/${id}`);
             const data = await res.json();
             datas.value = data.data;
-            mainStore.loader = false
+            // mainStore.loader = false
         } catch (err) {
             console.log(err);
         }

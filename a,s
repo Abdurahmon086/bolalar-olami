@@ -240,7 +240,7 @@
                                             class="achchiqtosh__carousel-item bg-dark image-container"
                                             :to="
                                                 localPath(
-                                                    `/category/${item.id}`
+                                                    `/categories/${item.id}`
                                                 )
                                             "
                                         >
@@ -278,7 +278,7 @@
                                     <NuxtLink
                                         v-for="item in data.healthPosts"
                                         :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
+                                        :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none"
                                     >
                                         <div
@@ -335,7 +335,7 @@
                                     <NuxtLink
                                         v-for="item in data.legalClinicPosts"
                                         :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
+                                        :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none"
                                     >
                                         <div
@@ -392,7 +392,7 @@
                                     <NuxtLink
                                         v-for="item in data.usefulPosts"
                                         :key="item.id"
-                                        :to="localPath(`/category/${item.id}`)"
+                                        :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none"
                                     >
                                         <div

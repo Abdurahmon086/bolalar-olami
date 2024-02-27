@@ -227,7 +227,7 @@ const data = singleStore.datas;
                         <section class="aside">
                             <h4 class="aside__title">Ko'p o'qilganlar</h4>
                             <div class="aside__wrapper">
-                                <NuxtLink v-for="item in data?.mostReadPosts" :to="localPath(`/category/${item.id}`)"
+                                <NuxtLink v-for="item in data?.mostReadPosts" :to="localPath(`/categories/${item.id}`)"
                                     :key="item.id"
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
                                     <div class="position-relative">
@@ -263,7 +263,8 @@ const data = singleStore.datas;
 </template>
 
 <style scoped>
-.show {
+.shows {
     background-color: #fff;
+    min-height: 100vh !important;
 }
 </style>

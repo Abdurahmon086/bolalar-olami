@@ -7,6 +7,7 @@ const searchStore = useSearchStore();
 const mainStore = useMainStore();
 const route = useRoute();
 const localPath = useLocalePath();
+
 </script>
 
 <template>
