@@ -5,7 +5,6 @@ useHead({
     title: "Bolalar olami",
 });
 
-const mainStore = useMainStore();
 const indexStore = useIndexStore();
 const localPath = useLocalePath();
 
@@ -16,10 +15,10 @@ const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
 <template>
-    <template v-if="mainStore.loader == true">
+    <template v-if="indexStore.loader == true">
         <Loader />
     </template>
-    <template v-else-if="mainStore.loader == false">
+    <template v-else-if="indexStore.loader == false">
         <main class="darkMode-body pb-5">
             <section class="hero">
                 <div class="container">
@@ -65,7 +64,7 @@ const mainPosts4 = data.mainPosts.slice(1);
             </section>
             <section class="news">
                 <div class="container">
-                    <h4 class="news__title news__tt darkMode-title">
+                    <h4 class="media__title news__tt darkMode-title">
                         {{ $t("main_title") }}
                     </h4>
                     <div class="news__wrapper">
@@ -102,7 +101,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                 <div class="container">
                     <div class="lastNews__wrapper">
                         <div class="lastNews__left-wrap">
-                            <h4 class="achchiqtosh__title darkMode-title">
+                            <h4 class="news__title darkMode-title">
                                 {{ $t("education") }}
                             </h4>
                             <div class="lastNews__left">
@@ -198,7 +197,12 @@ const mainPosts4 = data.mainPosts.slice(1);
                         {{ $t("media") }}
                     </h4>
                     <div class="media__wrapper">
-                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                        <iframe :src="data?.bannerVideos[0].youtube_link"
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen class="media__cards w-100"></iframe>
+
+                        <!-- <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
                             <img src="/images/media-img1.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
@@ -206,7 +210,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     bordi.
                                 </h5>
                             </div>
-                        </NuxtLink>
+                        </NuxtLink> -->
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
                             <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
@@ -225,7 +229,12 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h5>
                             </div>
                         </NuxtLink>
-                        <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
+                        <iframe :src="data?.bannerVideos[1].youtube_link"
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen class="media__cards w-100"></iframe>
+
+                        <!-- <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
                             <img src="/images/media-img4.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
@@ -233,7 +242,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     bordi.
                                 </h5>
                             </div>
-                        </NuxtLink>
+                        </NuxtLink> -->
                     </div>
                 </div>
             </section>
@@ -285,7 +294,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </Swiper>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("healthy") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -324,7 +333,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("clinc") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
@@ -363,7 +372,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </div>
                             </div>
                             <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
-                                <h4 class="achchiqtosh__title darkMode-title">
+                                <h4 class="news__title darkMode-title">
                                     {{ $t("useful") }}
                                 </h4>
                                 <div class="achchiqtosh__card">

@@ -4,7 +4,6 @@ const url = 'http://new.bolalarolami.uz/api/v2'
 
 export const useSearchStore = defineStore('searchStore', () => {
     const router = useRouter();
-    const mainStore = useMainStore();
 
     const rout = useRoute()
     const { locale } = useI18n()
@@ -14,22 +13,23 @@ export const useSearchStore = defineStore('searchStore', () => {
     const modal = ref(false)
     const showAll = ref(false);
     const search = ref("");
+    const loader = ref(false)
 
     // getter
 
     // action
     const getSearchData = async (value) => {
         try {
-            mainStore.loader = true
+            loader.value = true
             const res = await fetch(`${url}/get-search?search=${value.value == '' ? rout.query.q : value.value}`);
             const data = await res.json();
             datas.value = data.data.posts
-            mainStore.loader = false
+            loader.value = false
         } catch (err) {
             console.log(err);
         }
     };
-    getSearchData(search)
+
     const submitForm = () => {
         if (!search.value) return;
         const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
@@ -39,7 +39,9 @@ export const useSearchStore = defineStore('searchStore', () => {
         search.value = '';
     };
 
-
+    if (modal && search.value.length > 1) {
+        getSearchData(search)
+    }
 
     return {
         submitForm,
@@ -47,6 +49,7 @@ export const useSearchStore = defineStore('searchStore', () => {
         showAll,
         modal,
         getSearchData,
-        datas
+        datas,
+        loader
     };
 })

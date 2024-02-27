@@ -33,7 +33,6 @@ const switchToggle = computed(() => {
     }
 });
 
-console.log(mainStore.navData);
 </script>
 
 <template>
@@ -134,7 +133,7 @@ console.log(mainStore.navData);
                                         <button type="button"
                                             class="list-group-item darkMode list-group-item-action border-0"
                                             v-for="navItem in nav.child" :key="navItem.id">
-                                            <NuxtLink :to="navItem.url" class="text-decoration-none"
+                                            <NuxtLink :to="navItem.url" class="text-decoration-none darkMode"
                                                 style="color: #242424;">
                                                 {{
                                                     navItem[`title_${$i18n.locale}`]
@@ -153,16 +152,17 @@ console.log(mainStore.navData);
                                         <button class="darkMode rounded-3 accordion-button shadow-0 collapsed" type="button"
                                             data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + menu.id"
                                             aria-expanded="true" :aria-controls="'flush-collapseOne' + menu.id">
-                                            <NuxtLink :to="menu?.url" class="text-decoration-none" style="color: #242424;">
+                                            <NuxtLink :to="menu?.url" class="text-decoration-none darkMode"
+                                                style="color: #242424;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
                                             </NuxtLink>
                                         </button>
                                     </h2>
                                     <div :id="'flush-collapseOne' + menu.id" data-bs-parent="#accordionFlushExample"
-                                        class="accordion-collapse collapse border-0" :aria-labelledby="menu.id">
+                                        class="accordion-collapse collapse border-0 darkMode" :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
                                             <li v-for="navItem in menu.child" :key="navItem.id">
-                                                <NuxtLink :to="navItem?.url" class="text-decoration-none"
+                                                <NuxtLink :to="navItem?.url" class="text-decoration-none darkMode"
                                                     style="color: #242424;">
                                                     {{ navItem[`title_${$i18n.locale}`] }}
                                                 </NuxtLink>

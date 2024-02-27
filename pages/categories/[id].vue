@@ -10,15 +10,15 @@ const singleStore = useSingleStore();
 
 await singleStore.getSingleData(route.params.id);
 
-const data = singleStore.datas;
+const data = singleStore?.datas;
 // console.log(data);
 </script>
 
 <template>
-    <template v-if="mainStore.loader == true">
+    <template v-if="singleStore.loader == true">
         <Loader />
     </template>
-    <template v-else-if="mainStore.loader == false">
+    <template v-else-if="singleStore.loader == false">
         <div class="shows darkMode pb-5">
             <div class="navigate">
                 <div class="container">
