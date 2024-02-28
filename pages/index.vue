@@ -12,7 +12,7 @@ const indexStore = useIndexStore();
 await indexStore.getIndexData()
 
 const data = indexStore?.datas;
-console.log(data);
+
 const mainPosts4 = data.mainPosts.slice(1);
 </script>
 
@@ -87,7 +87,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                         <div class="news__right">
                             <NuxtLink v-for="item in mainPosts4" :to="localPath(`/categories/${item.id}`)" :key="item.id"
                                 class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                                <img :src="item.detail_image.card" class="card-img img-fluid h-100 rounded-0"
+                                <img :src="item.detail_image?.card" class="card-img img-fluid h-100 rounded-0"
                                     :alt="item[`title_${$i18n.locale}`]" />
                                 <div class="card-img-overlay rounded-0">
                                     <h5 class="news__card-title">
@@ -111,7 +111,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     :key="item.id"
                                     class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
                                     <div class="position-relative lastNews__left-img">
-                                        <img :src="item.detail_image.card" class="card-img-top rounded-0"
+                                        <img :src="item.detail_image?.card" class="card-img-top rounded-0"
                                             :alt="item[`title_${$i18n.locale}`]" />
                                         <span class="position-absolute lastNews__left-spLink darkMode">
                                             {{ $t("education") }}</span>
@@ -200,9 +200,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                     </h4>
                     <div class="media__wrapper">
                         <iframe :src="data?.bannerVideos[0].youtube_link"
-                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen class="media__cards w-100"></iframe>
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
+                            class="media__cards w-100"></iframe>
 
                         <!-- <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
                             <img src="/images/media-img1.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
@@ -232,9 +231,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </NuxtLink>
                         <iframe :src="data?.bannerVideos[1].youtube_link"
-                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen class="media__cards w-100"></iframe>
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
+                            class="media__cards w-100"></iframe>
 
                         <!-- <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
                             <img src="/images/media-img4.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
@@ -278,7 +276,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                             `/categories/${item.id}`
                                         )
                                             ">
-                                            <img :src="item.detail_image.card" :alt="item[
+                                            <img :src="item.detail_image?.card" :alt="item[
                                                 `title_${$i18n.locale}`
                                             ]
                                                 " class="achchiqtosh__carousel-img img-fluid h-100" />
@@ -304,7 +302,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
-                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                            <img class="img-fluid w-100" :src="item.detail_image?.card" :alt="item[
                                                 `title_${$i18n.locale}`
                                             ]
                                                 " />
@@ -343,7 +341,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
-                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                            <img class="img-fluid w-100" :src="item.detail_image?.card" :alt="item[
                                                 `title_${$i18n.locale}`
                                             ]
                                                 " />
@@ -382,7 +380,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
-                                            <img class="img-fluid w-100" :src="item.detail_image.card" :alt="item[
+                                            <img class="img-fluid w-100" :src="item.detail_image?.card" :alt="item[
                                                 `title_${$i18n.locale}`
                                             ]
                                                 " />

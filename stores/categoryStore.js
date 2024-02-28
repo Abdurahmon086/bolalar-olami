@@ -1,33 +1,23 @@
+import axios from 'axios';
 import { defineStore } from 'pinia'
 const url = 'http://new.bolalarolami.uz/api/v2'
 
 
 export const useCategoryStore = defineStore('categoryStore', () => {
-    // state
-    const datas = ref()
-    const loader = ref(false)
-    // getter
 
     // action
-    const getCategoryData = async (id) => {
+    async function getCategoryData(id) {
         try {
-            loader.value = true
-            const res = await fetch(`${url}/get-category/${id}`);
-            const data = await res.json();
-            datas.value = data.data;
-            loader.value = false
-        } catch (err) {
-            console.log(err);
-        } finally {
-            loader.value = false;
+            console.log(id);
+            const response = await axios.get(`${url}/get-category/${id}`);
+            return response.data;
+        } catch (error) {
+            throw error;
         }
     }
 
 
-
     return {
-        loader,
         getCategoryData,
-        datas
     };
 })

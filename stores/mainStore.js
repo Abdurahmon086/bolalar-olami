@@ -73,6 +73,6 @@ export const useMainStore = defineStore('mainStore', () => {
         language,
         navbarM,
         navData, loader,
-        auth, authed
+        auth, authed, category
     };
 })

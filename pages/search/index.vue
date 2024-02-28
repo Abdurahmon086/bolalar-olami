@@ -1,33 +1,42 @@
 <script setup>
-import Loader from '~/components/loader.vue';
-
 useHead({ title: "Bolalar olami | search" });
+import Loader from '~/components/loader.vue';
+import { onMounted } from 'vue';
 
 const searchStore = useSearchStore();
 const route = useRoute();
+
 const localPath = useLocalePath();
+
+const datas = ref(null)
+datas.value = searchStore.datas
+
+onMounted(() => {
+    searchStore.getSearchData(route.query.q).then(data => {
+        datas.value = data.data.posts;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
 
 </script>
 
 <template>
-    <template v-if="searchStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="searchStore.loader == false">
+    <template v-if="datas">
         <main class="darkMode-body">
             <section>
                 <div class="container">
                     <div class="tegs">
                         <p class="tegs-text darkMode-title">
-                            {{ $t('Kalit so‘z') + ' : ' + route.query.q }}
+                            {{ 'Kalit so‘z' + ' : ' + route.query.q }}
                         </p>
                         <div class="tegs-cardimg">
-                            <div class="tegs-cardimg__left" v-if="searchStore.datas">
+                            <div class="tegs-cardimg__left" v-if="datas">
                                 <NuxtLink class="tegs-cardimg__left-wrapper darkMode"
-                                    v-for="item in searchStore.datas?.data" :key="item.id"
-                                    :to="localPath(`/categories/${item.id}`)">
+                                    v-for="item in (searchStore?.datas.data ? searchStore?.datas.data : datas.data)"
+                                    :key="item.id" :to="localPath(`/categories/${item.id}`)">
                                     <div class="position-relative">
-                                        <img :src="item.detail_image.card" class="img-fluid w-100" alt="card-img" />
+                                        <img :src="item.detail_image?.card" class="img-fluid w-100" alt="card-img" />
                                         <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
                                             Maktab
                                         </p>
@@ -62,6 +71,10 @@ const localPath = useLocalePath();
                 </div>
             </section>
         </main>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 

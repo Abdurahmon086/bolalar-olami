@@ -1,22 +1,28 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
 import Loader from "~/components/loader.vue";
+import { onMounted } from 'vue';
+
 const route = useRoute();
 
 const localPath = useLocalePath();
 const singleStore = useSingleStore();
 
-await singleStore.getSingleData(route.params.id);
+const datas = ref(null)
 
-const data = singleStore?.datas;
-// console.log(data);
+onMounted(() => {
+    singleStore.getSingleData(route.params.id).then(data => {
+        datas.value = data.data;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
+
+
 </script>
 
 <template>
-    <template v-if="singleStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="singleStore.loader == false">
+    <template v-if="datas">
         <div class="shows darkMode pb-5">
             <div class="navigate">
                 <div class="container">
@@ -29,7 +35,7 @@ const data = singleStore?.datas;
                                 <a class="darkMode text-decoration-none" href="#">Yangiliklar</a>
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center active darkMode" aria-current="page">
-                                {{ data?.post[`title_${$i18n.locale}`] }}
+                                {{ datas?.post[`title_${$i18n.locale}`] }}
                             </li>
                         </ol>
                     </nav>
@@ -39,16 +45,16 @@ const data = singleStore?.datas;
                 <div class="container main__wrapper d-md-flex justify-content-md-between darkMode-title">
                     <section class="single">
                         <h2 class="single__title">
-                            {{ data?.post[`title_${$i18n.locale}`] }}
+                            {{ datas?.post[`title_${$i18n.locale}`] }}
                         </h2>
                         <div class="single__info">
                             <span class="darkMode pt-1">{{
-                                data?.post.publish_date
+                                datas?.post.publish_date
                             }}</span>
                             <div class="single__info-inner">
                                 <img src="/images/eye_main.svg" alt="eye icon" />
                                 <span class="darkMode">{{
-                                    data?.post.views_count
+                                    datas?.post.views_count
                                 }}</span>
                             </div>
                             <!-- <div class="single__info-inner">
@@ -60,7 +66,7 @@ const data = singleStore?.datas;
                             <span class="darkMode">98</span>
                         </div> -->
                         </div>
-                        <img :src="data?.post.detail_image.card" :alt="data?.post[`title_${$i18n.locale}`]"
+                        <img :src="datas?.post.detail_image?.card" :alt="datas?.post[`title_${$i18n.locale}`]"
                             class="single__mainImg" />
                         <div class="single__inner">
                             <!-- <ul
@@ -106,7 +112,7 @@ const data = singleStore?.datas;
                                         />
                                     </li>
                                 </ul> -->
-                                    <div class="single__text-wrapper single__text" v-html="data?.post[`content_${$i18n.locale}`]
+                                    <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]
                                         "></div>
                                 </div>
                                 <!-- <div class="single__qs darkMode-body">
@@ -120,13 +126,13 @@ const data = singleStore?.datas;
                                     ishtirok etganini qayd etgan.
                                 </p>
                             </div> -->
-                                <template v-if="data?.post.tags.length != 0">
+                                <template v-if="datas?.post.tags.length != 0">
                                     <div class="single__tags d-none d-md-block darkMode-body">
                                         <h4 class="single__tags-title">
                                             Teglar
                                         </h4>
                                         <ul class="list-unstyled">
-                                            <NuxtLink v-for="item of data?.post.tags" :to="`/tegs/${item.id}`">
+                                            <NuxtLink v-for="item of datas?.post.tags" :to="`/tegs/${item.id}`">
                                                 <li class="darkMode-btn button-container-1">
                                                     {{
                                                         item[
@@ -225,11 +231,11 @@ const data = singleStore?.datas;
                         <section class="aside">
                             <h4 class="aside__title">Ko'p o'qilganlar</h4>
                             <div class="aside__wrapper">
-                                <NuxtLink v-for="item in data?.mostReadPosts" :to="localPath(`/categories/${item.id}`)"
+                                <NuxtLink v-for="item in datas?.mostReadPosts" :to="localPath(`/categories/${item.id}`)"
                                     :key="item.id"
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
                                     <div class="position-relative">
-                                        <img :src="item.detail_image.card" :alt="item[`title_${$i18n.locale}`]"
+                                        <img :src="item.detail_image?.card" :alt="item[`title_${$i18n.locale}`]"
                                             class="card-img-top rounded-0" />
                                         <span class="position-absolute aside__left-spLink darkMode">Salomatlik</span>
                                     </div>
@@ -257,6 +263,10 @@ const data = singleStore?.datas;
                 <LoopScroler />
             </div>
         </div>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 
