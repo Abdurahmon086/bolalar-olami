@@ -32,19 +32,23 @@ onMounted(() => {
                         </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left" v-if="datas">
-                                <NuxtLink class="tegs-cardimg__left-wrapper darkMode"
+                                <div class="tegs-cardimg__left-wrapper darkMode"
                                     v-for="item in (searchStore?.datas.data ? searchStore?.datas.data : datas.data)"
-                                    :key="item.id" :to="localPath(`/categories/${item.id}`)">
+                                    :key="item.id">
                                     <div class="position-relative">
-                                        <img :src="item.detail_image?.card" class="img-fluid w-100" alt="card-img" />
-                                        <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
-                                            Maktab
-                                        </p>
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
+                                            <img :src="item.detail_image?.card" class="img-fluid w-100" alt="card-img" />
+                                            <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
+                                                {{ item.section[`title_${$i18n.locale}`] }}
+                                            </p>
+                                        </NuxtLink>
                                     </div>
                                     <div class="tegs-cardimg__left-wrapper-box">
-                                        <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </h4>
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
+                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                                {{ item[`title_${$i18n.locale}`] }}
+                                            </h4>
+                                        </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
                                             {{
                                                 item[
@@ -56,7 +60,7 @@ onMounted(() => {
                                             {{ item.publish_date }}
                                         </p>
                                     </div>
-                                </NuxtLink>
+                                </div>
                             </div>
                             <aside class="tegs-cardimg__aside">
                                 <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1"

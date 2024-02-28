@@ -18,7 +18,6 @@ onMounted(() => {
     });
 });
 
-
 </script>
 
 <template>
@@ -29,10 +28,12 @@ onMounted(() => {
                     <nav aria-label="breadcrumb ">
                         <ol class="breadcrumb d-flex align-items-center">
                             <li class="breadcrumb-item d-flex align-items-center">
-                                <a class="darkMode text-decoration-none" href="#">Asosiy</a>
+                                <NuxtLink class="darkMode text-decoration-none" to="/">Asosiy</NuxtLink>
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center">
-                                <a class="darkMode text-decoration-none" href="#">Yangiliklar</a>
+                                <NuxtLink :to="`/${datas.post?.section.slug_uz}/?id=${datas.post?.section.id}`"
+                                    class="darkMode text-decoration-none">{{ datas.post.section[`title_${$i18n.locale}`] }}
+                                </NuxtLink>
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center active darkMode" aria-current="page">
                                 {{ datas?.post[`title_${$i18n.locale}`] }}
@@ -231,19 +232,22 @@ onMounted(() => {
                         <section class="aside">
                             <h4 class="aside__title">Ko'p o'qilganlar</h4>
                             <div class="aside__wrapper">
-                                <NuxtLink v-for="item in datas?.mostReadPosts" :to="localPath(`/categories/${item.id}`)"
-                                    :key="item.id"
+                                <div v-for="item in datas?.mostReadPosts" :key="item.id"
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
-                                    <div class="position-relative">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
+                                        class="position-relative">
                                         <img :src="item.detail_image?.card" :alt="item[`title_${$i18n.locale}`]"
                                             class="card-img-top rounded-0" />
-                                        <span class="position-absolute aside__left-spLink darkMode">Salomatlik</span>
-                                    </div>
+                                        <span
+                                            class="position-absolute aside__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
+                                    </NuxtLink>
                                     <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title darkMode">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </h5>
-                                        <p class="card-text darkMode">
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
+                                            <h5 class="card-title darkMode heddin-text-2">
+                                                {{ item[`title_${$i18n.locale}`] }}
+                                            </h5>
+                                        </NuxtLink>
+                                        <p class="card-text darkMode heddin-text-3">
                                             {{
                                                 item[
                                                 `description_${$i18n.locale}`
@@ -254,7 +258,7 @@ onMounted(() => {
                                             {{ item.publish_date }}
                                         </span>
                                     </div>
-                                </NuxtLink>
+                                </div>
                             </div>
                         </section>
                     </aside>

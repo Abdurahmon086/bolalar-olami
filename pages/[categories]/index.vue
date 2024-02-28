@@ -45,7 +45,7 @@ onMounted(() => {
                                             <img :src="item.detail_image?.card" class="img-fluid w-100"
                                                 :alt="item[`title_${$i18n.locale}`]" />
                                             <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
-                                                Salomatlik
+                                                {{ item.section[`title_${$i18n.locale}`] }}
                                             </p>
                                         </NuxtLink>
                                     </div>
@@ -100,7 +100,8 @@ onMounted(() => {
                                     <NuxtLink :to="localPath(`/categories/${item.id}`)">
                                         <img :src="item.detail_image?.card" class="card-img-top rounded-0"
                                             :alt="item[`title_${$i18n.locale}`]" />
-                                        <span class="position-absolute lastNews__left-spLink darkMode">Salomatlik</span>
+                                        <span
+                                            class="position-absolute lastNews__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
                                     </NuxtLink>
                                 </div>
                                 <div class="card-body d-flex flex-column">
@@ -150,7 +151,7 @@ onMounted(() => {
                                         <img :src="item.detail_image?.card" class="img-fluid w-100"
                                             :alt="item[`title_${$i18n.locale}`]" />
                                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
-                                            Salomatlik
+                                            {{ item.section[`title_${$i18n.locale}`] }}
                                         </p>
                                     </NuxtLink>
                                 </div>
