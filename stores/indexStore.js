@@ -3,9 +3,8 @@ const url = 'http://new.bolalarolami.uz/api/v2'
 
 
 export const useIndexStore = defineStore('indexStore', () => {
-  const mainStore = useMainStore()
   // state
-  const datas = ref()
+  const datas = ref(null)
   const loader = ref(false)
   // getter
 

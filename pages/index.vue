@@ -13,14 +13,10 @@ await indexStore.getIndexData()
 const data = indexStore?.datas;
 const mainPosts4 = data.mainPosts.slice(1);
 
-console.log(data);
 </script>
 
 <template>
-    <template v-if="indexStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="indexStore.loader == false">
+    <template v-if="!indexStore.loader">
         <main class="darkMode-body pb-5">
             <section class="hero">
                 <div class="container">
@@ -388,6 +384,10 @@ console.log(data);
             </section>
             <LoopScroler />
         </main>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 
