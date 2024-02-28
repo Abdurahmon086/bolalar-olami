@@ -1,35 +1,47 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
+
 const route = useRoute();
-const mainStore = useMainStore();
 const tageStore = useTageStore();
-await tageStore.getTagsData(route.params.ids);
+
+const datas = ref(null)
+
+onMounted(() => {
+    tageStore.getTagsData(route.params.ids).then(data => {
+        datas.value = data.data;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
 </script>
 
 <template>
-    <template v-if="mainStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="mainStore.loader == false">
+    <template v-if="datas">
         <main class="darkMode-body">
             <section>
                 <div class="container">
                     <div class="tegs">
-                        <p class="tegs-text darkMode-title">Maktab</p>
+                        <p class="tegs-text text-capitalize darkMode-title">
+                            {{ datas?.posts.data[0].section[`title_${$i18n.locale}`] }}
+                        </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left">
-                                <div class="tegs-cardimg__left-wrapper darkMode"
-                                    v-for="item in tageStore.datas?.posts.data">
+                                <div class="tegs-cardimg__left-wrapper darkMode" v-for="item in datas?.posts.data"
+                                    :key="item.id">
                                     <div class="position-relative">
-                                        <img :src="item.detail_image.card" class="img-fluid w-100" alt="card-img" />
-                                        <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
-                                            Maktab
-                                        </p>
+                                        <NuxtLink :to="`/${item.section[`slug_uz`]}/${item.id}`">
+                                            <img :src="item.detail_image.card" class="img-fluid w-100" alt="card-img" />
+                                            <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
+                                                {{ item.section[`title_${$i18n.locale}`] }}
+                                            </p>
+                                        </NuxtLink>
                                     </div>
                                     <div class="tegs-cardimg__left-wrapper-box">
-                                        <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </h4>
+                                        <NuxtLink :to="`/${item.section[`slug_uz`]}/${item.id}`">
+                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                                {{ item[`title_${$i18n.locale}`] }}
+                                            </h4>
+                                        </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
                                             {{
                                                 item[
@@ -55,6 +67,10 @@ await tageStore.getTagsData(route.params.ids);
                 </div>
             </section>
         </main>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 <style scoped type="sass">

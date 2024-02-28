@@ -1,31 +1,20 @@
+import axios from 'axios';
 import { defineStore } from 'pinia'
 const url = 'http://new.bolalarolami.uz/api/v2'
 
 export const useTageStore = defineStore('tageStore', () => {
-    const mainStore = useMainStore();
 
-    // state
-    const datas = ref()
-
-    // getter
-
-    // action
-    const getTagsData = async (id) => {
+    async function getTagsData(id) {
         try {
-            // mainStore.loader = true
-            const res = await fetch(`${url}/get-tag/${id}`);
-            const data = await res.json();
-            datas.value = data.data
-            // mainStore.loader = false
-        } catch (err) {
-            console.log(err);
+            const response = await axios.get(`${url}/get-tag/${id}`);
+            return response.data;
+        } catch (error) {
+            throw error;
         }
-    };
-
+    }
 
 
     return {
-        datas,
         getTagsData
     };
 })
