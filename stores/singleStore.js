@@ -1,31 +1,21 @@
+import axios from 'axios';
 import { defineStore } from 'pinia'
 const url = 'http://new.bolalarolami.uz/api/v2'
 
 
 export const useSingleStore = defineStore('singleStore', () => {
-    const mainStore = useMainStore();
-    // state
-    const datas = ref()
-    const loader = ref(false)
-    // getter
 
     // action
-    const getSingleData = async (id) => {
+    async function getSingleData(id) {
         try {
-            // loader.value = true
-            const res = await fetch(`${url}/get-post/${id}`);
-            const data = await res.json();
-            datas.value = data.data;
-            // loader.value = false
-        } catch (err) {
-            console.log(err);
+            const response = await axios.get(`${url}/get-post/${id}`);
+            return response.data;
+        } catch (error) {
+            throw error;
         }
     }
 
-
     return {
         getSingleData,
-        datas,
-        loader
     };
 })

@@ -1,41 +1,54 @@
 <script setup>
-import Loader from '~/components/loader.vue';
-
 useHead({ title: "Bolalar olami | search" });
+import Loader from '~/components/loader.vue';
+import { onMounted } from 'vue';
 
 const searchStore = useSearchStore();
 const route = useRoute();
+
 const localPath = useLocalePath();
+
+const datas = ref(null)
+datas.value = searchStore.datas
+
+onMounted(() => {
+    searchStore.getSearchData(route.query.q).then(data => {
+        datas.value = data.data.posts;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
 
 </script>
 
 <template>
-    <template v-if="searchStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="searchStore.loader == false">
+    <template v-if="datas">
         <main class="darkMode-body">
             <section>
                 <div class="container">
                     <div class="tegs">
                         <p class="tegs-text darkMode-title">
-                            {{ $t('Kalit so‘z') + ' : ' + route.query.q }}
+                            {{ 'Kalit so‘z' + ' : ' + route.query.q }}
                         </p>
                         <div class="tegs-cardimg">
-                            <div class="tegs-cardimg__left" v-if="searchStore.datas">
-                                <NuxtLink class="tegs-cardimg__left-wrapper darkMode"
-                                    v-for="item in searchStore.datas?.data" :key="item.id"
-                                    :to="localPath(`/categories/${item.id}`)">
+                            <div class="tegs-cardimg__left" v-if="datas">
+                                <div class="tegs-cardimg__left-wrapper darkMode"
+                                    v-for="item in (searchStore?.datas.data ? searchStore?.datas.data : datas.data)"
+                                    :key="item.id">
                                     <div class="position-relative">
-                                        <img :src="item.detail_image.card" class="img-fluid w-100" alt="card-img" />
-                                        <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
-                                            Maktab
-                                        </p>
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
+                                            <img :src="item.detail_image?.card" class="img-fluid w-100" alt="card-img" />
+                                            <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
+                                                {{ item.section[`title_${$i18n.locale}`] }}
+                                            </p>
+                                        </NuxtLink>
                                     </div>
                                     <div class="tegs-cardimg__left-wrapper-box">
-                                        <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </h4>
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
+                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                                {{ item[`title_${$i18n.locale}`] }}
+                                            </h4>
+                                        </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
                                             {{
                                                 item[
@@ -47,7 +60,7 @@ const localPath = useLocalePath();
                                             {{ item.publish_date }}
                                         </p>
                                     </div>
-                                </NuxtLink>
+                                </div>
                             </div>
                             <aside class="tegs-cardimg__aside">
                                 <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1"
@@ -62,6 +75,10 @@ const localPath = useLocalePath();
                 </div>
             </section>
         </main>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 

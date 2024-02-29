@@ -11,7 +11,7 @@ export const useMainStore = defineStore('mainStore', () => {
     const auths = ref(false);
     const authed = ref(false)
     const loader = ref(false)
-    const category = ref()
+    const imgModal = ref(false)
 
     // getter
     const language = computed({
@@ -73,6 +73,6 @@ export const useMainStore = defineStore('mainStore', () => {
         language,
         navbarM,
         navData, loader,
-        auth, authed
+        auth, authed, imgModal
     };
 })

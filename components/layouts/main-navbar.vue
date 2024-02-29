@@ -127,7 +127,8 @@ const switchToggle = computed(() => {
                             <!-- navbar list -->
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
                                 <li class="nav-item position-relative darkMode" v-for="nav in navMain" :key="nav.id">
-                                    <NuxtLink class="nav-link darkMode-title" :to="localPath(`/${nav.slug_uz}/`)">
+                                    <NuxtLink class="nav-link darkMode-title"
+                                        :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
                                         <p class="m-0" @click="mainStore.category = nav">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
@@ -136,7 +137,7 @@ const switchToggle = computed(() => {
                                         <button type="button"
                                             class="list-group-item darkMode list-group-item-action border-0"
                                             v-for="navItem in nav.child" :key="navItem.id">
-                                            <NuxtLink :to="localPath(`/${navItem.slug_uz}/`)"
+                                            <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
                                                 class="text-decoration-none darkMode" style="color: #242424;">
                                                 <p class="m-0" @click="mainStore.category = navItem">
                                                     {{
@@ -157,7 +158,7 @@ const switchToggle = computed(() => {
                                         <button class="darkMode rounded-3 accordion-button shadow-0 collapsed" type="button"
                                             data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + menu.id"
                                             aria-expanded="true" :aria-controls="'flush-collapseOne' + menu.id">
-                                            <NuxtLink :to="localPath(`/${menu.slug_uz}/`)"
+                                            <NuxtLink :to="localPath(`/${menu.slug_uz}/?id=${menu.id}`)"
                                                 class="text-decoration-none darkMode" style="color: #242424;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
                                             </NuxtLink>
@@ -167,7 +168,7 @@ const switchToggle = computed(() => {
                                         class="accordion-collapse collapse border-0 darkMode" :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
                                             <li v-for="navItem in menu.child" :key="navItem.id">
-                                                <NuxtLink :to="localPath(`/${navItem.slug_uz}/`)"
+                                                <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
                                                     class="text-decoration-none darkMode" style="color: #242424;">
                                                     <p class="m-0" @click="mainStore.category = navItem">
                                                         {{ navItem[`title_${$i18n.locale}`] }}

@@ -19,42 +19,24 @@ await store.getMediaData();
                     </h2>
                     <div class="mediacate__card">
                         <div class="mediacate__card-box position-relative">
-                            <!-- <img src="/images/mediacategoryImages/mediaimg1.png" class="img-fluid mediacate__card-img"
-                                alt="GALEREYA img" /> -->
-                                <iframe :src="store.datas.bannerVideos[0].youtube_link" 
-                                    src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                    title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="w-100 mediacate__card-img">
-                                </iframe>
+                            <iframe :src="store.datas.bannerVideos[0].youtube_link"
+                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
+                                title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen class="w-100 mediacate__card-img">
+                            </iframe>
                             <div class="mediacate__card-posi position-absolute  w-100">
-                                <!-- <div>
-                                    <h3 class="mediacate__card-posi--title fw-medium text-white hidden-text-3">
-                                        {{
-                                            store.datas.bannerVideos[0][
-                                                `title_${$i18n.locale}`
-                                            ]
-                                        }}
-                                    </h3>
-                                    <h3 class="mediacate__card-posi--title fw-normal">
-                                        5 Videos
-                                    </h3>
-                                </div>
-                                <NuxtLink :to="store.datas.bannerVideos[0].youtube_link
-                                        " class="d-block">
-                                    <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid d-block"
-                                        alt="play-icon" />
-                                </NuxtLink> -->
+
                             </div>
                         </div>
                         <div class="mediacate__card-box1 ">
-                            <div class="position-relative" >
+                            <div class="position-relative">
                                 <img src="/images/mediacategoryImages/mediaimg2.png"
                                     class="img-fluid rounded-0 mediacate__card-box1--img  h-100" alt="GALEREYA img" />
-                     <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
+                                <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
                                     <h2 class="mediacate__card-bottom--title position-absolute">
-                                    Barcha pleylistlar
-                                </h2>
+                                        Barcha pleylistlar
+                                    </h2>
                                 </NuxtLink>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
@@ -99,11 +81,6 @@ await store.getMediaData();
                                 title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe">
-                                <!-- 
-                                <NuxtLink :to="item.youtube_link" class="d-block">
-                                    <img src="/images/mediacategoryImages/group-icon.svg"
-                                        class="position-absolute mediacate__galle--icon" alt="icon" />
-                                </NuxtLink> -->
                             </iframe>
                         </div>
                     </div>
@@ -111,16 +88,16 @@ await store.getMediaData();
             </section>
             <!-- media all -->
             <section class="container">
-                <div v-for="items in store.datas?.videoCategories">
+                <div v-for="items in   store.datas?.videoCategories  ">
                     <div class="d-flex justify-content-between align-items-center" v-if="items?.videos.length > 0">
                         <h2 class="mediacate__all-text darkMode-title mb-0">
                             {{ items[`title_${$i18n.locale}`] }}
                         </h2>
-                        <button id="myButton" @click="store.toggleCategory(items)"
+                        <button id="myButton" v-if="items.videos.length > 4" @click="store.toggleCategory(items)"
                             class="btn btn-danger btn-sm mediaBtn">Hammasi</button>
                     </div>
-                    <div class="mediacate__all">
-                        <template v-if="!store.isActive(items)">
+                    <div class="mediacate__all " :class="{ 'videoHidden': store.isActive(items) }">
+                        <!-- <template v-if="!store.isActive(items)">
                             <div class="position-relative mediacate__all-card w-100 image-container"
                                 v-for="item in items?.videos.slice(0, 4)">
                                 <iframe :src="item.youtube_link" width="100%"
@@ -128,50 +105,17 @@ await store.getMediaData();
                                     title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen class="mediacate__iframe-all"></iframe>
-                                <!-- <img src="/images/mediacategoryImages/all-img.png"
-                                    class="img-fluid h-100 rounded-0 card-img" alt="img" />
-                                <div class="position-absolute mediacate__all-box w-100 card-img-overlay">
-                                    <div>
-                                        <p class="mediacate__all-box-text fw-medium text-white hidden-text-3">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </p>
-                                        <p class="mediacate__all-box-text fw-normal">
-                                            {{ items.videos.length }} Videos
-                                        </p>
-                                    </div>
-                                    <NuxtLink :to="item.youtube_link" class="d-block">
-                                        <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
-                                            style="width: 40px; height: 40px" alt="icon" />
-                                    </NuxtLink>
-                                </div> -->
                             </div>
-                        </template>
-                        <template v-else>
-                            <div class="position-relative mediacate__all-card w-100 image-container"
-                                v-for="item in items.videos">
-                                <iframe :src="item.youtube_link" width="100%"
-                                    src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                    title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="mediacate__iframe-all"></iframe>
-                                <!-- <img src="/images/mediacategoryImages/all-img.png"
-                                    class="img-fluid h-100 rounded-0 card-img" alt="img" />
-                                <div class="position-absolute mediacate__all-box w-100 card-img-overlay">
-                                    <div>
-                                        <p class="mediacate__all-box-text fw-medium text-white hidden-text-3">
-                                            {{ item[`title_${$i18n.locale}`] }}
-                                        </p>
-                                        <p class="mediacate__all-box-text fw-normal">
-                                            {{ items.videos.length }} Videos
-                                        </p>
-                                    </div>
-                                    <NuxtLink :to="item.youtube_link" class="d-block">
-                                        <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
-                                            style="width: 40px; height: 40px" alt="icon" />
-                                    </NuxtLink>
-                                </div> -->
-                            </div>
-                        </template>
+                        </template> -->
+                        <!-- <template v-else> -->
+                        <div class="position-relative mediacate__all-card w-100 image-container"
+                            v-for="item in items.videos  ">
+                            <iframe :src="item.youtube_link" width="100%" src="https://www.youtube.com/embed/6ZdkMZq95PI"
+                                title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen class="mediacate__iframe-all"></iframe>
+                        </div>
+                        <!-- </template> -->
                     </div>
                 </div>
             </section>
@@ -182,3 +126,24 @@ await store.getMediaData();
         </main>
     </template>
 </template>
+
+<style scoped>
+.videoHidden {
+    height: 214px;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    .videoHidden {
+        height: 460px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .videoHidden {
+        height: 174px;
+        overflow: hidden;
+    }
+}
+</style>

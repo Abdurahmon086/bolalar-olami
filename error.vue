@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { NuxtError } from "#app";
+// import type { NuxtError } from "#app";
 
-const props = defineProps({
-    error: Object as () => NuxtError,
-});
+// // const props = defineProps({
+// //     error: Object as () => NuxtError,
+// // });
 
 const handleError = () => clearError({ redirect: "/" });
 </script>
@@ -11,7 +11,7 @@ const handleError = () => clearError({ redirect: "/" });
 <template>
     <div class="error">
         <div class="error__wrapper">
-            <h2 class="error__title-404">{{ error.statusCode }}</h2>
+            <h2 class="error__title-404">404</h2>
             <div class="error__inner">
                 <h4 class="error__title">Sahifa topilmadi</h4>
                 <p class="error__text">
