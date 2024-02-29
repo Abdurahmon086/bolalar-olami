@@ -71,6 +71,6 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
-        baseUrl: process.env.BASE_URL || "http://new.bolalarolami.uz/api/v2",
+        baseUrl: process.env.BASE_URL || "http://admin.bolalarolami.uz/api/v2",
     },
 });

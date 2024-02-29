@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-const url = 'http://new.bolalarolami.uz/api/v2'
+const url = 'http://admin.bolalarolami.uz/api/v2'
 
 
 export const useMainStore = defineStore('mainStore', () => {
