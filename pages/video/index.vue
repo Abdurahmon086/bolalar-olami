@@ -88,7 +88,7 @@ await store.getMediaData();
             </section>
             <!-- media all -->
             <section class="container">
-                <div v-for="items in   store.datas?.videoCategories  ">
+                <div v-for="items in store.datas?.videoCategories  ">
                     <div class="d-flex justify-content-between align-items-center" v-if="items?.videos.length > 0">
                         <h2 class="mediacate__all-text darkMode-title mb-0">
                             {{ items[`title_${$i18n.locale}`] }}
@@ -96,18 +96,7 @@ await store.getMediaData();
                         <button id="myButton" v-if="items.videos.length > 4" @click="store.toggleCategory(items)"
                             class="btn btn-danger btn-sm mediaBtn">Hammasi</button>
                     </div>
-                    <div class="mediacate__all " :class="{ 'videoHidden': store.isActive(items) }">
-                        <!-- <template v-if="!store.isActive(items)">
-                            <div class="position-relative mediacate__all-card w-100 image-container"
-                                v-for="item in items?.videos.slice(0, 4)">
-                                <iframe :src="item.youtube_link" width="100%"
-                                    src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                    title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen class="mediacate__iframe-all"></iframe>
-                            </div>
-                        </template> -->
-                        <!-- <template v-else> -->
+                    <div class="mediacate__all " :class="{ 'videoHidden': !store.isActive(items) }">
                         <div class="position-relative mediacate__all-card w-100 image-container"
                             v-for="item in items.videos  ">
                             <iframe :src="item.youtube_link" width="100%" src="https://www.youtube.com/embed/6ZdkMZq95PI"
@@ -115,7 +104,6 @@ await store.getMediaData();
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe-all"></iframe>
                         </div>
-                        <!-- </template> -->
                     </div>
                 </div>
             </section>
@@ -129,20 +117,20 @@ await store.getMediaData();
 
 <style scoped>
 .videoHidden {
-    height: 214px;
+    max-height: 214px;
     overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {
     .videoHidden {
-        height: 460px;
+        max-height: 460px;
         overflow: hidden;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .videoHidden {
-        height: 174px;
+        max-height: 174px;
         overflow: hidden;
     }
 }

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-const url = 'http://new.bolalarolami.uz/api/v2/get-videos '
+const url = 'http://admin.bolalarolami.uz/api/v2/get-videos '
 
 export const useMediaStore = defineStore('mediaStore', () => {
     const datas = ref();

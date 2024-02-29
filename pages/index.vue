@@ -13,6 +13,7 @@ await indexStore.getIndexData()
 const data = indexStore?.datas;
 const mainPosts4 = data.mainPosts.slice(1);
 
+console.log(data);
 </script>
 
 <template>
@@ -69,8 +70,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                     <div class="news__wrapper">
                         <NuxtLink :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${data.mainPosts[0].id}`)"
                             class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                            <img :src="data.mainPosts[0].detail_image.card" class="card-img img-fluid h-100 rounded-0" :alt="data.mainPosts[0][`title_${$i18n.locale}`]
-                                " />
+                            <img :src="data.mainPosts[0].detail_image.card" class="card-img img-fluid h-100 rounded-0"
+                                :alt="data.mainPosts[0][`title_${$i18n.locale}`]" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
                                     {{
