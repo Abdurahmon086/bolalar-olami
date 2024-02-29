@@ -63,7 +63,7 @@ a {
             font-weight: 400;
             line-height: normal;
             padding: 3.5px 10px 2.5px 12px;
-            border-radius: 61px;
+            background-color: #FFF;
             // background: #F6F6F6;
             // width: 315px;
 
@@ -192,25 +192,16 @@ a {
         }
 
         &-seaBtn {
-            display: flex;
-            column-gap: 15px;
-            align-items: center;
-            border-radius: 2px;
             background: #FFF;
-            margin: 0 auto 280px auto;
+            margin: 22px auto 280px auto;
 
             img {
                 padding: 16px 25px 16px 23px;
             }
 
             &-inp {
-                outline: none;
-                border: none;
-                color: #242424;
-                font-family: "BBC Reith Sans",sans-serif;
                 font-size: 18px;
                 padding: 3.5px 10px 2.5px 12px;
-                border-radius: 61px;
 
             }
         }
@@ -328,7 +319,7 @@ a {
             align-items: center;
             border-radius: 2px;
             background: #FFF;
-            margin: 0 auto 280px auto;
+            margin: 22px auto 280px auto;
 
             img {
                 padding: 16px 25px 16px 23px;
@@ -337,11 +328,8 @@ a {
             &-inp {
                 outline: none;
                 border: none;
-                color: #242424;
-                font-family: "BBC Reith Sans";
                 font-size: 18px;
                 padding: 3.5px 10px 2.5px 12px;
-                border-radius: 61px;
                 background: #fff;
 
             }
