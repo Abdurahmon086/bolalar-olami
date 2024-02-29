@@ -12,7 +12,7 @@
 
 .talim-box {
     display: grid;
-    grid-template-columns: auto 490px;
+    grid-template-columns: 1fr 490px;
     column-gap: 20px;
     &-wrapper{
         display: grid;
@@ -21,7 +21,7 @@
     }
     &-card{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
 
@@ -98,7 +98,7 @@
 .talim-cardimg {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: auto auto ;
+    grid-template-columns: 3fr 1fr ;
     gap: 21px;
     padding-bottom: 21px;
 
@@ -106,7 +106,7 @@
     &__left {
 
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 19px 15px;
 
         &-wrapper {
@@ -114,6 +114,9 @@
             flex-direction: column;
             row-gap: 10px;
             background-color: #FFF;
+            img{
+                height: 173px;
+            }
 
             &-box {
                 display: flex;
@@ -147,6 +150,7 @@
                 line-height: normal;
                 margin: 0;
                 padding: 2px 8px 0 6px;
+                height: 49px;
             }
 
             &-text {
@@ -160,6 +164,7 @@
                 line-height: normal;
                 margin: 0;
                 padding: 2px 3px 0 6px;
+                height: 43px;
 
             }
 
@@ -180,8 +185,8 @@
     }
 
     &__aside{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         row-gap: 16px;
         &-img1{
             width: 305px;
@@ -202,13 +207,12 @@
 @media only screen and (max-width:1200px) {
     .talim-title {
         margin-top: 15px;
-        // font-family: "BBC Reith Sans";
         font-size: 20px;
         padding-top: 110px;
     }
     .talim-box {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         gap: 14px;
     
         &__left {
@@ -276,6 +280,10 @@
     
             &-wrapper {
                 row-gap: 5px;
+                height: 255px;
+                img{
+                    height: 110px !important;
+                }
     
                 &-box {
                     row-gap: 9.08px;
@@ -289,14 +297,16 @@
                 }
     
                 &-title {
-                    font-size: 10px;
+                    font-size: 12px;
                     font-weight: 500;
                     padding: 2px 3px 0 3px;
+                    height: 32px;
                 }
     
                 &-text {
-                    font-size: 8px;
+                    font-size: 11px;
                     padding: 2px 3px 0 3px;
+                    height: 44px;
     
                 }
     
@@ -337,7 +347,7 @@
     }
     .talim-box {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         gap: 14px;
     
         &__left {
@@ -405,6 +415,9 @@
     
             &-wrapper {
                 row-gap: 5px;
+                img{
+                    height: 110px !important;
+                }
     
                 &-box {
                     row-gap: 9.08px;
@@ -418,14 +431,17 @@
                 }
     
                 &-title {
-                    font-size: 10px;
+                    font-size: 12px;
                     font-weight: 500;
                     padding: 2px 3px 0 3px;
+                    height: 32px;
+
                 }
     
                 &-text {
-                    font-size: 8px;
+                    font-size: 11px;
                     padding: 2px 3px 0 3px;
+                    height: 44px;
     
                 }
     
@@ -461,13 +477,12 @@
 @media only screen and (max-width:768px) {
     .talim-title {
         margin-top: 15px;
-        // font-family: "BBC Reith Sans";
         font-size: 20px;
         padding-top: 110px;
     }
     .talim-box {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         column-gap: 14px;
     
         &__left {
@@ -535,6 +550,9 @@
     
             &-wrapper {
                 row-gap: 5px;
+                img{
+                    height: 110px !important;
+                }
     
                 &-box {
                     row-gap: 9.08px;
@@ -548,15 +566,16 @@
                 }
     
                 &-title {
-                    font-size: 10px;
+                    font-size: 12px;
                     font-weight: 500;
                     padding: 2px 3px 0 3px;
+                    height: 32px;
                 }
     
                 &-text {
-                    font-size: 8px;
+                    font-size: 11px;
                     padding: 2px 3px 0 3px;
-    
+                    height: 44px;
                 }
     
                 &-time {
@@ -598,11 +617,11 @@
 
     .talim-box {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         row-gap:12.72px;
         margin-top: 116px;
         &-card{
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
         }
     
         &__left {
@@ -617,7 +636,6 @@
     
             &-title {
                 color: #FFF;
-                // font-family: "BBC Reith Sans";
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 700;
@@ -687,7 +705,7 @@
         &__left {
     
             display: grid;
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
             row-gap: 20px;
     
             &-wrapper {
@@ -695,7 +713,10 @@
                 flex-direction: column;
                 row-gap: 11px;
                 background-color: #FFF;
-    
+                height: 388px;
+                img{
+                    height: 204px !important;
+                }
                 &-box {
                     display: flex;
                     flex-direction: column;
@@ -733,6 +754,7 @@
                     margin: 0;
                     padding: 2px 3px 0 6px;
                     // max-width: 331px;
+                    height: 52px;
                 }
     
                 &-text {
@@ -747,6 +769,7 @@
                     margin: 0;
                     padding: 2px 3px 0 6px;
                     // max-width: 331px;
+                    height: 44px;
 
     
                 }
@@ -784,11 +807,11 @@
 
     .talim-box {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         row-gap:12.72px;
         margin-top: 116px;
         &-card{
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
         }
     
         &__left {
@@ -803,7 +826,6 @@
     
             &-title {
                 color: #FFF;
-                // font-family: "BBC Reith Sans";
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 700;
@@ -874,7 +896,7 @@
         &__left {
     
             display: grid;
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
             row-gap: 20px;
     
             &-wrapper {
@@ -882,6 +904,9 @@
                 flex-direction: column;
                 row-gap: 11px;
                 background-color: #FFF;
+                img{
+                    height: 204px !important;
+                }
     
                 &-box {
                     display: flex;
@@ -920,6 +945,7 @@
                     margin: 0;
                     padding: 2px 3px 0 6px;
                     max-width: 331px;
+                    height: 52px;
                 }
     
                 &-text {
@@ -934,6 +960,7 @@
                     margin: 0;
                     padding: 2px 3px 0 6px;
                     max-width: 331px;
+                    height: 44px;
 
     
                 }

@@ -26,7 +26,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 33px;
-
         img {
             cursor: pointer;
         }
@@ -200,6 +199,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 39.73px;
+            margin-bottom: 60px;
 
             img {
                 cursor: pointer;
