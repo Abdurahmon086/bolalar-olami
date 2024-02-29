@@ -2,6 +2,7 @@
 import { useMainStore } from '~/stores/mainStore';
 const mainStore = useMainStore()
 
+
 </script>
 <template>
     <LayoutsMainNavbar />
