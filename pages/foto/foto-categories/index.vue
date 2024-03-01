@@ -14,7 +14,8 @@ useHead({ title: "Bolalar olami | posts" });
                         <a href="#"><img src="/public/images/mediagalleriyaImages/search-icon.svg" class="img-fluid"
                                 alt="searchiicon" />
                         </a>
-                        <input type="text" placeholder="Искать лицензионный контент..." class="mediaGaller-seaBtn-inp w-75" />
+                        <input type="text" placeholder="Искать лицензионный контент..."
+                            class="mediaGaller-seaBtn-inp w-75" />
                     </div>
                 </div>
             </div>
@@ -59,12 +60,12 @@ useHead({ title: "Bolalar olami | posts" });
                         <p class="mediacard-box--text darkMode-title">493 изображения</p>
                     </NuxtLink>
                     <NuxtLink :to="`/foto/foto-categories/foto_id`" class="mediacard-box darkMode">
-                        <img src="/public/images/mediacardImages/img8.png" class="img-fluid w-100" alt="mediacard-img">
+                        <img src="/images/mediacardImages/img8.png" class="img-fluid w-100" alt="mediacard-img">
                         <h4 class="mediacard-box--title darkMode-title"> Новый Год</h4>
                         <p class="mediacard-box--text darkMode-title">493 изображения</p>
                     </NuxtLink>
                     <NuxtLink :to="`/foto/foto-categories/foto_id`" class="mediacard-box darkMode">
-                        <img src="/public/images/mediacardImages/img9.png" class="img-fluid w-100" alt="mediacard-img">
+                        <img src="/images/mediacardImages/img9.png" class="img-fluid w-100" alt="mediacard-img">
                         <h4 class="mediacard-box--title darkMode-title"> Новый Год</h4>
                         <p class="mediacard-box--text darkMode-title">493 изображения</p>
                     </NuxtLink>

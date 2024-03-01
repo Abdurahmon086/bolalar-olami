@@ -67,8 +67,8 @@ onMounted(() => {
                             <span class="darkMode">98</span>
                         </div> -->
                         </div>
-                        <img :src="datas?.post.detail_image?.card" :alt="datas?.post[`title_${$i18n.locale}`]"
-                            class="single__mainImg" />
+                        <img :src="(datas?.post.detail_image?.card ? datas?.post.detail_image?.card : '/images/logo.svg')"
+                            :alt="datas?.post[`title_${$i18n.locale}`]" class="single__mainImg object-fit-fill" />
                         <div class="single__inner">
                             <!-- <ul
                             class="single__social d-none d-sm-flex list-unstyled"
@@ -236,8 +236,8 @@ onMounted(() => {
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
                                         class="position-relative">
-                                        <img :src="item.detail_image?.card" :alt="item[`title_${$i18n.locale}`]"
-                                            class="card-img-top rounded-0" />
+                                        <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                            :alt="item[`title_${$i18n.locale}`]" class="card-img-top rounded-0" />
                                         <span
                                             class="position-absolute aside__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
                                     </NuxtLink>
