@@ -1,12 +1,12 @@
 module.exports = {
     apps: [
         {
-            name: 'Bolalar-olami',
+            name: 'BolalarOlamiPm2',
             exec_mode: 'cluster',
             instances: 'max', // Or a number of instances
             script: './.output/server/index.mjs',
             args: 'start',
-            port: 3000
+            port: 3003
         }
     ]
 }
