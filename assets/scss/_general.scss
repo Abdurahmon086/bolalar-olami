@@ -58,7 +58,16 @@ img {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
+.card--title:hover{
+    color: #F7931E !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight:600;
+}
+.card-title:hover{
+    color: #F7931E !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight:600;
+}
 .darkBody .darkMode-body {
     background: #1C1C1C !important;
 }
@@ -91,6 +100,3 @@ img {
     background-color: #3E2E89 !important;
 }
 
-.card-title:hover{
-    color: #3E2E89;
-}

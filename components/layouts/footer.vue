@@ -69,11 +69,10 @@ const localPath = useLocalePath();
                                 <a class="footer__link1 fw-normal text-decoration-none darkMode-title" href="#">
                                     bolalarolamiuz@gmail.com</a>
                             </li>
-                            <li class="d-flex" style="gap: 14px">
+                            <li class="d-flex" style="gap: 6px">
                                 <img src="/images/phone-icon.svg" alt="phone-icon" class="lightIcon d-block" />
                                 <img src="/images/tell-dark.svg" alt="tell-dark icon" class="darkIcon d-none" />
-                                <a class="footer__link1 fw-normal text-decoration-none darkMode-title" href="#">998 (90) 109
-                                    24 35</a>
+                                <a class="footer__link1 fw-normal text-decoration-none darkMode-title" href="#">+998(90) 004 41 21</a>
                             </li>
                             <li class="d-flex align-items-start" style="gap: 6px">
                                 <img src="/images/location-icon.svg" alt="location-icon" class="lightIcon d-block" />
@@ -89,11 +88,10 @@ const localPath = useLocalePath();
                                 <a class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#">{{ $t("for_support") }}</a>
                             </li>
-                            <li class="d-flex" style="gap: 14px">
+                            <li class="d-flex" style="gap: 10px">
                                 <img src="/images/phone-icon.svg" alt="phone-icon" class="lightIcon d-block" />
                                 <img src="/images/tell-dark.svg" alt="tell-dark icon" class="darkIcon d-none" />
-                                <a class="footer__link1 fw-normal darkMode-title text-decoration-none" href="#">998 (90) 109
-                                    24 35</a>
+                                <a class="footer__link1 fw-normal darkMode-title text-decoration-none" href="#">+998(90) 004 41 21</a>
                             </li>
                             <li class="d-flex" style="gap: 13px">
                                 <img src="/images/telegram-icon.svg" alt="telegram-icon" class="lightIcon d-block" />

@@ -15,12 +15,16 @@ const searchStore = useSearchStore();
             class="searchModal__form"
         >
             <label for="search">Nimani qidiramiz?</label>
+           <div class="searchModal__div">
             <input
                 type="text"
                 name="search"
                 id="search"
-                v-model="searchStore.search"
+                v-model="searchStore.search" 
             />
+            <button type="sumbit" class="">Search</button>
+
+           </div>
         </form>
     </div>
 </template>

@@ -38,7 +38,7 @@ onMounted(() => {
                                     </div>
                                     <div class="tegs-cardimg__left-wrapper-box">
                                         <NuxtLink :to="`/${item.section[`slug_uz`]}/${item.id}`">
-                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2 card--title">
                                                 {{ item[`title_${$i18n.locale}`] }}
                                             </h4>
                                         </NuxtLink>

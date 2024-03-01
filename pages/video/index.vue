@@ -29,10 +29,10 @@ await store.getMediaData();
 
                             </div>
                         </div>
-                        <div class="mediacate__card-box1 ">
-                            <div class="position-relative">
+                        <div class="mediacate__card-box1">
+                            <div class="position-relative mediacate__card-box1-cards">
                                 <img src="/images/mediacategoryImages/mediaimg2.png"
-                                    class="img-fluid rounded-0 mediacate__card-box1--img  h-100" alt="GALEREYA img" />
+                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
                                 <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
                                     <h2 class="mediacate__card-bottom--title position-absolute">
                                         Barcha pleylistlar

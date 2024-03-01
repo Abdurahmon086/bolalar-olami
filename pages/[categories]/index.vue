@@ -40,9 +40,9 @@ onMounted(() => {
                             <div class="talim-box-card">
                                 <div class="talim-cardimg__left-wrapper darkMode"
                                     v-for="item in datas?.bannerPosts.slice(1)">
-                                    <div class="position-relative">
+                                    <div class="position-relative ">
                                         <NuxtLink :to="localPath(`/categories/${item.id}`)">
-                                            <img :src="item.detail_image?.card" class="img-fluid w-100"
+                                            <img :src="item.detail_image?.card" class="img-fluid w-100 h-100"
                                                 :alt="item[`title_${$i18n.locale}`]" />
                                             <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
@@ -51,7 +51,7 @@ onMounted(() => {
                                     </div>
                                     <div class="talim-cardimg__left-wrapper-box">
                                         <NuxtLink :to="localPath(`/categories/${item.id}`)">
-                                            <h4 class="talim-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                            <h4 class="talim-cardimg__left-wrapper-title card--title darkMode-title hidden-text-2">
                                                 {{ item[`title_${$i18n.locale}`] }}
                                             </h4>
                                         </NuxtLink>
@@ -157,7 +157,7 @@ onMounted(() => {
                                 </div>
                                 <div class="talim-cardimg__left-wrapper-box">
                                     <NuxtLink :to="localPath(`/categories/${item.id}`)">
-                                        <h4 class="talim-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                        <h4 class="talim-cardimg__left-wrapper-title card--title darkMode-title hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}
                                         </h4>
                                     </NuxtLink>
