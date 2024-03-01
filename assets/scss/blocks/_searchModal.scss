@@ -46,20 +46,21 @@
             font-weight: 500;
             border-bottom: 2.214px solid #FFF;
         }
-        button{
+
+        button {
             outline: none;
             border: none;
-            padding: 10px 15px;
-            margin-top: 30px;
-            width: 90px;
+            padding: 15px 15px;
+            margin-top: 3px;
+            width: 110px;
             font-size: 15px;
             color: #F7931E;
             border-radius: 6px;
-background: rgba(247, 147, 30, 0.10);
+            background: rgba(247, 147, 30, 0.10);
         }
     }
 
-    &__div{
+    &__div {
         display: flex;
         justify-content: center;
         align-items: center;
