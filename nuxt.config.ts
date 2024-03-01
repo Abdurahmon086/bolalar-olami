@@ -69,7 +69,9 @@ export default defineNuxtConfig({
         ],
         defaultLocale: "uz",
     },
-
+    devServer: {
+        port: 3003
+    },
     runtimeConfig: {
         baseUrl: process.env.BASE_URL || "http://admin.bolalarolami.uz/api/v2",
     },
