@@ -181,8 +181,8 @@ const mainPosts4 = data.mainPosts.slice(1);
 }">
                         <SwiperSlide v-for="item in data.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
-                                <img :src="item.detail_image.original_url" :alt="item[`title_${$i18n.locale}`]"
-                                    class="social__img" />
+                                <img :src="(item.detail_image.original_url ? item.detail_image.original_url : '/images/logo.svg')"
+                                    :alt="item[`title_${$i18n.locale}`]" class="social__img" />
                                 <div class="social__qs">
                                     <p class="social__qs-text">
                                         {{ item[`title_${$i18n.locale}`] }}
