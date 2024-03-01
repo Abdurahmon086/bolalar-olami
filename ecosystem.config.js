@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: 'bolalar-olami-pm2',
+            name: 'BolalarOlamiPm2',
             port: 3003,
             exec_mode: 'cluster',
             instances: 'max', // Or a number of instances
