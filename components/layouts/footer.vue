@@ -17,13 +17,14 @@ const localPath = useLocalePath();
                             {{ $t("footer_text") }}
                         </p>
                         <div class="d-flex" style="margin-top: 50px; gap: 22px">
-                            <a href="#">
+                            <a href="https://www.instagram.com/Bolalarolami.uz" target="_blank">
                                 <img src="/images/instagram-logo.svg" alt="instagram-logo" /></a>
-                            <a href="#"><img src="/images/telegram-logo.svg" alt="telegram-logo" />
+                            <a href="https://t.me/bolalarolamiuz" target="_blank"><img src="/images/telegram-logo.svg"
+                                    alt="telegram-logo" />
                             </a>
-                            <a href="#">
+                            <a href="https://www.facebook.com/bolalarolami" target="_blank">
                                 <img src="/images/facebook-logo.svg" alt="facebook-logo" /></a>
-                            <a href="#">
+                            <a href="https://www.youtube.com/@bolalarolamiuz" target="_blank">
                                 <img src="/images/youtube-logo.svg" alt="youtube-logo" /></a>
                         </div>
                     </div>
@@ -98,7 +99,8 @@ const localPath = useLocalePath();
                             <li class="d-flex" style="gap: 13px">
                                 <img src="/images/telegram-icon.svg" alt="telegram-icon" class="lightIcon d-block" />
                                 <img src="/images/telegram-dark.svg" alt="telegram-dark icon" class="darkIcon d-none" />
-                                <a class="footer__link1 fw-normal darkMode-title text-decoration-none" href="#">Telegram</a>
+                                <a class="footer__link1 fw-normal darkMode-title text-decoration-none"
+                                    href="https://t.me/bolalarolamiadmin" target="_blank">Telegram</a>
                             </li>
                         </ul>
                     </div>

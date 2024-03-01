@@ -13,7 +13,6 @@ await indexStore.getIndexData()
 const data = indexStore?.datas;
 const mainPosts4 = data.mainPosts.slice(1);
 
-console.log(data);
 </script>
 
 <template>
@@ -36,8 +35,9 @@ console.log(data);
                         <!-- Inner -->
                         <SwiperSlide v-for="(item, index) in data?.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
-                                <img :src="item.main_image.preview_url" class="img-fluid h-100 w-100"
-                                    style="object-fit: cover" alt="hero image" />
+                                <img :src="(item.main_image?.preview ? item.main_image?.preview : '/images/logo.svg')"
+                                    class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover"
+                                    alt="hero image" />
                                 <div class="carousel-caption">
                                     <div class="hero__pages d-flex align-items-center">
                                         <img src="/images/Vector-left.svg" alt="verctor left icon" />
@@ -70,7 +70,8 @@ console.log(data);
                     <div class="news__wrapper">
                         <NuxtLink :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${data.mainPosts[0].id}`)"
                             class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                            <img :src="data.mainPosts[0].detail_image.card" class="card-img img-fluid h-100 rounded-0"
+                            <img :src="(data.mainPosts[0].detail_image.card ? data.mainPosts[0].detail_image.card : '/images/logo.svg')"
+                                class="card-img img-fluid h-100 rounded-0"
                                 :alt="data.mainPosts[0][`title_${$i18n.locale}`]" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
@@ -86,8 +87,8 @@ console.log(data);
                             <NuxtLink v-for="item in mainPosts4"
                                 :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
                                 class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                                <img :src="item.detail_image?.card" class="card-img img-fluid h-100 rounded-0"
-                                    :alt="item[`title_${$i18n.locale}`]" />
+                                <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                    class="card-img img-fluid h-100 rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                                 <div class="card-img-overlay rounded-0">
                                     <h5 class="news__card-title">
                                         {{ item[`title_${$i18n.locale}`] }}
@@ -110,8 +111,8 @@ console.log(data);
                                     class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
                                     <div class="position-relative lastNews__left-img">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <img :src="item.detail_image?.card" class="card-img-top rounded-0"
-                                                :alt="item[`title_${$i18n.locale}`]" />
+                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                                             <span class="position-absolute lastNews__left-spLink darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}</span>
                                         </NuxtLink>
@@ -258,7 +259,8 @@ console.log(data);
                                         class="achchiqtosh__carousel-inner">
                                         <NuxtLink class="achchiqtosh__carousel-item bg-dark image-container"
                                             :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <img :src="item.detail_image?.card" :alt="item[`title_${$i18n.locale}`]"
+                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                :alt="item[`title_${$i18n.locale}`]"
                                                 class="achchiqtosh__carousel-img img-fluid h-100" />
                                             <div class="achchiqtosh__carousel-text">
                                                 <h5 class="achchiqtosh__slider-text hidden-text-3">
@@ -278,7 +280,8 @@ console.log(data);
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                                <img class="img-fluid w-100" :src="item.detail_image?.card"
+                                                <img class="img-fluid w-100"
+                                                    :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                     :alt="item[`title_${$i18n.locale}`]" />
                                                 <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                     {{ item.section[`title_${$i18n.locale}`] }}
@@ -310,10 +313,12 @@ console.log(data);
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                                <img class="img-fluid w-100" :src="item.detail_image?.card" :alt="item[
-                                                    `title_${$i18n.locale}`
-                                                ]
-                                                    " />
+                                                <img class="img-fluid w-100"
+                                                    :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                    :alt="item[
+                                                        `title_${$i18n.locale}`
+                                                    ]
+                                                        " />
                                                 <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                     {{ item.section[`title_${$i18n.locale}`] }}
                                                 </span>
@@ -345,10 +350,12 @@ console.log(data);
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                                <img class="img-fluid w-100" :src="item.detail_image?.card" :alt="item[
-                                                    `title_${$i18n.locale}`
-                                                ]
-                                                    " />
+                                                <img class="img-fluid w-100"
+                                                    :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                    :alt="item[
+                                                        `title_${$i18n.locale}`
+                                                    ]
+                                                        " />
                                                 <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                     {{ item.section[`title_${$i18n.locale}`] }}
                                                 </span>
