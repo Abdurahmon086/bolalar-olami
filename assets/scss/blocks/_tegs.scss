@@ -30,6 +30,9 @@
                 flex-direction: column;
                 gap: 10px;
                 background-color: #FFF;
+                img{
+                    height: 175px;
+                }
 
                 &-box {
                     display: flex;
