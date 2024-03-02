@@ -10,8 +10,10 @@ export const useIndexStore = defineStore('indexStore', {
     setHomeData() {
       return new Promise((resolve, reject) => {
         fetchHomeData().then(res => {
-          console.log(res);
-          this.homeData = res.data
+          if (res.data){
+            this.homeData = res.data
+            resolve(res)
+          }
           resolve(res)
         }).catch(error => {
           reject(error)

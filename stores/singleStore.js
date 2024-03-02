@@ -10,9 +10,12 @@ export const useSingleStore = defineStore('singleStore', {
         setSingleData(id) {
             return new Promise((resolve, reject) => {
                 fetchSingleData(id).then(res => {
-                    this.singleData = res.data
-                    resolve(res)
+                    if (res.data){
+                        this.singleData = res.data
+                        resolve(res)
+                    }
                 }).catch(error => {
+                    console.log('caatchga kelli')
                     reject(error)
                 })
             })

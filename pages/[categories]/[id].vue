@@ -5,13 +5,13 @@ import { useSingleStore } from '~/stores/singleStore';
 import { onMounted } from 'vue';
 
 const route = useRoute();
+const router = useRouter();
 
 const localPath = useLocalePath();
 const singleStore = useSingleStore();
 const datas = computed(() => singleStore.getSingleData);
 
 onMounted(() => {
-  console.log('mounted ishlamayabdi')
     singleStore.setSingleData(route.params.id)
 });
 

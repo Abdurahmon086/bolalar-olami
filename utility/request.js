@@ -7,11 +7,11 @@ const service = axios.create({
   timeout: 5000000, // request timeout
 })
 
-const router = useRouter()
-function logout() {
-  // clearForLogout()
-  return router.push({ name: 'login' })
-}
+// const router = useRouter()
+// function logout() {
+//   // clearForLogout()
+//   return router.push({ name: 'login' })
+// }
 
 service.interceptors.request.use(
   config => {
@@ -29,11 +29,14 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   response => {
-      console.log('kelli requestga')
     const res = response.data
+      console.log(res)
     if (response.status !== 200) {
       console.log('service.interceptors.response.use response', response)
       return Promise.reject(new Error(res.message || 'Error'))
+    }
+    if (!res.success){
+        router.push({ path: '/' })
     }
     return res
   },
