@@ -37,7 +37,8 @@ onMounted(() => {
                                     :key="item.id">
                                     <div class="position-relative">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <img :src="item.detail_image?.card" class="img-fluid w-100" alt="card-img" />
+                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                class="img-fluid w-100" alt="card-img" />
                                             <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
                                             </p>
@@ -45,7 +46,8 @@ onMounted(() => {
                                     </div>
                                     <div class="tegs-cardimg__left-wrapper-box">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <h4 class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2">
+                                            <h4
+                                                class="tegs-cardimg__left-wrapper-title darkMode-title hidden-text-2 card--title">
                                                 {{ item[`title_${$i18n.locale}`] }}
                                             </h4>
                                         </NuxtLink>

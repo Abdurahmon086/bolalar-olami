@@ -215,6 +215,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 39.73px;
+        margin-bottom: 60px;
+
 
             img {
                 cursor: pointer;
@@ -789,9 +791,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 19px;
+        margin-bottom: 30px;
+
 
             img {
                 cursor: pointer;
+                // height: 190px !important;
             }
 
         }
@@ -866,6 +871,7 @@
                 line-height: normal;
                 top: 26px;
                 left: 16px;
+                width: 123px;
             }
 
             &--img {

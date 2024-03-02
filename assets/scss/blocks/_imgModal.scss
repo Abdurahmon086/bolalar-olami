@@ -1,10 +1,10 @@
 .imgModal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 99999;
     width: 100vw;
-    height: 100vh;
+    height: 100vw;
     flex-shrink: 0;
     background: rgba(10, 10, 11, 0.70);
     backdrop-filter: blur(42px);
@@ -15,6 +15,7 @@
             position: absolute;
             top: 59px;
             left: 81px;
+            cursor: pointer;
         }
 
         &__img1 {
@@ -24,16 +25,166 @@
             left: 617px;
             right: 617px;
             bottom: 53px;
+            cursor: pointer;
         }
 
         &__img2 {
             position: absolute;
-            left: 161px;
+            left: 361px;
             bottom: 161px;
             top: 162px;
             right: 161px;
-            // margin: 0 auto;
             max-height: 500px;
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .imgModal {
+        height: 100%;
+
+        &-top {
+            &__img3 {
+                left: 60px;
+            }
+
+            &__img1 {
+                top: 60px;
+                left: 350px;
+                right: auto;
+                bottom: 53px;
+                cursor: pointer;
+            }
+
+            &__img2 {
+                position: absolute;
+                left: 120px;
+                top: 162px;
+                right: auto;
+                max-height: 400px;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:992px) {
+    .imgModal {
+        height: 100%;
+
+        &-top {
+            &__img3 {
+                left: 60px;
+            }
+
+            &__img1 {
+                top: 60px;
+                left: 350px;
+                right: auto;
+                bottom: 53px;
+                cursor: pointer;
+            }
+
+            &__img2 {
+                position: absolute;
+                left: 100px;
+                top: 162px;
+                right: auto;
+                max-height: 380px;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:768px) {
+    .imgModal {
+        height: 100%;
+
+        &-top {
+            &__img3 {
+                left: 60px;
+            }
+
+            &__img1 {
+                top: 60px;
+                left: 250px;
+                right: auto;
+                bottom: 53px;
+                cursor: pointer;
+            }
+
+            &__img2 {
+                position: absolute;
+                left: 40px;
+                top: 162px;
+                right: auto;
+                max-height: 300px;
+            }
+        }
+    }
+
+
+}
+
+
+@media only screen and (max-width:576px) {
+    .imgModal {
+        height: 100%;
+
+        &-top {
+            &__img3 {
+                left: 40px;
+            }
+
+            &__img1 {
+                top: 60px;
+                left: 150px;
+                right: auto;
+                bottom: 53px;
+                cursor: pointer;
+            }
+
+            &__img2 {
+                position: absolute;
+                left: 30px;
+                top: 162px;
+                right: auto;
+                max-height: 200px;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:376px) {
+    .imgModal {
+        height: 100vh;
+
+        &-top {
+            &__img3 {
+                left: 20px;
+            }
+
+            &__img1 {
+                top: 60px;
+                left: 100px;
+                right: auto;
+                bottom: 53px;
+                cursor: pointer;
+                width: 180px;
+            }
+
+            &__img2 {
+                position: absolute;
+                left: 20px;
+                top: 162px;
+                right: auto;
+                max-height: 160px;
+            }
         }
     }
 }
