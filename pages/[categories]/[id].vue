@@ -5,7 +5,6 @@ import { useSingleStore } from '~/stores/singleStore';
 import { onMounted } from 'vue';
 
 const route = useRoute();
-const router = useRouter();
 
 const localPath = useLocalePath();
 const singleStore = useSingleStore();
