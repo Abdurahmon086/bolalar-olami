@@ -1,21 +1,17 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
 import Loader from "~/components/loader.vue";
+import { useSingleStore } from '~/stores/singleStore';
 import { onMounted } from 'vue';
 
 const route = useRoute();
 
 const localPath = useLocalePath();
 const singleStore = useSingleStore();
-
-const datas = ref(null)
+const datas = computed(() => singleStore.getSingleData);
 
 onMounted(() => {
-    singleStore.getSingleData(route.params.id).then(data => {
-        datas.value = data.data;
-    }).catch(error => {
-        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-    });
+    singleStore.setSingleData(route.params.id)
 });
 
 </script>

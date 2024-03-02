@@ -35,7 +35,7 @@ const mainPosts4 = data.mainPosts.slice(1);
             <!-- Inner -->
             <SwiperSlide v-for="(item, index) in data?.mainBanners" class="carousel-inner">
               <div class="carousel-item image-container w-100">
-                <img :src="(item.main_image?.preview ? item.main_image?.preview : '/images/logo.svg')"
+                <img :src="(item.main_image?.preview ? item.main_image?.main : '/images/logo.svg')"
                      class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover"
                      alt="hero image" />
                 <div class="carousel-caption">
@@ -52,7 +52,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                     </h3>
                     <NuxtLink :to="`/${item.post.section?.slug_uz}/${item.id}`"
                               class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
-                      Подробнее
+                      {{ $t('Батафсил') }}
                       <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
                     </NuxtLink>
                   </div>
@@ -65,7 +65,7 @@ const mainPosts4 = data.mainPosts.slice(1);
       <section class="news">
         <div class="container">
           <h4 class="media__title news__tt darkMode-title">
-            {{ $t("main_title") }}
+            {{ $t('Асосий') }}
           </h4>
           <div class="news__wrapper">
             <NuxtLink :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${data.mainPosts[0].id}`)"
