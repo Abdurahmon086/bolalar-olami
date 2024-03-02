@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: "Bolalar olami",
+  title: "Bolalar olami",
 });
 import Loader from "~/components/loader.vue";
 import { useIndexStore } from '~/stores/indexStore';
@@ -397,13 +397,13 @@ const mainPosts4 = data.mainPosts.slice(1);
         </main>
     </template>
 
-    <template v-else>
-        <Loader />
-    </template>
+  <template v-else>
+    <Loader />
+  </template>
 </template>
 
 <style scoped>
 main {
-    background: #f6f6f6;
+  background: #f6f6f6;
 }
 </style>
