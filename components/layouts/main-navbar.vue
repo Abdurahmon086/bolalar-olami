@@ -2,16 +2,27 @@
 import { getItem, setItem } from "~/utility/localStorageControl";
 import Loader from "../loader.vue";
 
-const { locales } = useI18n();
+const { locales, locale, setLocale } = useI18n();
 const localPath = useLocalePath();
 
 const mainStore = useMainStore();
 const searchStore = useSearchStore();
-await mainStore.getNabarData();
 
-const navMain = mainStore.navbarM;
+const datas = computed(() => mainStore.navbarM);
 
-//hooks
+// language
+const language = computed({
+    get: () => locale.value,
+    set: (value) => {
+        setLocale(value);
+    },
+});
+
+const changeLocale = (lang) => {
+    setLocale(lang);
+};
+
+// dark mode
 const darkTheme = ref(false);
 
 const switchToggle = computed(() => {
@@ -34,13 +45,13 @@ const switchToggle = computed(() => {
     }
 });
 
+onMounted(() => {
+    mainStore.setMainData()
+});
 </script>
 
 <template>
-    <template v-if="mainStore.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="mainStore.loader == false">
+    <template v-if="datas">
         <header class="header fixed-top darkMode">
             <div class="header__wrapper">
                 <!-- header top navbar -->
@@ -69,16 +80,13 @@ const switchToggle = computed(() => {
                                 <img src="/images/moon.svg" alt="moon icon" class="lightIcon d-block cur" />
                                 <img src="/images/moon_d.svg" alt="moon icon" class="darkIcon d-none" />
                             </div>
-                            <button @click="
-                                (mainStore.auth = true),
-                                (mainStore.auths = false)
-                                " type="button" class="header__top-mainBtn btn shadow-0 darkMode-btn"
-                                v-if="!mainStore.authed">
+                            <button @click="(mainStore.auth = true), (mainStore.auths = false)" type="button"
+                                class="header__top-mainBtn btn shadow-0 darkMode-btn" v-if="!mainStore.authed">
                                 {{ $t("entir") }}
                             </button>
 
                             <select class="header__top-btn darkMode-btn d-xl-none" aria-label="Default select example"
-                                v-model="mainStore.language">
+                                v-model="language">
                                 <option v-for="item in locales" :value="item.code">
                                     {{ item.code }}
                                 </option>
@@ -86,26 +94,14 @@ const switchToggle = computed(() => {
 
                             <ul class="header__top-list d-none d-xl-flex align-items-center list-unstyled m-0"
                                 style="gap: 10px">
-                                <li class="header__top-item darkMode" :class="{
-                                    active: $i18n.locale === 'uz',
-                                }" @click="mainStore.changeLocale('uz')">
-                                    Uz
-                                </li>
-                                <li class="header__top-item darkMode" :class="{
-                                    active: $i18n.locale === 'kr',
-                                }" @click="mainStore.changeLocale('kr')">
-                                    Уз
-                                </li>
-                                <li class="header__top-item darkMode" :class="{
-                                    active: $i18n.locale === 'en',
-                                }" @click="mainStore.changeLocale('en')">
-                                    En
-                                </li>
-                                <li class="header__top-item darkMode" :class="{
-                                    active: $i18n.locale === 'ru',
-                                }" @click="mainStore.changeLocale('ru')">
-                                    Ру
-                                </li>
+                                <li class="header__top-item darkMode" :class="{ active: $i18n.locale === 'uz', }"
+                                    @click="changeLocale('uz')">Uz</li>
+                                <li class="header__top-item darkMode" :class="{ active: $i18n.locale === 'kr', }"
+                                    @click="changeLocale('kr')"> Уз</li>
+                                <li class="header__top-item darkMode" :class="{ active: $i18n.locale === 'en', }"
+                                    @click="changeLocale('en')">En</li>
+                                <li class="header__top-item darkMode" :class="{ active: $i18n.locale === 'ru', }"
+                                    @click="changeLocale('ru')">Ру</li>
                             </ul>
                         </div>
                     </div>
@@ -123,27 +119,25 @@ const switchToggle = computed(() => {
                         </NuxtLink>
 
                         <!-- middle -->
-                        <div class="darkMode navbar-collapse header__navbar-middle collapse" id="navbarSupportedContent">
+                        <div class="darkMode navbar-collapse header__navbar-middle collapse"
+                            id="navbarSupportedContent">
                             <!-- navbar list -->
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
-                                <li class="nav-item position-relative darkMode" v-for="nav in navMain" :key="nav.id">
+                                <li class="nav-item position-relative darkMode" v-for="nav in datas" :key="nav.id">
                                     <NuxtLink class="nav-link darkMode-title"
                                         :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
-                                        <p class="m-0" @click="mainStore.category = nav">
+                                        <p class="m-0">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
                                     </NuxtLink>
-                                    <div class="darkMode d-none item-menu list-group list-group-light position-absolute">
+                                    <div
+                                        class="darkMode d-none item-menu list-group list-group-light position-absolute">
                                         <button type="button"
                                             class="list-group-item darkMode list-group-item-action border-0"
-                                            v-for="navItem in nav.child" :key="navItem.id">
-                                            <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
+                                            v-for="item in nav.child" :key="item.id">
+                                            <NuxtLink :to="localPath(`/${item.slug_uz}/?id=${item.id}`)"
                                                 class="text-decoration-none darkMode" style="color: #242424;">
-                                                <p class="m-0" @click="mainStore.category = navItem">
-                                                    {{
-                                                        navItem[`title_${$i18n.locale}`]
-                                                    }}
-                                                </p>
+                                                <p class="m-0">{{ item[`title_${$i18n.locale}`] }} </p>
                                             </NuxtLink>
                                         </button>
                                     </div>
@@ -153,11 +147,12 @@ const switchToggle = computed(() => {
                             <!-- accordion -->
                             <div class="darkMode accordion accordion-flush container my-3 d-flex flex-column d-xl-none left-0"
                                 style="gap: 12px" id="accordionFlushExample">
-                                <div class="accordion-item darkMode-btn" v-for="menu in navMain" :key="menu.id">
-                                    <h2 class="accordion-header" @click="mainStore.category = menu">
-                                        <button class="darkMode rounded-3 accordion-button shadow-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + menu.id"
-                                            aria-expanded="true" :aria-controls="'flush-collapseOne' + menu.id">
+                                <div class="accordion-item darkMode-btn" v-for="menu in datas" :key="menu.id">
+                                    <h2 class="accordion-header">
+                                        <button class="darkMode rounded-3 accordion-button shadow-0 collapsed"
+                                            type="button" data-bs-toggle="collapse"
+                                            :data-bs-target="'#flush-collapseOne' + menu.id" aria-expanded="true"
+                                            :aria-controls="'flush-collapseOne' + menu.id">
                                             <NuxtLink :to="localPath(`/${menu.slug_uz}/?id=${menu.id}`)"
                                                 class="text-decoration-none darkMode" style="color: #242424;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
@@ -165,12 +160,13 @@ const switchToggle = computed(() => {
                                         </button>
                                     </h2>
                                     <div :id="'flush-collapseOne' + menu.id" data-bs-parent="#accordionFlushExample"
-                                        class="accordion-collapse collapse border-0 darkMode" :aria-labelledby="menu.id">
+                                        class="accordion-collapse collapse border-0 darkMode"
+                                        :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
                                             <li v-for="navItem in menu.child" :key="navItem.id">
                                                 <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
                                                     class="text-decoration-none darkMode" style="color: #242424;">
-                                                    <p class="m-0" @click="mainStore.category = navItem">
+                                                    <p class="m-0">
                                                         {{ navItem[`title_${$i18n.locale}`] }}
                                                     </p>
                                                 </NuxtLink>
@@ -194,20 +190,23 @@ const switchToggle = computed(() => {
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation"
                                 class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed">
+
                                 <template v-if="!darkTheme">
                                     <img src="/images/x.svg" alt="x icon" class="" />
                                     <img src="/images/menu.svg" alt="menu icon" class="d-none" />
                                 </template>
+
                                 <template v-else>
                                     <img src="/images/x.svg" alt="x icon" class="" />
                                     <img src="/images/menu-d.svg" alt="menu icon" class="d-none" />
                                 </template>
                             </button>
                             <!-- Avatar -->
-                            <template v-if="mainStore?.authed">
+
+                            <template v-if="mainStore.authed">
                                 <div class="dropdown">
-                                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="/images/person.png" class="rounded-circle" height="35" alt="person"
                                             loading="lazy" />
                                     </a>
@@ -219,8 +218,8 @@ const switchToggle = computed(() => {
                                                 gap: 8px;
                                                 padding: 10px 10px 4px 10px;
                                             ">
-                                            <img src="/images/person.png" class="rounded-circle" height="35" alt="person"
-                                                loading="lazy" />
+                                            <img src="/images/person.png" class="rounded-circle" height="35"
+                                                alt="person" loading="lazy" />
 
                                             <div>
                                                 <h4 class="m-0" style="
@@ -262,6 +261,11 @@ const switchToggle = computed(() => {
             </div>
         </header>
     </template>
+
+    <template v-else>
+        <Loader />
+    </template>
+
 </template>
 
 <style scoped>

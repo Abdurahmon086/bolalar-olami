@@ -350,7 +350,7 @@
 
     .single {
 
-        max-width: 480px;
+        max-width: 480px !important;
 
         &__title {
             font-size: 24px;
@@ -610,7 +610,7 @@
     }
 
     .single {
-        max-width: 866px;
+        max-width: 866px !important;
 
         &__title {
             font-size: 44px;

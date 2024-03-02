@@ -19,7 +19,7 @@ service.interceptors.request.use(
     // if (token) {
     //   config.headers.Authorization = `Bearer ${token}`
     // }
-   return config
+    return config
   },
   error => {
     console.log(error) // for debug
@@ -30,13 +30,12 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-      console.log(res)
     if (response.status !== 200) {
       console.log('service.interceptors.response.use response', response)
       return Promise.reject(new Error(res.message || 'Error'))
     }
-    if (!res.success){
-        router.push({ path: '/' })
+    if (!res.success) {
+      router.push({ path: '/' })
     }
     return res
   },
@@ -47,9 +46,9 @@ service.interceptors.response.use(
       // message.error(error)
     }
     if (error.response.status === 401) {
-        // if(error.response.data.message !== 'Login yoki parol xato') {
-            logout()
-        // }
+      // if(error.response.data.message !== 'Login yoki parol xato') {
+      logout()
+      // }
     }
     return Promise.reject(error.response)
   },
