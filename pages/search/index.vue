@@ -38,11 +38,16 @@ onMounted(() => {
                                     <div class="position-relative">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <img :src="item.detail_image?.card" class="img-fluid w-100 " alt="card-img" />
 =======
                                             <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                 class="img-fluid w-100" alt="card-img" />
 >>>>>>> 9ede6a0f5391e1e30af95c7fba9dd0521443a2e7
+=======
+                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                                class="img-fluid w-100" alt="card-img" />
+>>>>>>> 4dc35b7fd3266f5de301687024c2ba2c285658bd
                                             <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
                                             </p>
