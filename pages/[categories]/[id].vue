@@ -12,6 +12,7 @@ const singleStore = useSingleStore();
 const datas = computed(() => singleStore.getSingleData);
 
 onMounted(() => {
+  console.log('mounted ishlamayabdi')
     singleStore.setSingleData(route.params.id)
 });
 

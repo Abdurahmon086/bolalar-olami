@@ -28,6 +28,7 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   response => {
+      console.log('kelli requestga')
     const res = response.data
     if (response.status !== 200) {
       console.log('service.interceptors.response.use response', response)
