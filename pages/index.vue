@@ -12,7 +12,6 @@ await indexStore.getIndexData()
 
 const data = indexStore?.datas;
 const mainPosts4 = data.mainPosts.slice(1);
-
 </script>
 
 <template>
@@ -21,17 +20,18 @@ const mainPosts4 = data.mainPosts.slice(1);
             <section class="hero">
                 <div class="container">
                     <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination,]"
-                        :pagination="{ clickable: true, }" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
-                            delay: 3000, disableOnInteraction: true,
-                        }" :creative-effect="{
-    prev: {
-        shadow: false,
-        translate: ['-20%', 0, -1],
-    },
-    next: {
-        translate: ['100%', 0, 0],
-    },
-}" class="carousel">
+                        :pagination="{ clickable: true, }" :slides-per-view="1" :loop="true" :effect="'creative'"
+                        :autoplay="{
+        delay: 3000, disableOnInteraction: true,
+    }" :creative-effect="{
+        prev: {
+            shadow: false,
+            translate: ['-20%', 0, -1],
+        },
+        next: {
+            translate: ['100%', 0, 0],
+        },
+    }" class="carousel">
                         <!-- Inner -->
                         <SwiperSlide v-for="(item, index) in data?.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
@@ -50,7 +50,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         <h3 class="text-start hero__car-text heddin-text-2">
                                             {{ item.post[`title_${$i18n.locale}`] }}
                                         </h3>
-                                        <NuxtLink :to="`/${item.post.section?.slug_uz}/${item.id}`"
+                                        <NuxtLink :to="localPath(`/${item.post.section.slug_uz}/${item.post.id}`)"
                                             class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
                                             Подробнее
                                             <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
@@ -76,10 +76,10 @@ const mainPosts4 = data.mainPosts.slice(1);
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
                                     {{
-                                        data.mainPosts[0][
-                                            `title_${$i18n.locale}`
-                                        ]
-                                    }}
+        data.mainPosts[0][
+        `title_${$i18n.locale}`
+        ]
+    }}
                                 </h5>
                             </div>
                         </NuxtLink>
@@ -125,10 +125,10 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         </NuxtLink>
                                         <p class="card-text darkMode hidden-text-3">
                                             {{
-                                                item[
-                                                `description_${$i18n.locale}`
-                                                ]
-                                            }}
+        item[
+        `description_${$i18n.locale}`
+        ]
+    }}
                                         </p>
                                         <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
@@ -168,17 +168,17 @@ const mainPosts4 = data.mainPosts.slice(1);
                     </h4>
                     <Swiper class="carousel" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1"
                         :loop="true" :effect="'creative'" :autoplay="{
-                            delay: 3000,
-                            disableOnInteraction: true,
-                        }" :creative-effect="{
-    prev: {
-        shadow: false,
-        translate: ['-20%', 0, -1],
-    },
-    next: {
-        translate: ['100%', 0, 0],
-    },
-}">
+        delay: 3000,
+        disableOnInteraction: true,
+    }" :creative-effect="{
+        prev: {
+            shadow: false,
+            translate: ['-20%', 0, -1],
+        },
+        next: {
+            translate: ['100%', 0, 0],
+        },
+    }">
                         <SwiperSlide v-for="item in data.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
                                 <img :src="(item.detail_image.original_url ? item.detail_image.original_url : '/images/logo.svg')"
@@ -204,10 +204,11 @@ const mainPosts4 = data.mainPosts.slice(1);
                     </h4>
                     <div class="media__wrapper">
                         <iframe :src="data?.bannerVideos[0].youtube_link"
-                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
-                            class="media__cards w-100"></iframe>
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            allowfullscreen class="media__cards w-100"></iframe>
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
-                            <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
+                            <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0"
+                                alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -216,7 +217,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </NuxtLink>
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
-                            <img src="/images/media-img3.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
+                            <img src="/images/media-img3.png" class="card-img img-fluid h-100 rounded-0"
+                                alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">
                                     Mirziyoyeva oilasi bolalar kutubxonasiga
@@ -225,8 +227,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </NuxtLink>
                         <iframe :src="data?.bannerVideos[1].youtube_link"
-                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
-                            class="media__cards w-100"></iframe>
+                            title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            allowfullscreen class="media__cards w-100"></iframe>
 
                     </div>
                 </div>
@@ -241,20 +243,20 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </h4>
                             <div class="">
                                 <Swiper :modules="[
-                                    SwiperAutoplay,
-                                    SwiperEffectCreative,
-                                ]" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
-    delay: 3000,
-    disableOnInteraction: true,
-}" :creative-effect="{
-    prev: {
-        shadow: true,
-        translate: ['-20%', 0, -1],
-    },
-    next: {
-        translate: ['100%', 0, 0],
-    },
-}" class="achchiqtosh__carousel">
+        SwiperAutoplay,
+        SwiperEffectCreative,
+    ]" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
+        delay: 3000,
+        disableOnInteraction: true,
+    }" :creative-effect="{
+        prev: {
+            shadow: true,
+            translate: ['-20%', 0, -1],
+        },
+        next: {
+            translate: ['100%', 0, 0],
+        },
+    }" class="achchiqtosh__carousel">
                                     <SwiperSlide v-for="item in data.achchiqtoshPosts" :key="item"
                                         class="achchiqtosh__carousel-inner">
                                         <NuxtLink class="achchiqtosh__carousel-item bg-dark image-container"
@@ -316,9 +318,9 @@ const mainPosts4 = data.mainPosts.slice(1);
                                                 <img class="img-fluid w-100"
                                                     :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                     :alt="item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                        " />
+        `title_${$i18n.locale}`
+    ]
+        " />
                                                 <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                     {{ item.section[`title_${$i18n.locale}`] }}
                                                 </span>
@@ -353,9 +355,9 @@ const mainPosts4 = data.mainPosts.slice(1);
                                                 <img class="img-fluid w-100"
                                                     :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                     :alt="item[
-                                                        `title_${$i18n.locale}`
-                                                    ]
-                                                        " />
+        `title_${$i18n.locale}`
+    ]
+        " />
                                                 <span class="darkMode achchiqtosh__card-sp position-absolute">
                                                     {{ item.section[`title_${$i18n.locale}`] }}
                                                 </span>
@@ -379,7 +381,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                             </div>
                         </div>
                         <div class="row-gap-3 d-none d-sm-flex flex-column">
-                            <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
+                            <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png"
+                                alt="reklama-img" />
                             <img class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png"
                                 alt="reklama-img1" />
                             <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png"
