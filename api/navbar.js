@@ -1,8 +1,8 @@
 import request from '@/utility/request'
 
-export function fetchHomeData() {
+export function fetchNavbarData() {
     return request({
-        url: '/home/get-news-home',
+        url: '/resources/get-sections',
         method: 'get'
     })
 }

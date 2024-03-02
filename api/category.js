@@ -1,8 +1,8 @@
 import request from '@/utility/request'
 
-export function fetchHomeData() {
+export function fetchCategoryData(id) {
     return request({
-        url: '/home/get-news-home',
+        url: '/get-category/' + id,
         method: 'get'
     })
 }

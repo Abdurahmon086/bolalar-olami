@@ -3,22 +3,13 @@ useHead({ title: "Bolalar olami | category" });
 import { onMounted } from 'vue';
 const localPath = useLocalePath()
 const route = useRoute();
-const router = useRouter()
 
 const categoryStore = useCategoryStore()
 
-const datas = ref(null)
+const datas = computed(() => categoryStore.getCategoryData);
 
 onMounted(() => {
-    categoryStore.getCategoryData(route.query.id).then(data => {
-        if (!data.success) {
-            router.push({ path: '/' })
-        }
-
-        datas.value = data.data;
-    }).catch(error => {
-        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-    });
+    categoryStore.setCategoryData(route.query.id)
 });
 
 </script>
@@ -28,11 +19,14 @@ onMounted(() => {
         <main class="darkMode-body pb-5 bg-light">
             <section class="darkMode-body">
                 <div class="container">
-                    <h3 class="talim-title darkMode-title text-capitalize">{{ route.params.categories }}</h3>
+                    <h3 class="talim-title darkMode-title text-capitalize">
+                        {{ datas?.bannerPosts[0].section[`title_${$i18n.locale}`] }}
+                    </h3>
                     <div class="talim-box">
                         <div class="talim-box-wrapper">
                             <div class="talim-box__left position-relative image-container item1">
-                                <NuxtLink :to="localPath(`/categories/${datas?.bannerPosts[0]?.id}`)">
+                                <NuxtLink
+                                    :to="localPath(`/${datas?.bannerPosts[0].section.slug_uz}/${datas?.bannerPosts[0]?.id}`)">
                                     <img :src="(datas?.bannerPosts[0]?.detail_image?.card ? datas?.bannerPosts[0]?.detail_image?.card : '/images/logo.svg')"
                                         class="img-fluid w-100 h-100" alt="talim-img" />
                                     <div class="talim-box__left-box position-absolute w-100 h-100">
@@ -46,7 +40,7 @@ onMounted(() => {
                                 <div class="talim-cardimg__left-wrapper darkMode"
                                     v-for=" item  in  datas?.bannerPosts.slice(1) ">
                                     <div class="position-relative ">
-                                        <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                             <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                 class="img-fluid w-100 h-100" :alt="item[`title_${$i18n.locale}`]" />
                                             <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
@@ -55,7 +49,7 @@ onMounted(() => {
                                         </NuxtLink>
                                     </div>
                                     <div class="talim-cardimg__left-wrapper-box">
-                                        <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                             <h4
                                                 class="talim-cardimg__left-wrapper-title card--title darkMode-title hidden-text-2">
                                                 {{ item[`title_${$i18n.locale}`] }}
@@ -75,7 +69,7 @@ onMounted(() => {
                             <h4 class="lastNews__right-title">So'nggi maqolalar</h4>
                             <ul class="lastNews__right-list list-unstyled darkMode">
                                 <li class="border-bottom" v-for=" item  in  datas?.resentPosts ">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <p class="lastNews__right-text darkMode hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}
                                         </p>
@@ -103,7 +97,7 @@ onMounted(() => {
                             <div class="lastNews__left-inner card h-100 shadow-0 rounded-0 darkMode border-0"
                                 v-for=" item  in  datas?.categoryPosts.slice(0, 4) ">
                                 <div class="position-relative">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                             class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                                         <span
@@ -111,7 +105,7 @@ onMounted(() => {
                                     </NuxtLink>
                                 </div>
                                 <div class="card-body d-flex flex-column">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <h5 class="card-title darkMode hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}
                                         </h5>
@@ -127,7 +121,7 @@ onMounted(() => {
                             <h4 class="lastNews__right-title">Ko'p o'qilgan</h4>
                             <ul class="lastNews__right-list list-unstyled darkMode">
                                 <li class="border-bottom" v-for=" item  in  datas?.mostReadPosts ">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <p class="lastNews__right-text darkMode hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}
                                         </p>
@@ -154,7 +148,7 @@ onMounted(() => {
                             <div class="talim-cardimg__left-wrapper darkMode"
                                 v-for=" item  in  datas?.categoryPosts.slice(4) ">
                                 <div class="position-relative">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                             class="img-fluid w-100" :alt="item[`title_${$i18n.locale}`]" />
                                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
@@ -163,7 +157,7 @@ onMounted(() => {
                                     </NuxtLink>
                                 </div>
                                 <div class="talim-cardimg__left-wrapper-box">
-                                    <NuxtLink :to="localPath(`/categories/${item.id}`)">
+                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                         <h4
                                             class="talim-cardimg__left-wrapper-title card--title darkMode-title hidden-text-2">
                                             {{ item[`title_${$i18n.locale}`] }}

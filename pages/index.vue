@@ -8,19 +8,6 @@ import { useIndexStore } from '~/stores/indexStore';
 const localPath = useLocalePath();
 const indexStore = useIndexStore();
 
-// const datas = ref(null)
-
-// onMounted(() => {
-//   indexStore.getIndexData().then(data => {
-//     if (!data.success) {
-//       router.push({ path: '/' })
-//     }
-
-//     datas.value = data.data;
-//   }).catch(error => {
-//     console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-//   });
-// });
 const datas = computed(() => indexStore.getHomeData);
 
 onMounted(() => {
