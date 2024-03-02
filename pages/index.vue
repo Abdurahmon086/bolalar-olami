@@ -65,7 +65,7 @@ onMounted(() => {
                     </h3>
                     <NuxtLink :to="localPath(`/${item.post.section.slug_uz}/${item.post.id}`)"
                       class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
-                      Подробнее
+                      {{ $t("hero_btn") }}
                       <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
                     </NuxtLink>
                   </div>

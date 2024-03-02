@@ -28,7 +28,7 @@
     "entir": "Kirish",
     "more": "Ko'p o'qilganlar",
     "news": "Yangiliklar",
-    "main_title":"Asosiy",
+    "main_title": "Asosiy",
     "education": "Talim",
     "last_news": "So'nggi yangiliklarga",
     "social_text": "Ijtimoiy so'rovnoma",
@@ -36,5 +36,6 @@
     "achiqtosh": "Achchiq tosh",
     "healthy": "Salomatlik",
     "clinc": "Xuquqiy kilinika",
-    "useful": "Foydali"
+    "useful": "Foydali",
+    "hero_btn": "Batafsil"
 }
