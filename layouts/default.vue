@@ -4,6 +4,7 @@ const mainStore = useMainStore()
 
 
 </script>
+
 <template>
     <LayoutsMainNavbar />
     <div class="">
@@ -12,5 +13,6 @@ const mainStore = useMainStore()
         </template>
         <slot />
     </div>
+    <ScrollerTop class="scrollerTop" />
     <LayoutsFooter />
 </template>

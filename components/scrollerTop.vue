@@ -1,11 +1,35 @@
 <script setup lang="ts">
+
+const showButton = ref(false);
+
+const scrollFunction = () => {
+    if (window.scrollY > 40) {
+        showButton.value = true;
+    } else {
+        showButton.value = false;
+    }
+};
+
 const scrollTop = () => {
-    window.scrollTo(0, 0)
-}
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', scrollFunction);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', scrollFunction);
+});
 </script>
 
 <template>
     <NuxtLink @click="scrollTop">
-        |asdasd
+        <button v-if="showButton" class="scrollerTop__btn darkMode-btn">
+            ↑
+        </button>
     </NuxtLink>
 </template>

@@ -3,13 +3,26 @@ useHead({ title: "Bolalar olami | posts" });
 import Loader from "~/components/loader.vue";
 
 const store = useMediaStore();
-await store.getMediaData();
+
+const datas = ref(null)
+
+onMounted(() => {
+    store.getMediaData().then(data => {
+        if (!data.success) {
+            router.push({ path: '/' })
+        }
+
+        datas.value = data.data;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
+
 </script>
+
 <template>
-    <template v-if="store.loader == true">
-        <Loader />
-    </template>
-    <template v-else-if="store.loader == false">
+
+    <template v-if="datas">
         <main class="darkMode-body pb-5 bg-white">
             <!-- OUR GALLERY -->
             <section class="container darkMode-body">
@@ -19,7 +32,7 @@ await store.getMediaData();
                     </h2>
                     <div class="mediacate__card">
                         <div class="mediacate__card-box position-relative">
-                            <iframe :src="store.datas.bannerVideos[0].youtube_link"
+                            <iframe :src="datas.bannerVideos[0].youtube_link"
                                 src="https://www.youtube.com/embed/6ZdkMZq95PI"
                                 title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -76,8 +89,9 @@ await store.getMediaData();
                     </div>
                     <div class="mediacate__galle">
                         <div class="mediacate__galle-wrapper position-relative"
-                            v-for="item in store.datas?.bannerVideos.slice(1)">
-                            <iframe :src="item.youtube_link" width="100%" src="https://www.youtube.com/embed/6ZdkMZq95PI"
+                            v-for="item in datas?.bannerVideos.slice(1)">
+                            <iframe :src="item.youtube_link" width="100%"
+                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
                                 title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe">
@@ -88,7 +102,7 @@ await store.getMediaData();
             </section>
             <!-- media all -->
             <section class="container">
-                <div v-for="items in store.datas?.videoCategories  ">
+                <div v-for="items in datas?.videoCategories  ">
                     <div class="d-flex justify-content-between align-items-center" v-if="items?.videos.length > 0">
                         <h2 class="mediacate__all-text darkMode-title mb-0">
                             {{ items[`title_${$i18n.locale}`] }}
@@ -99,7 +113,8 @@ await store.getMediaData();
                     <div class="mediacate__all " :class="{ 'videoHidden': !store.isActive(items) }">
                         <div class="position-relative mediacate__all-card w-100 image-container"
                             v-for="item in items.videos  ">
-                            <iframe :src="item.youtube_link" width="100%" src="https://www.youtube.com/embed/6ZdkMZq95PI"
+                            <iframe :src="item.youtube_link" width="100%"
+                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
                                 title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe-all"></iframe>
@@ -112,6 +127,10 @@ await store.getMediaData();
                 <LoopScroler />
             </section>
         </main>
+    </template>
+
+    <template v-else>
+        <Loader />
     </template>
 </template>
 

@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "Bolalar olami",
+    title: "Bolalar olami",
 });
 import Loader from "~/components/loader.vue";
 import { useIndexStore } from '~/stores/indexStore';
@@ -8,14 +8,24 @@ import { useIndexStore } from '~/stores/indexStore';
 const localPath = useLocalePath();
 const indexStore = useIndexStore();
 
-await indexStore.getIndexData()
+const datas = ref(null)
 
-const data = indexStore?.datas;
-const mainPosts4 = data.mainPosts.slice(1);
+onMounted(() => {
+    indexStore.getIndexData().then(data => {
+        if (!data.success) {
+            router.push({ path: '/' })
+        }
+
+        datas.value = data.data;
+    }).catch(error => {
+        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
+    });
+});
+
 </script>
 
 <template>
-    <template v-if="!indexStore.loader">
+    <template v-if="datas">
         <main class="darkMode-body pb-5">
             <section class="hero">
                 <div class="container">
@@ -33,7 +43,7 @@ const mainPosts4 = data.mainPosts.slice(1);
         },
     }" class="carousel">
                         <!-- Inner -->
-                        <SwiperSlide v-for="(item, index) in data?.mainBanners" class="carousel-inner">
+                        <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
                                 <img :src="(item.main_image?.preview ? item.main_image?.preview : '/images/logo.svg')"
                                     class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover"
@@ -43,7 +53,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                         <img src="/images/Vector-left.svg" alt="verctor left icon" />
                                         <span class="hero__infoTy">{{ index + 1 }}</span>
                                         <img src="/images/Vector-right.svg" alt="verctor right icon" />
-                                        <span class="opacity-75 hero__infoTy-oth">{{ data.mainBanners.length }}</span>
+                                        <span class="opacity-75 hero__infoTy-oth">{{ datas.mainBanners.length }}</span>
                                     </div>
                                     <div
                                         class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between">
@@ -68,24 +78,20 @@ const mainPosts4 = data.mainPosts.slice(1);
                         {{ $t("main_title") }}
                     </h4>
                     <div class="news__wrapper">
-                        <NuxtLink :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${data.mainPosts[0].id}`)"
+                        <NuxtLink :to="localPath(`/${datas?.mainPosts[0].section.slug_uz}/${datas.mainPosts[0].id}`)"
                             class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                            <img :src="(data.mainPosts[0].detail_image.card ? data.mainPosts[0].detail_image.card : '/images/logo.svg')"
+                            <img :src="(datas.mainPosts[0].detail_image.card ? datas.mainPosts[0].detail_image.card : '/images/logo.svg')"
                                 class="card-img img-fluid h-100 rounded-0"
-                                :alt="data.mainPosts[0][`title_${$i18n.locale}`]" />
+                                :alt="datas.mainPosts[0][`title_${$i18n.locale}`]" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="news__card-title">
-                                    {{
-        data.mainPosts[0][
-        `title_${$i18n.locale}`
-        ]
-    }}
+                                    {{ datas.mainPosts[0][`title_${$i18n.locale}`] }}
                                 </h5>
                             </div>
                         </NuxtLink>
                         <div class="news__right">
-                            <NuxtLink v-for="item in mainPosts4"
-                                :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
+                            <NuxtLink v-for="item in datas?.mainPosts.slice(1)"
+                                :to="localPath(`/${datas.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
                                 class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
                                 <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                     class="card-img img-fluid h-100 rounded-0" :alt="item[`title_${$i18n.locale}`]" />
@@ -107,7 +113,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 {{ $t("education") }}
                             </h4>
                             <div class="lastNews__left">
-                                <div v-for="item in data.educationPosts" :key="item.id"
+                                <div v-for="item in datas?.educationPosts" :key="item.id"
                                     class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
                                     <div class="position-relative lastNews__left-img">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
@@ -124,11 +130,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                             </h5>
                                         </NuxtLink>
                                         <p class="card-text darkMode hidden-text-3">
-                                            {{
-        item[
-        `description_${$i18n.locale}`
-        ]
-    }}
+                                            {{ item[`description_${$i18n.locale}`] }}
                                         </p>
                                         <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
@@ -140,8 +142,8 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 {{ $t("last_news") }}
                             </h4>
                             <ul class="lastNews__right-list list-unstyled darkMode">
-                                <NuxtLink v-for="item in data.recentNewsPosts"
-                                    :to="localPath(`/${data.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
+                                <NuxtLink v-for="item in datas?.recentNewsPosts"
+                                    :to="localPath(`/${datas.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
                                     class="border-bottom text-decoration-none">
                                     <p class="lastNews__right-text darkMode">
                                         {{ item[`title_${$i18n.locale}`] }}
@@ -179,7 +181,7 @@ const mainPosts4 = data.mainPosts.slice(1);
             translate: ['100%', 0, 0],
         },
     }">
-                        <SwiperSlide v-for="item in data.quotations" :key="item.id" class="social__qs-wrapper">
+                        <SwiperSlide v-for="item in datas?.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
                                 <img :src="(item.detail_image.original_url ? item.detail_image.original_url : '/images/logo.svg')"
                                     :alt="item[`title_${$i18n.locale}`]" class="social__img" />
@@ -203,7 +205,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                         {{ $t("media") }}
                     </h4>
                     <div class="media__wrapper">
-                        <iframe :src="data?.bannerVideos[0].youtube_link"
+                        <iframe :src="datas?.bannerVideos[0].youtube_link"
                             title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                             allowfullscreen class="media__cards w-100"></iframe>
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
@@ -226,7 +228,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                 </h5>
                             </div>
                         </NuxtLink>
-                        <iframe :src="data?.bannerVideos[1].youtube_link"
+                        <iframe :src="datas?.bannerVideos[1].youtube_link"
                             title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
                             allowfullscreen class="media__cards w-100"></iframe>
 
@@ -257,7 +259,7 @@ const mainPosts4 = data.mainPosts.slice(1);
             translate: ['100%', 0, 0],
         },
     }" class="achchiqtosh__carousel">
-                                    <SwiperSlide v-for="item in data.achchiqtoshPosts" :key="item"
+                                    <SwiperSlide v-for="item in datas?.achchiqtoshPosts" :key="item"
                                         class="achchiqtosh__carousel-inner">
                                         <NuxtLink class="achchiqtosh__carousel-item bg-dark image-container"
                                             :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
@@ -278,7 +280,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("healthy") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <div v-for="item in data.healthPosts" :key="item.id"
+                                    <div v-for="item in datas?.healthPosts" :key="item.id"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
@@ -311,7 +313,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("clinc") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <div v-for="item in data.legalClinicPosts" :key="item.id"
+                                    <div v-for="item in datas?.legalClinicPosts" :key="item.id"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
                                             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
@@ -347,7 +349,7 @@ const mainPosts4 = data.mainPosts.slice(1);
                                     {{ $t("useful") }}
                                 </h4>
                                 <div class="achchiqtosh__card">
-                                    <div v-for="item in data.usefulPosts" :key="item.id"
+                                    <div v-for="item in datas?.usefulPosts" :key="item.id"
                                         :to="localPath(`/categories/${item.id}`)"
                                         class="darkMode achchiqtosh__card-box text-decoration-none">
                                         <div class="position-relative achchiqtosh__img-wrapper">
@@ -397,13 +399,13 @@ const mainPosts4 = data.mainPosts.slice(1);
         </main>
     </template>
 
-  <template v-else>
-    <Loader />
-  </template>
+    <template v-else>
+        <Loader />
+    </template>
 </template>
 
 <style scoped>
 main {
-  background: #f6f6f6;
+    background: #f6f6f6;
 }
 </style>

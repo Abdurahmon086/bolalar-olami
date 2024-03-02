@@ -4,6 +4,7 @@ import Loader from "~/components/loader.vue";
 import { onMounted } from 'vue';
 
 const route = useRoute();
+const router = useRouter();
 
 const localPath = useLocalePath();
 const singleStore = useSingleStore();
@@ -12,6 +13,10 @@ const datas = ref(null)
 
 onMounted(() => {
     singleStore.getSingleData(route.params.id).then(data => {
+
+        if (!data.success) {
+            router.push({ path: '/' })
+        }
         datas.value = data.data;
     }).catch(error => {
         console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
@@ -32,7 +37,8 @@ onMounted(() => {
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center">
                                 <NuxtLink :to="`/${datas.post?.section.slug_uz}/?id=${datas.post?.section.id}`"
-                                    class="darkMode text-decoration-none">{{ datas.post.section[`title_${$i18n.locale}`] }}
+                                    class="darkMode text-decoration-none">
+                                    {{ datas.post.section[`title_${$i18n.locale}`] }}
                                 </NuxtLink>
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center active darkMode" aria-current="page">
@@ -50,13 +56,13 @@ onMounted(() => {
                         </h2>
                         <div class="single__info">
                             <span class="darkMode pt-1">{{
-                                datas?.post.publish_date
-                            }}</span>
+        datas?.post.publish_date
+    }}</span>
                             <div class="single__info-inner">
                                 <img src="/images/eye_main.svg" alt="eye icon" />
                                 <span class="darkMode">{{
-                                    datas?.post.views_count
-                                }}</span>
+            datas?.post.views_count
+        }}</span>
                             </div>
                             <!-- <div class="single__info-inner">
                             <img src="/images/message.svg" alt="message icon" />
@@ -114,7 +120,7 @@ onMounted(() => {
                                     </li>
                                 </ul> -->
                                     <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]
-                                        "></div>
+        "></div>
                                 </div>
                                 <!-- <div class="single__qs darkMode-body">
                                 <img src="/images/dod.svg" alt="dod icon" />
@@ -136,10 +142,10 @@ onMounted(() => {
                                             <NuxtLink v-for="item of datas?.post.tags" :to="`/tegs/${item.id}`">
                                                 <li class="darkMode-btn button-container-1">
                                                     {{
-                                                        item[
-                                                            `title_${$i18n.locale}`
-                                                        ]
-                                                    }}
+        item[
+        `title_${$i18n.locale}`
+        ]
+    }}
                                                 </li>
                                             </NuxtLink>
                                         </ul>
@@ -249,10 +255,10 @@ onMounted(() => {
                                         </NuxtLink>
                                         <p class="card-text darkMode heddin-text-3">
                                             {{
-                                                item[
-                                                `description_${$i18n.locale}`
-                                                ]
-                                            }}
+        item[
+        `description_${$i18n.locale}`
+        ]
+    }}
                                         </p>
                                         <span class="aside__left-sp darkMode-sp">
                                             {{ item.publish_date }}
