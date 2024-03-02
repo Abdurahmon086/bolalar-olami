@@ -49,7 +49,7 @@ onMounted(() => {
             <!-- Inner -->
             <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
               <div class="carousel-item image-container w-100">
-                <img :src="(item.main_image?.preview ? item.main_image?.preview : '/images/logo.svg')"
+                <img :src="(item.main_image?.preview ? item.main_image?.main : '/images/logo.svg')"
                   class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover" alt="hero image" />
                 <div class="carousel-caption">
                   <div class="hero__pages d-flex align-items-center">
