@@ -28,7 +28,7 @@ onBeforeUnmount(() => {
 
 <template>
     <NuxtLink @click="scrollTop">
-        <button v-if="showButton" class="scrollerTop__btn darkMode-btn">
+        <button v-if="showButton" class="scrollerTop__btn darkMode-btn shadow">
             ↑
         </button>
     </NuxtLink>
