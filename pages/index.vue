@@ -36,7 +36,7 @@ console.log(data);
                         <!-- Inner -->
                         <SwiperSlide v-for="(item, index) in data?.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
-                                <img :src="item.main_image.preview_url" class="img-fluid h-100 w-100"
+                                <img :src="item.main_image.main" class="img-fluid h-100 w-100"
                                     style="object-fit: cover" alt="hero image" />
                                 <div class="carousel-caption">
                                     <div class="hero__pages d-flex align-items-center">
