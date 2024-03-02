@@ -11,6 +11,8 @@
         "Kutubxona"
     ],
     "city": "sh.Tashkent",
+    "Батафсил": "Batafsil",
+    "Асосий": "Asosiy",
     "gNumber": "Guvohnoma raqami: №073429",
     "editor": "Masʼul muharrir: Sherali Soliyev",
     "footer_text": "Bolalarolami.uz internet nashri 2023 yilning 7 aprelda elektron OAV sifatida O‘zbekiston Respublikasi Prezidenti Administratsiyasi huzuridagi Axborot va ommaviy kommunikatsiyalar agentligi tomonidan davlat ro‘yxatidan o‘tkazilgan. ",
@@ -26,7 +28,7 @@
     "entir": "Kirish",
     "more": "Ko'p o'qilganlar",
     "news": "Yangiliklar",
-    "main_title":"Asosiy",
+    "main_title": "Asosiy",
     "education": "Talim",
     "last_news": "So'nggi yangiliklarga",
     "social_text": "Ijtimoiy so'rovnoma",
@@ -34,5 +36,6 @@
     "achiqtosh": "Achchiq tosh",
     "healthy": "Salomatlik",
     "clinc": "Xuquqiy kilinika",
-    "useful": "Foydali"
+    "useful": "Foydali",
+    "hero_btn": "Batafsil"
 }

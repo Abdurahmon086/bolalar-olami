@@ -8,6 +8,7 @@ const datas = ref(null)
 
 onMounted(() => {
     tageStore.getTagsData(route.params.ids).then(data => {
+      
         datas.value = data.data;
     }).catch(error => {
         console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
@@ -46,10 +47,10 @@ onMounted(() => {
                                         </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
                                             {{
-                                                item[
-                                                `description_${$i18n.locale}`
-                                                ]
-                                            }}
+        item[
+        `description_${$i18n.locale}`
+        ]
+    }}
                                         </p>
                                         <p class="tegs-cardimg__left-wrapper-time darkMode-sp">
                                             {{ item.publish_date }}
@@ -58,10 +59,10 @@ onMounted(() => {
                                 </div>
                             </div>
                             <aside class="tegs-cardimg__aside">
-                                <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1"
-                                    alt="reklama-img" />
-                                <img src="/images/talimImages/reklama-img2.png" class="img-fluid tegs-cardimg__aside-img2"
-                                    alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img1.png"
+                                    class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img2.png"
+                                    class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
                                 <!-- <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img"> -->
                             </aside>
                         </div>
@@ -75,6 +76,7 @@ onMounted(() => {
         <Loader />
     </template>
 </template>
+
 <style scoped type="sass">
 main {
     background: #f6f6f6;

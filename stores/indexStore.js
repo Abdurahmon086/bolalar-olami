@@ -1,32 +1,45 @@
 import { defineStore } from 'pinia'
-const url = 'http://admin.bolalarolami.uz/api/v2'
+import { fetchHomeData } from '~/api/home'
 
-
-export const useIndexStore = defineStore('indexStore', () => {
-  // state
-  const datas = ref(null)
-  const loader = ref(false)
-  // getter
-
-  // action
-  const getIndexData = async () => {
-    try {
-      loader.value = true
-      const res = await fetch(`${url}/home/get-news-home`);
-      const data = await res.json();
-      datas.value = data.data;
-      loader.value = false
-    } catch (err) {
-      console.log(err);
-    } finally {
-      loader.value = false;
+export const useIndexStore = defineStore('indexStore', {
+  state: () => ({
+    homeData: null
+  }),
+  actions:
+  {
+    setHomeData() {
+      return new Promise((resolve, reject) => {
+        fetchHomeData().then(res => {
+          if (res.data){
+            this.homeData = res.data
+            resolve(res)
+          }
+          resolve(res)
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    }
+  },
+  getters: {
+    getHomeData() {
+      return this.homeData
     }
   }
-
-
-  return {
-    loader,
-    getIndexData,
-    datas
-  };
 })
+// export const useIndexStore = defineStore('indexStore', () => {
+
+//   // action
+//   async function getIndexData() {
+//     try {
+//       const response = await axios.get(`${url}/home/get-news-home`);
+//       return response.data;
+//     } catch (error) {
+//       throw error;
+//     }
+//   }
+
+//   return {
+//     getIndexData
+//   };
+// })

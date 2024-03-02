@@ -1,21 +1,29 @@
-import axios from 'axios';
 import { defineStore } from 'pinia'
-const url = 'http://admin.bolalarolami.uz/api/v2'
+import { fetchSingleData } from '@/api/post'
 
-
-export const useSingleStore = defineStore('singleStore', () => {
-
-    // action
-    async function getSingleData(id) {
-        try {
-            const response = await axios.get(`${url}/get-post/${id}`);
-            return response.data;
-        } catch (error) {
-            throw error;
+export const useSingleStore = defineStore('singleStore', {
+    state: () => ({
+        singleData: null
+    }),
+    actions:
+    {
+        setSingleData(id) {
+            return new Promise((resolve, reject) => {
+                fetchSingleData(id).then(res => {
+                    if (res.data){
+                        this.singleData = res.data
+                        resolve(res)
+                    }
+                }).catch(error => {
+                    console.log('caatchga kelli')
+                    reject(error)
+                })
+            })
+        }
+    },
+    getters: {
+        getSingleData() {
+            return this.singleData
         }
     }
-
-    return {
-        getSingleData,
-    };
 })

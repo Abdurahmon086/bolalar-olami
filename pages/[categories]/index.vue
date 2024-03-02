@@ -3,6 +3,7 @@ useHead({ title: "Bolalar olami | category" });
 import { onMounted } from 'vue';
 const localPath = useLocalePath()
 const route = useRoute();
+const router = useRouter()
 
 const categoryStore = useCategoryStore()
 
@@ -10,6 +11,10 @@ const datas = ref(null)
 
 onMounted(() => {
     categoryStore.getCategoryData(route.query.id).then(data => {
+        if (!data.success) {
+            router.push({ path: '/' })
+        }
+
         datas.value = data.data;
     }).catch(error => {
         console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
@@ -189,6 +194,7 @@ onMounted(() => {
             </section>
         </main>
     </template>
+
     <template v-else>
         <Loader />
     </template>
