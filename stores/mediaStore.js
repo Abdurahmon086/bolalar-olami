@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { fetchGetReqData } from '~/api/getReq';
 import { fetchVideoData } from '~/api/video';
 
 
@@ -12,7 +13,7 @@ export const useMediaStore = defineStore('mediaStore', {
     {
         setMediaData() {
             return new Promise((resolve, reject) => {
-                fetchVideoData().then(res => {
+                fetchGetReqData('/get-videos').then(res => {
                     if (res.data) {
                         this.videoData = res.data
                         resolve(res)

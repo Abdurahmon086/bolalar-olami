@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
+import { fetchGetReqData } from '~/api/getReq';
 import { fetchNavbarData } from '~/api/navbar';
-import { useI18n } from 'vue-i18n';
 
 export const useMainStore = defineStore('mainStore', {
     state: () => ({
@@ -35,7 +35,7 @@ export const useMainStore = defineStore('mainStore', {
     actions: {
         setMainData() {
             return new Promise((resolve, reject) => {
-                fetchNavbarData().then(res => {
+                fetchGetReqData('/resources/get-sections').then(res => {
                     if (res.data) {
                         this.mainData = res.data
                         resolve(res)

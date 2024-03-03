@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import { fetchSearchData } from '~/api/search';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
+import { fetchGetReqData } from '~/api/getReq';
 
 export const useSearchStore = defineStore('searchStore', {
     state: () => ({
@@ -13,7 +14,7 @@ export const useSearchStore = defineStore('searchStore', {
     actions: {
         setSearchData(value) {
             return new Promise((resolve, reject) => {
-                fetchSearchData(value).then(res => {
+                fetchGetReqData('/get-search?search=', value).then(res => {
                     if (res.data) {
                         console.log(res.data);
                         this.searchData = res.data;

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { fetchSingleData } from '@/api/post'
+import { fetchGetReqData } from '~/api/getReq'
 
 export const useSingleStore = defineStore('singleStore', {
     state: () => ({
@@ -9,8 +10,8 @@ export const useSingleStore = defineStore('singleStore', {
     {
         setSingleData(id) {
             return new Promise((resolve, reject) => {
-                fetchSingleData(id).then(res => {
-                    if (res.data){
+                fetchGetReqData('/get-post/', id).then(res => {
+                    if (res.data) {
                         this.singleData = res.data
                         resolve(res)
                     }

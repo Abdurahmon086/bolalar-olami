@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { fetchGetReqData } from '~/api/getReq'
 import { fetchHomeData } from '~/api/home'
 
 export const useIndexStore = defineStore('indexStore', {
@@ -9,8 +10,8 @@ export const useIndexStore = defineStore('indexStore', {
   {
     setHomeData() {
       return new Promise((resolve, reject) => {
-        fetchHomeData().then(res => {
-          if (res.data){
+        fetchGetReqData('/home/get-news-home').then(res => {
+          if (res.data) {
             this.homeData = res.data
             resolve(res)
           }

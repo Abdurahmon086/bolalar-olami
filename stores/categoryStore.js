@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { fetchCategoryData } from '~/api/category'
+import { fetchGetReqData } from '~/api/getReq'
 
 export const useCategoryStore = defineStore('categoryStore', {
     state: () => ({
@@ -9,7 +9,7 @@ export const useCategoryStore = defineStore('categoryStore', {
     {
         setCategoryData(id) {
             return new Promise((resolve, reject) => {
-                fetchCategoryData(id).then(res => {
+                fetchGetReqData('/get-category/', id).then(res => {
                     if (res.data) {
                         this.categoryData = res.data
                         resolve(res)
