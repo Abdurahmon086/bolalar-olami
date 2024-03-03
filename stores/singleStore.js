@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { fetchSingleData } from '@/api/post'
 import { fetchGetReqData } from '~/api/getReq'
 
 export const useSingleStore = defineStore('singleStore', {

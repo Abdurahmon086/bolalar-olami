@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import { fetchGetReqData } from '~/api/getReq';
-import { fetchTagsData } from '~/api/tags';
 
 export const useTageStore = defineStore('tageStore', {
     state: () => ({

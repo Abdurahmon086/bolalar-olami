@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import { fetchGetReqData } from '~/api/getReq';
-import { fetchVideoData } from '~/api/video';
 
 
 export const useMediaStore = defineStore('mediaStore', {

@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import { fetchGetReqData } from '~/api/getReq';
-import { fetchNavbarData } from '~/api/navbar';
 
 export const useMainStore = defineStore('mainStore', {
     state: () => ({

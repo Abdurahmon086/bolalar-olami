@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { fetchSearchData } from '~/api/search';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { fetchGetReqData } from '~/api/getReq';

@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
 import { fetchGetReqData } from '~/api/getReq'
-import { fetchHomeData } from '~/api/home'
 
 export const useIndexStore = defineStore('indexStore', {
   state: () => ({
