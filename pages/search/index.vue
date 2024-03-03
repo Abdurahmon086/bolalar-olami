@@ -8,16 +8,14 @@ const route = useRoute();
 
 const localPath = useLocalePath();
 
-const datas = ref(null)
-datas.value = searchStore.datas
+const datas = computed(() => searchStore.getSearchData);
 
 onMounted(() => {
-    searchStore.getSearchData(route.query.q).then(data => {
-        datas.value = data.data.posts;
-    }).catch(error => {
-        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-    });
+    searchStore.setSearchData(route.query.q)
 });
+
+console.log(datas);
+
 
 </script>
 
@@ -32,22 +30,12 @@ onMounted(() => {
                         </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left" v-if="datas">
-                                <div class="tegs-cardimg__left-wrapper darkMode"
-                                    v-for="item in (searchStore?.datas.data ? searchStore?.datas.data : datas.data)"
+                                <div class="tegs-cardimg__left-wrapper darkMode" v-for="item in datas.data"
                                     :key="item.id">
                                     <div class="position-relative">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                            <img :src="item.detail_image?.card" class="img-fluid w-100 " alt="card-img" />
-=======
                                             <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
                                                 class="img-fluid w-100" alt="card-img" />
->>>>>>> 9ede6a0f5391e1e30af95c7fba9dd0521443a2e7
-=======
-                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
-                                                class="img-fluid w-100" alt="card-img" />
->>>>>>> 4dc35b7fd3266f5de301687024c2ba2c285658bd
                                             <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
                                             </p>
@@ -61,11 +49,7 @@ onMounted(() => {
                                             </h4>
                                         </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
-                                            {{
-                                                item[
-                                                `description_${$i18n.locale}`
-                                                ]
-                                            }}
+                                            {{ item[`description_${$i18n.locale}`] }}
                                         </p>
                                         <p class="tegs-cardimg__left-wrapper-time darkMode-sp">
                                             {{ item.publish_date }}
@@ -74,12 +58,12 @@ onMounted(() => {
                                 </div>
                             </div>
                             <aside class="tegs-cardimg__aside">
-                                <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1"
-                                    alt="reklama-img" />
-                                <img src="/images/talimImages/reklama-img2.png" class="img-fluid tegs-cardimg__aside-img2"
-                                    alt="reklama-img" />
-                                <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"
-                                    alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img1.png"
+                                    class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img2.png"
+                                    class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img3.png"
+                                    class="img-fluid talim-cardimg__aside-img3" alt="reklama-img" />
                             </aside>
                         </div>
                     </div>

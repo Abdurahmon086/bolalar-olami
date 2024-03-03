@@ -4,18 +4,10 @@ import Loader from "~/components/loader.vue";
 
 const store = useMediaStore();
 
-const datas = ref(null)
+const datas = computed(() => store.getMediaData);
 
 onMounted(() => {
-    store.getMediaData().then(data => {
-        if (!data.success) {
-            router.push({ path: '/' })
-        }
-
-        datas.value = data.data;
-    }).catch(error => {
-        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-    });
+    store.setMediaData()
 });
 
 </script>

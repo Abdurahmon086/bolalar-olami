@@ -4,27 +4,14 @@ const searchStore = useSearchStore();
 
 <template>
     <div class="searchModal">
-        <img
-            @click="searchStore.modal = false"
-            src="/images/search-x.svg"
-            alt="search x icon"
-            class="searchModal__x"
-        />
-        <form
-            @submit.prevent="searchStore.submitForm"
-            class="searchModal__form"
-        >
+        <img @click="searchStore.modal = false" src="/images/search-x.svg" alt="search x icon" class="searchModal__x" />
+        <form class="searchModal__form" @submit.prevent="searchStore.submitForm()">
             <label for="search">Nimani qidiramiz?</label>
-           <div class="searchModal__div">
-            <input
-                type="text"
-                name="search"
-                id="search"
-                v-model="searchStore.search" 
-            />
-            <button type="sumbit" class="">Search</button>
+            <div class="searchModal__div">
+                <input type="text" name="search" id="search" v-model="searchStore.search" />
+                <button>Search</button>
 
-           </div>
+            </div>
         </form>
     </div>
 </template>

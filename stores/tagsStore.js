@@ -1,20 +1,29 @@
-import axios from 'axios';
 import { defineStore } from 'pinia'
-const url = 'http://admin.bolalarolami.uz/api/v2'
+import { fetchTagsData } from '~/api/tags';
 
-export const useTageStore = defineStore('tageStore', () => {
-
-    async function getTagsData(id) {
-        try {
-            const response = await axios.get(`${url}/get-tag/${id}`);
-            return response.data;
-        } catch (error) {
-            throw error;
+export const useTageStore = defineStore('tageStore', {
+    state: () => ({
+        tagData: null
+    }),
+    actions:
+    {
+        setTagsData(id) {
+            return new Promise((resolve, reject) => {
+                fetchTagsData(id).then(res => {
+                    if (res.data) {
+                        this.tagData = res.data
+                        resolve(res)
+                    }
+                }).catch(error => {
+                    console.log('tags error')
+                    reject(error)
+                })
+            })
+        }
+    },
+    getters: {
+        getTagsData() {
+            return this.tagData
         }
     }
-
-
-    return {
-        getTagsData
-    };
 })

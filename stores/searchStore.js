@@ -1,46 +1,45 @@
-import axios from 'axios';
-import { defineStore } from 'pinia'
-const url = 'http://admin.bolalarolami.uz/api/v2'
+import { defineStore } from 'pinia';
+import { fetchSearchData } from '~/api/search';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
 
+export const useSearchStore = defineStore('searchStore', {
+    state: () => ({
+        searchData: null,
+        modal: false,
+        showAll: false,
+        search: "",
+    }),
+    actions: {
+        setSearchData(value) {
+            return new Promise((resolve, reject) => {
+                fetchSearchData(value).then(res => {
+                    if (res.data) {
+                        console.log(res.data);
+                        this.searchData = res.data;
+                        resolve(res);
+                    }
+                }).catch(error => {
+                    console.log('search error');
+                    reject(error);
+                });
+            });
+        },
+        submitForm() {
+            const { locale } = useI18n();
+            const router = useRouter();
 
-export const useSearchStore = defineStore('searchStore', () => {
-    const router = useRouter();
-    const { locale } = useI18n()
-
-    // state
-    const modal = ref(false)
-    const showAll = ref(false);
-    const search = ref("");
-    const datas = ref(null)
-
-    // getter
-
-    // action
-    async function getSearchData(value) {
-        try {
-            const response = await axios.get(`${url}/get-search?search=${value}`);
-            datas.value = response.data.data.posts
-            return response.data;
-        } catch (error) {
-            throw error;
+            if (!this.search) return;
+            const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
+            router.push({ path: `${pathPrefix}/search/`, query: { q: this.search } });
+            this.modal = false;
+            this.getSearchData(this.search);
+            this.search = '';
+        }
+    },
+    getters: {
+        getSearchData() {
+            return this.searchData
         }
     }
-
-    const submitForm = () => {
-        if (!search.value) return;
-        const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
-        router.push({ path: `${pathPrefix}/search/`, query: { q: search.value } });
-        modal.value = false;
-        getSearchData(search.value)
-        search.value = '';
-    };
-
-    return {
-        submitForm,
-        search,
-        showAll,
-        modal,
-        getSearchData,
-        datas
-    };
-})
+});

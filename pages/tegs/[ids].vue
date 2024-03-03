@@ -1,18 +1,13 @@
 <script setup>
-useHead({ title: "Bolalar olami | posts" });
+useHead({ title: "Bolalar olami | tags" });
 
 const route = useRoute();
 const tageStore = useTageStore();
 
-const datas = ref(null)
+const datas = computed(() => tageStore.getTagsData);
 
 onMounted(() => {
-    tageStore.getTagsData(route.params.ids).then(data => {
-      
-        datas.value = data.data;
-    }).catch(error => {
-        console.error('Ma\'lumotlarni yuklashda xato yuz berdi:', error);
-    });
+    tageStore.setTagsData(route.params.ids)
 });
 </script>
 
