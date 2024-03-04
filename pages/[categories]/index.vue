@@ -66,7 +66,7 @@ onMounted(() => {
                             </div>
                         </div>
                         <div class="lastNews__right darkMode border-0">
-                            <h4 class="lastNews__right-title">So'nggi maqolalar</h4>
+                            <h4 class="lastNews__right-title">{{ $t("latest_articles") }}</h4>
                             <ul class="lastNews__right-list list-unstyled darkMode">
                                 <li class="border-bottom" v-for=" item  in  datas?.resentPosts ">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
@@ -118,7 +118,7 @@ onMounted(() => {
                             </div>
                         </div>
                         <div class="lastNews__right darkMode border-0">
-                            <h4 class="lastNews__right-title">Ko'p o'qilgan</h4>
+                            <h4 class="lastNews__right-title">{{ $t("most_read") }}</h4>
                             <ul class="lastNews__right-list list-unstyled darkMode">
                                 <li class="border-bottom" v-for=" item  in  datas?.mostReadPosts ">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">

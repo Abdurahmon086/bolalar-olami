@@ -37,5 +37,16 @@
     "clinc": "Legal Clinic",
     "useful": "Useful",
     "main_title": "Main",
-    "hero_btn": "More details"
+    "hero_btn": "More details",
+    "most_read":"Most read",
+    "latest_articles":"Latest Articles",
+    "all_photos":"All photos",
+    "all_playlists":"All playlists",
+    "our_gallery":"OUR GALLERY",
+    "cocial_survey":"Social survey",
+    "all_pictures":"All pictures",
+    "videos":"Videos",
+    "pictures":"pictures",
+    "video_btn":"Everything"
+
 }
