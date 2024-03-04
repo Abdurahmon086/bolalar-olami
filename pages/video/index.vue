@@ -4,6 +4,7 @@ import Loader from "~/components/loader.vue";
 
 const store = useMediaStore();
 
+
 const datas = computed(() => store.getMediaData);
 
 onMounted(() => {
@@ -20,7 +21,7 @@ onMounted(() => {
             <section class="container darkMode-body">
                 <div class="mediacate">
                     <h2 class="mediacate__text darkMode-title">
-                        BIZNING GALEREYA
+                        {{ $t("our_gallery") }}
                     </h2>
                     <div class="mediacate__card">
                         <div class="mediacate__card-box position-relative">
@@ -40,35 +41,37 @@ onMounted(() => {
                                     class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
                                 <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
                                     <h2 class="mediacate__card-bottom--title position-absolute">
-                                        Barcha pleylistlar
+                                        {{ $t("all_playlists") }}
                                     </h2>
                                 </NuxtLink>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
-                                            Ijtimoiy so'rovnoma
+                                            {{ $t("cocial_survey") }}
                                         </p>
                                         <p class="mediacate__card-bottom--text1 fw-normal">
-                                            32 Videos
+                                            32 {{ $t("videos") }}
                                         </p>
                                     </div>
+                                <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
                                     <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
                                         style="width: 40px; height: 40px" alt="play-icon" />
+                                        </NuxtLink>
                                 </div>
                             </div>
                             <div class="position-relative">
                                 <img src="/images/mediacategoryImages/mediaimg3.png"
                                     class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
                                 <h2 class="mediacate__card-bottom--title position-absolute">
-                                    Barcha fotosuratlar
+                                    {{ $t("all_photos") }}
                                 </h2>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
-                                            Hamma rasmlar
+                                    {{ $t("all_pictures") }}
                                         </p>
                                         <p class="mediacate__card-bottom--text1 fw-normal">
-                                            65 rasmlar
+                                            65 {{ $t("pictures") }}
                                         </p>
                                     </div>
                                     <div class="mediacate__card-bottom--imgdiv">
@@ -100,7 +103,7 @@ onMounted(() => {
                             {{ items[`title_${$i18n.locale}`] }}
                         </h2>
                         <button id="myButton" v-if="items.videos.length > 4" @click="store.toggleCategory(items)"
-                            class="btn btn-danger btn-sm mediaBtn">Hammasi</button>
+                            class="btn btn-danger btn-sm mediaBtn">{{ $t("video_btn") }}</button>
                     </div>
                     <div class="mediacate__all " :class="{ 'videoHidden': !store.isActive(items) }">
                         <div class="position-relative mediacate__all-card w-100 image-container"

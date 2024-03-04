@@ -37,5 +37,17 @@
     "healthy": "Здоровый",
     "clinc": "Юридическая клиника",
     "useful": "Полезно",
-    "hero_btn": "Подробнее"
+    "hero_btn": "Подробнее",
+    "most_read":"Самые читаемые",
+    "latest_articles":"Последние статьи",
+    "all_photos":"Все фотографии",
+    "all_playlists":"Все плейлисты",
+    "our_gallery":"НАША ГАЛЕРЕЯ",
+    "cocial_survey":"Социальный опрос",
+    "all_pictures":"Все фотографии",
+    "videos":"Видеос",
+    "pictures":"картинки",
+    "video_btn":"Все"
+
+
 }

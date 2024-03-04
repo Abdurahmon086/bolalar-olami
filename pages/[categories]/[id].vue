@@ -228,7 +228,7 @@ onMounted(() => {
                     </section>
                     <aside>
                         <section class="aside">
-                            <h4 class="aside__title">Ko'p o'qilganlar</h4>
+                            <h4 class="aside__title">{{ $t("most_read") }}</h4>
                             <div class="aside__wrapper">
                                 <div v-for="item in datas?.mostReadPosts" :key="item.id"
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
