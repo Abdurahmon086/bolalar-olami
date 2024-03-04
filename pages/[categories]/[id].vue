@@ -47,14 +47,10 @@ onMounted(() => {
                             {{ datas?.post[`title_${$i18n.locale}`] }}
                         </h2>
                         <div class="single__info">
-                            <span class="darkMode pt-1">{{
-        datas?.post.publish_date
-    }}</span>
+                            <span class="darkMode pt-1">{{ datas?.post.publish_date }}</span>
                             <div class="single__info-inner">
                                 <img src="/images/eye_main.svg" alt="eye icon" />
-                                <span class="darkMode">{{
-            datas?.post.views_count
-        }}</span>
+                                <span class="darkMode">{{ datas?.post.views_count }}</span>
                             </div>
                             <!-- <div class="single__info-inner">
                             <img src="/images/message.svg" alt="message icon" />
@@ -131,13 +127,10 @@ onMounted(() => {
                                             Teglar
                                         </h4>
                                         <ul class="list-unstyled">
-                                            <NuxtLink v-for="item of datas?.post.tags" :to="`/tegs/${item.id}`">
+                                            <NuxtLink v-for="item of datas?.post.tags"
+                                                :to="localPath(`/tegs/${item.id}`)">
                                                 <li class="darkMode-btn button-container-1">
-                                                    {{
-        item[
-        `title_${$i18n.locale}`
-        ]
-    }}
+                                                    {{ item[`title_${$i18n.locale}`] }}
                                                 </li>
                                             </NuxtLink>
                                         </ul>

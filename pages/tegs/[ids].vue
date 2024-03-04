@@ -41,11 +41,7 @@ onMounted(() => {
                                             </h4>
                                         </NuxtLink>
                                         <p class="tegs-cardimg__left-wrapper-text darkMode-title hidden-text-3">
-                                            {{
-        item[
-        `description_${$i18n.locale}`
-        ]
-    }}
+                                            {{ item[`description_${$i18n.locale}`] }}
                                         </p>
                                         <p class="tegs-cardimg__left-wrapper-time darkMode-sp">
                                             {{ item.publish_date }}
