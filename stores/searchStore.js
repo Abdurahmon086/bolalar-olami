@@ -3,44 +3,51 @@ import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 import { fetchGetReqData } from '~/api/getReq';
 
-export const useSearchStore = defineStore('searchStore', {
-    state: () => ({
-        searchData: null,
-        modal: false,
-        showAll: false,
-        search: "",
-    }),
-    actions: {
-        setSearchData(value) {
-            return new Promise((resolve, reject) => {
-                fetchGetReqData('/get-search?search=', value).then(res => {
-                    if (res.data) {
-                        console.log(res.data);
-                        this.searchData = res.data;
-                        resolve(res);
-                    }
-                }).catch(error => {
-                    console.log('search error');
-                    reject(error);
-                });
-            });
-        },
-        submitForm() {
-            console.log('kelli')
-            const { locale } = useI18n();
-            const router = useRouter();
+export const useSearchStore = defineStore('searchStore', () => {
+    const router = useRouter();
+    const { locale } = useI18n()
 
-            if (!this.search) return;
-            const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
-            router.push({ path: `${pathPrefix}/search/`, query: { q: this.search } });
-            this.modal = false;
-            this.getSearchData(this.search);
-            this.search = '';
-        }
-    },
-    getters: {
-        getSearchData() {
-            return this.searchData
-        }
+    // state
+    const modal = ref(false)
+    const showAll = ref(false);
+    const search = ref("");
+    const searchData = ref(null)
+
+    // getter
+    const getSearchData = computed(() => {
+        return searchData.value
+    })
+
+    // action
+
+    const setSearchData = async (value) => {
+        return new Promise((resolve, reject) => {
+            fetchGetReqData('/get-search?search=', value).then(res => {
+                if (res.data) {
+                    searchData.value = res.data.posts;
+                    resolve(res);
+                }
+            }).catch(error => {
+                console.log('search error');
+                reject(error);
+            });
+        });
     }
-});
+
+    const submitForm = () => {
+        if (!search.value) return;
+        const pathPrefix = locale.value == 'uz' ? '' : '/' + locale.value;
+        router.push({ path: `${pathPrefix}/search/`, query: { q: search.value } });
+        modal.value = false;
+        setSearchData(search.value)
+        search.value = '';
+    };
+
+    return {
+        submitForm, setSearchData,
+        search,
+        showAll,
+        modal,
+        getSearchData,
+    };
+})

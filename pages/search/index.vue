@@ -14,8 +14,6 @@ onMounted(() => {
     searchStore.setSearchData(route.query.q)
 });
 
-console.log(datas);
-
 
 </script>
 
