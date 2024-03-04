@@ -27,7 +27,6 @@ export const useMainStore = defineStore('mainStore', {
                     newArr.push(element);
                 }
             });
-
             return newArr;
         }
     },
