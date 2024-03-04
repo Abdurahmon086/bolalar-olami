@@ -1,16 +1,81 @@
-<script setup>
-const searchStore = useSearchStore();
+<script>
+  import { message } from 'ant-design-vue';
+  import { useSearchStore } from '~/stores/searchStore';
+  import { vRequired } from '~/utility/helpers'
+  import { reactive, ref } from 'vue';
+  export default {
+    setup() {
+      const searchStore = useSearchStore();
+      const formRef = ref();
+      const data = reactive({
+        searchData: null
+      })
+
+      const error = (msg) => {
+        message.error(msg);
+      };
+      const success = (msg) => {
+        message.success(msg);
+      };
+      const rules = {
+        searchData: [
+          {
+            required: true,
+            message: 'Qidiruv kalit so\'zini kiriting',
+            trigger: 'change',
+          },
+        ],
+      };
+
+      const sendMessageAction = () => {
+
+        formRef.value.validate().then(() => {
+          if(data.searchData) {
+            searchStore.search = data.searchData
+            searchStore.submitForm
+            // return this.router.push({ path: '/search' })
+          }
+          else {
+            console.log('Qidiruv matnini kiriting')
+            error('Qidiruv matnini kiriting')
+          }
+        })
+      };
+
+      return { sendMessageAction, data, vRequired,searchStore, rules, formRef }
+    }
+  }
 </script>
 
 <template>
     <div class="searchModal">
         <img @click="searchStore.modal = false" src="/images/search-x.svg" alt="search x icon" class="searchModal__x" />
-        <form class="searchModal__form" @submit.prevent>
+        <a-form
+            @finish="sendMessageAction"
+            ref="formRef"
+            :model="data"
+            :rules="rules"
+            class="searchModal__form card__form"
+        >
+          <a-form-item ref="searchData" name="searchData">
             <label for="search">Nimani qidiramiz?</label>
             <div class="searchModal__div">
-                <input type="text" name="search" id="search" v-model="searchStore.search" />
-                <button @click="searchStore.submitForm">Search</button>
+              <a-input
+                  v-model:value="data.searchData"
+                  class="card__form-control lgText"
+                  placeholder="Qidirish"
+              />
+              <button @click="sendMessageAction">Search</button>
             </div>
-        </form>
+          </a-form-item>
+        </a-form>
+
+<!--        <form class="searchModal__form" @submit.prevent>-->
+<!--            <label for="search">Nimani qidiramiz?</label>-->
+<!--            <div class="searchModal__div">-->
+<!--                <input type="text" name="search" id="search" v-model="searchStore.search" />-->
+<!--                <button @click="searchStore.submitForm">Search</button>-->
+<!--            </div>-->
+<!--        </form>-->
     </div>
 </template>

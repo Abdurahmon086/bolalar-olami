@@ -26,6 +26,7 @@ export const useSearchStore = defineStore('searchStore', {
             });
         },
         submitForm() {
+            console.log('kelli')
             const { locale } = useI18n();
             const router = useRouter();
 
