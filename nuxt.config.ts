@@ -30,10 +30,6 @@ export default defineNuxtConfig({
     },
     devtools: {
         enabled: true,
-
-        timeline: {
-            enabled: true,
-        },
     },
     modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],

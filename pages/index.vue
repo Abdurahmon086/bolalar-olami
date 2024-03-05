@@ -193,9 +193,8 @@ onMounted(() => {
             {{ $t("media") }}
           </h4>
           <div class="media__wrapper">
-            <iframe :src="datas?.bannerVideos[0].youtube_link"
-              title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
-              class="media__cards w-100"></iframe>
+            <iframe :src="datas?.bannerVideos[0].youtube_link" :title="datas?.bannerVideos[0][`title_${$i18n.locale}`]"
+              frameborder="0" allowfullscreen class="media__cards w-100"></iframe>
             <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
               <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
               <div class="card-img-overlay rounded-0">
@@ -214,9 +213,8 @@ onMounted(() => {
                 </h5>
               </div>
             </NuxtLink>
-            <iframe :src="datas?.bannerVideos[1].youtube_link"
-              title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0" allowfullscreen
-              class="media__cards w-100"></iframe>
+            <iframe :src="datas?.bannerVideos[1].youtube_link" :title="datas?.bannerVideos[1][`title_${$i18n.locale}`]"
+              frameborder="0" allowfullscreen class="media__cards w-100"></iframe>
 
           </div>
         </div>
