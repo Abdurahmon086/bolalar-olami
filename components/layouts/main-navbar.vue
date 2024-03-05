@@ -25,16 +25,28 @@ const changeLocale = (lang) => {
 // dark mode
 const darkTheme = ref(false);
 
-const switchToggle = computed(() => {
-    darkTheme.value = !darkTheme.value;
+
+onMounted(() => {
+    const storedValue = getItem("darkThame")
+    if (storedValue) {
+        darkTheme.value = storedValue
+    }
+
+    mainStore.setMainData()
+});
+
+const togglrMode = () => {
+    darkTheme.value = !darkTheme.value
     setItem("darkThame", darkTheme.value);
+}
 
-    const value = getItem("darkThame");
-
+watch(() => {
+    darkTheme.value
+}, () => {
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
 
-    if (value) {
+    if (darkTheme.value) {
         document.body.classList.add("darkBody");
         darkIcons.forEach((icon) => icon.classList.remove("d-none"));
         lightIcons.forEach((icon) => icon.classList.add("d-none"));
@@ -43,11 +55,8 @@ const switchToggle = computed(() => {
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
     }
-});
+}, { deep: true })
 
-onMounted(() => {
-    mainStore.setMainData()
-});
 </script>
 
 <template>
@@ -76,7 +85,7 @@ onMounted(() => {
                             alt="glasses icon"
                             class="darkIcon d-none"
                         /> -->
-                            <div id="themingSwitcher" @click="switchToggle">
+                            <div id="themingSwitcher" @click="togglrMode">
                                 <img src="/images/moon.svg" alt="moon icon" class="lightIcon d-block cur" />
                                 <img src="/images/moon_d.svg" alt="moon icon" class="darkIcon d-none" />
                             </div>
