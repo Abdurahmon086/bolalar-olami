@@ -17,7 +17,7 @@ useHead({ title: "Bolalar olami | posts" });
             <div class="container books-wrapper darkMode-body">
                 <div class="books-wrapper__part darkMode">
                     <h3 class="books-wrapper__part-title darkMode-title">
-                        Bo'limlar
+                        {{ $t("sections") }}
                     </h3>
                     <ul class="books-wrapper__part-list">
                         <li class="books-wrapper__part-item darkMode-title">
@@ -46,7 +46,7 @@ useHead({ title: "Bolalar olami | posts" });
                 <div class="books-wrapper__total darkMode-body">
                     <div class="books-wrapper__total-box">
                         <h3 class="books-wrapper__total-box--title darkMode-title">
-                            Kitoblar
+                            {{ $t("books") }}
                         </h3>
                         <input class="books-wrapper__total-box--insearch darkMode-btn" type="search" placeholder="Qidirish">
                     </div>

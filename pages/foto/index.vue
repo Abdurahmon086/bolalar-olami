@@ -9,9 +9,9 @@ const localPath = useLocalePath()
             <div class="mediaGaller">
                 <div class="container">
                     <h3 class="mediaGaller-title">
-                        Изображения и видео со всего мира
+                        {{ $t("imagesFrom") }}
                     </h3>
-                    <p class="mediaGaller-text">Media</p>
+                    <p class="mediaGaller-text">{{ $t("media") }}</p>
                     <div type="search" class="mediaGaller-seaBtn w-75">
                         <a href="#">
                             <img src="/images/mediagalleriyaImages/search-icon.svg" class="img-fluid"
@@ -28,11 +28,10 @@ const localPath = useLocalePath()
                 <div class="mediaGaller-wrapper">
                     <div class="mediaGaller-wrapper--box" style="margin-bottom: 100px">
                         <p class="mediaGaller-wrapper-text darkMode-title">
-                            Избранные фотографии
+                            {{ $t("selectedPhotos") }}
                         </p>
                         <p class="mediaGaller-wrapper-text1 darkMode-title">
-                            Оцените тематические коллекции, тщательно собранные
-                            нашими фоторедакторами
+                            {{ $t("photoEditors") }}
                         </p>
                     </div>
                     <div class="mediaGaller-wrapper--card">

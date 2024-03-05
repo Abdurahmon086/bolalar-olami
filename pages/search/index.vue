@@ -24,7 +24,7 @@ onMounted(() => {
                 <div class="container">
                     <div class="tegs">
                         <p class="tegs-text darkMode-title">
-                            {{ 'Kalit so‘z' + ' : ' + route.query.q }}
+                            {{  $t("keyword") + ' : ' + route.query.q }}
                         </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left" v-if="datas">
