@@ -1,33 +1,38 @@
 import { defineStore } from 'pinia'
-const url = 'http://admin.bolalarolami.uz/api/v2/get-videos '
+import { fetchGetReqData } from '~/api/getReq';
 
-export const useMediaStore = defineStore('mediaStore', () => {
-    const datas = ref();
-    const openToggle = ref(false)
-    const activeCategory = ref(null);
-    const loader = ref(false)
 
-    const getMediaData = async () => {
-        try {
-            loader.value = true
-            const res = await fetch(`${url}`);
-            const data = await res.json();
-            datas.value = data.data
-            loader.value = false
-        } catch (err) {
-            console.log(err);
+export const useMediaStore = defineStore('mediaStore', {
+    state: () => ({
+        videoData: null,
+        openToggle: false,
+        activeCategory: null
+    }),
+    actions:
+    {
+        setMediaData() {
+            return new Promise((resolve, reject) => {
+                fetchGetReqData('/get-videos').then(res => {
+                    if (res.data) {
+                        this.videoData = res.data
+                        resolve(res)
+                    }
+                }).catch(error => {
+                    console.log('caatchga kelli')
+                    reject(error)
+                })
+            })
+        },
+        toggleCategory(category) {
+            this.activeCategory = (this.activeCategory === category) ? null : category;
+        },
+        isActive(category) {
+            return this.activeCategory === category;
         }
-    };
-
-
-    const toggleCategory = (category) => {
-        activeCategory.value = (activeCategory.value === category) ? null : category;
-    };
-
-    const isActive = (category) => {
-        return activeCategory.value === category;
-    };
-
-    return { datas, openToggle, loader, getMediaData, toggleCategory, isActive }
-
+    },
+    getters: {
+        getMediaData() {
+            return this.videoData
+        }
+    }
 })

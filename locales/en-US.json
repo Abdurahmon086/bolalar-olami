@@ -11,6 +11,8 @@
         "Library"
     ],
     "city": "c.Tashkent",
+    "Батафсил": "More details",
+    "Асосий": "Main",
     "gNumber": "Certificate number: №073429",
     "editor": "Responsible editor: Sherali Soliyev",
     "footer_text": "On April 7, 2023, the Internet publication Bolalarolami.uz was registered as an electronic mass media by the Information and Mass Communications Agency under the Presidential Administration of the Republic of Uzbekistan.",
@@ -26,7 +28,6 @@
     "entir": "Enter",
     "more": "More Reads",
     "news": "News",
-    "main_title": "Main",
     "education": "Education",
     "last_news": "Go to latest news",
     "social_text": "Social questionnaire",
@@ -34,5 +35,18 @@
     "achiqtosh": "Bitter Stone",
     "healthy": "Healthy",
     "clinc": "Legal Clinic",
-    "useful": "Useful"
+    "useful": "Useful",
+    "main_title": "Main",
+    "hero_btn": "More details",
+    "most_read":"Most read",
+    "latest_articles":"Latest Articles",
+    "all_photos":"All photos",
+    "all_playlists":"All playlists",
+    "our_gallery":"OUR GALLERY",
+    "cocial_survey":"Social survey",
+    "all_pictures":"All pictures",
+    "videos":"Videos",
+    "pictures":"pictures",
+    "video_btn":"Everything"
+
 }

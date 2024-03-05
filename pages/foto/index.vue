@@ -1,5 +1,6 @@
 <script setup>
-useHead({ title: "Bolalar olami | posts" });
+useHead({ title: "Bolalar olami | foto" });
+const localPath = useLocalePath()
 </script>
 
 <template>
@@ -13,7 +14,7 @@ useHead({ title: "Bolalar olami | posts" });
                     <p class="mediaGaller-text">Media</p>
                     <div type="search" class="mediaGaller-seaBtn w-75">
                         <a href="#">
-                            <img src="/public/images/mediagalleriyaImages/search-icon.svg" class="img-fluid"
+                            <img src="/images/mediagalleriyaImages/search-icon.svg" class="img-fluid"
                                 alt="searchiicon" />
                         </a>
                         <input type="text" placeholder="Искать лицензионный контент..."
@@ -37,8 +38,9 @@ useHead({ title: "Bolalar olami | posts" });
                     <div class="mediaGaller-wrapper--card">
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -49,8 +51,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.2.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-ategories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.2.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -61,8 +64,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.3.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.3.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -75,8 +79,9 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -87,8 +92,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.7.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.7.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -99,8 +105,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list mediaGaller-wrapper--card-item2 darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.8.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.8.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год
@@ -111,12 +118,13 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list1 darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item1 darkMode-card">
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item1 darkMode-card">
                                     <p class="mediaGaller-wrapper--card-item1--text">
                                         Больше подборок
                                     </p>
                                     <a href="#">
-                                        <img src="/public/images/mediagalleriyaImages/right-icon.svg"
+                                        <img src="/images/mediagalleriyaImages/right-icon.svg"
                                             class="img-fuild mediaGaller-wrapper--card-list1-link" style="width: 24px"
                                             alt="right-icon" /></a>
                                 </NuxtLink>
@@ -124,7 +132,8 @@ useHead({ title: "Bolalar olami | posts" });
                         </div>
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
                                     <img src="/images/mediagalleriyaImages/img1.5.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
@@ -136,7 +145,8 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
                                     <img src="/images/mediagalleriyaImages/img1.6.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
@@ -148,8 +158,9 @@ useHead({ title: "Bolalar olami | posts" });
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
-                                <NuxtLink to="/foto/foto-categories" class="mediaGaller-wrapper--card-item">
-                                    <img src="/public/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100"
+                                <NuxtLink :to="localPath(`/foto/foto-categories`)"
+                                    class="mediaGaller-wrapper--card-item">
+                                    <img src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100"
                                         alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">
                                         Новый Год

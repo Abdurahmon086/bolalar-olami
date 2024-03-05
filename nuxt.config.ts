@@ -35,7 +35,7 @@ export default defineNuxtConfig({
             enabled: true,
         },
     },
-    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,
