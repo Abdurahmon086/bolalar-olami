@@ -47,9 +47,13 @@
     "all_pictures":"Hamma rasmlar",
     "videos":"Videos",
     "pictures":"rasmlar",
-    "video_btn":"Hammasi"
-
-
-
+    "video_btn":"Hammasi",
+    "keyword":"Kalit so‘z",
+    "imagesFrom":"DUNYO BO'YICHA TASVIR VA VIDEOLAR",
+    "selectedPhotos":"TANLANGAN FOTOLAR",
+    "photoEditors":"Bizning foto muharrirlarimiz tomonidan diqqat bilan to'plangan tematik to'plamlarni ko'rib chiqing",
+    "images":"TASVIRLAR",
+    "books":"Kitoblar",
+    "sections":"Bo'limlar"
 
 }

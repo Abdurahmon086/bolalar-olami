@@ -18,7 +18,7 @@ onMounted(() => {
                 <div class="container">
                     <div class="tegs">
                         <p class="tegs-text text-capitalize darkMode-title">
-                            {{ 'Kalit so‘z' + ' : ' + datas?.posts.data[0].section[`title_${$i18n.locale}`] }}
+                            {{ $t("keyword") + ' : ' + datas?.posts.data[0].section[`title_${$i18n.locale}`] }}
                         </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left">

@@ -9,9 +9,9 @@ const localPath = useLocalePath()
             <div class="mediaGaller">
                 <div class="container">
                     <h3 class="mediaGaller-title">
-                        Изображения и видео со всего мира
+                    {{ $t("imagesFrom") }}
                     </h3>
-                    <p class="mediaGaller-text">Media</p>
+                    <p class="mediaGaller-text">{{ $t("media") }}</p>
                     <div type="search" class="mediaGaller-seaBtn w-75">
                         <a href="#"><img src="/images/mediagalleriyaImages/search-icon.svg" class="img-fluid"
                                 alt="searchiicon" />
@@ -24,7 +24,7 @@ const localPath = useLocalePath()
         </section>
         <section>
             <div class="container">
-                <h3 class="mediacard-title darkMode-title">470 ИЗОБРАЖЕНИЙ</h3>
+                <h3 class="mediacard-title darkMode-title">470 {{ $t("images") }}</h3>
                 <div class="mediacard">
                     <NuxtLink :to="localPath(`/foto/foto-categories/foto_id`)" class="mediacard-box darkMode">
                         <img src="/images/mediacardImages/img1.png" class="img-fluid w-100" alt="mediacard-img">
