@@ -23,30 +23,30 @@ const changeLocale = (lang) => {
 };
 
 // dark mode
-const darkTheme = ref(false);
+
 
 
 onMounted(() => {
     const storedValue = getItem("darkThame")
     if (storedValue) {
-        darkTheme.value = storedValue
+        mainStore.darkTheme = storedValue
     }
 
     mainStore.setMainData()
 });
 
 const togglrMode = () => {
-    darkTheme.value = !darkTheme.value
-    setItem("darkThame", darkTheme.value);
+    mainStore.darkTheme = !mainStore.darkTheme
+    setItem("darkThame", mainStore.darkTheme);
 }
 
 watch(() => {
-    darkTheme.value
+    mainStore.darkTheme
 }, () => {
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
 
-    if (darkTheme.value) {
+    if (mainStore.darkTheme) {
         document.body.classList.add("darkBody");
         darkIcons.forEach((icon) => icon.classList.remove("d-none"));
         lightIcons.forEach((icon) => icon.classList.add("d-none"));
@@ -200,7 +200,7 @@ watch(() => {
                                 aria-expanded="false" aria-label="Toggle navigation"
                                 class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed">
 
-                                <template v-if="!darkTheme">
+                                <template v-if="!mainStore.darkTheme">
                                     <img src="/images/x.svg" alt="x icon" class="" />
                                     <img src="/images/menu.svg" alt="menu icon" class="d-none" />
                                 </template>

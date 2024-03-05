@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 const showButton = ref(false);
 
@@ -27,9 +27,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <NuxtLink @click="scrollTop">
+    <div @click="scrollTop">
         <button v-if="showButton" class="scrollerTop__btn darkMode-btn shadow">
             ↑
         </button>
-    </NuxtLink>
+    </div>
 </template>

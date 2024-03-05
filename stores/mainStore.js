@@ -7,7 +7,8 @@ export const useMainStore = defineStore('mainStore', {
         auth: false,
         auths: false,
         authed: false,
-        imgModal: false
+        imgModal: false,
+        darkTheme: false
     }),
 
     getters: {
