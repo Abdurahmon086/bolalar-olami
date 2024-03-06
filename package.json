@@ -13,9 +13,13 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.2",
     "@pinia/nuxt": "^0.5.1",
+    "ant-design-vue": "^4.1.2",
     "axios": "^1.6.7",
     "nuxt-swiper": "^1.2.2",
     "pinia": "^2.1.7"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   },
   "devDependencies": {
     "@ant-design-vue/nuxt": "^1.4.1",
