@@ -13,7 +13,7 @@
     &-cardimg {
         margin-top: 24.5px;
         display: grid;
-        grid-template-columns: 1fr 305px;
+        grid-template-columns: 4fr 305px;
         gap: 21px;
         padding-bottom: 21px;
 
@@ -21,11 +21,11 @@
         &__left {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: min-content;
             gap: 20px;
+            align-content: start;
 
             &-wrapper {
-                height: 348px;
+                max-height: 348px;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
@@ -57,6 +57,7 @@
                     font-weight: 500;
                     margin: 0;
                     padding: 2px 8px 0 6px;
+                    height: 44px;
                 }
 
                 &-text {
@@ -66,6 +67,7 @@
                     font-size: 14px;
                     margin: 0;
                     padding: 2px 3px 0 6px;
+                    height: 46px;
                 }
 
                 &-time {
@@ -125,7 +127,9 @@
                 &-wrapper {
                     row-gap: 5px;
                     height: 198px;
-
+                    img{
+                        max-height: 99px;
+                    }
                     &-box {
                         row-gap: 9.08px;
                     }
@@ -141,11 +145,13 @@
                         font-size: 10px;
                         font-weight: 500;
                         padding: 2px 3px 0 3px;
+                        height: 26px;
                     }
 
                     &-text {
                         font-size: 8px;
                         padding: 2px 3px 0 3px;
+                        height: 30px;
 
                     }
 
@@ -201,7 +207,9 @@
 
                 &-wrapper {
                     row-gap: 5px;
-
+                    img{
+                        max-height: 99px;
+                    }
                     &-box {
                         row-gap: 9.08px;
                     }
@@ -217,11 +225,13 @@
                         font-size: 10px;
                         font-weight: 500;
                         padding: 2px 3px 0 3px;
+                        height: 26px;
                     }
 
                     &-text {
                         font-size: 8px;
                         padding: 2px 3px 0 3px;
+                        height: 30px;
                     }
 
                     &-time {
@@ -277,6 +287,9 @@
 
                 &-wrapper {
                     row-gap: 5px;
+                    img{
+                        max-height: 99px;
+                    }
 
                     &-box {
                         row-gap: 9.08px;
@@ -293,11 +306,13 @@
                         font-size: 10px;
                         font-weight: 500;
                         padding: 2px 3px 0 3px;
+                        height: 26px;
                     }
 
                     &-text {
                         font-size: 8px;
                         padding: 2px 3px 0 3px;
+                        height: 30px;
                     }
 
                     &-time {
@@ -363,6 +378,9 @@
                     flex-direction: column;
                     row-gap: 11px;
                     background-color: #FFF;
+                    img{
+                        max-height: 165px;
+                    }
 
                     &-box {
                         display: flex;
@@ -393,7 +411,8 @@
                         font-weight: 500;
                         margin: 0;
                         padding: 2px 3px 0 6px;
-                        max-width: 331px;
+                        max-width: 531px;
+                        height: 54px;
                     }
 
                     &-text {
@@ -403,9 +422,8 @@
                         font-size: 16px;
                         margin: 0;
                         padding: 2px 3px 0 6px;
-                        max-width: 331px;
-
-
+                        max-width: 531px;
+                        height: 56px;
                     }
 
                     &-time {
@@ -450,7 +468,7 @@
             &__left {
 
                 display: grid;
-                grid-template-columns: auto;
+                grid-template-columns: 1fr;
                 row-gap: 20px;
 
                 &-wrapper {
@@ -491,6 +509,7 @@
                         margin: 0;
                         padding: 2px 3px 0 6px;
                         max-width: 331px;
+                        height: 54px;
                     }
 
                     &-text {
@@ -501,6 +520,7 @@
                         margin: 0;
                         padding: 2px 3px 0 6px;
                         max-width: 331px;
+                        height: 56px;
                     }
 
                     &-time {

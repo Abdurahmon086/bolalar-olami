@@ -10,11 +10,9 @@ const datas = computed(() => store.getMediaData);
 onMounted(() => {
     store.setMediaData()
 });
-
 </script>
 
 <template>
-
     <template v-if="datas">
         <main class="darkMode-body pb-5 bg-white">
             <!-- OUR GALLERY -->
@@ -26,8 +24,7 @@ onMounted(() => {
                     <div class="mediacate__card">
                         <div class="mediacate__card-box position-relative">
                             <iframe :src="datas.bannerVideos[0].youtube_link"
-                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                                :title="datas.bannerVideos[0][`title_${$i18n.locale}`]" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="w-100 mediacate__card-img">
                             </iframe>
@@ -53,10 +50,10 @@ onMounted(() => {
                                             32 {{ $t("videos") }}
                                         </p>
                                     </div>
-                                <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
-                                    <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
-                                        style="width: 40px; height: 40px" alt="play-icon" />
-                                        </NuxtLink>
+                                    <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
+                                        <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
+                                            style="width: 40px; height: 40px" alt="play-icon" />
+                                    </NuxtLink>
                                 </div>
                             </div>
                             <div class="position-relative">
@@ -68,7 +65,7 @@ onMounted(() => {
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
-                                    {{ $t("all_pictures") }}
+                                            {{ $t("all_pictures") }}
                                         </p>
                                         <p class="mediacate__card-bottom--text1 fw-normal">
                                             65 {{ $t("pictures") }}
@@ -85,9 +82,8 @@ onMounted(() => {
                     <div class="mediacate__galle">
                         <div class="mediacate__galle-wrapper position-relative"
                             v-for="item in datas?.bannerVideos.slice(1)">
-                            <iframe :src="item.youtube_link" width="100%"
-                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            <iframe :src="item.youtube_link" width="100%" :title="item[`title_${$i18n.locale}`]"
+                                frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe">
                             </iframe>
@@ -107,10 +103,9 @@ onMounted(() => {
                     </div>
                     <div class="mediacate__all " :class="{ 'videoHidden': !store.isActive(items) }">
                         <div class="position-relative mediacate__all-card w-100 image-container"
-                            v-for="item in items.videos  ">
-                            <iframe :src="item.youtube_link" width="100%"
-                                src="https://www.youtube.com/embed/6ZdkMZq95PI"
-                                title="Нега Уйкуга Тоймаймиз? °Abdulloh Domla °Абдуллох Домла" frameborder="0"
+                            v-for="item in items.videos">
+                            <iframe :src="item.youtube_link" width="100%" :title="item[`title_${$i18n.locale}`]"
+                                frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen class="mediacate__iframe-all"></iframe>
                         </div>

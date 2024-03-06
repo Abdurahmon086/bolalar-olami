@@ -47,6 +47,12 @@
     "all_pictures":"All pictures",
     "videos":"Videos",
     "pictures":"pictures",
-    "video_btn":"Everything"
-
+    "video_btn":"Everything",
+    "keyword":"Keyword",
+    "imagesFrom":"IMAGES AND VIDEOS FROM AROUND THE WORLD",
+    "selectedPhotos":"SELECTED PHOTOS",
+    "photoEditors":"Check out thematic collections carefully collected by our photo editors",
+    "images":"IMAGES",
+    "books":"Books",
+    "sections":"Sections"
 }

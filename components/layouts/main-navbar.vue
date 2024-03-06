@@ -23,18 +23,30 @@ const changeLocale = (lang) => {
 };
 
 // dark mode
-const darkTheme = ref(false);
 
-const switchToggle = computed(() => {
-    darkTheme.value = !darkTheme.value;
-    setItem("darkThame", darkTheme.value);
 
-    const value = getItem("darkThame");
 
+onMounted(() => {
+    const storedValue = getItem("darkThame")
+    if (storedValue) {
+        mainStore.darkTheme = storedValue
+    }
+
+    mainStore.setMainData()
+});
+
+const togglrMode = () => {
+    mainStore.darkTheme = !mainStore.darkTheme
+    setItem("darkThame", mainStore.darkTheme);
+}
+
+watch(() => {
+    mainStore.darkTheme
+}, () => {
     const darkIcons = document.querySelectorAll(".darkIcon");
     const lightIcons = document.querySelectorAll(".lightIcon");
 
-    if (value) {
+    if (mainStore.darkTheme) {
         document.body.classList.add("darkBody");
         darkIcons.forEach((icon) => icon.classList.remove("d-none"));
         lightIcons.forEach((icon) => icon.classList.add("d-none"));
@@ -43,11 +55,8 @@ const switchToggle = computed(() => {
         darkIcons.forEach((icon) => icon.classList.add("d-none"));
         lightIcons.forEach((icon) => icon.classList.remove("d-none"));
     }
-});
+}, { deep: true })
 
-onMounted(() => {
-    mainStore.setMainData()
-});
 </script>
 
 <template>
@@ -76,7 +85,7 @@ onMounted(() => {
                             alt="glasses icon"
                             class="darkIcon d-none"
                         /> -->
-                            <div id="themingSwitcher" @click="switchToggle">
+                            <div id="themingSwitcher" @click="togglrMode">
                                 <img src="/images/moon.svg" alt="moon icon" class="lightIcon d-block cur" />
                                 <img src="/images/moon_d.svg" alt="moon icon" class="darkIcon d-none" />
                             </div>
@@ -191,7 +200,7 @@ onMounted(() => {
                                 aria-expanded="false" aria-label="Toggle navigation"
                                 class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed">
 
-                                <template v-if="!darkTheme">
+                                <template v-if="!mainStore.darkTheme">
                                     <img src="/images/x.svg" alt="x icon" class="" />
                                     <img src="/images/menu.svg" alt="menu icon" class="d-none" />
                                 </template>

@@ -14,12 +14,14 @@
     display: grid;
     grid-template-columns: 1fr 477px;
     column-gap: 20px;
-    &-wrapper{
+
+    &-wrapper {
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 24px;
     }
-    &-card{
+
+    &-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
@@ -28,7 +30,7 @@
     &__left {
 
         &-box {
-            background-image: url(../../images/talimImages/Rectangle-img.png);
+            background-image: url(/images/talimImages/Rectangle-img.png);
             background-size: cover;
             background-repeat: no-repeat;
             bottom: 3px;
@@ -37,14 +39,14 @@
 
         &-title {
             color: #FFF;
-            font-family: "BBC Reith Sans" ,sans-serif;
+            font-family: "BBC Reith Sans", sans-serif;
             font-size: 24.004px;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            padding:0 220px 0 17px;
+            padding: 0 220px 0 17px;
             bottom: 10px;
-                margin-bottom: 0;
+            margin-bottom: 0;
 
         }
     }
@@ -98,7 +100,7 @@
 .talim-cardimg {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: 3fr 1fr ;
+    grid-template-columns: 3fr 1fr;
     gap: 21px;
     padding-bottom: 21px;
 
@@ -114,7 +116,8 @@
             flex-direction: column;
             row-gap: 10px;
             background-color: #FFF;
-            img{
+
+            img {
                 height: 173px;
             }
 
@@ -184,19 +187,22 @@
         }
     }
 
-    &__aside{
+    &__aside {
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 16px;
-        &-img1{
+
+        &-img1 {
             width: 305px;
             // height: 916px;
         }
-        &-img2{
+
+        &-img2 {
             width: 305px;
             // height: 448px;
         }
-        &-img3{
+
+        &-img3 {
             width: 305px;
             // height: 540px;
         }
@@ -210,51 +216,52 @@
         font-size: 20px;
         padding-top: 110px;
     }
+
     .talim-box {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
-    
+
         &__left {
-    
+
             &-box {
-                background-image: url(../../images/talimImages/Rectangle-img.png);
+                background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 bottom: 3px;
-    
+
             }
-    
+
             &-title {
                 font-size: 17px;
-                padding:0 10px 0 10px;
-    
+                padding: 0 10px 0 10px;
+
             }
         }
-    
+
         &__right {
             display: flex;
             flex-direction: column;
             background: #F3EBDF;
-    
-    
+
+
             &-box {
                 display: flex;
                 flex-direction: column;
                 row-gap: 45.57px;
-    
+
             }
-    
+
             &-title {
                 font-size: 28.784px;
                 padding: 45.58px 76px 0 44.38px;
             }
-    
+
             &-text {
                 font-size: 21.588px;
                 padding: 5px 10px 15px 44px;
             }
-    
+
             &-img {
                 width: 129.529px;
                 height: 129.529px;
@@ -262,7 +269,7 @@
                 align-self: flex-end;
                 margin-bottom: 16px;
                 padding-right: 17px;
-    
+
             }
         }
     }
@@ -272,65 +279,69 @@
         display: flex;
         gap: 18px;
         margin-bottom: 40px;
-    
-    
+
+
         &__left {
-    
+
             gap: 20px 10px;
-    
+
             &-wrapper {
                 row-gap: 5px;
                 height: 255px;
-                img{
+
+                img {
                     height: 110px !important;
                 }
-    
+
                 &-box {
                     row-gap: 9.08px;
                 }
-    
+
                 &-dec {
                     font-size: 6.825px;
                     padding: 4.989px 11.974px;
-    
-    
+
+
                 }
-    
+
                 &-title {
                     font-size: 12px;
                     font-weight: 500;
                     padding: 2px 3px 0 3px;
                     height: 32px;
                 }
-    
+
                 &-text {
                     font-size: 11px;
                     padding: 2px 3px 0 3px;
                     height: 44px;
-    
+
                 }
-    
+
                 &-time {
                     font-size: 7.963px;
                     padding: 2px 3px 9.08px 3px;
-    
+
                 }
             }
         }
-    
-        &__aside{
+
+        &__aside {
             display: flex;
             flex-direction: column;
             row-gap: 9.1px;
-            &-img1{
+
+            &-img1 {
                 max-width: 173px;
                 // height: 326px;
             }
-            &-img2{
+
+            &-img2 {
                 max-width: 173px;
                 // height: 203px;
             }
-            &-img3{
+
+            &-img3 {
                 max-width: 173px;
                 // height: 305px;
             }
@@ -338,58 +349,60 @@
 
     }
 }
+
 @media only screen and (max-width:992px) {
     .talim-title {
         margin-top: 15px;
-        font-family: "BBC Reith Sans",sans-serif;
+        font-family: "BBC Reith Sans", sans-serif;
         font-size: 20px;
         padding-top: 110px;
     }
+
     .talim-box {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 14px;
-    
+
         &__left {
-    
+
             &-box {
-                background-image: url(../../images/talimImages/Rectangle-img.png);
+                background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 bottom: 3px;
-    
+
             }
-    
+
             &-title {
                 font-size: 17px;
-                padding:0 10px 0 10px;
-    
+                padding: 0 10px 0 10px;
+
             }
         }
-    
+
         &__right {
             display: flex;
             flex-direction: column;
             background: #F3EBDF;
-    
-    
+
+
             &-box {
                 display: flex;
                 flex-direction: column;
                 row-gap: 45.57px;
-    
+
             }
-    
+
             &-title {
                 font-size: 28.784px;
                 padding: 45.58px 76px 0 44.38px;
             }
-    
+
             &-text {
                 font-size: 21.588px;
                 padding: 5px 10px 15px 44px;
             }
-    
+
             &-img {
                 width: 129.529px;
                 height: 129.529px;
@@ -397,7 +410,7 @@
                 align-self: flex-end;
                 margin-bottom: 16px;
                 padding-right: 17px;
-    
+
             }
         }
     }
@@ -407,29 +420,30 @@
         display: flex;
         gap: 18px;
         margin-bottom: 40px;
-    
-    
+
+
         &__left {
-    
+
             gap: 20px 10px;
-    
+
             &-wrapper {
                 row-gap: 5px;
-                img{
+
+                img {
                     height: 110px !important;
                 }
-    
+
                 &-box {
                     row-gap: 9.08px;
                 }
-    
+
                 &-dec {
                     font-size: 6.825px;
                     padding: 4.989px 11.974px;
-    
-    
+
+
                 }
-    
+
                 &-title {
                     font-size: 12px;
                     font-weight: 500;
@@ -437,35 +451,38 @@
                     height: 32px;
 
                 }
-    
+
                 &-text {
                     font-size: 11px;
                     padding: 2px 3px 0 3px;
                     height: 44px;
-    
+
                 }
-    
+
                 &-time {
                     font-size: 7.963px;
                     padding: 2px 3px 9.08px 3px;
-    
+
                 }
             }
         }
-    
-        &__aside{
+
+        &__aside {
             display: flex;
             flex-direction: column;
             row-gap: 9.1px;
-            &-img1{
+
+            &-img1 {
                 max-width: 173px;
                 // height: 326px;
             }
-            &-img2{
+
+            &-img2 {
                 max-width: 173px;
                 // height: 203px;
             }
-            &-img3{
+
+            &-img3 {
                 max-width: 173px;
                 // height: 305px;
             }
@@ -480,51 +497,52 @@
         font-size: 20px;
         padding-top: 110px;
     }
+
     .talim-box {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 14px;
-    
+
         &__left {
-    
+
             &-box {
-                background-image: url(../../images/talimImages/Rectangle-img.png);
+                background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 bottom: 3px;
-    
+
             }
-    
+
             &-title {
                 font-size: 17px;
-                padding:0 20px 0 10px;
-    
+                padding: 0 20px 0 10px;
+
             }
         }
-    
+
         &__right {
             display: flex;
             flex-direction: column;
             background: #F3EBDF;
-    
-    
+
+
             &-box {
                 display: flex;
                 flex-direction: column;
                 row-gap: 45.57px;
-    
+
             }
-    
+
             &-title {
                 font-size: 28.784px;
                 padding: 45.58px 76px 0 44.38px;
             }
-    
+
             &-text {
                 font-size: 21.588px;
                 padding: 5px 10px 15px 44px;
             }
-    
+
             &-img {
                 width: 129.529px;
                 height: 129.529px;
@@ -532,7 +550,7 @@
                 align-self: flex-end;
                 margin-bottom: 16px;
                 padding-right: 17px;
-    
+
             }
         }
     }
@@ -542,64 +560,67 @@
         display: flex;
         gap: 18px;
         margin-bottom: 40px;
-    
-    
+
+
         &__left {
-    
+
             gap: 20px 10px;
-    
+
             &-wrapper {
                 row-gap: 5px;
-                img{
+
+                img {
                     height: 110px !important;
                 }
-    
+
                 &-box {
                     row-gap: 9.08px;
                 }
-    
+
                 &-dec {
                     font-size: 6.825px;
                     padding: 4.989px 11.974px;
-    
-    
+
+
                 }
-    
+
                 &-title {
                     font-size: 12px;
                     font-weight: 500;
                     padding: 2px 3px 0 3px;
                     height: 32px;
                 }
-    
+
                 &-text {
                     font-size: 11px;
                     padding: 2px 3px 0 3px;
                     height: 44px;
                 }
-    
+
                 &-time {
                     font-size: 7.963px;
                     padding: 2px 3px 9.08px 3px;
-    
+
                 }
             }
         }
-    
-        &__aside{
+
+        &__aside {
             display: flex;
             flex-direction: column;
             row-gap: 9.1px;
 
-            &-img1{
+            &-img1 {
                 max-width: 173px;
                 // height: 326px;
             }
-            &-img2{
+
+            &-img2 {
                 max-width: 173px;
                 // height: 203px;
             }
-            &-img3{
+
+            &-img3 {
                 max-width: 173px;
                 // height: 305px;
             }
@@ -611,29 +632,30 @@
 
 @media only screen and (max-width:576px) {
 
-    .talim-title{
+    .talim-title {
         display: none;
     }
 
     .talim-box {
         display: grid;
         grid-template-columns: 1fr;
-        row-gap:12.72px;
+        row-gap: 12.72px;
         margin-top: 116px;
-        &-card{
+
+        &-card {
             grid-template-columns: 1fr;
         }
-    
+
         &__left {
-    
+
             &-box {
-                background-image: url(../../images/talimImages/Rectangle-img.png);
+                background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 bottom: 3px;
-    
+
             }
-    
+
             &-title {
                 color: #FFF;
                 font-size: 18px;
@@ -644,33 +666,33 @@
                 max-width: 293.24px;
                 bottom: 10px;
                 margin-bottom: 0;
-    
+
             }
         }
-    
+
         &__right {
             display: flex;
             flex-direction: column;
             background: #F3EBDF;
-    
-    
+
+
             &-box {
                 display: flex;
                 flex-direction: column;
                 row-gap: 21.47px;
-    
+
             }
-    
+
             &-title {
                 color: #967851;
                 font-family: "IBM Plex Sans";
                 font-size: 13.562px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: normal; 
+                line-height: normal;
                 padding: 21.47px 20.91px 0 20.91px;
             }
-    
+
             &-text {
                 color: #967851;
                 font-family: "IBM Plex Sans";
@@ -678,17 +700,17 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-                padding:0 10px 15px 20.91px;
+                padding: 0 10px 15px 20.91px;
             }
-    
+
             &-img {
                 width: 61.028px;
-                height:  61.028px;
+                height: 61.028px;
                 display: flex;
                 align-self: flex-end;
                 margin-bottom: 16px;
                 padding-right: 8px;
-    
+
             }
         }
     }
@@ -700,32 +722,35 @@
         flex-direction: column;
         // gap: 21px;
         margin-bottom: 21px;
-    
-    
+
+
         &__left {
-    
+
             display: grid;
             grid-template-columns: 1fr;
             row-gap: 20px;
-    
+
             &-wrapper {
                 display: flex;
                 flex-direction: column;
                 row-gap: 11px;
                 background-color: #FFF;
                 height: 388px;
-                img{
+
+                img {
                     height: 204px !important;
                 }
+
                 &-box {
                     display: flex;
                     flex-direction: column;
                     row-gap: 18px;
                 }
-                img{
+
+                img {
                     width: 546px
                 }
-    
+
                 &-dec {
                     color: #121212;
                     font-family: "IBM Plex Sans";
@@ -740,10 +765,10 @@
                     bottom: 12px;
                     left: 11px;
                     margin-bottom: 0;
-    
-    
+
+
                 }
-    
+
                 &-title {
                     color: #242424;
                     font-family: "IBM Plex Sans";
@@ -756,7 +781,7 @@
                     // max-width: 331px;
                     height: 52px;
                 }
-    
+
                 &-text {
                     overflow: hidden;
                     color: #242424;
@@ -771,9 +796,9 @@
                     // max-width: 331px;
                     height: 44px;
 
-    
+
                 }
-    
+
                 &-time {
                     overflow: hidden;
                     color: #A0A0A0;
@@ -787,12 +812,12 @@
                     padding: 2px 3px 15.9px 6px;
                     // max-width: 331px;
 
-    
+
                 }
             }
         }
-    
-        &__aside{
+
+        &__aside {
             display: none;
         }
     }
@@ -801,29 +826,30 @@
 
 @media only screen and (max-width:376px) {
 
-    .talim-title{
+    .talim-title {
         display: none;
     }
 
     .talim-box {
         display: grid;
         grid-template-columns: 1fr;
-        row-gap:12.72px;
+        row-gap: 12.72px;
         margin-top: 116px;
-        &-card{
+
+        &-card {
             grid-template-columns: 1fr;
         }
-    
+
         &__left {
-    
+
             &-box {
-                background-image: url(../../images/talimImages/Rectangle-img.png);
+                background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 bottom: 3px;
-    
+
             }
-    
+
             &-title {
                 color: #FFF;
                 font-size: 18px;
@@ -833,53 +859,53 @@
                 padding: 0 2px 0 17px;
                 max-width: 293.24px;
                 bottom: 10px;
-                margin-bottom: 0; 
-    
+                margin-bottom: 0;
+
             }
         }
-    
+
         &__right {
             display: flex;
             flex-direction: column;
             background: #F3EBDF;
-          
-    
-    
+
+
+
             &-box {
                 display: flex;
                 flex-direction: column;
                 row-gap: 21.47px;
-    
+
             }
-    
+
             &-title {
                 color: #967851;
                 font-family: "IBM Plex Sans";
                 font-size: 13.562px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: normal; 
+                line-height: normal;
                 padding: 21.47px 20.91px 0 20.91px;
             }
-    
+
             &-text {
                 color: #967851;
                 font-family: "IBM Plex Sans";
                 font-size: 10.171px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: normal; 
-                padding:0 10px 15px 20.91px;
+                line-height: normal;
+                padding: 0 10px 15px 20.91px;
             }
-    
+
             &-img {
                 width: 61.028px;
-                height:  61.028px;
+                height: 61.028px;
                 display: flex;
                 align-self: flex-end;
-                margin-bottom: 4.72px; 
+                margin-bottom: 4.72px;
                 padding-right: 8px;
-    
+
             }
         }
     }
@@ -891,32 +917,34 @@
         flex-direction: column;
         // gap: 21px;
         margin-bottom: 21px;
-    
-    
+
+
         &__left {
-    
+
             display: grid;
             grid-template-columns: 1fr;
             row-gap: 20px;
-    
+
             &-wrapper {
                 display: flex;
                 flex-direction: column;
                 row-gap: 11px;
                 background-color: #FFF;
-                img{
+
+                img {
                     height: 204px !important;
                 }
-    
+
                 &-box {
                     display: flex;
                     flex-direction: column;
                     row-gap: 18px;
                 }
-                img{
+
+                img {
                     width: 343px;
                 }
-    
+
                 &-dec {
                     color: #121212;
                     font-family: "IBM Plex Sans";
@@ -931,10 +959,10 @@
                     bottom: 12px;
                     left: 11px;
                     margin-bottom: 0;
-    
-    
+
+
                 }
-    
+
                 &-title {
                     color: #242424;
                     font-family: "IBM Plex Sans";
@@ -947,7 +975,7 @@
                     max-width: 331px;
                     height: 52px;
                 }
-    
+
                 &-text {
                     overflow: hidden;
                     color: #242424;
@@ -962,9 +990,9 @@
                     max-width: 331px;
                     height: 44px;
 
-    
+
                 }
-    
+
                 &-time {
                     overflow: hidden;
                     color: #A0A0A0;
@@ -978,12 +1006,12 @@
                     padding: 2px 3px 15.9px 6px;
                     max-width: 331px;
 
-    
+
                 }
             }
         }
-    
-        &__aside{
+
+        &__aside {
             display: none;
         }
     }
