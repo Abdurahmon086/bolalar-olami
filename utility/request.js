@@ -1,13 +1,15 @@
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 // import { getToken, clearForLogout } from './auth'
 // const runtimeConfig = useRuntimeConfig();
+
+const router = useRouter()
 
 const service = axios.create({
   baseURL: 'http://admin.bolalarolami.uz/api/v2', // url = base url + request url
   timeout: 5000000, // request timeout
 })
 
-// const router = useRouter()
 // function logout() {
 //   // clearForLogout()
 //   return router.push({ name: 'login' })
@@ -35,7 +37,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error(res.message || 'Error'))
     }
     if (!res.success) {
-      router.push({ path: '/' })
+      window.location.href = '/'
     }
     return res
   },
