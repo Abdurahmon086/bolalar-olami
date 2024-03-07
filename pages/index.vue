@@ -154,7 +154,7 @@ onMounted(() => {
       <section class="social">
         <div class="container">
           <h4 class="social__name-title darkMode-title">
-            {{ $t("social_text") }}
+            {{ $t("quote_the_day") }}
           </h4>
           <Swiper class="carousel" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
             :effect="'creative'" :autoplay="{
