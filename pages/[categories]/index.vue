@@ -12,6 +12,7 @@ onMounted(() => {
     categoryStore.setCategoryData(route.query.id)
 });
 
+console.log(datas);
 </script>
 
 <template>

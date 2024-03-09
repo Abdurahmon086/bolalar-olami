@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 // import { getToken, clearForLogout } from './auth'
 // const runtimeConfig = useRuntimeConfig();
 
-const router = useRouter()
+
 
 const service = axios.create({
   baseURL: 'http://admin.bolalarolami.uz/api/v2', // url = base url + request url
@@ -37,7 +37,7 @@ service.interceptors.response.use(
       return Promise.reject(new Error(res.message || 'Error'))
     }
     if (!res.success) {
-      window.location.href = '/'
+      useRouter().push('/')
     }
     return res
   },
