@@ -17,7 +17,7 @@ console.log(datas);
 
 <template>
     <template v-if="datas">
-        <main class="darkMode-body pb-5 bg-light">
+        <main class="darkMode-body pb-2 bg-light">
             <section class="darkMode-body">
                 <div class="container">
                     <h3 class="talim-title darkMode-title text-capitalize">
