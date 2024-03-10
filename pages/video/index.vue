@@ -1,10 +1,8 @@
 <script setup>
 useHead({ title: "Bolalar olami | posts" });
 import Loader from "~/components/loader.vue";
-
+const localPath = useLocalePath()
 const store = useMediaStore();
-
-
 const datas = computed(() => store.getMediaData);
 
 onMounted(() => {
@@ -59,9 +57,11 @@ onMounted(() => {
                             <div class="position-relative">
                                 <img src="/images/mediacategoryImages/mediaimg3.png"
                                     class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
+                               <NuxtLink :to="localPath(`/foto`)">
                                 <h2 class="mediacate__card-bottom--title position-absolute">
                                     {{ $t("all_photos") }}
                                 </h2>
+                               </NuxtLink>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
@@ -72,8 +72,10 @@ onMounted(() => {
                                         </p>
                                     </div>
                                     <div class="mediacate__card-bottom--imgdiv">
-                                        <img src="/images/mediacategoryImages/gallery-icon.svg"
+                                        <NuxtLink :to="localPath(`/foto`)">
+                                            <img src="/images/mediacategoryImages/gallery-icon.svg"
                                             class="img-fluid mediacate__card-bottom--img" alt="play-icon" />
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
