@@ -75,16 +75,8 @@ watch(() => {
                             <span class="darkMode">{{ $t("editor") }}</span>
                         </div>
                         <div class="header__top-menuList d-flex align-items-center" style="gap: 16px">
-                            <!-- <img
-                            src="/images/glasses.svg"
-                            alt="glasses icon"
-                            class="lightIcon d-block"
-                        />
-                        <img
-                            src="/images/glasses_d.svg"
-                            alt="glasses icon"
-                            class="darkIcon d-none"
-                        /> -->
+                            <img src="/images/glasses.svg" alt="glasses icon" class="lightIcon d-block" />
+                            <img src="/images/glasses_d.svg" alt="glasses icon" class="darkIcon d-none" />
                             <div id="themingSwitcher" @click="togglrMode">
                                 <img src="/images/moon.svg" alt="moon icon" class="lightIcon d-block cur" />
                                 <img src="/images/moon_d.svg" alt="moon icon" class="darkIcon d-none" />
@@ -132,6 +124,13 @@ watch(() => {
                             id="navbarSupportedContent">
                             <!-- navbar list -->
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
+                                <li class="nav-item position-relative darkMode">
+                                    <NuxtLink class="nav-link darkMode-title" :to="localPath(`/`)">
+                                        <p class="m-0">
+                                            {{ $t("bosh_sahifa") }}
+                                        </p>
+                                    </NuxtLink>
+                                </li>
                                 <li class="nav-item position-relative darkMode" v-for="nav in datas" :key="nav.id">
                                     <NuxtLink class="nav-link darkMode-title"
                                         :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
