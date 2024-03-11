@@ -52,6 +52,11 @@
         }
     }
 
+    .navbar-brand {
+        height: 31px !important;
+        margin-left: 20px !important;
+    }
+
     &__navbar {
         height: 64px;
         border-bottom: 1px solid #EEE;
@@ -182,6 +187,11 @@
 
 @media only screen and (min-width: 376px) {
     .header {
+
+        .navbar-brand {
+            height: 31px !important;
+            margin-left: 0 !important;
+        }
 
         &__top {
             height: 32px;

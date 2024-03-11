@@ -24,6 +24,15 @@ const changeLocale = (lang) => {
 
 // dark mode
 
+const navgateValue = ref(true)
+
+const navgateToggle = (value) => {
+    const menu = document.querySelectorAll(".show")[0];
+    if (menu) {
+        menu.classList.remove("show")
+    }
+    navgateValue.value = value
+}
 
 
 onMounted(() => {
@@ -174,7 +183,8 @@ watch(() => {
                                         class="accordion-collapse collapse border-0 darkMode"
                                         :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
-                                            <li v-for="navItem in menu.child" :key="navItem.id">
+                                            <li v-for="navItem in menu.child" :key="navItem.id"
+                                                @click="navgateToggle(true)">
                                                 <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
                                                     class="text-decoration-none darkMode" style="color: #000;">
                                                     <p class="m-0">
@@ -199,8 +209,9 @@ watch(() => {
                                 <SearchModal />
                             </template>
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation"
-                                class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed">
+                                :aria-expanded="navgateValue ? false : true" aria-label="Toggle navigation"
+                                class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none "
+                                :class="navgateValue ? 'collapsed' : ''" @click="navgateToggle(false)">
 
                                 <template v-if="!mainStore.darkTheme">
                                     <img src="/images/x.svg" alt="x icon" class="" />
