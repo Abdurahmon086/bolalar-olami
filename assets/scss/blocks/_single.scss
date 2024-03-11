@@ -129,7 +129,9 @@
 
     &__main {
         margin-top: 10px;
-
+        img {
+            width: 100%;
+        }
         &-inner {
             gap: 16px;
         }
