@@ -1,5 +1,5 @@
 .lastNews {
-    margin-top: 20px;
+    margin-top: 20px !important;
 
     &__wrapper {
         display: grid;
@@ -136,8 +136,10 @@
             left: 5.797px;
             bottom: 8.7px;
             color: #121212;
-            font-size: 11.594px;
+            font-size: 13px;
             text-transform: uppercase;
+            // width: 104px;
+            height: 32px;
         }
     }
 }
@@ -264,7 +266,7 @@
 
             &-text {
                 font-size: 19px;
-                margin-bottom: 23px;
+                margin-bottom: 20px;
             }
 
             &-sp {
@@ -300,7 +302,7 @@
                 left: 6.455px;
                 bottom: 9.88px;
                 padding: 6.269px 15.045px;
-                font-size: 12.91px;
+                font-size: 13px;
             }
 
             .card-title {
