@@ -9,13 +9,13 @@ const mainStore = useMainStore()
                 <li class="loopScroler__wrapper-item d-flex align-items-center">
                     <template v-if="!mainStore.darkTheme">
                         <img src="/images/dunyoBola-img.svg" alt="dunyoBola-img" class=" d-block img-fluid" />
-                        <img src="/public/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" />
+                        <img src="/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" />
 
                     </template>
 
                     <template v-else>
                         <img src="/images/dunyoBola-img-dark1.jpg" alt="dunyoBola-img" class=" img-fluid" />
-                        <img src="/public/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" />
+                        <img src="/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" />
 
                     </template>
                 </li>
