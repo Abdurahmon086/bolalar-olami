@@ -13,6 +13,6 @@ const mainStore = useMainStore()
         </template>
         <slot />
     </div>
-    <ScrollerTop class="scrollerTop" />
+ 
     <LayoutsFooter />
 </template>
