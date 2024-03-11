@@ -61,7 +61,7 @@ onMounted(() => {
                             <span class="darkMode">98</span>
                         </div> -->
                         </div>
-                        <img :src="(datas?.post.detail_image?.card ? datas?.post.detail_image?.card : '/images/logo.svg')"
+                        <img :src="(datas?.post.detail_image?.url ? datas?.post.detail_image?.url : '/images/logo.svg')"
                             :alt="datas?.post[`title_${$i18n.locale}`]" class="single__mainImg object-fit-fill" />
                         <div class="single__inner">
                             <!-- <ul
@@ -227,7 +227,7 @@ onMounted(() => {
                                     class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
                                         class="position-relative">
-                                        <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                        <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                                             :alt="item[`title_${$i18n.locale}`]" class="card-img-top rounded-0" />
                                         <span
                                             class="position-absolute aside__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
@@ -239,11 +239,7 @@ onMounted(() => {
                                             </h5>
                                         </NuxtLink>
                                         <p class="card-text darkMode heddin-text-3">
-                                            {{
-        item[
-        `description_${$i18n.locale}`
-        ]
-    }}
+                                            {{ item[`description_${$i18n.locale}`] }}
                                         </p>
                                         <span class="aside__left-sp darkMode-sp">
                                             {{ item.publish_date }}
