@@ -16,7 +16,7 @@ const localPath = useLocalePath();
                         <p class="footer__text darkMode">
                             {{ $t("footer_text") }}
                         </p>
-                        <div class="d-flex" style="margin-top: 50px; gap: 22px">
+                        <!-- <div class="d-flex" style="margin-top: 50px; gap: 22px">
                             <a href="https://www.instagram.com/Bolalarolami.uz" target="_blank">
                                 <img src="/images/instagram-logo.svg" alt="instagram-logo" /></a>
                             <a href="https://t.me/bolalarolamiuz" target="_blank"><img src="/images/telegram-logo.svg"
@@ -26,7 +26,7 @@ const localPath = useLocalePath();
                                 <img src="/images/facebook-logo.svg" alt="facebook-logo" /></a>
                             <a href="https://www.youtube.com/@bolalarolamiuz" target="_blank">
                                 <img src="/images/youtube-logo.svg" alt="youtube-logo" /></a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="">
                         <ul class="footer__list list-unstyled d-flex flex-column" style="gap: 24px">
@@ -100,6 +100,17 @@ const localPath = useLocalePath();
                                 <a class="footer__link1 fw-normal darkMode-title text-decoration-none"
                                     href="https://t.me/bolalarolamiadmin" target="_blank">Telegram</a>
                             </li>
+                            <div class="d-flex" style=" gap: 22px">
+                            <a href="https://www.instagram.com/Bolalarolami.uz" target="_blank">
+                                <img src="/images/instagram-logo.svg" alt="instagram-logo" /></a>
+                            <a href="https://t.me/bolalarolamiuz" target="_blank"><img src="/images/telegram-logo.svg"
+                                    alt="telegram-logo" />
+                            </a>
+                            <a href="https://www.facebook.com/bolalarolami" target="_blank">
+                                <img src="/images/facebook-logo.svg" alt="facebook-logo" /></a>
+                            <a href="https://www.youtube.com/@bolalarolamiuz" target="_blank">
+                                <img src="/images/youtube-logo.svg" alt="youtube-logo" /></a>
+                        </div>
                         </ul>
                     </div>
                 </div>
