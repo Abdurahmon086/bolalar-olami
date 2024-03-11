@@ -4,7 +4,8 @@ const mainStore = useMainStore()
 
 <template>
     <section class="loopScroler bg-white darkMode mt-5 mb-0 d-none d-md-flex w-100 ">
-        <Swiper :modules="[SwiperAutoplay]" :slides-per-view="6" :autoplay="{ delay: 3000 }" class="loopScroler__inner">
+        <Swiper :modules="[SwiperAutoplay]" :slides-per-group="6" :slides-per-view="6" :autoplay="{ delay: 3000 }"
+            class="loopScroler__inner">
             <SwiperSlide v-for="slide in 9" :key="slide" class="loopScroler__wrapper list-unstyled m-0 darkMode">
                 <li class="loopScroler__wrapper-item d-flex align-items-center">
                     <template v-if="!mainStore.darkTheme">
