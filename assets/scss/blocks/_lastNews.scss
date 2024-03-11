@@ -49,7 +49,7 @@
         &-sp {
             color: #969696;
             font-family: "BBC Reith Sans", sans-serif;
-            font-size: 8.632px;
+            font-size: 13px !important;
             font-weight: 400;
             text-transform: uppercase;
 
@@ -122,6 +122,7 @@
             color: #A0A0A0;
             text-overflow: ellipsis;
             font-size: 15.459px;
+            margin-bottom: 0 !important;
         }
 
         // &-inner {
@@ -258,7 +259,7 @@
             }
 
             &-list {
-                gap: 44px;
+                gap: 20px;
             }
 
             &-text {
