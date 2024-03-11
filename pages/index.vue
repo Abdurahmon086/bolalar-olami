@@ -13,7 +13,6 @@ const datas = computed(() => indexStore.getHomeData);
 onMounted(() => {
   indexStore.setHomeData()
 });
-
 </script>
 
 <template>
