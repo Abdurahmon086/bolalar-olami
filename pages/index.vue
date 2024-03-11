@@ -135,11 +135,11 @@ onMounted(() => {
       </section>
       <section class="lastNews">
         <div class="container">
-          <div class="lastNews__wrapper">
-            <div class="lastNews__left-wrap">
-              <h4 class="news__title darkMode-title">
+          <h4 class="news__title darkMode-title">
                 {{ $t("education") }}
               </h4>
+          <div class="lastNews__wrapper">
+            <div class="lastNews__left-wrap">
               <div class="lastNews__left">
                 <div v-for="item in datas?.educationPosts" :key="item.id"
                   class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
@@ -260,11 +260,11 @@ onMounted(() => {
       <!-- Achchiqtosh -->
       <section class="achchiqtosh mt-3 mt-sm-5">
         <div class="container">
-          <div class="achchiqtosh__wrapper">
-            <div class="achchiqtosh__left d-flex flex-column">
-              <h4 class="achchiqtosh__title darkMode-title">
+          <h4 class="achchiqtosh__title darkMode-title">
                 {{ $t("achiqtosh") }}
               </h4>
+          <div class="achchiqtosh__wrapper">
+            <div class="achchiqtosh__left d-flex flex-column">
               <div class="">
                 <Swiper :modules="[
     SwiperAutoplay,
@@ -295,7 +295,7 @@ onMounted(() => {
                   </SwiperSlide>
                 </Swiper>
               </div>
-              <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+              <div class="achchiqtosh__main-inner mt-3 mt-lg-3">
                 <h4 class="news__title darkMode-title achchiqtosh__title">
                   {{ $t("healthy") }}
                 </h4>
@@ -328,7 +328,7 @@ onMounted(() => {
                   </div>
                 </div>
               </div>
-              <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+              <div class="achchiqtosh__main-inner mt-3 mt-lg-3">
                 <h4 class="news__title darkMode-title achchiqtosh__title">
                   {{ $t("clinc") }}
                 </h4>
@@ -363,7 +363,7 @@ onMounted(() => {
                   </div>
                 </div>
               </div>
-              <div class="achchiqtosh__main-inner mt-3 mt-lg-5">
+              <div class="achchiqtosh__main-inner mt-3 mt-lg-3">
                 <h4 class="news__title darkMode-title achchiqtosh__title">
                   {{ $t("useful") }}
                 </h4>
@@ -399,7 +399,7 @@ onMounted(() => {
                 </div>
               </div>
             </div>
-            <div class="row-gap-3 d-none d-sm-flex flex-column">
+            <div class="row-gap-3 d-none d-sm-flex flex-column mt-2">
               <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
               <img class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png" alt="reklama-img1" />
               <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
