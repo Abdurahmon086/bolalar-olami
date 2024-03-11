@@ -23,7 +23,7 @@ onMounted(() => {
         <div class="container">
           <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination,]"
             :pagination="{ clickable: true, }" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
-    delay: 3000, disableOnInteraction: true,
+    delay: 30000, disableOnInteraction: true,
   }" :creative-effect="{
     prev: {
       shadow: false,
@@ -34,26 +34,28 @@ onMounted(() => {
     },
   }" class="carousel">
             <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
-              <div class="carousel-item image-container w-100">
-                <img :src="(item.main_image?.preview ? item.main_image?.main : '/images/logo.svg')"
-                  class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover" alt="hero image" />
-                <div class="carousel-caption">
-                  <div class="hero__pages d-flex align-items-center">
-                    <img src="/images/Vector-left.svg" alt="verctor left icon" />
-                    <span class="hero__infoTy">{{ index + 1 }}</span>
-                    <img src="/images/Vector-right.svg" alt="verctor right icon" />
-                    <span class="opacity-75 hero__infoTy-oth">{{ datas.mainBanners.length }}</span>
-                  </div>
-                  <div
-                    class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between">
-                    <h3 class="text-start hero__car-text heddin-text-2">
-                      {{ item.post[`title_${$i18n.locale}`] }}
-                    </h3>
-                    <NuxtLink :to="localPath(`/${item.post.section.slug_uz}/${item.post.id}`)"
-                      class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
-                      {{ $t("hero_btn") }}
-                      <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
-                    </NuxtLink>
+              <div class="carousel-item image-container w-100 ">
+                <img :src="(item.main_image?.preview ? item.main_image?.url : '/images/logo.svg')"
+                  class="img-fluid h-100 w-100" style="object-fit: cover" alt="hero image" />
+                <div class="s" style="background: linear-gradient(to bottom, #fff3 20%, #000 90%); ">
+                  <div class=" carousel-caption">
+                    <div class="hero__pages d-flex align-items-center">
+                      <img src="/images/Vector-left.svg" alt="verctor left icon" />
+                      <span class="hero__infoTy">{{ index + 1 }}</span>
+                      <img src="/images/Vector-right.svg" alt="verctor right icon" />
+                      <span class="opacity-75 hero__infoTy-oth">{{ datas.mainBanners.length }}</span>
+                    </div>
+                    <div
+                      class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between">
+                      <h3 class="text-start hero__car-text heddin-text-2">
+                        {{ item.post[`title_${$i18n.locale}`] }}
+                      </h3>
+                      <NuxtLink :to="localPath(`/${item.post.section.slug_uz}/${item.post.id}`)"
+                        class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
+                        {{ $t("hero_btn") }}
+                        <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
+                      </NuxtLink>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,7 +110,7 @@ onMounted(() => {
             <NuxtLink :to="localPath(`/${datas?.mainPosts[0].section.slug_uz}/${datas.mainPosts[0].id}`)"
               class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
               <img
-                :src="(datas.mainPosts[0].detail_image.card ? datas.mainPosts[0].detail_image.card : '/images/logo.svg')"
+                :src="(datas.mainPosts[0].detail_image.url ? datas.mainPosts[0].detail_image.url : '/images/logo.svg')"
                 class="card-img img-fluid h-100 rounded-0" :alt="datas.mainPosts[0][`title_${$i18n.locale}`]" />
               <div class="card-img-overlay rounded-0">
                 <h5 class="news__card-title">
@@ -120,7 +122,7 @@ onMounted(() => {
               <NuxtLink v-for="item in datas?.mainPosts.slice(1)"
                 :to="localPath(`/${datas.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
                 class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0">
-                <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                   class="card-img img-fluid h-100 rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                 <div class="card-img-overlay rounded-0">
                   <h5 class="news__card-title">
@@ -144,7 +146,7 @@ onMounted(() => {
                   class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
                   <div class="position-relative lastNews__left-img">
                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                      <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                      <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                         class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                       <span class="position-absolute lastNews__left-spLink darkMode">
                         {{ item.section[`title_${$i18n.locale}`] }}</span>
@@ -283,7 +285,7 @@ onMounted(() => {
                   <SwiperSlide v-for="item in datas?.achchiqtoshPosts" :key="item" class="achchiqtosh__carousel-inner">
                     <NuxtLink class="achchiqtosh__carousel-item bg-dark image-container"
                       :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                      <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                      <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                         :alt="item[`title_${$i18n.locale}`]" class="achchiqtosh__carousel-img img-fluid h-100" />
                       <div class="achchiqtosh__carousel-text">
                         <h5 class="achchiqtosh__slider-text hidden-text-3">
@@ -304,7 +306,7 @@ onMounted(() => {
                     <div class="position-relative achchiqtosh__img-wrapper">
                       <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                         <img class="img-fluid w-100"
-                          :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                           :alt="item[`title_${$i18n.locale}`]" />
                         <span class="darkMode achchiqtosh__card-sp position-absolute">
                           {{ item.section[`title_${$i18n.locale}`] }}
@@ -337,7 +339,7 @@ onMounted(() => {
                     <div class="position-relative achchiqtosh__img-wrapper">
                       <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                         <img class="img-fluid w-100"
-                          :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')" :alt="item[
+                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')" :alt="item[
     `title_${$i18n.locale}`
   ]
     " />
@@ -372,7 +374,7 @@ onMounted(() => {
                     <div class="position-relative achchiqtosh__img-wrapper">
                       <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                         <img class="img-fluid w-100"
-                          :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')" :alt="item[
+                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')" :alt="item[
     `title_${$i18n.locale}`
   ]
     " />
