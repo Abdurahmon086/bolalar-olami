@@ -26,7 +26,7 @@ onMounted(() => {
                             <div class="talim-box__left position-relative image-container item1">
                                 <NuxtLink
                                     :to="localPath(`/${datas?.bannerPosts[0].section.slug_uz}/${datas?.bannerPosts[0]?.id}`)">
-                                    <img :src="(datas?.bannerPosts[0]?.detail_image?.card ? datas?.bannerPosts[0]?.detail_image?.card : '/images/logo.svg')"
+                                    <img :src="(datas?.bannerPosts[0]?.detail_image?.url ? datas?.bannerPosts[0]?.detail_image?.url : '/images/logo.svg')"
                                         class="img-fluid w-100 h-100" alt="talim-img" />
                                     <div class="talim-box__left-box position-absolute w-100 h-100">
                                         <h3 class="talim-box__left-title position-absolute hidden-text-3">
@@ -40,7 +40,7 @@ onMounted(() => {
                                     v-for=" item  in  datas?.bannerPosts.slice(1) ">
                                     <div class="position-relative ">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                            <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                                                 class="img-fluid w-100 h-100" :alt="item[`title_${$i18n.locale}`]" />
                                             <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
@@ -97,7 +97,7 @@ onMounted(() => {
                                 v-for=" item  in  datas?.categoryPosts.slice(0, 4) ">
                                 <div class="position-relative">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                        <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                        <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                                             class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
                                         <span
                                             class="position-absolute lastNews__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
@@ -148,7 +148,7 @@ onMounted(() => {
                                 v-for=" item  in  datas?.categoryPosts.slice(4) ">
                                 <div class="position-relative">
                                     <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                        <img :src="(item.detail_image?.card ? item.detail_image?.card : '/images/logo.svg')"
+                                        <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                                             class="img-fluid w-100" :alt="item[`title_${$i18n.locale}`]" />
                                         <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                                             {{ item.section[`title_${$i18n.locale}`] }}

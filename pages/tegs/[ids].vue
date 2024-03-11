@@ -26,7 +26,7 @@ onMounted(() => {
                                     :key="item.id">
                                     <div class="position-relative">
                                         <NuxtLink :to="`/${item.section[`slug_uz`]}/${item.id}`">
-                                            <img :src="item.detail_image.card ? item.detail_image.card : '/images/logo.svg'"
+                                            <img :src="item.detail_image.url ? item.detail_image.url : '/images/logo.svg'"
                                                 class="img-fluid w-100" alt="card-img" />
                                             <p class="tegs-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
