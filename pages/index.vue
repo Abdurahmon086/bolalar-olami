@@ -33,7 +33,6 @@ onMounted(() => {
       translate: ['100%', 0, 0],
     },
   }" class="carousel">
-            <!-- Inner -->
             <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
               <div class="carousel-item image-container w-100">
                 <img :src="(item.main_image?.preview ? item.main_image?.main : '/images/logo.svg')"
@@ -60,6 +59,44 @@ onMounted(() => {
               </div>
             </SwiperSlide>
           </Swiper>
+          <!-- <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative, SwiperPagination,]"
+            :pagination="{ clickable: true, }" :slides-per-view="1" :loop="true" :effect="'creative'" :autoplay="{
+    delay: 3000, disableOnInteraction: true,
+  }" :creative-effect="{
+    prev: {
+      shadow: false,
+      translate: ['-20%', 0, -1],
+    },
+    next: {
+      translate: ['100%', 0, 0],
+    },
+  }" class="carousel">
+            <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
+              <div class="carousel-item image-container w-100">
+                <img :src="(item.main_image?.preview ? item.main_image?.main : '/images/logo.svg')"
+                  class="img-fluid object-fit-fill  h-100 w-100" style="object-fit: cover" alt="hero image" />
+                <div class="carousel-caption">
+                  <div class="hero__pages d-flex align-items-center">
+                    <img src="/images/Vector-left.svg" alt="verctor left icon" />
+                    <span class="hero__infoTy">{{ index + 1 }}</span>
+                    <img src="/images/Vector-right.svg" alt="verctor right icon" />
+                    <span class="opacity-75 hero__infoTy-oth">{{ datas.mainBanners.length }}</span>
+                  </div>
+                  <div
+                    class="carousel-card d-flex flex-column align-items-start flex-sm-row align-items-sm-end justify-content-sm-between">
+                    <h3 class="text-start hero__car-text heddin-text-2">
+                      {{ item.post[`title_${$i18n.locale}`] }}
+                    </h3>
+                    <NuxtLink :to="localPath(`/${item.post.section.slug_uz}/${item.post.id}`)"
+                      class="btn text-white hero__link-btn d-flex align-items-center darkMode2">
+                      {{ $t("hero_btn") }}
+                      <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
+                    </NuxtLink>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper> -->
         </div>
       </section>
       <section class="news">
