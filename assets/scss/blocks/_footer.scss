@@ -6,7 +6,7 @@
         color: #979797;
         font-size: 13px;
         text-transform: capitalize;
-        text-align: justify;
+        // text-align: justify;
         max-width: 340px;
         margin-top: 27px;
         margin-bottom: 0;
@@ -67,10 +67,12 @@
         .footer__card {
             display: flex !important;
             flex-direction: column !important;
+            gap: 15px !important;
         }
 
         .footer__text {
             max-width: 310px;
+            margin-bottom: 10px !important;
         }
 
         .footer__list {

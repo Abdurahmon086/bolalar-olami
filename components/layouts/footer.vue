@@ -63,11 +63,11 @@ const localPath = useLocalePath();
                                 <a class="footer__link text-decoration-none fw-bold text-decoration-none darkMode-title"
                                     href="#">{{ $t("contact") }}</a>
                             </li>
-                            <li class="d-flex align-items-center" style="gap: 6px">
-                                <img src="/images/mail-icon.svg" alt="mail-icon" class="lightIcon d-block" />
+                            <li class="d-flex align-items-center " style="gap: 6px">
+                                <img src="/images/mail-icon.svg" alt="mail-icon" class="lightIcon d-block"/>
                                 <img src="/images/email-dark.svg" alt="email-dark icon" class="darkIcon d-none" />
 
-                                <a class="footer__link1 fw-normal text-decoration-none darkMode-title" href="#">
+                                <a class="footer__link1 fw-normal text-decoration-none darkMode-title" style="height: 20px; margin-top: 5px;" href="#">
                                     bolalarolamiuz@gmail.com</a>
                             </li>
                             <li class="d-flex" style="gap: 6px">
@@ -100,7 +100,7 @@ const localPath = useLocalePath();
                                 <a class="footer__link1 fw-normal darkMode-title text-decoration-none"
                                     href="https://t.me/bolalarolamiadmin" target="_blank">Telegram</a>
                             </li>
-                            <div class="d-flex" style=" gap: 22px">
+                            <div class="d-flex" style="gap: 22px">
                             <a href="https://www.instagram.com/Bolalarolami.uz" target="_blank">
                                 <img src="/images/instagram-logo.svg" alt="instagram-logo" /></a>
                             <a href="https://t.me/bolalarolamiuz" target="_blank"><img src="/images/telegram-logo.svg"
