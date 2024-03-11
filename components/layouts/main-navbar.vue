@@ -132,12 +132,13 @@ watch(() => {
                                     </NuxtLink>
                                 </li>
                                 <li class="nav-item position-relative darkMode " v-for="nav in datas" :key="nav.id">
-                                    <NuxtLink class="nav-link darkMode-title d-flex align-items-center" style="column-gap: 4px;"
-                                        :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
+                                    <NuxtLink class="nav-link darkMode-title d-flex align-items-center"
+                                        style="column-gap: 4px;" :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
                                         <p class="m-0" style="color:#242424; font-size: 16px;">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
-                                          <img src="/images/bottom-icon.svg" class="mt-1"  alt="bottom-icon" style="width: 10px;">
+                                        <img src="/images/bottom-icon.svg" class="mt-1" alt="bottom-icon"
+                                            style="width: 10px;">
 
                                     </NuxtLink>
                                     <div
@@ -146,7 +147,7 @@ watch(() => {
                                             class="list-group-item darkMode list-group-item-action border-0"
                                             v-for="item in nav.child" :key="item.id">
                                             <NuxtLink :to="localPath(`/${item.slug_uz}/?id=${item.id}`)"
-                                                class="text-decoration-none darkMode" style="color: #242424;">
+                                                class="text-decoration-none darkMode" style="color: #000;">
                                                 <p class="m-0">{{ item[`title_${$i18n.locale}`] }} </p>
                                             </NuxtLink>
                                         </button>
@@ -164,7 +165,7 @@ watch(() => {
                                             :data-bs-target="'#flush-collapseOne' + menu.id" aria-expanded="true"
                                             :aria-controls="'flush-collapseOne' + menu.id">
                                             <NuxtLink :to="localPath(`/${menu.slug_uz}/?id=${menu.id}`)"
-                                                class="text-decoration-none darkMode" style="color: #242424;">
+                                                class="text-decoration-none darkMode" style="color: #000;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
                                             </NuxtLink>
                                         </button>
@@ -175,7 +176,7 @@ watch(() => {
                                         <ul class="accordion-body list-unstyled">
                                             <li v-for="navItem in menu.child" :key="navItem.id">
                                                 <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
-                                                    class="text-decoration-none darkMode" style="color: #242424;">
+                                                    class="text-decoration-none darkMode" style="color: #000;">
                                                     <p class="m-0">
                                                         {{ navItem[`title_${$i18n.locale}`] }}
                                                     </p>
