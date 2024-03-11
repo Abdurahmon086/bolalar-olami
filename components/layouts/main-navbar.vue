@@ -135,7 +135,7 @@ watch(() => {
                                 <li class="nav-item position-relative darkMode" v-for="nav in datas" :key="nav.id">
                                     <NuxtLink class="nav-link darkMode-title"
                                         :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
-                                        <p class="m-0">
+                                        <p class="m-0" style="color:#242424; font-size: 16px;">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
                                     </NuxtLink>

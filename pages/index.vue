@@ -129,7 +129,7 @@ onMounted(() => {
             </div>
             <div class="lastNews__right darkMode border-0">
               <h4 class="lastNews__right-title">
-                {{ $t("last_news") }}
+                {{ $t("last_news") }}:
               </h4>
               <ul class="lastNews__right-list list-unstyled darkMode">
                 <NuxtLink v-for="item in datas?.recentNewsPosts"
@@ -139,10 +139,10 @@ onMounted(() => {
                     {{ item[`title_${$i18n.locale}`] }}
                   </p>
                   <div class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp">
-                    <div class="d-flex align-items-center" style="gap: 7px">
+                    <!-- <div class="d-flex align-items-center" style="gap: 7px">
                       <img src="/images/eye.svg" alt="eye icon" />
                       <span class="lastNews__right-sp darkMode-sp">{{ item.views_count }}</span>
-                    </div>
+                    </div> -->
                     <span class="lastNews__right-sp lastNews__right-spDate darkMode-sp">{{ item.publish_date }}</span>
                   </div>
                 </NuxtLink>
