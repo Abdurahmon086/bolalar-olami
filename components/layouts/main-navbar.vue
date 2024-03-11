@@ -24,6 +24,15 @@ const changeLocale = (lang) => {
 
 // dark mode
 
+const navgateValue = ref(true)
+
+const navgateToggle = (value) => {
+    const menu = document.querySelectorAll(".show")[0];
+    if (menu) {
+        menu.classList.remove("show")
+    }
+    navgateValue.value = value
+}
 
 
 onMounted(() => {
@@ -146,7 +155,7 @@ watch(() => {
                                             class="list-group-item darkMode list-group-item-action border-0"
                                             v-for="item in nav.child" :key="item.id">
                                             <NuxtLink :to="localPath(`/${item.slug_uz}/?id=${item.id}`)"
-                                                class="text-decoration-none darkMode" style="color: #242424;">
+                                                class="text-decoration-none darkMode" style="color: #000;">
                                                 <p class="m-0">{{ item[`title_${$i18n.locale}`] }} </p>
                                             </NuxtLink>
                                         </button>
@@ -164,7 +173,7 @@ watch(() => {
                                             :data-bs-target="'#flush-collapseOne' + menu.id" aria-expanded="true"
                                             :aria-controls="'flush-collapseOne' + menu.id">
                                             <NuxtLink :to="localPath(`/${menu.slug_uz}/?id=${menu.id}`)"
-                                                class="text-decoration-none darkMode" style="color: #242424;">
+                                                class="text-decoration-none darkMode" style="color: #000;">
                                                 {{ menu[`title_${$i18n.locale}`] }}
                                             </NuxtLink>
                                         </button>
@@ -173,9 +182,10 @@ watch(() => {
                                         class="accordion-collapse collapse border-0 darkMode"
                                         :aria-labelledby="menu.id">
                                         <ul class="accordion-body list-unstyled">
-                                            <li v-for="navItem in menu.child" :key="navItem.id">
+                                            <li v-for="navItem in menu.child" :key="navItem.id"
+                                                @click="navgateToggle(true)">
                                                 <NuxtLink :to="localPath(`/${navItem.slug_uz}/?id=${navItem.id}`)"
-                                                    class="text-decoration-none darkMode" style="color: #242424;">
+                                                    class="text-decoration-none darkMode" style="color: #000;">
                                                     <p class="m-0">
                                                         {{ navItem[`title_${$i18n.locale}`] }}
                                                     </p>
@@ -198,8 +208,9 @@ watch(() => {
                                 <SearchModal />
                             </template>
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation"
-                                class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none collapsed">
+                                :aria-expanded="navgateValue ? false : true" aria-label="Toggle navigation"
+                                class="darkMode-btn navbar-toggler header__navbar-btn d-xl-none "
+                                :class="navgateValue ? 'collapsed' : ''" @click="navgateToggle(false)">
 
                                 <template v-if="!mainStore.darkTheme">
                                     <img src="/images/x.svg" alt="x icon" class="" />

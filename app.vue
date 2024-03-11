@@ -3,4 +3,5 @@
         <NuxtLoadingIndicator />
         <NuxtPage />
     </NuxtLayout>
+    <ScrollerTop class="scrollerTop" />
 </template>

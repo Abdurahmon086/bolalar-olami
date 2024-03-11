@@ -21,10 +21,10 @@
         border-left: 2px solid #F7931E;
         padding: 2px 0 0 10px;
     }
-    
+
 
     &__cards {
-        height: 202px;
+        height: 224px;
     }
 
     &__card-title {
@@ -46,7 +46,7 @@
 
     .card-img-overlay {
         padding: 0;
-        background-image: url(/images/rectangle.png);
+        background: linear-gradient(to bottom, rgb(255 255 255 / 0%) 50%, #000 106%);
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
