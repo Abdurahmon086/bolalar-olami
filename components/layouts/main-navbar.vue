@@ -126,8 +126,8 @@ watch(() => {
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
                                 <li class="nav-item position-relative darkMode ">
                                     <NuxtLink class="nav-link darkMode-title" :to="localPath(`/`)">
-                                        <p class="m-0" style="color: #242424; font-size: 16px;">
-                                            Bosh sahifa
+                                        <p class="m-0">
+                                            {{ $t("bosh_sahifa") }}
                                         </p>
                                     </NuxtLink>
                                 </li>
