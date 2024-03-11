@@ -135,20 +135,19 @@ watch(() => {
                             <ul class="darkMode navbar-nav d-none d-xl-flex justify-content-center w-100">
                                 <li class="nav-item position-relative darkMode ">
                                     <NuxtLink class="nav-link darkMode-title" :to="localPath(`/`)">
-                                        <p class="m-0">
+                                        <p class="m-0 darkMode-title">
                                             {{ $t("bosh_sahifa") }}
                                         </p>
                                     </NuxtLink>
                                 </li>
                                 <li class="nav-item position-relative darkMode " v-for="nav in datas" :key="nav.id">
-                                    <NuxtLink class="nav-link darkMode-title d-flex align-items-center"
-                                        style="column-gap: 4px;" :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
-                                        <p class="m-0" style="color:#242424; font-size: 16px;">
+                                    <NuxtLink class="nav-link darkMode-title d-flex align-items-center" style="column-gap: 4px;"
+                                        :to="localPath(`/${nav.slug_uz}/?id=${nav.id}`)">
+                                        <p class="m-0 darkMode-title" style="color:#242424; font-size: 16px;">
                                             {{ nav[`title_${$i18n.locale}`] }}
                                         </p>
-                                        <img src="/images/bottom-icon.svg" class="mt-1" alt="bottom-icon"
-                                            style="width: 10px;">
-
+                                          <img src="/images/bottom-icon.svg" class="mt-1 lightIcon"  alt="bottom-icon" style="width: 10px;">
+                                        <img src="/images/bottom-icon-dark.svg" class="darkIcon mt-1" alt="bottom-icon" style="width: 10px;">
                                     </NuxtLink>
                                     <div
                                         class="darkMode d-none item-menu list-group list-group-light position-absolute">

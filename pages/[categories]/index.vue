@@ -41,7 +41,7 @@ onMounted(() => {
                                     <div class="position-relative ">
                                         <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                                             <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                                                class="img-fluid w-100 h-100" :alt="item[`title_${$i18n.locale}`]" />
+                                                class="img-fluid w-100 " :alt="item[`title_${$i18n.locale}`]" />
                                             <p class="talim-cardimg__left-wrapper-dec position-absolute darkMode">
                                                 {{ item.section[`title_${$i18n.locale}`] }}
                                             </p>
@@ -54,9 +54,9 @@ onMounted(() => {
                                                 {{ item[`title_${$i18n.locale}`] }}
                                             </h4>
                                         </NuxtLink>
-                                        <p class="talim-cardimg__left-wrapper-text darkMode-title hidden-text-3">
+                                        <!-- <p class="talim-cardimg__left-wrapper-text darkMode-title hidden-text-3">
                                             {{ item[`description_${$i18n.locale}`] }}
-                                        </p>
+                                        </p> -->
                                         <p class="talim-cardimg__left-wrapper-time darkMode-sp">
                                             {{ item.publish_date }}
                                         </p>
@@ -75,10 +75,6 @@ onMounted(() => {
                                     </NuxtLink>
                                     <div
                                         class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp">
-                                        <div class="d-flex align-items-center" style="gap: 7px">
-                                            <img src="/images/eye.svg" alt="eye icon" />
-                                            <span class="lastNews__right-sp darkMode-sp">{{ item.views_count }}</span>
-                                        </div>
                                         <span
                                             class="lastNews__right-sp lastNews__right-spDate darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
@@ -127,10 +123,6 @@ onMounted(() => {
                                     </NuxtLink>
                                     <div
                                         class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp">
-                                        <div class="d-flex align-items-center" style="gap: 7px">
-                                            <img src="/images/eye.svg" alt="eye icon" />
-                                            <span class="lastNews__right-sp darkMode-sp">{{ item.views_count }}</span>
-                                        </div>
                                         <span
                                             class="lastNews__right-sp lastNews__right-spDate darkMode-sp">{{ item.publish_date }}</span>
                                     </div>
