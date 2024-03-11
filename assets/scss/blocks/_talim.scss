@@ -33,7 +33,7 @@
             background-image: url(/images/talimImages/Rectangle-img.png);
             background-size: cover;
             background-repeat: no-repeat;
-            bottom: 3px;
+            bottom: 0;   
 
         }
 
@@ -228,7 +228,6 @@
                 background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
-                bottom: 3px;
 
             }
 
@@ -369,7 +368,6 @@
                 background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
-                bottom: 3px;
 
             }
 
@@ -509,8 +507,6 @@
                 background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
-                bottom: 3px;
-
             }
 
             &-title {
@@ -559,7 +555,7 @@
         margin-top: 34px;
         display: flex;
         gap: 18px;
-        margin-bottom: 40px;
+        margin-bottom: 0;
 
 
         &__left {
@@ -640,7 +636,7 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 12.72px;
-        margin-top: 116px;
+        padding-top: 116px;
 
         &-card {
             grid-template-columns: 1fr;
@@ -652,7 +648,6 @@
                 background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
-                bottom: 3px;
 
             }
 
@@ -810,9 +805,6 @@
                     line-height: normal;
                     margin: 0;
                     padding: 2px 3px 15.9px 6px;
-                    // max-width: 331px;
-
-
                 }
             }
         }
@@ -834,7 +826,7 @@
         display: grid;
         grid-template-columns: 1fr;
         row-gap: 12.72px;
-        margin-top: 116px;
+        padding-top: 116px;
 
         &-card {
             grid-template-columns: 1fr;
@@ -846,7 +838,6 @@
                 background-image: url(/images/talimImages/Rectangle-img.png);
                 background-size: cover;
                 background-repeat: no-repeat;
-                bottom: 3px;
 
             }
 
