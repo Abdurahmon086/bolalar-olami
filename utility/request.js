@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router'
 
 
 const service = axios.create({
-  baseURL: 'http://admin.bolalarolami.uz/api/v2', // url = base url + request url
+  baseURL: 'https://admin.bolalarolami.uz/api/v2', // url = base url + request url
   timeout: 5000000, // request timeout
 })
 
