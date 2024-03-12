@@ -59,93 +59,18 @@
         margin-bottom: 0;
     }
 
-    &__img-wrapper {
-        display: none;
-    }
-
     &__card {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
-
-        &-box:nth-child(1) .achchiqtosh__img-wrapper {
-            display: block !important;
-        }
     }
-
-    &__card-box {
-        background: #FFF;
-        cursor: auto;
-
-        img {
-            height: 197.104px;
-            cursor: pointer;
-        }
-    }
-
-    &__card-sp {
-        left: 5.8px;
-        bottom: 8.7px;
-        padding: 5.63px 13.511px;
-        color: #121212;
-        font-size: 11.594px;
-        text-transform: uppercase;
-        background: #FFF;
-        cursor: pointer;
-        height: 32px;
-        // width: 106px;
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        padding: 12px 5.8px 20px;
-
-        &-title {
-            color: #121212;
-            font-size: 19.324px;
-            font-weight: 500;
-            margin-bottom: 0;
-            cursor: pointer;
-            height: 52px;
-        }
-
-        &-title:hover {
-            color: #F7931E;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
-        }
-
-        &-text {
-            overflow: hidden;
-            color: #121212;
-            text-overflow: ellipsis;
-            font-size: 15.459px;
-            height: 62px;
-            margin-bottom: 0;
-        }
-
-        &-time {
-            margin-bottom: 0;
-            color: #A0A0A0;
-            text-overflow: ellipsis;
-            font-size: 15.459px;
-        }
-    }
-
 }
 
 @media only screen and (min-width:576px) {
     .achchiqtosh {
         margin-top: 58px;
         margin-bottom: 58px;
-
-        &__img-wrapper {
-            display: block !important;
-
-        }
 
         &__wrapper {
             display: grid;
@@ -186,37 +111,6 @@
             gap: 10px;
         }
 
-        &__card-box {
-            img {
-                height: 99.531px;
-            }
-        }
-
-        &__card-sp {
-            left: 3px;
-            bottom: 4px;
-            padding: 2.837px 6.81px;
-            font-size: 6.825px;
-        }
-
-        &__info {
-            gap: 9px;
-            padding: 5px 2.61px 9px;
-
-            &-title {
-                font-size: 10px;
-                height: 26px;
-            }
-
-            &-text {
-                font-size: 8px;
-                height: 30px;
-            }
-
-            &-time {
-                font-size: 7.963px;
-            }
-        }
     }
 }
 
@@ -249,36 +143,5 @@
             gap: 18px;
         }
 
-        &__card-box {
-            img {
-                height: 175px;
-            }
-        }
-
-        &__card-sp {
-            left: 7px;
-            bottom: 11px;
-            padding: 9px 10px;
-            font-size: 12px;
-        }
-
-        &__info {
-            gap: 15.965px;
-            padding: 10px 5.5px 18.7px;
-
-            &-title {
-                font-size: 16px;
-                height: 42px;
-            }
-
-            &-text {
-                font-size: 14px;
-                height: 54px;
-            }
-
-            &-time {
-                font-size: 14px;
-            }
-        }
     }
 }

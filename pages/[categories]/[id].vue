@@ -5,9 +5,8 @@ import { useSingleStore } from '~/stores/singleStore';
 import { onMounted } from 'vue';
 
 const route = useRoute();
-const router = useRouter();
-
 const localPath = useLocalePath();
+
 const singleStore = useSingleStore();
 const datas = computed(() => singleStore.getSingleData);
 
@@ -107,8 +106,8 @@ onMounted(() => {
                                         />
                                     </li>
                                 </ul> -->
-                                    <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]
-        "></div>
+                                    <div class="single__text-wrapper single__text"
+                                        v-html="datas?.post[`content_${$i18n.locale}`]"></div>
                                 </div>
                                 <!-- <div class="single__qs darkMode-body">
                                 <img src="/images/dod.svg" alt="dod icon" />

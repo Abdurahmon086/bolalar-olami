@@ -28,13 +28,13 @@
     }
 
     &__left {
+        max-height: 448px;
 
         &-box {
             background-image: url(/images/talimImages/Rectangle-img.png);
             background-size: cover;
             background-repeat: no-repeat;
             bottom: 0;
-
         }
 
         &-title {
@@ -168,7 +168,7 @@
                 margin: 0;
                 padding: 2px 3px 0 6px;
                 height: 58px;
-                 
+
 
             }
 

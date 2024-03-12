@@ -1,0 +1,89 @@
+.listCard {
+    &__right {
+        &-text {
+            color: #1C1C1C;
+            font-family: "BBC Reith Sans", sans-serif;
+            font-size: 15.5px !important;
+            font-weight: 400;
+            margin-bottom: 5.75px;
+            max-width: 95%;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &-view {
+            margin-bottom: 5px;
+        }
+
+        &-sp {
+            color: #969696;
+            font-family: "BBC Reith Sans", sans-serif;
+            font-size: 13px !important;
+            font-weight: 400;
+            text-transform: uppercase;
+
+            &:nth-child(1) {
+                margin-bottom: 4px !important;
+                font-size: 15px;
+            }
+        }
+
+        &-spDate {
+            margin-right: 20px;
+            font-size: 9.351px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 576px) {
+    .listCard {
+        &__right {
+            &-text {
+                font-size: 10.798px;
+                margin-bottom: 4.55px;
+            }
+
+            &-sp {
+                font-size: 6.82px;
+
+                &:nth-child(1) {
+                    font-size: 12px;
+                }
+            }
+
+            &-spDate {
+                font-size: 7.388px;
+                margin-right: 17.8px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .listCard {
+
+        &__right {
+            &-text {
+                font-size: 19px;
+                margin-bottom: 20px;
+            }
+
+            &-sp {
+                font-size: 12px;
+
+                &:nth-child(1) {
+                    font-size: 21px;
+                }
+            }
+
+            &-spDate {
+                font-size: 13px;
+                margin-right: 31px;
+            }
+
+        }
+    }
+}

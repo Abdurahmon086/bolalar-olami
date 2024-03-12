@@ -11,12 +11,12 @@ const { item } = props;
 </script>
 
 <template>
-    <div class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
-        <div class="position-relative lastNews__left-img">
+    <div class="bigCards bigCards__inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
+        <div class="position-relative bigCards__img">
             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                 <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
                     class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
-                <span class="position-absolute lastNews__left-spLink darkMode">
+                <span class="position-absolute bigCards__spLink darkMode">
                     {{ item.section[`title_${$i18n.locale}`] }}</span>
             </NuxtLink>
         </div>
@@ -29,7 +29,7 @@ const { item } = props;
             <p class="card-text darkMode hidden-text-2">
                 {{ item[`description_${$i18n.locale}`] }}
             </p>
-            <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
+            <span class="bigCards__sp darkMode-sp">{{ item.publish_date }}</span>
         </div>
     </div>
 </template>
