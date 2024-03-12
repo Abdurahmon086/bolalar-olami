@@ -3,7 +3,7 @@
 }
 
 .mediacate__text {
-    color: #242424;
+    color: #000;
     font-family: "BBC Reith Sans", sans-serif;
     font-size: 30px;
     font-style: normal;
@@ -31,6 +31,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 33px;
         height: 355px;
+
         img {
             cursor: pointer;
         }
@@ -133,7 +134,7 @@
 }
 
 .mediacate__iframe {
-    height: 274px; 
+    height: 274px;
 
     &-all {
         height: 174px;
@@ -141,7 +142,7 @@
 }
 
 .mediacate__all-text {
-    color: #242424;
+    color: #000;
     font-family: "BBC Reith Sans", sans-serif;
     font-size: 30px;
     font-style: normal;
@@ -188,7 +189,7 @@
 
 @media only screen and (max-width:1200px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans";
         font-size: 30px;
         font-style: normal;
@@ -215,7 +216,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 39.73px;
-        margin-bottom: 60px;
+            margin-bottom: 60px;
 
 
             img {
@@ -340,7 +341,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 30px;
         font-style: normal;
@@ -387,7 +388,7 @@
 
 @media only screen and (max-width:992px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans";
         font-size: 30px;
         font-style: normal;
@@ -529,7 +530,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 30px;
         font-style: normal;
@@ -577,7 +578,7 @@
 
 @media only screen and (max-width:768px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans";
         font-size: 30px;
         font-style: normal;
@@ -719,7 +720,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 30px;
         font-style: normal;
@@ -791,7 +792,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 19px;
-        margin-bottom: 30px;
+            margin-bottom: 30px;
 
 
             img {
@@ -918,7 +919,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 14px;
         font-style: normal;
@@ -1106,7 +1107,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 14px;
         font-style: normal;

@@ -1,6 +1,6 @@
 .mediacate__text {
-    color: #242424;
-    font-family: "BBC Reith Sans" , sans-serif;
+    color: #000;
+    font-family: "BBC Reith Sans", sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
@@ -26,6 +26,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 33px;
+
         img {
             cursor: pointer;
         }
@@ -40,12 +41,12 @@
         align-items: center;
         // gap: 287px;
         padding: 0 35px 24px 0;
-        
+
 
 
         &--title {
             color: #DDD;
-            font-family: "BBC Reith Sans" , sans-serif;
+            font-family: "BBC Reith Sans", sans-serif;
             font-size: 24px;
             font-style: normal;
             font-weight: 500;
@@ -85,7 +86,7 @@
 
         &--title {
             color: #FFF;
-            font-family: "BBC Reith Sans" ,sans-serif;
+            font-family: "BBC Reith Sans", sans-serif;
             font-size: 35px;
             font-style: normal;
             font-weight: 700;
@@ -128,8 +129,8 @@
 }
 
 .mediacate__all-text {
-    color: #242424;
-    font-family: "BBC Reith Sans" , sans-serif; 
+    color: #000;
+    font-family: "BBC Reith Sans", sans-serif;
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
@@ -148,6 +149,7 @@
     img {
         cursor: pointer;
     }
+
     &-box {
         display: flex;
         justify-content: space-between;
@@ -157,8 +159,9 @@
         background-repeat: no-repeat;
         padding-top: 120px;
         border-radius: 12px;
+
         &-text {
-            font-family: "BBC Reith Sans" ,sans-serif; 
+            font-family: "BBC Reith Sans", sans-serif;
             font-size: 10px;
             font-style: normal;
             line-height: normal;
@@ -173,7 +176,7 @@
 
 @media only screen and (max-width:1200px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         font-size: 30px;
         font-style: normal;
         font-weight: 500;
@@ -267,7 +270,7 @@
             }
 
             &--title {
-                font-family: "BBC Reith Sans",sans-serif;
+                font-family: "BBC Reith Sans", sans-serif;
                 color: #FFF;
                 font-size: 40.899px;
                 font-style: normal;
@@ -313,7 +316,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         font-size: 30px;
         font-style: normal;
         font-weight: 500;
@@ -323,7 +326,7 @@
 
     .mediacate__all {
         display: grid;
-        grid-template-columns: 1fr 1fr  ;
+        grid-template-columns: 1fr 1fr;
         justify-content: space-between;
         row-gap: 20px;
         column-gap: 55px;
@@ -358,7 +361,7 @@
 
 @media only screen and (max-width:992px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         font-size: 30px;
         font-style: normal;
         font-weight: 500;
@@ -388,7 +391,7 @@
             img {
                 cursor: pointer;
                 border-radius: 7.011px;
-                
+
             }
 
             &--img {
@@ -497,7 +500,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 30px;
         font-style: normal;
@@ -523,7 +526,7 @@
             display: flex;
             justify-content: space-between;
             padding: 145px 23px 0 12px;
-            
+
 
             img {
                 width: 46px !important;
@@ -545,7 +548,7 @@
 
 @media only screen and (max-width:768px) {
     .mediacate__text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans";
         font-size: 30px;
         font-style: normal;
@@ -687,7 +690,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 30px;
         font-style: normal;
@@ -869,7 +872,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 14px;
         font-style: normal;
@@ -888,7 +891,7 @@
 
         img {
             cursor: pointer;
-        //    max-width: 160px !important;
+            //    max-width: 160px !important;
             // height: 96px !important;
         }
 
@@ -896,8 +899,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 80px 6px 6px 6.15px; 
-            
+            padding: 80px 6px 6px 6.15px;
+
             img {
                 width: 22.243px !important;
                 height: 22.243px !important;
@@ -1053,7 +1056,7 @@
     }
 
     .mediacate__all-text {
-        color: #242424;
+        color: #000;
         // font-family: "BBC Reith Sans"; 
         font-size: 14px;
         font-style: normal;
@@ -1079,7 +1082,8 @@
             display: flex;
             justify-content: space-between;
 
-            padding: 49px 6px 6px 6.15px; 
+            padding: 49px 6px 6px 6.15px;
+
             img {
                 width: 22.243px !important;
                 height: 22.243px !important;

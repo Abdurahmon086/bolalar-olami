@@ -129,9 +129,11 @@
 
     &__main {
         margin-top: 10px;
+
         img {
             width: 100%;
         }
+
         &-inner {
             gap: 16px;
         }
@@ -574,7 +576,7 @@
                         }
 
                         h4 {
-                            color: #242424;
+                            color: #000;
                             font-size: 9.083px;
                             font-weight: 500;
                         }

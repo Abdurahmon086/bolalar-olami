@@ -2,7 +2,7 @@
     padding-top: 126px;
 
     &-text {
-        color: #242424;
+        color: #000;
         font-family: "BBC Reith Sans", sans-serif;
         font-size: 18px;
         font-weight: 700;
@@ -30,7 +30,8 @@
                 flex-direction: column;
                 gap: 10px;
                 background-color: #FFF;
-                img{
+
+                img {
                     height: 175px;
                 }
 
@@ -41,7 +42,7 @@
                 }
 
                 &-dec {
-                    color: #242424;
+                    color: #000;
                     font-size: 12px;
                     text-transform: uppercase;
                     padding: 4.989px 11.974px;
@@ -52,7 +53,7 @@
                 }
 
                 &-title {
-                    color: #242424;
+                    color: #000;
                     font-size: 16px;
                     font-weight: 500;
                     margin: 0;
@@ -62,7 +63,7 @@
 
                 &-text {
                     overflow: hidden;
-                    color: #242424;
+                    color: #000;
                     text-overflow: ellipsis;
                     font-size: 14px;
                     margin: 0;
@@ -127,9 +128,11 @@
                 &-wrapper {
                     row-gap: 5px;
                     height: 198px;
-                    img{
+
+                    img {
                         max-height: 99px;
                     }
+
                     &-box {
                         row-gap: 9.08px;
                     }
@@ -207,9 +210,11 @@
 
                 &-wrapper {
                     row-gap: 5px;
-                    img{
+
+                    img {
                         max-height: 99px;
                     }
+
                     &-box {
                         row-gap: 9.08px;
                     }
@@ -287,7 +292,8 @@
 
                 &-wrapper {
                     row-gap: 5px;
-                    img{
+
+                    img {
                         max-height: 99px;
                     }
 
@@ -354,7 +360,7 @@
         padding-top: 131px;
 
         &-text {
-            color: #242424;
+            color: #000;
             font-family: "BBC Reith Sans", sans-serif;
             font-size: 18px;
             font-weight: 700;
@@ -378,7 +384,8 @@
                     flex-direction: column;
                     row-gap: 11px;
                     background-color: #FFF;
-                    img{
+
+                    img {
                         max-height: 165px;
                     }
 
@@ -406,7 +413,7 @@
                     }
 
                     &-title {
-                        color: #242424;
+                        color: #000;
                         font-size: 20px;
                         font-weight: 500;
                         margin: 0;
@@ -417,7 +424,7 @@
 
                     &-text {
                         overflow: hidden;
-                        color: #242424;
+                        color: #000;
                         text-overflow: ellipsis;
                         font-size: 16px;
                         margin: 0;
@@ -451,7 +458,7 @@
         padding-top: 131px;
 
         &-text {
-            color: #242424;
+            color: #000;
             font-family: "BBC Reith Sans", sans-serif;
             font-size: 18px;
             font-weight: 700;
@@ -503,7 +510,7 @@
                     }
 
                     &-title {
-                        color: #242424;
+                        color: #000;
                         font-size: 20px;
                         font-weight: 500;
                         margin: 0;
@@ -514,7 +521,7 @@
 
                     &-text {
                         overflow: hidden;
-                        color: #242424;
+                        color: #000;
                         text-overflow: ellipsis;
                         font-size: 16px;
                         margin: 0;

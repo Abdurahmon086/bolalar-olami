@@ -33,7 +33,7 @@
             font-size: 7.8px;
             font-weight: 500;
             line-height: 12px;
-            color: #242424;
+            color: #000;
             font-family: "BBC Reith Sans", sans-serif;
             border-radius: 5px;
             outline: none;
@@ -50,6 +50,11 @@
             font-weight: 500;
             line-height: 12px;
         }
+    }
+
+    .navbar-brand {
+        height: 31px !important;
+        margin-left: 20px !important;
     }
 
     &__navbar {
@@ -128,7 +133,7 @@
             .accordion-button {
                 background: #F6F6F6;
                 padding: 20px 10px;
-                color: #242424;
+                color: #000;
                 font-size: 15px;
                 font-weight: 500;
             }
@@ -183,6 +188,11 @@
 @media only screen and (min-width: 376px) {
     .header {
 
+        .navbar-brand {
+            height: 31px !important;
+            margin-left: 0 !important;
+        }
+
         &__top {
             height: 32px;
 
@@ -228,7 +238,7 @@
 
             span {
                 font-size: 12px;
-                color: #242424;
+                color: #000;
                 font-family: "IBM Plex Sans", sans-serif;
             }
         }
