@@ -13,7 +13,6 @@ const datas = computed(() => indexStore.getHomeData);
 onMounted(() => {
   indexStore.setHomeData()
 });
-console.log(datas);
 </script>
 
 <template>
@@ -104,28 +103,7 @@ console.log(datas);
           <div class="lastNews__wrapper">
             <div class="lastNews__left-wrap">
               <div class="lastNews__left">
-                <div v-for="item in datas?.educationPosts" :key="item.id"
-                  class="lastNews__left-inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
-                  <div class="position-relative lastNews__left-img">
-                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                      <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                        class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
-                      <span class="position-absolute lastNews__left-spLink darkMode">
-                        {{ item.section[`title_${$i18n.locale}`] }}</span>
-                    </NuxtLink>
-                  </div>
-                  <div class="card-body d-flex flex-column">
-                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                      <h5 class="card-title darkMode hidden-text-2">
-                        {{ item[`title_${$i18n.locale}`] }}
-                      </h5>
-                    </NuxtLink>
-                    <p class="card-text darkMode hidden-text-3">
-                      {{ item[`description_${$i18n.locale}`] }}
-                    </p>
-                    <span class="lastNews__left-sp darkMode-sp">{{ item.publish_date }}</span>
-                  </div>
-                </div>
+                <CardsBigCard v-for="item in datas?.educationPosts" :key="item.id" :item="item" />
               </div>
             </div>
             <div class="lastNews__right darkMode border-0">
@@ -133,20 +111,7 @@ console.log(datas);
                 {{ $t("last_news") }}:
               </h4>
               <ul class="lastNews__right-list list-unstyled darkMode">
-                <NuxtLink v-for="item in datas?.recentNewsPosts"
-                  :to="localPath(`/${datas.mainPosts[0].section.slug_uz}/${item.id}`)" :key="item.id"
-                  class="border-bottom text-decoration-none">
-                  <p class="lastNews__right-text darkMode">
-                    {{ item[`title_${$i18n.locale}`] }}
-                  </p>
-                  <div class="lastNews__right-view d-flex justify-content-between align-items-center darkMode-sp">
-                    <!-- <div class="d-flex align-items-center" style="gap: 7px">
-                      <img src="/images/eye.svg" alt="eye icon" />
-                      <span class="lastNews__right-sp darkMode-sp">{{ item.views_count }}</span>
-                    </div> -->
-                    <span class="lastNews__right-sp lastNews__right-spDate darkMode-sp">{{ item.publish_date }}</span>
-                  </div>
-                </NuxtLink>
+                <CardsListCard v-for="item in datas?.recentNewsPosts" :key="item.id" :item="item" />
               </ul>
             </div>
           </div>
@@ -263,32 +228,7 @@ console.log(datas);
                   {{ $t("healthy") }}
                 </h4>
                 <div class="achchiqtosh__card">
-                  <div v-for="item in datas?.healthPosts" :key="item.id"
-                    class="darkMode achchiqtosh__card-box text-decoration-none">
-                    <div class="position-relative achchiqtosh__img-wrapper">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <img class="img-fluid w-100"
-                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                          :alt="item[`title_${$i18n.locale}`]" />
-                        <span class="darkMode achchiqtosh__card-sp position-absolute">
-                          {{ item.section[`title_${$i18n.locale}`] }}
-                        </span>
-                      </NuxtLink>
-                    </div>
-                    <div class="achchiqtosh__info darkMode">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <p class="darkMode-title achchiqtosh__info-title hidden-text-2">
-                          {{ item[`title_${$i18n.locale}`] }}
-                        </p>
-                      </NuxtLink>
-                      <p class="darkMode-title achchiqtosh__info-text hidden-text-3">
-                        {{ item[`description_${$i18n.locale}`] }}
-                      </p>
-                      <p class="darkMode-sp achchiqtosh__info-time">
-                        {{ item.publish_date }}
-                      </p>
-                    </div>
-                  </div>
+                  <CardsMiddleCard v-for="item in datas?.healthPosts" :key="item.id" :item="item" />
                 </div>
               </div>
               <div class="achchiqtosh__main-inner mt-3 mt-lg-3">
@@ -296,34 +236,7 @@ console.log(datas);
                   {{ $t("clinc") }}
                 </h4>
                 <div class="achchiqtosh__card">
-                  <div v-for="item in datas?.legalClinicPosts" :key="item.id"
-                    class="darkMode achchiqtosh__card-box text-decoration-none">
-                    <div class="position-relative achchiqtosh__img-wrapper">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <img class="img-fluid w-100"
-                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')" :alt="item[
-    `title_${$i18n.locale}`
-  ]
-    " />
-                        <span class="darkMode achchiqtosh__card-sp position-absolute">
-                          {{ item.section[`title_${$i18n.locale}`] }}
-                        </span>
-                      </NuxtLink>
-                    </div>
-                    <div class="achchiqtosh__info darkMode">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <p class="darkMode-title achchiqtosh__info-title hidden-text-2">
-                          {{ item[`title_${$i18n.locale}`] }}
-                        </p>
-                      </NuxtLink>
-                      <p class="darkMode-title achchiqtosh__info-text hidden-text-3">
-                        {{ item[`description_${$i18n.locale}`] }}
-                      </p>
-                      <p class="darkMode-sp achchiqtosh__info-time">
-                        {{ item.publish_date }}
-                      </p>
-                    </div>
-                  </div>
+                  <CardsMiddleCard v-for="item in datas?.legalClinicPosts" :key="item.id" :item="item" />
                 </div>
               </div>
               <div class="achchiqtosh__main-inner mt-3 mt-lg-3">
@@ -331,38 +244,11 @@ console.log(datas);
                   {{ $t("useful") }}
                 </h4>
                 <div class="achchiqtosh__card">
-                  <div v-for="item in datas?.usefulPosts" :key="item.id" :to="localPath(`/categories/${item.id}`)"
-                    class="darkMode achchiqtosh__card-box text-decoration-none">
-                    <div class="position-relative achchiqtosh__img-wrapper">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <img class="img-fluid w-100"
-                          :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')" :alt="item[
-    `title_${$i18n.locale}`
-  ]
-    " />
-                        <span class="darkMode achchiqtosh__card-sp position-absolute">
-                          {{ item.section[`title_${$i18n.locale}`] }}
-                        </span>
-                      </NuxtLink>
-                    </div>
-                    <div class="achchiqtosh__info darkMode">
-                      <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                        <p class="darkMode-title achchiqtosh__info-title hidden-text-2">
-                          {{ item[`title_${$i18n.locale}`] }}
-                        </p>
-                      </NuxtLink>
-                      <p class="darkMode-title achchiqtosh__info-text hidden-text-3">
-                        {{ item[`description_${$i18n.locale}`] }}
-                      </p>
-                      <p class="darkMode-sp achchiqtosh__info-time ">
-                        {{ item.publish_date }}
-                      </p>
-                    </div>
-                  </div>
+                  <CardsMiddleCard v-for="item in datas?.usefulPosts" :key="item.id" :item="item" />
                 </div>
               </div>
             </div>
-            <div class="row-gap-3 d-none d-sm-flex flex-column mt-2">
+            <div class="row-gap-3 d-none d-sm-flex flex-column mt-2 sidbar">
               <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
               <img class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png" alt="reklama-img1" />
               <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
@@ -387,5 +273,12 @@ main {
 
 .hero__bgLiner {
   background: linear-gradient(to bottom, #fff3 40%, #000 90%) !important;
+}
+
+.sidbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 93.5%;
 }
 </style>

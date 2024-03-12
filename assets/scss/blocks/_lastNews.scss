@@ -19,7 +19,6 @@
             font-family: "BBC Reith Sans", sans-serif;
             font-size: 14.386px;
             font-weight: 500;
-            //text-transform: capitalize;
             margin-bottom: 22.768px;
         }
 
@@ -99,24 +98,13 @@
             font-size: 19px;
             font-weight: 500;
             margin-bottom: 0;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .card-text {
-            overflow: hidden;
             color: #121212;
             text-overflow: ellipsis;
             font-size: 15.459px;
             margin-bottom: 0;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            
-            margin-top: -13px !important;
         }
 
         &-sp {
@@ -127,10 +115,6 @@
             margin-bottom: 0 !important;
         }
 
-        // &-inner {
-        //     height: 375px !important;
-        // }
-
         &-spLink {
             position: absolute;
             padding: 5.63px 13.511px;
@@ -140,7 +124,6 @@
             color: #121212;
             font-size: 13px;
             text-transform: uppercase;
-            // width: 104px;
             height: 32px;
         }
     }
@@ -255,7 +238,7 @@
         }
 
         &__right {
-            padding: 24px 0px 67px 24px;
+            padding: 24px 0px 44px 24px;
 
             &-title {
                 font-size: 20px;
@@ -297,7 +280,7 @@
 
             .card-body {
                 gap: 20.06px;
-                padding: 12.91px 6.46px 12px;
+                padding: 12.91px 6.46px 20px;
             }
 
             &-spLink {
@@ -309,9 +292,11 @@
 
             .card-title {
                 font-size: 21.517px;
+                height: 56px;
             }
 
             .card-text {
+                height: 44px;
                 font-size: 17.214px;
             }
 

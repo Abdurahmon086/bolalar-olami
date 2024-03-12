@@ -223,29 +223,8 @@ onMounted(() => {
                         <section class="aside">
                             <h4 class="aside__title">{{ $t("most_read") }}</h4>
                             <div class="aside__wrapper">
-                                <div v-for="item in datas?.mostReadPosts" :key="item.id"
-                                    class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
-                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
-                                        class="position-relative">
-                                        <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                                            :alt="item[`title_${$i18n.locale}`]" class="card-img-top rounded-0" />
-                                        <span
-                                            class="position-absolute aside__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
-                                    </NuxtLink>
-                                    <div class="card-body d-flex flex-column">
-                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <h5 class="card-title darkMode heddin-text-2">
-                                                {{ item[`title_${$i18n.locale}`] }}
-                                            </h5>
-                                        </NuxtLink>
-                                        <p class="card-text darkMode heddin-text-3">
-                                            {{ item[`description_${$i18n.locale}`] }}
-                                        </p>
-                                        <span class="aside__left-sp darkMode-sp">
-                                            {{ item.publish_date }}
-                                        </span>
-                                    </div>
-                                </div>
+                                <CardsBigCard v-for="item in datas?.mostReadPosts" :key="item.id" :item="item"
+                                    class="bg-light" />
                             </div>
                         </section>
                     </aside>
