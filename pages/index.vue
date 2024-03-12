@@ -13,6 +13,7 @@ const datas = computed(() => indexStore.getHomeData);
 onMounted(() => {
   indexStore.setHomeData()
 });
+console.log(datas);
 </script>
 
 <template>
@@ -36,7 +37,7 @@ onMounted(() => {
               <div class="carousel-item image-container w-100 ">
                 <img :src="(item.main_image?.preview ? item.main_image?.url : '/images/logo.svg')"
                   class="img-fluid h-100 w-100" style="object-fit: cover" alt="hero image" />
-                <div class="s" style="background: linear-gradient(to bottom, #fff3 40%, #000 90%); ">
+                <div class="s" :class="item.header_type == 1 ? 'hero__bgLiner' : ''">
                   <div class=" carousel-caption">
                     <div class="hero__pages d-flex align-items-center">
                       <img src="/images/Vector-left.svg" alt="verctor left icon" />
@@ -382,5 +383,9 @@ onMounted(() => {
 <style scoped>
 main {
   background: #f6f6f6;
+}
+
+.hero__bgLiner {
+  background: linear-gradient(to bottom, #fff3 40%, #000 90%) !important;
 }
 </style>

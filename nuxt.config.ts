@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from "nuxt/config";
+import {p as publicAssetsURL} from ".output/server/chunks/handlers/renderer.mjs";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -7,6 +8,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [
+                { rel: 'icon', type: 'image/x-icon', href: '../images/favicon.ico' },
                 {
                     href: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css",
                     rel: "stylesheet",
@@ -18,8 +20,7 @@ export default defineNuxtConfig({
                     src: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js",
                 },
             ],
-
-            title: "bolalar olami sitega xush kelibsiz",
+            title: "Bolalar olami sitega xush kelibsiz",
             meta: [
                 {
                     name: "Bolalar Olami - yangiliklardan bohabar bo'ling",
