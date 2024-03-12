@@ -29,10 +29,16 @@ export default defineNuxtConfig({
             ],
         },
     },
+    site: {
+        url: 'https://new.bolalarolami.uz',
+        name: 'Bolalarolami.uz',
+        description: 'Bolalar olamiga oid barcha yangiliklar bizda ! Yangiliklar , salomatlik , huquqiy klinika , xayriya , adabiyot , foydaliga oid malumotlardan xabardor bo\'ling ',
+        defaultLocale: 'uz', // not needed if you have @nuxtjs/i18n installed
+    },
     devtools: {
         enabled: true,
     },
-    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt","@nuxtjs/seo"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,
@@ -70,6 +76,7 @@ export default defineNuxtConfig({
         port: 3003
     },
     runtimeConfig: {
-        baseUrl: process.env.BASE_URL || "http://admin.bolalarolami.uz/api/v2",
+        baseUrl: process.env.BASE_URL || "https://admin.bolalarolami.uz/api/v2",
     },
+
 });

@@ -24,6 +24,7 @@
   "devDependencies": {
     "@ant-design-vue/nuxt": "^1.4.1",
     "@nuxtjs/i18n": "^8.1.1",
+    "@nuxtjs/seo": "^2.0.0-rc.9",
     "@types/bootstrap": "^5.2.10",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
