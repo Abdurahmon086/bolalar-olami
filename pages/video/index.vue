@@ -5,7 +5,7 @@ useSeoMeta({
         blogCategory: "Video",
     },
 });
-defineOgImageComponent("NuxtSeo"); 
+
 import Loader from "~/components/loader.vue";
 const localPath = useLocalePath();
 const store = useMediaStore();
@@ -40,7 +40,7 @@ onMounted(() => {
                         </div>
                         <div class="mediacate__card-box1">
                             <div class="position-relative mediacate__card-box1-cards">
-                                <img
+                                <NuxtImg
                                     src="/images/mediacategoryImages/mediaimg2.png"
                                     class="img-fluid rounded-0 mediacate__card-box1--img h-100"
                                     alt="GALEREYA img"
@@ -58,7 +58,7 @@ onMounted(() => {
                                         <p class="mediacate__card-bottom--text1 fw-normal">32 {{ $t("videos") }}</p>
                                     </div>
                                     <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
-                                        <img
+                                        <NuxtImg
                                             src="/images/mediacategoryImages/play-icon.svg"
                                             class="img-fluid"
                                             style="width: 40px; height: 40px"
@@ -68,7 +68,7 @@ onMounted(() => {
                                 </div>
                             </div>
                             <div class="position-relative">
-                                <img
+                                <NuxtImg
                                     src="/images/mediacategoryImages/mediaimg3.png"
                                     class="img-fluid rounded-0 mediacate__card-box1--img h-100"
                                     alt="GALEREYA img"
@@ -87,7 +87,7 @@ onMounted(() => {
                                     </div>
                                     <div class="mediacate__card-bottom--imgdiv">
                                         <NuxtLink :to="localPath(`/foto`)">
-                                            <img
+                                            <NuxtImg
                                                 src="/images/mediacategoryImages/gallery-icon.svg"
                                                 class="img-fluid mediacate__card-bottom--img"
                                                 alt="play-icon"

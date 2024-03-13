@@ -46,7 +46,7 @@ onMounted(() => {
                     >
                         <SwiperSlide v-for="(item, index) in datas?.mainBanners" class="carousel-inner">
                             <div class="carousel-item image-container w-100">
-                                <img
+                                <NuxtImg
                                     :src="item.main_image?.preview ? item.main_image?.url : '/images/logo.svg'"
                                     class="img-fluid h-100 w-100"
                                     style="object-fit: cover"
@@ -55,9 +55,9 @@ onMounted(() => {
                                 <div class="s" :class="item.header_type == 1 ? 'hero__bgLiner' : ''">
                                     <div class="carousel-caption">
                                         <div class="hero__pages d-flex align-items-center">
-                                            <img src="/images/Vector-left.svg" alt="verctor left icon" />
+                                            <NuxtImg src="/images/Vector-left.svg" alt="verctor left icon" />
                                             <span class="hero__infoTy">{{ index + 1 }}</span>
-                                            <img src="/images/Vector-right.svg" alt="verctor right icon" />
+                                            <NuxtImg src="/images/Vector-right.svg" alt="verctor right icon" />
                                             <span class="opacity-75 hero__infoTy-oth">{{ datas.mainBanners.length }}</span>
                                         </div>
                                         <div
@@ -71,7 +71,7 @@ onMounted(() => {
                                                 class="btn text-white hero__link-btn d-flex align-items-center darkMode2"
                                             >
                                                 {{ $t("hero_btn") }}
-                                                <img src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
+                                                <NuxtImg src="/images/Vector-oreng.svg" alt="vrctor orange icon" />
                                             </NuxtLink>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@ onMounted(() => {
                             :to="localPath(`/${datas?.mainPosts[0].section.slug_uz}/${datas.mainPosts[0].id}`)"
                             class="news__left card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                         >
-                            <img
+                            <NuxtImg
                                 :src="datas.mainPosts[0].detail_image.url ? datas.mainPosts[0].detail_image.url : '/images/logo.svg'"
                                 class="card-img img-fluid h-100 rounded-0"
                                 :alt="datas.mainPosts[0][`title_${$i18n.locale}`]"
@@ -109,7 +109,7 @@ onMounted(() => {
                                 :key="item.id"
                                 class="card bg-dark text-white news__cards image-container w-100 border-0 rounded-0"
                             >
-                                <img
+                                <NuxtImg
                                     :src="item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg'"
                                     class="card-img img-fluid h-100 rounded-0"
                                     :alt="item[`title_${$i18n.locale}`]"
@@ -171,7 +171,7 @@ onMounted(() => {
                     >
                         <SwiperSlide v-for="item in datas?.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
-                                <img
+                                <NuxtImg
                                     :src="item.detail_image.original_url ? item.detail_image.original_url : '/images/logo.svg'"
                                     :alt="item[`title_${$i18n.locale}`]"
                                     class="social__img"
@@ -204,13 +204,13 @@ onMounted(() => {
                             class="media__cards w-100"
                         ></iframe>
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
-                            <img src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
+                            <NuxtImg src="/images/media-img2.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">Mirziyoyeva oilasi bolalar kutubxonasiga bordi.</h5>
                             </div>
                         </NuxtLink>
                         <NuxtLink class="card bg-dark text-white media__cards image-container w-100 border-0 rounded-0">
-                            <img src="/images/media-img3.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
+                            <NuxtImg src="/images/media-img3.png" class="card-img img-fluid h-100 rounded-0" alt="media-img3" />
                             <div class="card-img-overlay rounded-0">
                                 <h5 class="media__card-title">Mirziyoyeva oilasi bolalar kutubxonasiga bordi.</h5>
                             </div>
@@ -259,7 +259,7 @@ onMounted(() => {
                                             class="achchiqtosh__carousel-item bg-dark image-container"
                                             :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
                                         >
-                                            <img
+                                            <NuxtImg
                                                 :src="item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg'"
                                                 :alt="item[`title_${$i18n.locale}`]"
                                                 class="achchiqtosh__carousel-img img-fluid h-100"
@@ -299,10 +299,10 @@ onMounted(() => {
                             </div>
                         </div>
                         <div class="row-gap-3 d-none d-sm-flex flex-column mt-2 sidbar">
-                            <img class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
-                            <img class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png" alt="reklama-img1" />
-                            <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
-                            <img class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
+                            <NuxtImg class="img-fluid achchiqtosh__card-box7" src="/images/reklama-img.png" alt="reklama-img" />
+                            <NuxtImg class="img-fluid achchiqtosh__card-box8" src="/images/reklama-img1.png" alt="reklama-img1" />
+                            <NuxtImg class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
+                            <NuxtImg class="img-fluid achchiqtosh__card-box9" src="/images/reklama-img1.png" alt="reklama-img1" />
                         </div>
                     </div>
                 </div>

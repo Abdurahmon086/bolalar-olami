@@ -14,9 +14,11 @@ const { item } = props;
     <div class="darkMode middleCard__card-box text-decoration-none">
         <div class="position-relative middleCard__img-wrapper">
             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                <img class="img-fluid w-100"
-                    :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                    :alt="item[`title_${$i18n.locale}`]" />
+                <NuxtImg
+                    class="img-fluid w-100"
+                    :src="item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg'"
+                    :alt="item[`title_${$i18n.locale}`]"
+                />
                 <span class="darkMode middleCard__card-sp position-absolute">
                     {{ item.section[`title_${$i18n.locale}`] }}
                 </span>

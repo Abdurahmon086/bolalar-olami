@@ -1,6 +1,5 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | foto-one" });
-defineOgImageComponent("NuxtSeo");
 
 const mainStore = useMainStore();
 </script>
@@ -11,49 +10,49 @@ const mainStore = useMainStore();
                 <h3 class="mediabox-title darkMode-title">470 ИЗОБРАЖЕНИЙ</h3>
                 <div class="mediabox">
                     <div class="mediabox-left">
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"
                             alt="mediabox-img"
                         />
-                        <img
+                        <NuxtImg
                             @click="mainStore.imgModal = !mainStore.imgModal"
                             src="/images/mediacardImages/img.png"
                             class="img-fluid w-100"

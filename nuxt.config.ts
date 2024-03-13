@@ -40,22 +40,14 @@ export default defineNuxtConfig({
         defaultLocale: "uz",
         trailingSlash: true,
     },
-    server: {
-        redirect: {
-            canonical: true,
-        },
-    },
     devtools: {
+      enabled: true,
+
+      timeline: {
         enabled: true,
+      },
     },
-    modules: [
-        "@nuxtjs/i18n",
-        "@pinia/nuxt",
-        "nuxt-swiper",
-        "@ant-design-vue/nuxt",
-        "@nuxtjs/seo",
-        "nuxt-og-image",
-    ],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt", "@nuxtjs/seo", "nuxt-og-image", "@nuxt/image"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,
@@ -94,5 +86,9 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         baseUrl: process.env.BASE_URL || "https://admin.bolalarolami.uz/api/v2",
+    },
+    image: {
+        quality: 80,
+        format: ["webp"],
     },
 });

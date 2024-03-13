@@ -1,8 +1,5 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | bookshelter" });
-defineOgImageComponent("NuxtSeo");
-
-
 </script>
 <template>
     <main class="darkMode-body bg-light pb-3">
@@ -40,7 +37,7 @@ defineOgImageComponent("NuxtSeo");
                     </div>
                     <div class="books-wrapper__total-card">
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -48,11 +45,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img1.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img1.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -60,11 +57,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" class="img-fluid" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" class="img-fluid" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -72,11 +69,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -84,11 +81,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -96,11 +93,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -108,11 +105,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -120,11 +117,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -132,11 +129,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -144,11 +141,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -156,11 +153,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -168,11 +165,11 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
+                            <NuxtImg src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
                                 Barbara Oukli: Raqamlar <br />
                                 uchun yaralgan
@@ -180,7 +177,7 @@ defineOgImageComponent("NuxtSeo");
                             <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
                             <button class="books-wrapper__total-card--box-btn w-100">
                                 Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
+                                <NuxtImg src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                     </div>

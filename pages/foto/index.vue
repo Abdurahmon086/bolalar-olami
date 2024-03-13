@@ -1,6 +1,5 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | foto" });
-defineOgImageComponent("NuxtSeo");
 
 const localPath = useLocalePath();
 </script>
@@ -16,7 +15,7 @@ const localPath = useLocalePath();
                     <p class="mediaGaller-text">{{ $t("media") }}</p>
                     <div type="search" class="mediaGaller-seaBtn w-75">
                         <a href="#">
-                            <img src="/images/mediagalleriyaImages/search-icon.svg" class="img-fluid" alt="searchiicon" />
+                            <NuxtImg src="/images/mediagalleriyaImages/search-icon.svg" class="img-fluid" alt="searchiicon" />
                         </a>
                         <input type="text" placeholder="Искать лицензионный контент..." class="mediaGaller-seaBtn-inp w-75" />
                     </div>
@@ -38,21 +37,21 @@ const localPath = useLocalePath();
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.2.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.2.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.3.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.3.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
@@ -61,21 +60,21 @@ const localPath = useLocalePath();
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.7.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.7.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list mediaGaller-wrapper--card-item2 darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.8.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.8.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
@@ -84,7 +83,7 @@ const localPath = useLocalePath();
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item1 darkMode-card">
                                     <p class="mediaGaller-wrapper--card-item1--text">Больше подборок</p>
                                     <a href="#">
-                                        <img
+                                        <NuxtImg
                                             src="/images/mediagalleriyaImages/right-icon.svg"
                                             class="img-fuild mediaGaller-wrapper--card-list1-link"
                                             style="width: 24px"
@@ -96,21 +95,21 @@ const localPath = useLocalePath();
                         <div class="mediaGaller-wrapper--card-box">
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.5.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.5.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.6.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.6.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>
                             </ul>
                             <ul class="mediaGaller-wrapper--card-list darkMode">
                                 <NuxtLink :to="localPath(`/foto/foto-categories`)" class="mediaGaller-wrapper--card-item">
-                                    <img src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100" alt="galleriya-img" />
+                                    <NuxtImg src="/images/mediagalleriyaImages/img1.4.png" class="img-fuild w-100" alt="galleriya-img" />
                                     <p class="mediaGaller-wrapper--card-text darkMode-title">Новый Год</p>
                                     <p class="mediaGaller-wrapper--card-span darkMode-sp">493 изображения</p>
                                 </NuxtLink>

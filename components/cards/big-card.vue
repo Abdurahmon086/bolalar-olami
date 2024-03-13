@@ -14,10 +14,12 @@ const { item } = props;
     <div class="bigCards bigCards__inner text-decoration-none card h-100 border-0 shadow-0 rounded-0 darkMode">
         <div class="position-relative bigCards__img">
             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                    class="card-img-top rounded-0" :alt="item[`title_${$i18n.locale}`]" />
-                <span class="position-absolute bigCards__spLink darkMode">
-                    {{ item.section[`title_${$i18n.locale}`] }}</span>
+                <NuxtImg
+                    :src="item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg'"
+                    class="card-img-top rounded-0"
+                    :alt="item[`title_${$i18n.locale}`]"
+                />
+                <span class="position-absolute bigCards__spLink darkMode"> {{ item.section[`title_${$i18n.locale}`] }}</span>
             </NuxtLink>
         </div>
         <div class="card-body d-flex flex-column">
