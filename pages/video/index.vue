@@ -1,12 +1,18 @@
 <script setup>
-useHead({ title: "Bolalar olami | posts" });
+useSeoMeta({
+    title: "Bolalar olami | video",
+    templateParams: {
+        blogCategory: "Video",
+    },
+});
+defineOgImageComponent("NuxtSeo"); 
 import Loader from "~/components/loader.vue";
-const localPath = useLocalePath()
+const localPath = useLocalePath();
 const store = useMediaStore();
 const datas = computed(() => store.getMediaData);
 
 onMounted(() => {
-    store.setMediaData()
+    store.setMediaData();
 });
 </script>
 
@@ -21,19 +27,24 @@ onMounted(() => {
                     </h2>
                     <div class="mediacate__card">
                         <div class="mediacate__card-box position-relative">
-                            <iframe :src="datas.bannerVideos[0].youtube_link"
-                                :title="datas.bannerVideos[0][`title_${$i18n.locale}`]" frameborder="0"
+                            <iframe
+                                :src="datas.bannerVideos[0].youtube_link"
+                                :title="datas.bannerVideos[0][`title_${$i18n.locale}`]"
+                                frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen class="w-100 mediacate__card-img">
+                                allowfullscreen
+                                class="w-100 mediacate__card-img"
+                            >
                             </iframe>
-                            <div class="mediacate__card-posi position-absolute  w-100">
-
-                            </div>
+                            <div class="mediacate__card-posi position-absolute w-100"></div>
                         </div>
                         <div class="mediacate__card-box1">
                             <div class="position-relative mediacate__card-box1-cards">
-                                <img src="/images/mediacategoryImages/mediaimg2.png"
-                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
+                                <img
+                                    src="/images/mediacategoryImages/mediaimg2.png"
+                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100"
+                                    alt="GALEREYA img"
+                                />
                                 <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
                                     <h2 class="mediacate__card-bottom--title position-absolute">
                                         {{ $t("all_playlists") }}
@@ -44,37 +55,43 @@ onMounted(() => {
                                         <p class="mediacate__card-bottom--text">
                                             {{ $t("cocial_survey") }}
                                         </p>
-                                        <p class="mediacate__card-bottom--text1 fw-normal">
-                                            32 {{ $t("videos") }}
-                                        </p>
+                                        <p class="mediacate__card-bottom--text1 fw-normal">32 {{ $t("videos") }}</p>
                                     </div>
                                     <NuxtLink to="https://www.youtube.com/@bolalarolamiuz/playlists">
-                                        <img src="/images/mediacategoryImages/play-icon.svg" class="img-fluid"
-                                            style="width: 40px; height: 40px" alt="play-icon" />
+                                        <img
+                                            src="/images/mediacategoryImages/play-icon.svg"
+                                            class="img-fluid"
+                                            style="width: 40px; height: 40px"
+                                            alt="play-icon"
+                                        />
                                     </NuxtLink>
                                 </div>
                             </div>
                             <div class="position-relative">
-                                <img src="/images/mediacategoryImages/mediaimg3.png"
-                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100" alt="GALEREYA img" />
-                               <NuxtLink :to="localPath(`/foto`)">
-                                <h2 class="mediacate__card-bottom--title position-absolute">
-                                    {{ $t("all_photos") }}
-                                </h2>
-                               </NuxtLink>
+                                <img
+                                    src="/images/mediacategoryImages/mediaimg3.png"
+                                    class="img-fluid rounded-0 mediacate__card-box1--img h-100"
+                                    alt="GALEREYA img"
+                                />
+                                <NuxtLink :to="localPath(`/foto`)">
+                                    <h2 class="mediacate__card-bottom--title position-absolute">
+                                        {{ $t("all_photos") }}
+                                    </h2>
+                                </NuxtLink>
                                 <div class="mediacate__card-bottom position-absolute w-100">
                                     <div>
                                         <p class="mediacate__card-bottom--text">
                                             {{ $t("all_pictures") }}
                                         </p>
-                                        <p class="mediacate__card-bottom--text1 fw-normal">
-                                            65 {{ $t("pictures") }}
-                                        </p>
+                                        <p class="mediacate__card-bottom--text1 fw-normal">65 {{ $t("pictures") }}</p>
                                     </div>
                                     <div class="mediacate__card-bottom--imgdiv">
                                         <NuxtLink :to="localPath(`/foto`)">
-                                            <img src="/images/mediacategoryImages/gallery-icon.svg"
-                                            class="img-fluid mediacate__card-bottom--img" alt="play-icon" />
+                                            <img
+                                                src="/images/mediacategoryImages/gallery-icon.svg"
+                                                class="img-fluid mediacate__card-bottom--img"
+                                                alt="play-icon"
+                                            />
                                         </NuxtLink>
                                     </div>
                                 </div>
@@ -82,12 +99,16 @@ onMounted(() => {
                         </div>
                     </div>
                     <div class="mediacate__galle">
-                        <div class="mediacate__galle-wrapper position-relative"
-                            v-for="item in datas?.bannerVideos.slice(1)">
-                            <iframe :src="item.youtube_link" width="100%" :title="item[`title_${$i18n.locale}`]"
+                        <div class="mediacate__galle-wrapper position-relative" v-for="item in datas?.bannerVideos.slice(1)">
+                            <iframe
+                                :src="item.youtube_link"
+                                width="100%"
+                                :title="item[`title_${$i18n.locale}`]"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen class="mediacate__iframe">
+                                allowfullscreen
+                                class="mediacate__iframe"
+                            >
                             </iframe>
                         </div>
                     </div>
@@ -95,21 +116,26 @@ onMounted(() => {
             </section>
             <!-- media all -->
             <section class="container">
-                <div v-for="items in datas?.videoCategories  ">
+                <div v-for="items in datas?.videoCategories">
                     <div class="d-flex justify-content-between align-items-center" v-if="items?.videos.length > 0">
                         <h2 class="mediacate__all-text darkMode-title mb-0">
                             {{ items[`title_${$i18n.locale}`] }}
                         </h2>
-                        <button id="myButton" v-if="items.videos.length > 4" @click="store.toggleCategory(items)"
-                            class="btn btn-danger btn-sm mediaBtn">{{ $t("video_btn") }}</button>
+                        <button id="myButton" v-if="items.videos.length > 4" @click="store.toggleCategory(items)" class="btn btn-danger btn-sm mediaBtn">
+                            {{ $t("video_btn") }}
+                        </button>
                     </div>
-                    <div class="mediacate__all " :class="{ 'videoHidden': !store.isActive(items) }">
-                        <div class="position-relative mediacate__all-card w-100 image-container"
-                            v-for="item in items.videos">
-                            <iframe :src="item.youtube_link" width="100%" :title="item[`title_${$i18n.locale}`]"
+                    <div class="mediacate__all" :class="{ videoHidden: !store.isActive(items) }">
+                        <div class="position-relative mediacate__all-card w-100 image-container" v-for="item in items.videos">
+                            <iframe
+                                :src="item.youtube_link"
+                                width="100%"
+                                :title="item[`title_${$i18n.locale}`]"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen class="mediacate__iframe-all"></iframe>
+                                allowfullscreen
+                                class="mediacate__iframe-all"
+                            ></iframe>
                         </div>
                     </div>
                 </div>

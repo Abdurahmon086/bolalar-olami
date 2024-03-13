@@ -1,17 +1,19 @@
 <script setup>
-useHead({ title: "Bolalar olami | posts" });
+useSeoMeta({ title: "Bolalar olami | bookshelter" });
+defineOgImageComponent("NuxtSeo");
+
+
 </script>
 <template>
     <main class="darkMode-body bg-light pb-3">
         <section id="section" class="darkMode-body">
-           <div class="container">
-            <div class="books-card darkMode-body">
-                <p class="books-card__text darkMode-title">Asosiy</p>
-                <p class="books-card__text darkMode-title">Yangiliklar</p>
-                <p class="books-card__text darkMode-title">Maktab o'quvchilari ilk bor Prezident Administratsiyasiga bordi</p>
- 
-             </div>
-           </div>
+            <div class="container">
+                <div class="books-card darkMode-body">
+                    <p class="books-card__text darkMode-title">Asosiy</p>
+                    <p class="books-card__text darkMode-title">Yangiliklar</p>
+                    <p class="books-card__text darkMode-title">Maktab o'quvchilari ilk bor Prezident Administratsiyasiga bordi</p>
+                </div>
+            </div>
         </section>
         <section>
             <div class="container books-wrapper darkMode-body">
@@ -20,27 +22,13 @@ useHead({ title: "Bolalar olami | posts" });
                         {{ $t("sections") }}
                     </h3>
                     <ul class="books-wrapper__part-list">
-                        <li class="books-wrapper__part-item darkMode-title">
-                            Bolalar adabiyoti
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            Badiiy adabiyotlar
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            Bolalar adabiyoti
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            IТ sohasiga oid kitoblar
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            Diniy adabiyotlar
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            IТ sohasiga oid kitoblar
-                        </li>
-                        <li class="books-wrapper__part-item darkMode-title">
-                            Bolalar adabiyoti
-                        </li>
+                        <li class="books-wrapper__part-item darkMode-title">Bolalar adabiyoti</li>
+                        <li class="books-wrapper__part-item darkMode-title">Badiiy adabiyotlar</li>
+                        <li class="books-wrapper__part-item darkMode-title">Bolalar adabiyoti</li>
+                        <li class="books-wrapper__part-item darkMode-title">IТ sohasiga oid kitoblar</li>
+                        <li class="books-wrapper__part-item darkMode-title">Diniy adabiyotlar</li>
+                        <li class="books-wrapper__part-item darkMode-title">IТ sohasiga oid kitoblar</li>
+                        <li class="books-wrapper__part-item darkMode-title">Bolalar adabiyoti</li>
                     </ul>
                 </div>
                 <div class="books-wrapper__total darkMode-body">
@@ -48,154 +36,153 @@ useHead({ title: "Bolalar olami | posts" });
                         <h3 class="books-wrapper__total-box--title darkMode-title">
                             {{ $t("books") }}
                         </h3>
-                        <input class="books-wrapper__total-box--insearch darkMode-btn" type="search" placeholder="Qidirish">
+                        <input class="books-wrapper__total-box--insearch darkMode-btn" type="search" placeholder="Qidirish" />
                     </div>
                     <div class="books-wrapper__total-card">
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img1.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img1.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" class="img-fluid" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" class="img-fluid" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
                         <div class="books-wrapper__total-card--box darkMode">
-                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img">
+                            <img src="/images/booksImages/books-img.png" class="img-fluid books-wrapper__total-card--box-img w-100" alt="books-img" />
                             <p class="books-wrapper__total-card--box-natext darkMode-title">
-                                Barbara Oukli: Raqamlar <br> uchun yaralgan 
+                                Barbara Oukli: Raqamlar <br />
+                                uchun yaralgan
                             </p>
-                            <p class="books-wrapper__total-card--box-vatext darkMode-title">
-                                Erkin Vohidovning
-                            </p>
-                            <button class="books-wrapper__total-card--box-btn w-100">Yuklab olish
-                                <img src="/images/booksImages/download.svg" alt="dowlond-icon">
+                            <p class="books-wrapper__total-card--box-vatext darkMode-title">Erkin Vohidovning</p>
+                            <button class="books-wrapper__total-card--box-btn w-100">
+                                Yuklab olish
+                                <img src="/images/booksImages/download.svg" alt="dowlond-icon" />
                             </button>
                         </div>
-
                     </div>
                 </div>
             </div>

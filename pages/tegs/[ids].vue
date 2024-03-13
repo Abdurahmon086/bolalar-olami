@@ -1,5 +1,6 @@
 <script setup>
-useHead({ title: "Bolalar olami | tags" });
+useSeoMeta({ title: "Bolalar olami | tags" });
+defineOgImageComponent("NuxtSeo");
 
 const route = useRoute();
 const tageStore = useTageStore();
@@ -7,7 +8,7 @@ const tageStore = useTageStore();
 const datas = computed(() => tageStore.getTagsData);
 
 onMounted(() => {
-    tageStore.setTagsData(route.params.ids)
+    tageStore.setTagsData(route.params.ids);
 });
 </script>
 
@@ -18,17 +19,15 @@ onMounted(() => {
                 <div class="container">
                     <div class="tegs">
                         <p class="tegs-text text-capitalize darkMode-title">
-                            {{ $t("keyword") + ' : ' + datas?.posts.data[0].section[`title_${$i18n.locale}`] }}
+                            {{ $t("keyword") + " : " + datas?.posts.data[0].section[`title_${$i18n.locale}`] }}
                         </p>
                         <div class="tegs-cardimg">
                             <div class="tegs-cardimg__left">
                                 <CardsMiddleCard v-for="item in datas?.posts.data" :key="item.id" :item="item" />
                             </div>
                             <aside class="tegs-cardimg__aside">
-                                <img src="/images/talimImages/reklama-img1.png"
-                                    class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
-                                <img src="/images/talimImages/reklama-img2.png"
-                                    class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
+                                <img src="/images/talimImages/reklama-img2.png" class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
                                 <!-- <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img"> -->
                             </aside>
                         </div>
