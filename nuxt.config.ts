@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     ssr: true,
     app: {
         head: {
+            charset: "utf-8",
+            viewport: "width=device-width, initial-scale=1",
             link: [
                 {
                     rel: "icon",
@@ -41,11 +43,11 @@ export default defineNuxtConfig({
         trailingSlash: true,
     },
     devtools: {
-      enabled: true,
-
-      timeline: {
         enabled: true,
-      },
+
+        timeline: {
+            enabled: true,
+        },
     },
     modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt", "@nuxtjs/seo", "nuxt-og-image", "@nuxt/image"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
