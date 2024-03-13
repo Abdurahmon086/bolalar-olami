@@ -40,7 +40,7 @@ onMounted(() => {
                 </div>
             </div>
             <div>
-                <div class="container main__wrapper d-md-flex justify-content-md-between darkMode-title">
+                <div class="container main__wrapper darkMode-title">
                     <section class="single">
                         <h2 class="single__title">
                             {{ datas?.post[`title_${$i18n.locale}`] }}

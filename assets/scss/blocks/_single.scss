@@ -81,13 +81,19 @@
     }
 }
 
+.main__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
 .single {
     &__title {
         font-feature-settings: 'clig' off, 'liga' off;
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 11px;
-        max-width: 341px;
+        max-width: 90%;
     }
 
     &__info {
@@ -123,7 +129,7 @@
 
     &__mainImg {
         object-fit: cover;
-        max-width: 317px;
+        max-width: 95%;
         height: 191px;
     }
 
@@ -164,7 +170,7 @@
         text-align: justify;
 
         &-wrapper {
-            max-width: 273px;
+            max-width: 90%;
         }
     }
 
@@ -251,7 +257,7 @@
         }
 
         &-item {
-            max-width: 343px;
+            // max-width: 343px;
             padding: 16px;
             border-radius: 8px;
             background: #F6F6F6;
@@ -349,17 +355,18 @@
 
 @media only screen and (min-width: 510px) {
     .main__wrapper {
-        gap: 37px;
+        display: grid;
+        grid-template-columns: 480px;
+        gap: 10px;
     }
 
     .single {
-
-        max-width: 480px !important;
+        // max-width: 480px !important;
 
         &__title {
             font-size: 24px;
             margin-bottom: 11px;
-            max-width: 480px;
+            // max-width: 480px;
         }
 
         &__info {
@@ -562,7 +569,7 @@
             }
 
             &-item {
-                max-width: 331px;
+                // max-width: 331px;
                 padding: 10px;
                 border-radius: 7.948px;
 
@@ -608,13 +615,23 @@
     }
 }
 
+@media only screen and (min-width: 677px) {
+    .main__wrapper {
+        display: grid;
+        grid-template-columns: 480px 170px;
+        gap: 10px;
+        justify-content: space-between;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     .main__wrapper {
+        grid-template-columns: 866px 1fr;
         gap: 58px;
     }
 
     .single {
-        max-width: 866px !important;
+        // max-width: 866px !important;
 
         &__title {
             font-size: 44px;
@@ -675,7 +692,7 @@
             line-height: 24px;
 
             &-wrapper {
-                max-width: 866px;
+                max-width: 90%;
             }
         }
 
