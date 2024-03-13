@@ -60,12 +60,16 @@
 
         &__title {
             margin-bottom: 10px;
+            font-size: 22px;
         }
     }
 }
 
 @media only screen and (min-width:768px) {
     .news {
+        &__title {
+            font-size: 13.639px;
+        }
         &__wrapper {
             display: grid;
             grid-template-columns: 348px 1fr;
