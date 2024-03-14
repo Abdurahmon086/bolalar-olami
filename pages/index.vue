@@ -169,6 +169,7 @@ onMounted(() => {
                             },
                         }"
                     >
+
                         <SwiperSlide v-for="item in datas?.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
                                 <NuxtImg
