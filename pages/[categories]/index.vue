@@ -61,6 +61,8 @@ onMounted(() => {
             </section>
             <section class="lastNews">
                 <div class="container">
+            <!-- <img src="/images/talimImages/reklama-y-img.png" class="mb-3 img-fluid" alt="reklama-img"> -->
+
                     <div class="lastNews__wrapper">
                         <div class="lastNews__left">
                             <CardsBigCard v-for="item in datas?.categoryPosts.slice(0, 4)" :key="item.id" :item="item" />
