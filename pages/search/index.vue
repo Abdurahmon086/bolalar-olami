@@ -1,5 +1,12 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | search" });
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 import Loader from "~/components/loader.vue";
 import { onMounted } from "vue";

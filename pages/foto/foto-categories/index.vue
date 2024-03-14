@@ -1,5 +1,12 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | foto galery" });
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 const localPath = useLocalePath();
 </script>

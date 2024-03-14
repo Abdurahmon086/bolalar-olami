@@ -1,5 +1,12 @@
 <script setup>
 useHead({ title: "Bolalar olami | category" });
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 import { onMounted } from "vue";
 const localPath = useLocalePath();

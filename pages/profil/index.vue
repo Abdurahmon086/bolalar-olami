@@ -1,5 +1,13 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | profil" });
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
+
 </script>
 <template>
     <main class="darkMode-body pb-5 bg-light">
