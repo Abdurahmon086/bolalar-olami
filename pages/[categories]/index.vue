@@ -56,7 +56,7 @@ onMounted(() => {
                             </ul>
                         </div>
                     </div>
-                    <NuxtImg src="/images/talimImages/reklama-y-img.png" class="img-fluid pt-3 w-100 d-block d-xl-none" alt="" />
+                    <NuxtImg src="/images/talimImages/reklama-y-img.png" class="img-fluid pt-3 w-100 d-block d-xl-none" style="height: 170px" />
                 </div>
             </section>
             <section class="lastNews">
