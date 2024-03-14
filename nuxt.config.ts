@@ -34,6 +34,7 @@ export default defineNuxtConfig({
             ],
         },
     },
+
     site: {
         url: "https://new.bolalarolami.uz",
         name: "Bolalarolami.uz",
