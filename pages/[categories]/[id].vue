@@ -1,20 +1,19 @@
 <script setup>
-useHead({ title: "Bolalar olami | posts" });
+useSeoMeta({ title: "Bolalar olami | posts" });
+
 import Loader from "~/components/loader.vue";
-import { useSingleStore } from '~/stores/singleStore';
-import { onMounted } from 'vue';
+import { useSingleStore } from "~/stores/singleStore";
+import { onMounted } from "vue";
 
 const route = useRoute();
-const router = useRouter();
-
 const localPath = useLocalePath();
+
 const singleStore = useSingleStore();
 const datas = computed(() => singleStore.getSingleData);
 
 onMounted(() => {
-    singleStore.setSingleData(route.params.id)
+    singleStore.setSingleData(route.params.id);
 });
-
 </script>
 
 <template>
@@ -28,8 +27,7 @@ onMounted(() => {
                                 <NuxtLink class="darkMode text-decoration-none" to="/">Asosiy</NuxtLink>
                             </li>
                             <li class="breadcrumb-item d-flex align-items-center">
-                                <NuxtLink :to="`/${datas.post?.section.slug_uz}/?id=${datas.post?.section.id}`"
-                                    class="darkMode text-decoration-none">
+                                <NuxtLink :to="`/${datas.post?.section.slug_uz}/?id=${datas.post?.section.id}`" class="darkMode text-decoration-none">
                                     {{ datas.post.section[`title_${$i18n.locale}`] }}
                                 </NuxtLink>
                             </li>
@@ -41,7 +39,7 @@ onMounted(() => {
                 </div>
             </div>
             <div>
-                <div class="container main__wrapper d-md-flex justify-content-md-between darkMode-title">
+                <div class="container main__wrapper darkMode-title">
                     <section class="single">
                         <h2 class="single__title">
                             {{ datas?.post[`title_${$i18n.locale}`] }}
@@ -49,38 +47,41 @@ onMounted(() => {
                         <div class="single__info">
                             <span class="darkMode pt-1">{{ datas?.post.publish_date }}</span>
                             <div class="single__info-inner">
-                                <img src="/images/eye_main.svg" alt="eye icon" />
+                                <NuxtImg src="/images/eye_main.svg" alt="eye icon" />
                                 <span class="darkMode">{{ datas?.post.views_count }}</span>
                             </div>
                             <!-- <div class="single__info-inner">
-                            <img src="/images/message.svg" alt="message icon" />
+                            <NuxtImg  src="/images/message.svg" alt="message icon" />
                             <span class="darkMode">98</span>
                         </div>
                         <div class="single__info-inner">
-                            <img src="/images/share.svg" alt="share icon" />
+                            <NuxtImg  src="/images/share.svg" alt="share icon" />
                             <span class="darkMode">98</span>
                         </div> -->
                         </div>
-                        <img :src="(datas?.post.detail_image?.url ? datas?.post.detail_image?.url : '/images/logo.svg')"
-                            :alt="datas?.post[`title_${$i18n.locale}`]" class="single__mainImg object-fit-fill" />
+                        <NuxtImg
+                            :src="datas?.post.detail_image?.url ? datas?.post.detail_image?.url : '/images/logo.svg'"
+                            :alt="datas?.post[`title_${$i18n.locale}`]"
+                            class="single__mainImg object-fit-fill"
+                        />
                         <div class="single__inner">
                             <!-- <ul
                             class="single__social d-none d-sm-flex list-unstyled"
                         >
                             <li class="darkMode-btn">
-                                <img
+                                <NuxtImg 
                                     src="/images/insta.svg"
                                     alt="instagram icon"
                                 />
                             </li>
                             <li class="darkMode-btn">
-                                <img
+                                <NuxtImg 
                                     src="/images/telegram1.svg"
                                     alt="telegram icon"
                                 />
                             </li>
                             <li class="darkMode-btn">
-                                <img src="/images/share.svg" alt="share icon" />
+                                <NuxtImg  src="/images/share.svg" alt="share icon" />
                             </li>
                         </ul> -->
                             <div class="single__main">
@@ -89,29 +90,28 @@ onMounted(() => {
                                     class="single__social list-unstyled d-flex d-sm-none"
                                 >
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/insta.svg"
                                             alt="instagram icon"
                                         />
                                     </li>
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/telegram1.svg"
                                             alt="telegram icon"
                                         />
                                     </li>
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/share.svg"
                                             alt="share icon"
                                         />
                                     </li>
                                 </ul> -->
-                                    <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]
-        "></div>
+                                    <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]"></div>
                                 </div>
                                 <!-- <div class="single__qs darkMode-body">
-                                <img src="/images/dod.svg" alt="dod icon" />
+                                <NuxtImg  src="/images/dod.svg" alt="dod icon" />
                                 <p class="single__qs-text">
                                     Shuningdek, Prezident yordamchisi ta’lim
                                     islohoti doirasida “Xorijiy tillarni
@@ -123,12 +123,9 @@ onMounted(() => {
                             </div> -->
                                 <template v-if="datas?.post.tags.length != 0">
                                     <div class="single__tags d-none d-md-block darkMode-body">
-                                        <h4 class="single__tags-title">
-                                            Teglar
-                                        </h4>
+                                        <h4 class="single__tags-title">Teglar</h4>
                                         <ul class="list-unstyled">
-                                            <NuxtLink v-for="item of datas?.post.tags"
-                                                :to="localPath(`/tegs/${item.id}`)">
+                                            <NuxtLink v-for="item of datas?.post.tags" :to="localPath(`/tegs/${item.id}`)">
                                                 <li class="darkMode-btn button-container-1">
                                                     {{ item[`title_${$i18n.locale}`] }}
                                                 </li>
@@ -144,7 +141,7 @@ onMounted(() => {
                                         Maqola muallifi
                                     </p>
                                     <div class="single__auther-inner">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/person.png"
                                             alt="person image"
                                         />
@@ -196,19 +193,19 @@ onMounted(() => {
                                         class="single__auther-share list-unstyled"
                                     >
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/telegram1.svg"
                                                 alt="telegram icon"
                                             />
                                         </li>
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/insta.svg"
                                                 alt="instagram icon"
                                             />
                                         </li>
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/share.svg"
                                                 alt="share icon"
                                             />
@@ -223,29 +220,7 @@ onMounted(() => {
                         <section class="aside">
                             <h4 class="aside__title">{{ $t("most_read") }}</h4>
                             <div class="aside__wrapper">
-                                <div v-for="item in datas?.mostReadPosts" :key="item.id"
-                                    class="aside__left-inner card h-100 shadow-0 border-0 rounded-0 bg-light text-decoration-none darkMode">
-                                    <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)"
-                                        class="position-relative">
-                                        <img :src="(item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg')"
-                                            :alt="item[`title_${$i18n.locale}`]" class="card-img-top rounded-0" />
-                                        <span
-                                            class="position-absolute aside__left-spLink darkMode">{{ item.section[`title_${$i18n.locale}`] }}</span>
-                                    </NuxtLink>
-                                    <div class="card-body d-flex flex-column">
-                                        <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
-                                            <h5 class="card-title darkMode heddin-text-2">
-                                                {{ item[`title_${$i18n.locale}`] }}
-                                            </h5>
-                                        </NuxtLink>
-                                        <p class="card-text darkMode heddin-text-3">
-                                            {{ item[`description_${$i18n.locale}`] }}
-                                        </p>
-                                        <span class="aside__left-sp darkMode-sp">
-                                            {{ item.publish_date }}
-                                        </span>
-                                    </div>
-                                </div>
+                                <CardsBigCard v-for="item in datas?.mostReadPosts" :key="item.id" :item="item" class="bg-light" />
                             </div>
                         </section>
                     </aside>

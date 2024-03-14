@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from "nuxt/config";
-import {p as publicAssetsURL} from ".output/server/chunks/handlers/renderer.mjs";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -7,8 +6,14 @@ export default defineNuxtConfig({
     ssr: true,
     app: {
         head: {
+            charset: "utf-8",
+            viewport: "width=device-width, initial-scale=1",
             link: [
-                { rel: 'icon', type: 'image/x-icon', href: '../images/favicon.ico' },
+                {
+                    rel: "icon",
+                    type: "image/x-icon",
+                    href: "../images/favicon.ico",
+                },
                 {
                     href: "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css",
                     rel: "stylesheet",
@@ -29,16 +34,23 @@ export default defineNuxtConfig({
             ],
         },
     },
+
     site: {
-        url: 'https://new.bolalarolami.uz',
-        name: 'Bolalarolami.uz',
-        description: 'Bolalar olamiga oid barcha yangiliklar bizda ! Yangiliklar , salomatlik , huquqiy klinika , xayriya , adabiyot , foydaliga oid malumotlardan xabardor bo\'ling ',
-        defaultLocale: 'uz', // not needed if you have @nuxtjs/i18n installed
+        url: "https://new.bolalarolami.uz",
+        name: "Bolalarolami.uz",
+        description:
+            "Bolalar olamiga oid barcha yangiliklar bizda ! Yangiliklar , salomatlik , huquqiy klinika , xayriya , adabiyot , foydaliga oid malumotlardan xabardor bo'ling ",
+        defaultLocale: "uz",
+        trailingSlash: true,
     },
     devtools: {
         enabled: true,
+
+        timeline: {
+            enabled: true,
+        },
     },
-    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt","@nuxtjs/seo"],
+    modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@ant-design-vue/nuxt", "@nuxtjs/seo", "nuxt-og-image", "@nuxt/image"],
     css: ["bootstrap/dist/css/bootstrap.min.css", "~/assets/scss/style.scss"],
     i18n: {
         lazy: false,
@@ -73,10 +85,13 @@ export default defineNuxtConfig({
         defaultLocale: "uz",
     },
     devServer: {
-        port: 3003
+        port: 3003,
     },
     runtimeConfig: {
         baseUrl: process.env.BASE_URL || "https://admin.bolalarolami.uz/api/v2",
     },
-
+    image: {
+        quality: 80,
+        format: ["webp"],
+    },
 });

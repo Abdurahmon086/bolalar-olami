@@ -1,0 +1,137 @@
+.bigCards {
+    height: fit-content !important;
+
+    .card-img-top {
+        height: 197.104px;
+    }
+
+    .card-body {
+        height: auto;
+        // justify-content: space-between;
+        gap: 18px;
+        padding: 11.59px 5.8px 9.31px;
+    }
+
+    .card-title {
+        color: #121212;
+        font-size: 19px;
+        font-weight: 500;
+        margin-bottom: 0;
+        height: 48px;
+    }
+
+    .card-text {
+        height: 42px;
+        color: #121212;
+        text-overflow: ellipsis;
+        font-size: 15.459px;
+        margin-bottom: 0;
+    }
+
+    &__img {
+        display: none;
+    }
+
+    &__inner:nth-child(1) &__img {
+        display: block;
+
+    }
+
+
+    &__sp {
+        overflow: hidden;
+        color: #A0A0A0;
+        text-overflow: ellipsis;
+        font-size: 15.459px;
+        margin-bottom: 0 !important;
+    }
+
+    &__spLink {
+        position: absolute;
+        padding: 5.63px 13.511px;
+        background: #FFF;
+        left: 5.797px;
+        bottom: 8.7px;
+        color: #121212;
+        font-size: 13px;
+        text-transform: uppercase;
+        height: auto;
+    }
+}
+
+
+@media only screen and (min-width: 576px) {
+    .bigCards {
+        .card-img-top {
+            height: 124.731px;
+        }
+
+        .card-body {
+            gap: 11.4px;
+            padding: 7.34px 3.67px 11.13px;
+        }
+
+        .card-title {
+            font-size: 12px;
+            height: 32px;
+        }
+
+        .card-text {
+            font-size: 11px;
+            height: 30px;
+        }
+
+        &__img {
+            display: block;
+        }
+
+        &__spLink {
+            font-family: "BBC Reith Sans", sans-serif;
+            left: 3.668px;
+            bottom: 5.5px;
+            padding: 3.563px 8.55px;
+            font-size: 7.337px;
+        }
+
+        &__sp {
+            font-size: 9.783px;
+            margin-bottom: 6.47px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .bigCards {
+        .card-img-top {
+            height: 219.47px;
+        }
+
+        .card-body {
+            gap: 20.06px;
+            padding: 12.91px 6.46px 20px;
+        }
+
+        .card-title {
+            font-size: 21.517px;
+            height: 56px;
+        }
+
+        .card-text {
+            height: 44px;
+            font-size: 17.214px;
+        }
+
+        &__spLink {
+            left: 6.455px;
+            bottom: 9.88px;
+            padding: 6.269px 15.045px;
+            font-size: 13px;
+        }
+
+        &__sp {
+            font-size: 17.214px;
+            margin-bottom: 43.37px;
+        }
+    }
+}

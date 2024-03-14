@@ -19,7 +19,6 @@
             font-family: "BBC Reith Sans", sans-serif;
             font-size: 14.386px;
             font-weight: 500;
-            //text-transform: capitalize;
             margin-bottom: 22.768px;
         }
 
@@ -28,41 +27,6 @@
             flex-direction: column;
             gap: 31.65px;
         }
-
-        &-text {
-            color: #1C1C1C;
-            font-family: "BBC Reith Sans", sans-serif;
-            font-size: 15.5px !important;
-            font-weight: 400;
-            margin-bottom: 5.75px;
-            max-width: 95%;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        &-view {
-            margin-bottom: 5px;
-        }
-
-        &-sp {
-            color: #969696;
-            font-family: "BBC Reith Sans", sans-serif;
-            font-size: 13px !important;
-            font-weight: 400;
-            text-transform: uppercase;
-
-            &:nth-child(1) {
-                margin-bottom: 4px !important;
-                font-size: 15px;
-            }
-        }
-
-        &-spDate {
-            margin-right: 20px;
-            font-size: 9.351px;
-        }
     }
 
     &__left {
@@ -70,78 +34,8 @@
         grid-template-columns: 1fr;
         gap: 20px;
 
-        &-img {
-            display: none;
-        }
-
-        &-inner:nth-child(1) &-img {
-            display: block;
-
-        }
-
         &-wrap {
             order: 2;
-
-        }
-
-        .card-img-top {
-            height: 197.104px;
-        }
-
-        .card-body {
-            justify-content: space-between;
-            gap: 18px;
-            padding: 11.59px 5.8px 9.31px;
-        }
-
-        .card-title {
-            color: #121212;
-            font-size: 19px;
-            font-weight: 500;
-            margin-bottom: 0;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .card-text {
-            overflow: hidden;
-            color: #121212;
-            text-overflow: ellipsis;
-            font-size: 15.459px;
-            margin-bottom: 0;
-            -webkit-line-clamp: 2;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            
-            margin-top: -13px !important;
-        }
-
-        &-sp {
-            overflow: hidden;
-            color: #A0A0A0;
-            text-overflow: ellipsis;
-            font-size: 15.459px;
-            margin-bottom: 0 !important;
-        }
-
-        // &-inner {
-        //     height: 375px !important;
-        // }
-
-        &-spLink {
-            position: absolute;
-            padding: 5.63px 13.511px;
-            background: #FFF;
-            left: 5.797px;
-            bottom: 8.7px;
-            color: #121212;
-            font-size: 13px;
-            text-transform: uppercase;
-            // width: 104px;
-            height: 32px;
         }
     }
 }
@@ -167,68 +61,12 @@
             &-list {
                 gap: 25.01px;
             }
-
-            &-text {
-                font-size: 10.798px;
-                margin-bottom: 4.55px;
-            }
-
-            &-sp {
-                font-size: 6.82px;
-
-                &:nth-child(1) {
-                    font-size: 12px;
-                }
-            }
-
-            &-spDate {
-                font-size: 7.388px;
-                margin-right: 17.8px;
-            }
-        }
-
-        &__left {
-            &-img {
-                display: block;
-            }
-
-            .card-img-top {
-                height: 124.731px;
-            }
-
-            .card-body {
-                gap: 11.4px;
-                padding: 7.34px 3.67px 11.13px;
-            }
-
-            .card-title {
-                font-size: 12px;
-            }
-
-            .card-text {
-                font-size: 11px;
-            }
-
-            &-spLink {
-                font-family: "BBC Reith Sans", sans-serif;
-                left: 3.668px;
-                bottom: 5.5px;
-                padding: 3.563px 8.55px;
-                font-size: 7.337px;
-            }
-
-            &-sp {
-                font-size: 9.783px;
-                margin-bottom: 6.47px;
-            }
         }
     }
 }
 
 @media only screen and (min-width: 768px) {
-
     .lastNews {
-
         &__wrapper {
             gap: 13px;
         }
@@ -255,7 +93,7 @@
         }
 
         &__right {
-            padding: 24px 0px 67px 24px;
+            padding: 24px 0px 44px 24px;
 
             &-title {
                 font-size: 20px;
@@ -265,60 +103,11 @@
             &-list {
                 gap: 20px;
             }
-
-            &-text {
-                font-size: 19px;
-                margin-bottom: 20px;
-            }
-
-            &-sp {
-                font-size: 12px;
-
-                &:nth-child(1) {
-                    font-size: 21px;
-                }
-            }
-
-            &-spDate {
-                font-size: 13px;
-                margin-right: 31px;
-            }
-
         }
 
         &__left {
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-
-
-            .card-img-top {
-                height: 219.47px;
-            }
-
-            .card-body {
-                gap: 20.06px;
-                padding: 12.91px 6.46px 12px;
-            }
-
-            &-spLink {
-                left: 6.455px;
-                bottom: 9.88px;
-                padding: 6.269px 15.045px;
-                font-size: 13px;
-            }
-
-            .card-title {
-                font-size: 21.517px;
-            }
-
-            .card-text {
-                font-size: 17.214px;
-            }
-
-            &-sp {
-                font-size: 17.214px;
-                margin-bottom: 43.37px;
-            }
         }
     }
 }
