@@ -1,6 +1,6 @@
 <script setup>
 useSeoMeta({
-    title: "Bolalar olami",
+    title: "Bolalar olami", 
 });
 
 defineOgImageComponent("NuxtSeo", {
