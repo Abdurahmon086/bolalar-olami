@@ -91,6 +91,7 @@ export default defineNuxtConfig({
         baseUrl: process.env.BASE_URL || "https://admin.bolalarolami.uz/api/v2",
     },
     image: {
+        inject: true,
         quality: 80,
         format: ["webp"],
     },
