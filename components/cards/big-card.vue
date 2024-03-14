@@ -16,7 +16,7 @@ const { item } = props;
             <NuxtLink :to="localPath(`/${item.section.slug_uz}/${item.id}`)">
                 <NuxtImg
                     :src="item.detail_image?.url ? item.detail_image?.url : '/images/logo.svg'"
-                    class="card-img-top rounded-0"
+                    class="card-img-top rounded-0 object-fit-cover"
                     :alt="item[`title_${$i18n.locale}`]"
                 />
                 <span class="position-absolute bigCards__spLink darkMode"> {{ item.section[`title_${$i18n.locale}`] }}</span>

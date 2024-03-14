@@ -3,7 +3,13 @@ useSeoMeta({
     title: "Bolalar olami",
 });
 
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 import Loader from "~/components/loader.vue";
 import { useIndexStore } from "~/stores/indexStore";
@@ -169,7 +175,6 @@ onMounted(() => {
                             },
                         }"
                     >
-
                         <SwiperSlide v-for="item in datas?.quotations" :key="item.id" class="social__qs-wrapper">
                             <NuxtLink class="carousel-item">
                                 <NuxtImg
