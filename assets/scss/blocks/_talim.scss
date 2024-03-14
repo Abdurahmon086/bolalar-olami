@@ -98,7 +98,6 @@
 
 
     &__left {
-
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 19px 15px;
@@ -202,7 +201,7 @@
 
     .talim-box {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 271px;
         gap: 14px;
 
         &__left {
@@ -342,7 +341,7 @@
 
     .talim-box {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 271px;
         gap: 14px;
 
         &__left {
@@ -481,10 +480,11 @@
 
     .talim-box {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 271px;
         column-gap: 14px;
 
         &__left {
+
 
             &-box {
                 background-image: url(/images/talimImages/Rectangle-img.png);
@@ -542,7 +542,7 @@
 
 
         &__left {
-
+            grid-template-columns: 1fr 1fr;
             gap: 20px 10px;
 
             &-wrapper {

@@ -1,6 +1,12 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | posts" });
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 import Loader from "~/components/loader.vue";
 import { useSingleStore } from "~/stores/singleStore";
@@ -48,19 +54,19 @@ onMounted(() => {
                         <div class="single__info">
                             <span class="darkMode pt-1">{{ datas?.post.publish_date }}</span>
                             <div class="single__info-inner">
-                                <img src="/images/eye_main.svg" alt="eye icon" />
+                                <NuxtImg src="/images/eye_main.svg" alt="eye icon" />
                                 <span class="darkMode">{{ datas?.post.views_count }}</span>
                             </div>
                             <!-- <div class="single__info-inner">
-                            <img src="/images/message.svg" alt="message icon" />
+                            <NuxtImg  src="/images/message.svg" alt="message icon" />
                             <span class="darkMode">98</span>
                         </div>
                         <div class="single__info-inner">
-                            <img src="/images/share.svg" alt="share icon" />
+                            <NuxtImg  src="/images/share.svg" alt="share icon" />
                             <span class="darkMode">98</span>
                         </div> -->
                         </div>
-                        <img
+                        <NuxtImg
                             :src="datas?.post.detail_image?.url ? datas?.post.detail_image?.url : '/images/logo.svg'"
                             :alt="datas?.post[`title_${$i18n.locale}`]"
                             class="single__mainImg object-fit-fill"
@@ -70,19 +76,19 @@ onMounted(() => {
                             class="single__social d-none d-sm-flex list-unstyled"
                         >
                             <li class="darkMode-btn">
-                                <img
+                                <NuxtImg 
                                     src="/images/insta.svg"
                                     alt="instagram icon"
                                 />
                             </li>
                             <li class="darkMode-btn">
-                                <img
+                                <NuxtImg 
                                     src="/images/telegram1.svg"
                                     alt="telegram icon"
                                 />
                             </li>
                             <li class="darkMode-btn">
-                                <img src="/images/share.svg" alt="share icon" />
+                                <NuxtImg  src="/images/share.svg" alt="share icon" />
                             </li>
                         </ul> -->
                             <div class="single__main">
@@ -91,19 +97,19 @@ onMounted(() => {
                                     class="single__social list-unstyled d-flex d-sm-none"
                                 >
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/insta.svg"
                                             alt="instagram icon"
                                         />
                                     </li>
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/telegram1.svg"
                                             alt="telegram icon"
                                         />
                                     </li>
                                     <li class="darkMode-btn">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/share.svg"
                                             alt="share icon"
                                         />
@@ -112,7 +118,7 @@ onMounted(() => {
                                     <div class="single__text-wrapper single__text" v-html="datas?.post[`content_${$i18n.locale}`]"></div>
                                 </div>
                                 <!-- <div class="single__qs darkMode-body">
-                                <img src="/images/dod.svg" alt="dod icon" />
+                                <NuxtImg  src="/images/dod.svg" alt="dod icon" />
                                 <p class="single__qs-text">
                                     Shuningdek, Prezident yordamchisi ta’lim
                                     islohoti doirasida “Xorijiy tillarni
@@ -142,7 +148,7 @@ onMounted(() => {
                                         Maqola muallifi
                                     </p>
                                     <div class="single__auther-inner">
-                                        <img
+                                        <NuxtImg 
                                             src="/images/person.png"
                                             alt="person image"
                                         />
@@ -194,19 +200,19 @@ onMounted(() => {
                                         class="single__auther-share list-unstyled"
                                     >
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/telegram1.svg"
                                                 alt="telegram icon"
                                             />
                                         </li>
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/insta.svg"
                                                 alt="instagram icon"
                                             />
                                         </li>
                                         <li class="darkMode-btn">
-                                            <img
+                                            <NuxtImg 
                                                 src="/images/share.svg"
                                                 alt="share icon"
                                             />

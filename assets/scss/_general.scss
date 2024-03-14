@@ -80,6 +80,16 @@ img {
 .darkBody .darkMode {
     color: #DBDBDB !important;
     background: #242424 !important;
+
+    input::placeholder {
+        color: #DBDBDB !important;
+
+    }
+}
+
+.darkBody input::placeholder {
+    color: #DBDBDB !important;
+
 }
 
 .darkBody .darkMode-btn {

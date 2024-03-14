@@ -1,6 +1,12 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | tags" });
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 const route = useRoute();
 const tageStore = useTageStore();
@@ -26,9 +32,9 @@ onMounted(() => {
                                 <CardsMiddleCard v-for="item in datas?.posts.data" :key="item.id" :item="item" />
                             </div>
                             <aside class="tegs-cardimg__aside">
-                                <img src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
-                                <img src="/images/talimImages/reklama-img2.png" class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
-                                <!-- <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img"> -->
+                                <NuxtImg src="/images/talimImages/reklama-img1.png" class="img-fluid tegs-cardimg__aside-img1" alt="reklama-img" />
+                                <NuxtImg src="/images/talimImages/reklama-img2.png" class="img-fluid tegs-cardimg__aside-img2" alt="reklama-img" />
+                                <!-- <NuxtImg  src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3"  alt="reklama-img"> -->
                             </aside>
                         </div>
                     </div>

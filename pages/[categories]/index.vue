@@ -1,6 +1,12 @@
 <script setup>
 useHead({ title: "Bolalar olami | category" });
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 import { onMounted } from "vue";
 const localPath = useLocalePath();
@@ -27,7 +33,7 @@ onMounted(() => {
                         <div class="talim-box-wrapper">
                             <div class="talim-box__left position-relative image-container item1">
                                 <NuxtLink :to="localPath(`/${datas?.bannerPosts[0].section.slug_uz}/${datas?.bannerPosts[0]?.id}`)">
-                                    <img
+                                    <NuxtImg
                                         :src="datas?.bannerPosts[0]?.detail_image?.url ? datas?.bannerPosts[0]?.detail_image?.url : '/images/logo.svg'"
                                         class="img-fluid w-100 h-100"
                                         alt="talim-img"
@@ -50,7 +56,7 @@ onMounted(() => {
                             </ul>
                         </div>
                     </div>
-                    <img src="/images/talimImages/reklama-y-img.png" class="img-fluid pt-3" alt="" />
+                    <NuxtImg src="/images/talimImages/reklama-y-img.png" class="img-fluid pt-3 w-100 d-block d-xl-none" alt="" />
                 </div>
             </section>
             <section class="lastNews">
@@ -75,9 +81,9 @@ onMounted(() => {
                             <CardsMiddleCard v-for="item in datas?.categoryPosts.slice(4)" :key="item.id" :item="item" />
                         </div>
                         <aside class="talim-cardimg__aside">
-                            <img src="/images/talimImages/reklama-img1.png" class="img-fluid talim-cardimg__aside-img1" alt="reklama-img" />
-                            <img src="/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2" alt="reklama-img" />
-                            <img src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3" alt="reklama-img" />
+                            <NuxtImg src="/images/talimImages/reklama-img1.png" class="img-fluid talim-cardimg__aside-img1" alt="reklama-img" />
+                            <NuxtImg src="/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2" alt="reklama-img" />
+                            <NuxtImg src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3" alt="reklama-img" />
                         </aside>
                     </div>
                 </div>

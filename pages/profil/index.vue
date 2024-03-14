@@ -1,6 +1,12 @@
 <script setup>
 useSeoMeta({ title: "Bolalar olami | profil" });
-defineOgImageComponent("NuxtSeo");
+defineOgImageComponent("NuxtSeo", {
+    // icon: true/,
+    siteName: "Bolalar olami",
+    siteLogo: "/images/logo.svg",
+    theme: "#F7931E",
+    colorMode: "light",
+});
 
 </script>
 <template>
@@ -16,7 +22,7 @@ defineOgImageComponent("NuxtSeo");
             <div class="author-bg">
                 <div class="container">
                     <div class="author darkMode">
-                        <img src="/images/profilImages/author-img.png" class="img-fluid h-100 w-100" alt="author-img" />
+                        <NuxtImg src="/images/profilImages/author-img.png" class="img-fluid h-100 w-100" alt="author-img" />
                         <div class="author-about">
                             <h2 class="author-about--na darkMode-title">Firdavs Muzafarov</h2>
                             <span class="author-about--jo darkMode-title">Muxbir</span>
@@ -26,14 +32,14 @@ defineOgImageComponent("NuxtSeo");
                             </p>
                             <div class="author-about-wrapper">
                                 <div class="author-about-wrapper-box darkMode-body">
-                                    <img src="/images/profilImages/Notebook.svg" class="img-fluid" alt="icon" />
+                                    <NuxtImg src="/images/profilImages/Notebook.svg" class="img-fluid" alt="icon" />
                                     <div>
                                         <p class="author-about-wrapper-box--text darkMode-title">3457</p>
                                         <span class="author-about-wrapper-box--span darkMode-sp">Maqola</span>
                                     </div>
                                 </div>
                                 <div class="author-about-wrapper-box darkMode-body">
-                                    <img src="/images/profilImages/Notebook.svg" class="img-fluid" alt="icon" />
+                                    <NuxtImg src="/images/profilImages/Notebook.svg" class="img-fluid" alt="icon" />
                                     <div>
                                         <p class="author-about-wrapper-box--text darkMode-title">3457</p>
                                         <span class="author-about-wrapper-box--span darkMode-sp">o'tqilgan</span>
@@ -52,7 +58,7 @@ defineOgImageComponent("NuxtSeo");
                     <div class="author-card__wrapper">
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -65,7 +71,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -78,7 +84,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -91,7 +97,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -104,7 +110,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -117,7 +123,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -130,7 +136,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -143,7 +149,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
@@ -156,7 +162,7 @@ defineOgImageComponent("NuxtSeo");
                         </div>
                         <div class="darkMode author-card-box text-decoration-none">
                             <div class="position-relative author-card__img-wrapper">
-                                <img class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
+                                <NuxtImg class="img-fluid w-100" src="/images/profilImages/img1.png" alt="img" />
                                 <span class="darkMode author-card-sp position-absolute">Salomatlik</span>
                             </div>
                             <div class="author-card__info darkMode">
