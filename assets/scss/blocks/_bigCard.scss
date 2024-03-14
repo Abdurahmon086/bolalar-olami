@@ -1,10 +1,13 @@
 .bigCards {
+    height: fit-content !important;
+
     .card-img-top {
         height: 197.104px;
     }
 
     .card-body {
-        justify-content: space-between;
+        height: auto;
+        // justify-content: space-between;
         gap: 18px;
         padding: 11.59px 5.8px 9.31px;
     }
@@ -75,7 +78,7 @@
 
         .card-text {
             font-size: 11px;
-            height: 42px;
+            height: 30px;
         }
 
         &__img {
