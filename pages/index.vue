@@ -326,7 +326,6 @@ main {
 }
 
 .sidbar {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 93.5%;

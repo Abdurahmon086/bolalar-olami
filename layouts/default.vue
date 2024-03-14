@@ -1,8 +1,6 @@
 <script setup>
-import { useMainStore } from '~/stores/mainStore';
-const mainStore = useMainStore()
-
-
+import { useMainStore } from "~/stores/mainStore";
+const mainStore = useMainStore();
 </script>
 
 <template>
@@ -14,6 +12,6 @@ const mainStore = useMainStore()
         <slot />
     </div>
 
-    <ScrollerTop class="scrollerTop" />
     <LayoutsFooter />
+    <ScrollerTop class="scrollerTop" />
 </template>
