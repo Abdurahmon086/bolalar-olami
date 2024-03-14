@@ -61,12 +61,14 @@ img {
 
 .card--title:hover {
     color: #F7931E !important;
+
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 600;
 }
 
 .card-title:hover {
     color: #F7931E !important;
+
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-weight: 600;
 }
@@ -100,5 +102,6 @@ img {
 }
 
 .darkBody .darkMode-card {
-    background-color: #3E2E89 !important;
+    background-color: #3E2E89 !important; 
+    
 }
