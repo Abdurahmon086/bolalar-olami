@@ -28,7 +28,7 @@
         background: #FFF;
         cursor: pointer;
         height: auto;
-        // width: 106px;
+        // width: 106px; 
     }
 
     &__info {
@@ -38,7 +38,7 @@
         padding: 12px 5.8px 20px;
 
         &-title {
-            color: #121212;
+            color: #000;
             font-size: 19.324px;
             font-weight: 500;
             margin-bottom: 0;
@@ -46,15 +46,15 @@
             height: 52px;
         }
 
-        &-title:hover {
-            color: #F7931E;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
+        &-title:hover { 
+            transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s; 
+            font-weight: 600; 
+            font-size: 17px; 
         }
 
         &-text {
             overflow: hidden;
-            color: #121212;
+            color: #000; 
             text-overflow: ellipsis;
             font-size: 15.459px;
             height: 62px;

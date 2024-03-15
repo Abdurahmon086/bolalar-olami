@@ -28,7 +28,7 @@ const { item } = props;
                     {{ item[`title_${$i18n.locale}`] }}
                 </h5>
             </NuxtLink>
-            <p class="card-text darkMode hidden-text-2">
+            <p class="card-text darkMode hidden-text-3">
                 {{ item[`description_${$i18n.locale}`] }}
             </p>
             <span class="bigCards__sp darkMode-sp">{{ item.publish_date }}</span>

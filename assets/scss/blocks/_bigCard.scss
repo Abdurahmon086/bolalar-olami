@@ -13,16 +13,20 @@
     }
 
     .card-title {
-        color: #121212;
+        color: #000; 
         font-size: 19px;
         font-weight: 500;
         margin-bottom: 0;
         height: 48px;
     }
-
+    .card-title:hover{
+        transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s;
+        font-weight: 600;
+        font-size: 17px; 
+    }
     .card-text {
         height: 42px;
-        color: #121212;
+        color: #000;
         text-overflow: ellipsis;
         font-size: 15.459px;
         margin-bottom: 0;
