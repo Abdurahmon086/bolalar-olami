@@ -18,7 +18,22 @@
 
         &-item {
             width: 204px;
+            height: 114px !important;
             margin-left: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .loopScroler {
+
+        &__wrapper {
+
+            &-item {
+                width: 150px;
+                height: 80px !important;
+                margin-left: 20px;
+            }
         }
     }
 }
