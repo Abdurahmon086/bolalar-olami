@@ -47,33 +47,29 @@ onMounted(() => {
                             </div>
                             <div class="talim-box-card">
                                 <CardsBigCard v-for="item in datas?.bannerPosts.slice(1)" :key="item.id" :item="item" />
+                                <CardsBigCard v-for="item in datas?.categoryPosts.slice(0, 4)" :key="item.id" :item="item" />
                             </div>
                         </div>
-                        <div class="lastNews__right darkMode border-0">
-                            <h4 class="lastNews__right-title">{{ $t("latest_articles") }}</h4>
-                            <ul class="lastNews__right-list list-unstyled darkMode">
-                                <CardsListCard v-for="item in datas?.resentPosts" :key="item.id" :item="item" />
-                            </ul>
+                        <div class="d-flex flex-column gap-3 h-100">
+                            <div class="lastNews__right flex-fill darkMode border-0">
+                                <h4 class="lastNews__right-title">{{ $t("latest_articles") }}</h4>
+                                <ul class="lastNews__right-list list-unstyled darkMode">
+                                    <CardsListCard v-for="item in datas?.resentPosts" :key="item.id" :item="item" />
+                                </ul>
+                            </div>
+                            <div class="lastNews__right flex-fill darkMode border-0">
+                                <h4 class="lastNews__right-title">{{ $t("most_read") }}</h4>
+                                <ul class="lastNews__right-list list-unstyled darkMode">
+                                    <CardsListCard v-for="item in datas?.mostReadPosts" :key="item.id" :item="item" />
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <NuxtImg src="/images/talimImages/reklama-y-img.png" class="img-fluid pt-3 w-100 d-block d-xl-none" style="height: 170px" />
                 </div>
             </section>
             <section class="lastNews">
                 <div class="container">
-            <!-- <img src="/images/talimImages/reklama-y-img.png" class="mb-3 img-fluid" alt="reklama-img"> -->
-
-                    <div class="lastNews__wrapper">
-                        <div class="lastNews__left">
-                            <CardsBigCard v-for="item in datas?.categoryPosts.slice(0, 4)" :key="item.id" :item="item" />
-                        </div>
-                        <div class="lastNews__right darkMode border-0">
-                            <h4 class="lastNews__right-title">{{ $t("most_read") }}</h4>
-                            <ul class="lastNews__right-list list-unstyled darkMode">
-                                <CardsListCard v-for="item in datas?.mostReadPosts" :key="item.id" :item="item" />
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- <img src="/images/talimImages/reklama-y-img.png" class="mb-3 img-fluid" alt="reklama-img"> -->
                 </div>
             </section>
             <section class="darkMode-body">
