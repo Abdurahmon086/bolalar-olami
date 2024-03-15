@@ -1,6 +1,6 @@
 <script setup>
 useSeoMeta({
-    title: "Bolalar olami", 
+    title: "Bolalar olami",
 });
 
 defineOgImageComponent("NuxtSeo", {
@@ -334,6 +334,6 @@ main {
 .sidbar {
     position: sticky;
     top: 0;
-    height: 93.5%;
+    height: fit-content;
 }
 </style>
