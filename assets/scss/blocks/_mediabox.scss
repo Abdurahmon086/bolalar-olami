@@ -96,9 +96,6 @@
     .mediabox {
         display: grid;
         grid-template-columns: 1fr 356px;
-        column-gap: 40px;
-        margin-bottom: 50px;
-        margin-top: 20px;
     
         &-left {
             gap:60px 20px;

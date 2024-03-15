@@ -175,16 +175,6 @@
 
 
 @media only screen and (max-width:1200px) {
-    .mediacate__text {
-        color: #000;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        font-variant: small-caps;
-
-    }
-
     .mediacate__card {
         display: grid;
         grid-template-columns: 1fr;
@@ -219,10 +209,6 @@
         &-posi {
             bottom: 31px !important;
             left: 18px !important;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            // gap: 287px;
             padding: 0 30px 0 0 !important;
 
             img {
@@ -231,8 +217,6 @@
             }
 
             &--title {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 28.181px;
                 font-style: normal;
                 line-height: normal;
@@ -243,39 +227,21 @@
         &-bottom {
             bottom: 24px !important;
             left: 18px !important;
-            display: flex;
             justify-content: space-between !important;
-            // gap: 76px; 
             padding: 0 35px 5px 16px !important;
 
 
             &--text {
-                color: #FFF;
-                font-family: "BBC Reith Sans";
                 font-size: 18.697px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                // width: 147px;  
             }
 
             &--text1 {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 16.36px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
                 margin: 0;
             }
 
             &--title {
-                font-family: "BBC Reith Sans", sans-serif;
-                color: #FFF;
                 font-size: 40.899px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
                 top: 30px;
                 left: 18px;
                 max-width: 262px;
@@ -316,18 +282,13 @@
     }
 
     .mediacate__all-text {
-        color: #000;
         font-size: 30px;
-        font-style: normal;
         font-weight: 500;
-        line-height: normal;
-
     }
 
     .mediacate__all {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        justify-content: space-between;
         row-gap: 20px;
         column-gap: 55px;
         margin: 16.36px 0 20px 0;
@@ -349,10 +310,7 @@
 
             &-text {
                 font-size: 11.799px;
-                font-style: normal;
-                line-height: normal;
                 margin-bottom: 4px;
-                color: #ddd;
             }
 
         }
@@ -361,13 +319,7 @@
 
 @media only screen and (max-width:992px) {
     .mediacate__text {
-        color: #000;
         font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        font-variant: small-caps;
-
     }
 
     .mediacate__card {
@@ -404,10 +356,6 @@
         &-posi {
             bottom: 31px !important;
             left: 18px !important;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            // gap: 287px;
             padding: 0 30px 0 0 !important;
 
             img {
@@ -416,11 +364,7 @@
             }
 
             &--title {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 28.181px;
-                font-style: normal;
-                line-height: normal;
 
             }
         }
@@ -430,36 +374,20 @@
             left: 18px !important;
             display: flex;
             justify-content: space-between !important;
-            // gap: 76px; 
             padding: 0 35px 5px 16px !important;
 
 
             &--text {
-                color: #FFF;
-                font-family: "BBC Reith Sans";
                 font-size: 18.697px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                // width: 147px;  
             }
 
             &--text1 {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 16.36px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
                 margin: 0;
             }
 
             &--title {
-                color: #FFF;
                 font-size: 40.899px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
                 top: 30px;
                 left: 18px;
                 max-width: 262px;
@@ -500,13 +428,7 @@
     }
 
     .mediacate__all-text {
-        color: #000;
-        // font-family: "BBC Reith Sans"; 
         font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-
     }
 
     .mediacate__all {
@@ -533,13 +455,9 @@
                 height: 46px !important;
             }
 
-            &-text {
-                // font-family: "BBC Reith Sans"; 
+            &-text { 
                 font-size: 11.799px;
-                font-style: normal;
-                line-height: normal;
                 margin-bottom: 4px;
-                color: #ddd;
             }
 
         }
@@ -548,13 +466,7 @@
 
 @media only screen and (max-width:768px) {
     .mediacate__text {
-        color: #000;
-        // font-family: "BBC Reith Sans";
         font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        font-variant: small-caps;
 
     }
 
@@ -579,8 +491,6 @@
             img {
                 cursor: pointer;
                 border-radius: 7.011px;
-                // background: rgba(36, 36, 36, 0.10);
-                // backdrop-filter: blur(31.550559997558594px);
             }
 
             &--img {
@@ -593,10 +503,6 @@
         &-posi {
             bottom: 31px !important;
             left: 18px !important;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            // gap: 287px;
             padding: 0 30px 0 0 !important;
 
             img {
@@ -605,11 +511,7 @@
             }
 
             &--title {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 28.181px;
-                font-style: normal;
-                line-height: normal;
 
             }
         }
@@ -619,37 +521,20 @@
             left: 18px !important;
             display: flex;
             justify-content: space-between !important;
-            // gap: 76px; 
             padding: 0 35px 5px 16px !important;
 
 
             &--text {
-                color: #FFF;
-                font-family: "BBC Reith Sans";
-                font-size: 18.697px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                // width: 147px;  
+                font-size: 18.697px; 
             }
 
             &--text1 {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 16.36px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
                 margin: 0;
             }
 
             &--title {
-                // font-family: "BBC Reith Sans";
-                color: #FFF;
                 font-size: 40.899px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
                 top: 30px;
                 left: 18px;
                 max-width: 262px;
@@ -690,12 +575,7 @@
     }
 
     .mediacate__all-text {
-        color: #000;
-        // font-family: "BBC Reith Sans"; 
         font-size: 30px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
 
     }
 
@@ -724,11 +604,9 @@
             }
 
             &-text {
-                // font-family: "BBC Reith Sans"; 
                 font-size: 11.799px;
                 font-style: normal;
                 line-height: normal;
-                // margin-bottom: 4px;
                 color: #ddd;
             }
 
@@ -747,7 +625,6 @@
         row-gap: 19px;
 
         &-img {
-            // height: 190px !important;
             cursor: pointer;
 
         }
@@ -769,24 +646,14 @@
             left: 16px !important;
             display: flex;
             justify-content: space-between;
-
-            // align-items: center;
-            // gap: 287px;
-            // padding: 0 35px 9px 9px;
             img {
                 width: 45px;
                 height: 45px;
             }
 
             &--title {
-                color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 13px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
                 margin-top: 5px;
-
             }
         }
 
@@ -794,8 +661,7 @@
             bottom: 7px;
             left: 8px;
             display: flex;
-            justify-content: space-between !important;
-            // gap: 76px; 
+            justify-content: space-between !important; 
             padding: 0 29px 0 5px;
 
             img {
@@ -805,33 +671,20 @@
 
             &--text {
                 color: #FFF;
-                font-family: "BBC Reith Sans";
                 font-size: 8px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
                 margin-top: 3px;
                 margin-bottom: 8px;
-                // width: 147px;  
             }
 
             &--text1 {
                 color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 7px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
                 margin: 0;
             }
 
             &--title {
                 color: #FFF;
-                // font-family: "BBC Reith Sans";
                 font-size: 19px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
                 top: 26px;
                 left: 16px;
             }
@@ -873,11 +726,7 @@
 
     .mediacate__all-text {
         color: #000;
-        // font-family: "BBC Reith Sans"; 
         font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
 
     }
 
@@ -891,8 +740,6 @@
 
         img {
             cursor: pointer;
-            //    max-width: 160px !important;
-            // height: 96px !important;
         }
 
         &-box {
@@ -907,10 +754,7 @@
             }
 
             &-text {
-                // font-family: "BBC Reith Sans"; 
                 font-size: 5px;
-                font-style: normal;
-                line-height: normal;
                 margin-top: 4px;
                 margin-bottom: 0;
                 color: #ddd;
@@ -953,8 +797,6 @@
             left: 16px !important;
             display: flex;
             justify-content: space-between;
-            // align-items: center;
-            // gap: 287px;
             padding: 0 35px 9px 9px;
 
             img {
@@ -964,11 +806,7 @@
 
             &--title {
                 color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 13px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
                 margin-top: 5px;
 
             }
@@ -979,7 +817,6 @@
             left: 8px;
             display: flex;
             justify-content: space-between !important;
-            // gap: 76px; 
             padding: 0 29px 0 5px;
 
             img {
@@ -989,33 +826,20 @@
 
             &--text {
                 color: #FFF;
-                font-family: "BBC Reith Sans";
                 font-size: 8px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
                 margin-top: 3px;
                 margin-bottom: 8px;
-                // width: 147px;  
             }
 
             &--text1 {
                 color: #DDD;
-                font-family: "BBC Reith Sans";
                 font-size: 7px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
                 margin: 0;
             }
 
             &--title {
                 color: #FFF;
-                // font-family: "BBC Reith Sans";
                 font-size: 19px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
                 top: 26px;
                 left: 16px;
             }
@@ -1057,11 +881,7 @@
 
     .mediacate__all-text {
         color: #000;
-        // font-family: "BBC Reith Sans"; 
         font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
 
     }
 
@@ -1072,33 +892,23 @@
         row-gap: 10px;
         column-gap: 27px;
         margin: 8px 0 9px 0;
-
         img {
             cursor: pointer;
-
         }
-
         &-box {
             display: flex;
             justify-content: space-between;
-
             padding: 49px 6px 6px 6.15px;
-
             img {
                 width: 22.243px !important;
                 height: 22.243px !important;
             }
-
             &-text {
-                // font-family: "BBC Reith Sans"; 
                 font-size: 5px;
-                font-style: normal;
-                line-height: normal;
                 margin-top: 4px;
                 margin-bottom: 0;
                 color: #ddd;
             }
-
         }
     }
 }
