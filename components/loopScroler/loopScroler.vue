@@ -8,12 +8,12 @@ const mainStore = useMainStore();
             <SwiperSlide v-for="slide in 9" :key="slide" class="loopScroler__wrapper list-unstyled m-0 darkMode">
                 <li class="loopScroler__wrapper-item d-flex align-items-center">
                     <template v-if="!mainStore.darkTheme">
-                        <NuxtImg src="/images/dunyoBola-img.svg" alt="dunyoBola-img" class="d-block img-fluid" />
+                        <NuxtImg src="/images/dunyoBola-img.svg" alt="dunyoBola-img" class="d-block img-fluid h-100 w-100" />
                         <!-- <NuxtImg  src="/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" /> -->
                     </template>
 
                     <template v-else>
-                        <NuxtImg src="/images/dunyoBola-img-dark1.jpg" alt="dunyoBola-img" class="img-fluid" />
+                        <NuxtImg src="/images/dunyoBola-img-dark1.jpg" alt="dunyoBola-img" class="img-fluid h-100 w-100" />
                         <!-- <NuxtImg  src="/images/image-removebg.png" alt="dunyoBola-img" class=" d-block img-fluid" /> -->
                     </template>
                 </li>
