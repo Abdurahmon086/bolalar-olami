@@ -78,7 +78,7 @@ onMounted(() => {
                         <div class="talim-cardimg__left">
                             <CardsMiddleCard v-for="item in datas?.categoryPosts.slice(4)" :key="item.id" :item="item" />
                         </div>
-                        <aside class="talim-cardimg__aside">
+                        <aside class="talim-cardimg__aside sidbar">
                             <NuxtImg src="/images/talimImages/reklama-img1.png" class="img-fluid talim-cardimg__aside-img1" alt="reklama-img" />
                             <NuxtImg src="/images/talimImages/reklama-img2.png" class="img-fluid talim-cardimg__aside-img2" alt="reklama-img" />
                             <NuxtImg src="/images/talimImages/reklama-img3.png" class="img-fluid talim-cardimg__aside-img3" alt="reklama-img" />

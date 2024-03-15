@@ -112,6 +112,12 @@ img {
 }
 
 .darkBody .darkMode-card {
-    background-color: #3E2E89 !important; 
-    
+    background-color: #3E2E89 !important;
+
+}
+
+.sidbar {
+    position: sticky;
+    top: 0;
+    height: fit-content;
 }

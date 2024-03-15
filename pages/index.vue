@@ -330,10 +330,4 @@ main {
 .hero__bgLiner {
     background: linear-gradient(to bottom, #fff3 40%, #000 90%) !important;
 }
-
-.sidbar {
-    position: sticky;
-    top: 0;
-    height: fit-content;
-}
 </style>
