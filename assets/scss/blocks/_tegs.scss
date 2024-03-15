@@ -2,548 +2,90 @@
     padding-top: 126px;
 
     &-text {
-        color: #000;
         font-family: "BBC Reith Sans", sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
         margin-bottom: 0;
-
     }
 
     &-cardimg {
         margin-top: 24.5px;
         display: grid;
-        grid-template-columns: 4fr 305px;
-        gap: 21px;
+        grid-template-columns: 1fr;
         padding-bottom: 21px;
-
 
         &__left {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            height: fit-content;
             gap: 20px;
-            align-content: start;
-
-            &-wrapper {
-                max-height: 348px;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                background-color: #FFF;
-
-                img {
-                    height: 175px;
-                }
-
-                &-box {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 15.96px;
-                }
-
-                &-dec {
-                    color: #000;
-                    font-size: 12px;
-                    text-transform: uppercase;
-                    padding: 4.989px 11.974px;
-                    background-color: #FFF;
-                    bottom: 12px;
-                    left: 11px;
-                    margin-bottom: 0;
-                }
-
-                &-title {
-                    color: #000;
-                    font-size: 16px;
-                    font-weight: 500;
-                    margin: 0;
-                    padding: 2px 8px 0 6px;
-                    height: 44px;
-                }
-
-                &-text {
-                    overflow: hidden;
-                    color: #000;
-                    text-overflow: ellipsis;
-                    font-size: 14px;
-                    margin: 0;
-                    padding: 2px 3px 0 6px;
-                    height: 46px;
-                }
-
-                &-time {
-                    overflow: hidden;
-                    color: #A0A0A0;
-                    text-overflow: ellipsis;
-                    font-size: 14px;
-                    font-weight: 400;
-                    margin: 0;
-                    padding: 2px 3px 15.9px 6px;
-                }
-            }
         }
 
         &__aside {
-            display: flex;
-            flex-direction: column;
-            row-gap: 16px;
-
-            &-img1 {
-                width: 305px;
-                // height: 916px;
-            }
-
-            &-img2 {
-                width: 305px;
-                // height: 448px;
-            }
-
-            &-img3 {
-                width: 305px;
-                // height: 540px;
-            }
+            display: none;
         }
     }
 }
 
-@media only screen and (max-width:1200px) {
-
+@media only screen and (min-width:576px) {
     .tegs {
-        padding-top: 128px;
-
         &-text {
-            font-size: 16px;
-        }
-
-        &-cardimg {
-            margin-top: 24px;
-            display: flex;
-            gap: 18px;
-            margin-bottom: 40px;
-
-
-            &__left {
-                gap: 20px 10px;
-
-                &-wrapper {
-                    row-gap: 5px;
-                    height: 198px;
-
-                    img {
-                        max-height: 99px;
-                    }
-
-                    &-box {
-                        row-gap: 9.08px;
-                    }
-
-                    &-dec {
-                        font-size: 6.825px;
-                        padding: 2.989px 5.974px;
-                        bottom: 5px;
-                        left: 4px;
-                    }
-
-                    &-title {
-                        font-size: 10px;
-                        font-weight: 500;
-                        padding: 2px 3px 0 3px;
-                        height: 26px;
-                    }
-
-                    &-text {
-                        font-size: 8px;
-                        padding: 2px 3px 0 3px;
-                        height: 30px;
-
-                    }
-
-                    &-time {
-                        font-size: 7.963px;
-                        padding: 2px 3px 9.08px 3px;
-                    }
-                }
-            }
-
-            &__aside {
-                display: flex;
-                flex-direction: column;
-                row-gap: 9.1px;
-
-                &-img1 {
-                    max-width: 173px;
-                    // height: 326px;
-                }
-
-                &-img2 {
-                    max-width: 173px;
-                    // height: 203px;
-                }
-
-                &-img3 {
-                    max-width: 173px;
-                    // height: 305px;
-                }
-            }
-
-        }
-    }
-}
-
-@media only screen and (max-width:992px) {
-
-    .tegs {
-        padding-top: 128px;
-
-        &-text {
-            font-size: 16px;
-        }
-
-        &-cardimg {
-            margin-top: 24px;
-            display: flex;
-            gap: 18px;
-            margin-bottom: 40px;
-
-            &__left {
-                gap: 20px 10px;
-
-                &-wrapper {
-                    row-gap: 5px;
-
-                    img {
-                        max-height: 99px;
-                    }
-
-                    &-box {
-                        row-gap: 9.08px;
-                    }
-
-                    &-dec {
-                        font-size: 6.825px;
-                        padding: 2.989px 5.974px;
-                        bottom: 5px;
-                        left: 4px;
-                    }
-
-                    &-title {
-                        font-size: 10px;
-                        font-weight: 500;
-                        padding: 2px 3px 0 3px;
-                        height: 26px;
-                    }
-
-                    &-text {
-                        font-size: 8px;
-                        padding: 2px 3px 0 3px;
-                        height: 30px;
-                    }
-
-                    &-time {
-                        font-size: 7.963px;
-                        padding: 2px 3px 9.08px 3px;
-                    }
-                }
-            }
-
-            &__aside {
-                display: flex;
-                flex-direction: column;
-                row-gap: 9.1px;
-
-                &-img1 {
-                    max-width: 173px;
-                    // height: 326px;
-                }
-
-                &-img2 {
-                    max-width: 173px;
-                    // height: 203px;
-                }
-
-                &-img3 {
-                    max-width: 173px;
-                    // height: 305px;
-                }
-            }
-
-        }
-    }
-}
-
-@media only screen and (max-width:768px) {
-
-    .tegs {
-        padding-top: 128px;
-
-        &-text {
-            font-size: 16px;
-        }
-
-        &-cardimg {
-            margin-top: 24px;
-            display: flex;
-            gap: 18px;
-            margin-bottom: 40px;
-
-            &__left {
-
-                gap: 20px 10px;
-
-                &-wrapper {
-                    row-gap: 5px;
-
-                    img {
-                        max-height: 99px;
-                    }
-
-                    &-box {
-                        row-gap: 9.08px;
-                    }
-
-                    &-dec {
-                        font-size: 6.825px;
-                        padding: 2.989px 5.974px;
-                        bottom: 5px;
-                        left: 4px;
-                    }
-
-                    &-title {
-                        font-size: 10px;
-                        font-weight: 500;
-                        padding: 2px 3px 0 3px;
-                        height: 26px;
-                    }
-
-                    &-text {
-                        font-size: 8px;
-                        padding: 2px 3px 0 3px;
-                        height: 30px;
-                    }
-
-                    &-time {
-                        font-size: 7.963px;
-                        padding: 2px 3px 9.08px 3px;
-
-                    }
-                }
-            }
-
-            &__aside {
-                display: flex;
-                flex-direction: column;
-                row-gap: 9.1px;
-
-                &-img1 {
-                    max-width: 173px;
-                    // height: 326px;
-                }
-
-                &-img2 {
-                    max-width: 173px;
-                    // height: 203px;
-                }
-
-                &-img3 {
-                    max-width: 173px;
-                    // height: 305px;
-                }
-            }
-
-        }
-    }
-}
-
-@media only screen and (max-width:576px) {
-
-    .tegs {
-        padding-top: 131px;
-
-        &-text {
-            color: #000;
-            font-family: "BBC Reith Sans", sans-serif;
             font-size: 18px;
-            font-weight: 700;
         }
 
         &-cardimg {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            // gap: 21px;
-            margin-bottom: 21px;
 
             &__left {
                 display: grid;
-                grid-template-columns: auto;
-                row-gap: 20px;
-
-                &-wrapper {
-                    height: 404px;
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 11px;
-                    background-color: #FFF;
-
-                    img {
-                        max-height: 165px;
-                    }
-
-                    &-box {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 18px;
-                    }
-
-                    img {
-                        width: 343px;
-                        height: 197.066px;
-
-                    }
-
-                    &-dec {
-                        color: #121212;
-                        text-transform: uppercase;
-                        padding: 4.989px 11.974px;
-                        background-color: #FFF;
-                        // top: 145px;
-                        bottom: 12px;
-                        left: 11px;
-                        margin-bottom: 0;
-                    }
-
-                    &-title {
-                        color: #000;
-                        font-size: 20px;
-                        font-weight: 500;
-                        margin: 0;
-                        padding: 2px 3px 0 6px;
-                        max-width: 531px;
-                        height: 54px;
-                    }
-
-                    &-text {
-                        overflow: hidden;
-                        color: #000;
-                        text-overflow: ellipsis;
-                        font-size: 16px;
-                        margin: 0;
-                        padding: 2px 3px 0 6px;
-                        max-width: 531px;
-                        height: 56px;
-                    }
-
-                    &-time {
-                        overflow: hidden;
-                        color: #A0A0A0;
-                        text-overflow: ellipsis;
-                        font-size: 16px;
-                        margin: 0;
-                        padding: 2px 3px 15.9px 6px;
-                        max-width: 331px;
-                    }
-                }
-            }
-
-            &__aside {
-                display: none;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
         }
     }
 }
 
-@media only screen and (max-width:376px) {
-
+@media only screen and (min-width:768px) {
     .tegs {
-        padding-top: 131px;
-
-        &-text {
-            color: #000;
-            font-family: "BBC Reith Sans", sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
         &-cardimg {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            // gap: 21px;
-            margin-bottom: 21px;
-
+            grid-template-columns: 1fr 173px;
+            gap: 17px;
 
             &__left {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px 10px;
+            }
 
+            &__aside {
                 display: grid;
                 grid-template-columns: 1fr;
-                row-gap: 20px;
+                height: fit-content;
+                gap: 9px;
 
-                &-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 11px;
-                    background-color: #FFF;
-
-                    &-box {
-                        display: flex;
-                        flex-direction: column;
-                        row-gap: 18px;
-                    }
-
-                    img {
-                        width: 343px;
-                    }
-
-                    &-dec {
-                        color: #121212;
-                        font-size: 12px;
-                        font-weight: 400;
-                        text-transform: uppercase;
-                        padding: 4.989px 11.974px;
-                        background-color: #FFF;
-                        // top: 145px;
-                        bottom: 12px;
-                        left: 11px;
-                        margin-bottom: 0;
-
-
-                    }
-
-                    &-title {
-                        color: #000;
-                        font-size: 20px;
-                        font-weight: 500;
-                        margin: 0;
-                        padding: 2px 3px 0 6px;
-                        max-width: 331px;
-                        height: 54px;
-                    }
-
-                    &-text {
-                        overflow: hidden;
-                        color: #000;
-                        text-overflow: ellipsis;
-                        font-size: 16px;
-                        margin: 0;
-                        padding: 2px 3px 0 6px;
-                        max-width: 331px;
-                        height: 56px;
-                    }
-
-                    &-time {
-                        overflow: hidden;
-                        color: #A0A0A0;
-                        text-overflow: ellipsis;
-                        font-size: 16px;
-                        margin: 0;
-                        padding: 2px 3px 15.9px 6px;
-                        max-width: 331px;
-                    }
+                &-img1 {
+                    height: 326px;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .tegs {
+        &-cardimg {
+            grid-template-columns: 1fr 305px;
+            gap: 20px;
+
+            &__left {
+                gap: 20px;
             }
 
             &__aside {
-                display: none;
+                gap: 20px;
+
+                &-img1 {
+                    height: 574px;
+                }
             }
         }
     }
