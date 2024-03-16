@@ -59,15 +59,15 @@ img {
     overflow: hidden;
 }
 
-.card--title:hover { 
-    transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s;  
-    font-size: 17px;  
+.card--title:hover {
+    transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;
+    font-size: 17px;
     font-weight: 600;
 }
 
-.card-title:hover { 
-    transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s;  
-    font-size: 17px; 
+.card-title:hover {
+    transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;
+    font-size: 17px;
     font-weight: 600;
 }
 
@@ -117,5 +117,6 @@ img {
 .sidbar {
     position: sticky;
     top: 0;
+    right: 0;
     height: fit-content;
 }
