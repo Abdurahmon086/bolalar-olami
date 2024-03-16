@@ -59,17 +59,15 @@ img {
     overflow: hidden;
 }
 
-.card--title:hover {
-    color: #F7931E !important;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.card--title:hover { 
+    transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s;  
+    font-size: 17px;  
     font-weight: 600;
 }
 
-.card-title:hover {
-    color: #F7931E !important;
-
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.card-title:hover { 
+    transition: font-size .25s, margin .25s , padding .25s , opacity .5s .25s;  
+    font-size: 17px; 
     font-weight: 600;
 }
 

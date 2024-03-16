@@ -177,17 +177,14 @@
 
         &-img1 {
             width: 305px;
-            // height: 916px;
         }
 
         &-img2 {
-            width: 305px;
-            // height: 448px;
+            width: 305px; 
         }
 
         &-img3 {
-            width: 305px;
-            // height: 540px;
+            width: 305px; 
         }
     }
 }
@@ -543,7 +540,7 @@
 
 
         &__left {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 20px 10px;
 
             &-wrapper {
@@ -591,18 +588,15 @@
             row-gap: 9.1px;
 
             &-img1 {
-                max-width: 173px;
-                // height: 326px;
+                max-width: 173px; 
             }
 
             &-img2 {
-                max-width: 173px;
-                // height: 203px;
+                max-width: 173px; 
             }
 
             &-img3 {
-                max-width: 173px;
-                // height: 305px;
+                max-width: 173px; 
             }
         }
 
