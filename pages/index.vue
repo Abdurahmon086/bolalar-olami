@@ -232,7 +232,7 @@ onMounted(() => {
                 </div>
             </section>
             <!-- Achchiqtosh -->
-            <section class="achchiqtosh mt-3 mt-sm-5">
+            <section class="achchiqtosh mt-3 mt-sm-3">
                 <div class="container">
                     <h4 class="achchiqtosh__title darkMode-title">
                         {{ $t("achiqtosh") }}
